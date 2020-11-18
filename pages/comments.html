@@ -39,6 +39,7 @@ The above copyright notice and this permission notice shall be included in all c
     />
     <!-- CSS Files -->
     <link href="../assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
+    <link href="../assets/css/comment.css" rel="stylesheet" />
   </head>
 
   <body class="landing-page sidebar-collapse">
@@ -48,81 +49,20 @@ The above copyright notice and this permission notice shall be included in all c
       id="sectionsNav"
     >
       <div class="container">
-        <div class="navbar-translate">
-          <a class="navbar-brand" href="#"> Comments </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
-            <li class="dropdown nav-item">
-              <a
-                href="#"
-                class="dropdown-toggle nav-link"
-                data-toggle="dropdown"
-              >
-                <i class="material-icons">apps</i> Menu
-              </a>
-              <div class="dropdown-menu dropdown-with-icons">
-                <a href="../index.html" class="dropdown-item">
-                  <i class="material-icons">layers</i> Home
-                </a>
-                <a href="#" class="dropdown-item">
-                  <i class="material-icons">content_paste</i> Documentation
-                </a>
-              </div>
-            </li>
-
             <li class="nav-item">
               <a
                 class="nav-link"
-                rel="tooltip"
-                title=""
-                data-placement="bottom"
-                href="#"
-                target="_blank"
-                data-original-title="Follow us on Twitter"
-                rel="nofollow"
+                href="javascript:void(0)"
+                onclick="scrollToDownload()"
               >
-                <i class="fa fa-twitter"></i>
+                <i class="material-icons">description</i> Register
               </a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                rel="tooltip"
-                title=""
-                data-placement="bottom"
-                href="#"
-                target="_blank"
-                data-original-title="Like us on Facebook"
-                rel="nofollow"
-              >
-                <i class="fa fa-facebook-square"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                rel="tooltip"
-                title=""
-                data-placement="bottom"
-                href="#"
-                target="_blank"
-                data-original-title="Follow us on Instagram"
-                rel="nofollow"
-              >
-                <i class="fa fa-instagram"></i>
+              <a class="nav-link" href="#" target="_blank">
+                <i class="material-icons">login</i> Login
               </a>
             </li>
           </ul>
@@ -136,15 +76,10 @@ The above copyright notice and this permission notice shall be included in all c
     >
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h1 class="title">Your Story Starts With Us.</h1>
-            <h4>
-              Every landing page needs a small description after the big bold
-              title, that&apos;s why we added this text here. Add here all the
-              information that can make you or your product create the first
-              impression.
-            </h4>
-            <br />
+          <div class="col-md-8 ml-auto mr-auto">
+            <div class="brand">
+              <h1 class="text-center">Let Zeppelin</h1>
+            </div>
           </div>
         </div>
       </div>
@@ -154,14 +89,16 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="section text-center">
           <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+              <li class="breadcrumb-item"><a href="javascript:;"><span class="material-icons material-icons-home">
+                home<div class="mx-3"></div>
+                </span>Home</a></li>
               <li class="breadcrumb-item">
                 <a href="javascript:;">Board index</a>
               </li>
-              <li class="breadcrumb-item active">Category 1</li>
+              <li class="breadcrumb-item active">Category One</li>
               <li class="breadcrumb-item active">Topics icon Demo</li>
               <li class="breadcrumb-item active" aria-current="page">
-                Topics Read
+                Topics Read (Hot)
               </li>
             </ol>
           </nav>
