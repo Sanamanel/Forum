@@ -39,6 +39,7 @@ The above copyright notice and this permission notice shall be included in all c
     />
     <!-- CSS Files -->
     <link href="../assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
+    <link href="./assets/css/profil.css" rel="stylesheet" />
   </head>
 
   <body class="profile-page sidebar-collapse">
@@ -138,175 +139,130 @@ The above copyright notice and this permission notice shall be included in all c
         background-position: top;
       "
     ></div>
-    <div class="main main-raised">
-      <div class="profile-content">
-        <div class="container">
+    <div class="content">
+      <div class="container-fluid">
           <div class="row">
-            <div class="col-md-6 ml-auto mr-auto">
-              <div class="profile">
-                <div class="avatar">
-                  <img
-                    src="../assets/img/faces/christian.jpg"
-                    alt="Circle Image"
-                    class="img-raised rounded-circle img-fluid"
-                  />
-                </div>
-                <div class="name">
-                  <h3 class="title">Christian Louboutin</h3>
-                  <h6>Designer</h6>
-                  <a
-                    href="#pablo"
-                    class="btn btn-just-icon btn-link btn-dribbble"
-                    ><i class="fa fa-dribbble"></i
-                  ></a>
-                  <a
-                    href="#pablo"
-                    class="btn btn-just-icon btn-link btn-twitter"
-                    ><i class="fa fa-twitter"></i
-                  ></a>
-                  <a
-                    href="#pablo"
-                    class="btn btn-just-icon btn-link btn-pinterest"
-                    ><i class="fa fa-pinterest"></i
-                  ></a>
-                </div>
+              <div class="col-md-8">
+                  <div class="card">
+                      <div class="card-header">
+                          <h4 class="card-title">Edit Profile</h4>
+                      </div>
+                      <div class="card-body">
+                          <form>
+                              <div class="row">
+                                  <div class="col-md-5 pr-1">
+                                      <div class="form-group">
+                                          <label>Company (disabled)</label>
+                                          <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3 px-1">
+                                      <div class="form-group">
+                                          <label>Username</label>
+                                          <input type="text" class="form-control" placeholder="Username" value="michael23">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4 pl-1">
+                                      <div class="form-group">
+                                          <label for="exampleInputEmail1">Email address</label>
+                                          <input type="email" class="form-control" placeholder="Email">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6 pr-1">
+                                      <div class="form-group">
+                                          <label>First Name</label>
+                                          <input type="text" class="form-control" placeholder="Company" value="Mike">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 pl-1">
+                                      <div class="form-group">
+                                          <label>Last Name</label>
+                                          <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="form-group">
+                                          <label>Address</label>
+                                          <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-4 pr-1">
+                                      <div class="form-group">
+                                          <label>City</label>
+                                          <input type="text" class="form-control" placeholder="City" value="Mike">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4 px-1">
+                                      <div class="form-group">
+                                          <label>Country</label>
+                                          <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4 pl-1">
+                                      <div class="form-group">
+                                          <label>Postal Code</label>
+                                          <input type="number" class="form-control" placeholder="ZIP Code">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="form-group">
+                                          <label>About Me</label>
+                                          <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                      </div>
+                                  </div>
+                              </div>
+                              <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                              <div class="clearfix"></div>
+                          </form>
+                      </div>
+                  </div>
               </div>
-            </div>
+              <div class="col-md-4">
+                  <div class="card card-user">
+                      <div class="card-image">
+                          <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="...">
+                      </div>
+                      <div class="card-body">
+                          <div class="author">
+                              <a href="#">
+                                  <img class="avatar border-gray" src="../assets/img/faces/face-3.jpg" alt="...">
+                                  <h5 class="title">Mike Andrew</h5>
+                              </a>
+                              <p class="description">
+                                  michael24
+                              </p>
+                          </div>
+                          <p class="description text-center">
+                              "Lamborghini Mercy
+                              <br> Your chick she so thirsty
+                              <br> I'm in that two seat Lambo"
+                          </p>
+                      </div>
+                      <hr>
+                      <div class="button-container mr-auto ml-auto">
+                          <button href="#" class="btn btn-simple btn-link btn-icon">
+                              <i class="fa fa-facebook-square"></i>
+                          </button>
+                          <button href="#" class="btn btn-simple btn-link btn-icon">
+                              <i class="fa fa-twitter"></i>
+                          </button>
+                          <button href="#" class="btn btn-simple btn-link btn-icon">
+                              <i class="fa fa-google-plus-square"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="description text-center">
-            <p>
-              An artist of considerable range, Chet Faker &#x2014; the name
-              taken by Melbourne-raised, Brooklyn-based Nick Murphy &#x2014;
-              writes, performs and records all of his own music, giving it a
-              warm, intimate feel with a solid groove structure.
-            </p>
-          </div>
-          <div class="row">
-            <div class="col-md-6 ml-auto mr-auto">
-              <div class="profile-tabs">
-                <ul
-                  class="nav nav-pills nav-pills-icons justify-content-center"
-                  role="tablist"
-                >
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      href="#studio"
-                      role="tab"
-                      data-toggle="tab"
-                    >
-                      <i class="material-icons">camera</i> Studio
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      href="#works"
-                      role="tab"
-                      data-toggle="tab"
-                    >
-                      <i class="material-icons">palette</i> Work
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      href="#favorite"
-                      role="tab"
-                      data-toggle="tab"
-                    >
-                      <i class="material-icons">favorite</i> Favorite
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="tab-content tab-space">
-            <div class="tab-pane active text-center gallery" id="studio">
-              <div class="row">
-                <div class="col-md-3 ml-auto">
-                  <img
-                    src="../assets/img/examples/studio-1.jpg"
-                    class="rounded"
-                  />
-                  <img
-                    src="../assets/img/examples/studio-2.jpg"
-                    class="rounded"
-                  />
-                </div>
-                <div class="col-md-3 mr-auto">
-                  <img
-                    src="../assets/img/examples/studio-5.jpg"
-                    class="rounded"
-                  />
-                  <img
-                    src="../assets/img/examples/studio-4.jpg"
-                    class="rounded"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane text-center gallery" id="works">
-              <div class="row">
-                <div class="col-md-3 ml-auto">
-                  <img
-                    src="../assets/img/examples/olu-eletu.jpg"
-                    class="rounded"
-                  />
-                  <img
-                    src="../assets/img/examples/clem-onojeghuo.jpg"
-                    class="rounded"
-                  />
-                  <img
-                    src="../assets/img/examples/cynthia-del-rio.jpg"
-                    class="rounded"
-                  />
-                </div>
-                <div class="col-md-3 mr-auto">
-                  <img
-                    src="../assets/img/examples/mariya-georgieva.jpg"
-                    class="rounded"
-                  />
-                  <img
-                    src="../assets/img/examples/clem-onojegaw.jpg"
-                    class="rounded"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane text-center gallery" id="favorite">
-              <div class="row">
-                <div class="col-md-3 ml-auto">
-                  <img
-                    src="../assets/img/examples/mariya-georgieva.jpg"
-                    class="rounded"
-                  />
-                  <img
-                    src="../assets/img/examples/studio-3.jpg"
-                    class="rounded"
-                  />
-                </div>
-                <div class="col-md-3 mr-auto">
-                  <img
-                    src="../assets/img/examples/clem-onojeghuo.jpg"
-                    class="rounded"
-                  />
-                  <img
-                    src="../assets/img/examples/olu-eletu.jpg"
-                    class="rounded"
-                  />
-                  <img
-                    src="../assets/img/examples/studio-1.jpg"
-                    class="rounded"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
+  </div>
     <footer class="footer">
       <div class="container">
         <div class="copyright float-right">
