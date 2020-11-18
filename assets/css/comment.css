@@ -2,3 +2,18 @@
     font-size: 20px;
     color: #889096;
 }
+.navbarnewalign {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-left: 0px;
+}
+.breadcrumbnewalign {
+    padding-left: 0px;
+    padding-bottom: 0px;
+}
+.alertnew {
+    background-color: #ecd5d8;
+    border-radius: 10px;
+    width: 75%;
+    box-shadow: -4px 0 0 #bc2b4d
+}
