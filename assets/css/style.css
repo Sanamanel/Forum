@@ -1,0 +1,11 @@
+.back-board {
+  background-color: #f9f9f9;
+}
+/* Some custom styles to beautify this example */
+.main-content {
+  min-height: 230px;
+  background: #f9f9f9;
+}
+.sidebar-content {
+  min-height: 230px;
+}
