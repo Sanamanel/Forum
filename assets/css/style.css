@@ -1,6 +1,28 @@
 .back-board {
   background-color: #f9f9f9;
 }
+.home_icon {
+  color: #666;
+}
+
+.log_in_icon {
+  width: 25px;
+  height: 25px;
+  fill: #fff;
+  stroke: #fff;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #6c757d;
+  content: "<";
+}
+
+.breadcrumb-item a {
+  color: #6c757d;
+}
 
 .main-content {
   min-height: 230px;
