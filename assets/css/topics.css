@@ -61,12 +61,19 @@
   border: 1px solid #ccc;
   border-radius: 100px;
   width: 279px;
+  padding-left: 21px;
 }
 .sub_btn_search {
-  border: none;
   padding: 5px;
   width: 100px;
   border-radius: 100px;
+  background: none;
+  border: 1px solid #ccc;
+  text-transform: capitalize;
+  color: #666;
+  font-size: 0.8em;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .count_page {
@@ -102,7 +109,7 @@
 .log_regester {
   display: flex;
   position: relative;
-  top: 3%;
+  top: 2%;
 }
 .text {
   flex: 70%;
@@ -128,7 +135,7 @@
 }
 .hr {
   position: relative;
-  top: 3%;
+  top: 2%;
 }
 .form_right .input_username,
 .form_right .input_pass {
@@ -161,7 +168,7 @@
 }
 .hr_btn_login {
   position: relative;
-  top: 1%;
+  top: 5px;
 }
 .forgot {
   color: #6c757d;
@@ -185,6 +192,38 @@
   background-color: #fff;
   padding: 10px;
   border-radius: 6px;
+}
+.box_image {
+  max-width: 100%;
+  text-align: center;
+}
+
+.box_image .img {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  border: 1px solid red;
+  border-radius: 50%;
+}
+.box_image .img.active:before {
+  content: "";
+  position: absolute;
+  top: 57px;
+  left: 46px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: greenyellow;
+}
+.neck_name {
+  color: #6c757d;
+  font-weight: bold;
+}
+.help {
+  color: #777;
+  font-size: 0.7em;
+  font-weight: bold;
 }
 .cat {
   float: left;
@@ -254,6 +293,10 @@
   border: 1px solid gray;
   color: gray;
 }
+.frst_i.red {
+  border: 1px solid red;
+  color: red;
+}
 .global {
   font-size: 0.8em;
   text-transform: capitalize;
@@ -269,5 +312,22 @@
 .first_text_td {
   flex: 50%;
 }
-.text_cell {
+
+/*.user_active {
+  display: flex !important;
+  justify-content: space-between;
+  flex-direction: row;
+}*/
+.btn_sort {
+  background-color: #ccc !important;
+}
+.btn_sort:hover {
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+}
+.return {
+  color: #6c757d;
+  font-weight: bold;
+  font-size: 0.8em;
 }
