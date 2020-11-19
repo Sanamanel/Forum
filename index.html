@@ -117,7 +117,9 @@ The above copyright notice and this permission notice shall be included in all c
       </div>
       <div class="container mt-3">
         <div class="row">
-          <div class="col-sm-9 main-content">
+          <!-- structure contenu board -->
+
+          <div class="col-lg-9 m-15px-tb main-content">
             <div>
               <h2 class="text-muted font-weight-bold">General</h2>
               <div class="d-flex flex-row flex-wrap justify-content-center">
@@ -227,51 +229,6 @@ The above copyright notice and this permission notice shall be included in all c
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-3">
-            <!--Nested rows within a column-->
-            <!-- Search form -->
-            <form
-              class="form-inline d-flex justify-content-center md-form form-sm"
-            >
-              <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                <input
-                  class="form-control form-control-sm mr-3 w-75"
-                  type="text"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </div>
-            </form>
-            <div class="row">
-              <div class="col-12">
-                <div class="sidebar-content col-sm card">
-                  <div class="card-body">
-                    <div class="author">
-                      <a href="#">
-                        <img
-                          src="./assets/img/faces/avatar.jpg"
-                          alt="Rounded Image"
-                          class="rounded img-fluid"
-                        />
-                        <h5 class="title">Jenny Andrew</h5>
-                      </a>
-                      <p class="description">jenny24</p>
-                    </div>
-                    <p class="description text-center">
-                      "Keep your face
-                      <br />
-                      to the sunshine <br />
-                      and you cannot see a shadow"
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row"></div>
-          </div>
-          <div class="col-sm-9 main-content">
             <div>
               <h2 class="text-muted font-weight-bold">Development</h2>
               <div class="d-flex flex-row flex-wrap justify-content-center">
@@ -309,19 +266,6 @@ The above copyright notice and this permission notice shall be included in all c
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-3">
-            <!--Nested rows within a column-->
-            <div class="row">
-              <div class="col-12">
-                <div class="sidebar-content col-sm card">
-                  One of three columns
-                </div>
-              </div>
-            </div>
-            <div class="row"></div>
-          </div>
-          <div class="col-sm-9 main-content">
             <div>
               <h2 class="text-muted font-weight-bold">Smalltalk</h2>
               <div class="d-flex flex-row flex-wrap justify-content-center">
@@ -375,20 +319,7 @@ The above copyright notice and this permission notice shall be included in all c
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-3">
-            <!--Nested rows within a column-->
-            <div class="row">
-              <div class="col-12">
-                <div class="sidebar-content col-sm card">
-                  One of three columns
-                </div>
-              </div>
-            </div>
-            <div class="row"></div>
-          </div>
 
-          <div class="col-sm-9 main-content">
             <div>
               <h2 class="text-muted font-weight-bold">Events</h2>
               <div class="d-flex flex-row flex-wrap justify-content-center">
@@ -446,17 +377,166 @@ The above copyright notice and this permission notice shall be included in all c
               </div>
             </div>
           </div>
-          <div class="col-sm-3">
-            <!--Nested rows within a column-->
-            <div class="row">
-              <div class="col-12">
-                <div class="sidebar-content col-sm card">
-                  One of three columns
+          <!-- div aside -->
+          <div class="col-lg-3 m-15px-tb blog-aside">
+            <!-- search -->
+            <nav class="navbar navbar-expand-lg navbarbtn">
+              <div class="container">
+                <div class="navbar-translate">
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                  <form class="form-inline ml-auto">
+                    <div class="form-group no-border">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      class="btn btn-white btn-just-icon btn-round"
+                    >
+                      <i class="material-icons">search</i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </nav>
+            <!-- Author -->
+            <div class="widget widget-author">
+              <div class="widget-title">
+                <h3>Author</h3>
+              </div>
+              <div class="widget-body">
+                <div class="media align-items-center">
+                  <div class="avatar">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                      title=""
+                      alt=""
+                    />
+                  </div>
+                  <div class="media-body">
+                    <h6>
+                      Hello, I'm<br />
+                      Rachel Roth
+                    </h6>
+                  </div>
+                </div>
+                <p>
+                  I design and develop services for customers of all sizes,
+                  specializing in creating stylish, modern websites, web
+                  services and online stores
+                </p>
+              </div>
+            </div>
+            <!-- End Author -->
+
+            <!-- Latest Post -->
+            <div class="widget widget-latest-post">
+              <div class="widget-title">
+                <h3>Latest Post</h3>
+              </div>
+              <div class="widget-body">
+                <div class="latest-post-aside media">
+                  <div class="lpa-left media-body">
+                    <div class="lpa-title">
+                      <h5>
+                        <a href="#"
+                          >Prevent 75% of visitors from google analytics</a
+                        >
+                      </h5>
+                    </div>
+                    <div class="lpa-meta">
+                      <a class="name" href="#"> Rachel Roth </a>
+                      <a class="date" href="#"> 26 FEB 2020 </a>
+                    </div>
+                  </div>
+                  <div class="lpa-right">
+                    <a href="#">
+                      <img
+                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
+                        title=""
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="latest-post-aside media">
+                  <div class="lpa-left media-body">
+                    <div class="lpa-title">
+                      <h5>
+                        <a href="#"
+                          >Prevent 75% of visitors from google analytics</a
+                        >
+                      </h5>
+                    </div>
+                    <div class="lpa-meta">
+                      <a class="name" href="#"> Rachel Roth </a>
+                      <a class="date" href="#"> 26 FEB 2020 </a>
+                    </div>
+                  </div>
+                  <div class="lpa-right">
+                    <a href="#">
+                      <img
+                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
+                        title=""
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="latest-post-aside media">
+                  <div class="lpa-left media-body">
+                    <div class="lpa-title">
+                      <h5>
+                        <a href="#"
+                          >Prevent 75% of visitors from google analytics</a
+                        >
+                      </h5>
+                    </div>
+                    <div class="lpa-meta">
+                      <a class="name" href="#"> Rachel Roth </a>
+                      <a class="date" href="#"> 26 FEB 2020 </a>
+                    </div>
+                  </div>
+                  <div class="lpa-right">
+                    <a href="#">
+                      <img
+                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
+                        title=""
+                        alt=""
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="row"></div>
+            <!-- End Latest Post -->
+            <!-- Last users -->
+            <div class="widget widget-post">
+              <div class="widget-title">
+                <h3>Last active user</h3>
+              </div>
+              <div class="widget-body"></div>
+            </div>
+            <!-- End Last users-->
           </div>
+
+          <!-- fin test structure -->
         </div>
       </div>
     </div>
@@ -465,20 +545,20 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="container">
         <nav class="d-flex justify-content-around">
           <ul>
-            <li class="px-2 mt-2">
-              <i class="fa fa-lg fa-twitter"></i>
+            <li class="px-3 mt-2">
+              <i class="fa fa-2x fa-twitter"></i>
             </li>
-            <li class="px-2 mt-2">
-              <i class="fa fa-lg fa-facebook"></i>
+            <li class="px-3 mt-2">
+              <i class="fa fa-2x fa-facebook"></i>
             </li>
-            <li class="px-2 mt-2">
-              <i class="fa fa-lg fa-apple"></i>
+            <li class="px-3 mt-2">
+              <i class="fa fa-2x fa-apple"></i>
             </li>
-            <li class="px-2 mt-2">
-              <i class="fa fa-lg fa-codepen"></i>
+            <li class="px-3 mt-2">
+              <i class="fa fa-2x fa-codepen"></i>
             </li>
-            <li class="px-2">
-              <i class="fa fa-lg fa-google"></i>
+            <li class="px-3 mt-2">
+              <i class="fa fa-2x fa-google"></i>
             </li>
           </ul>
         </nav>
