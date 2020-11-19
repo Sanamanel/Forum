@@ -64,18 +64,31 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item"></li>
+            <li class="dropdown nav-item">
               <a
-                class="nav-link"
-                href="javascript:void(0)"
-                onclick="scrollToDownload()"
+                href="#"
+                class="dropdown-toggle nav-link"
+                data-toggle="dropdown"
               >
-                <i class="material-icons">description</i> Register
+                <i class="material-icons">apps</i> Menu
               </a>
+              <div class="dropdown-menu dropdown-with-icons">
+                <a href="../index.html" class="dropdown-item">
+                  <i class="material-icons">dashboard</i> Board
+                </a>
+                <a href="profile-page.html" class="dropdown-item">
+                  <i class="material-icons">account_box</i> Profile
+                </a>
+                <a href="#" class="dropdown-item">
+                  <i class="material-icons">contact_support</i> Contact
+                </a>
+              </div>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#" target="_blank">
-                <i class="material-icons">login</i> Login
+                <i class="material-icons">login</i> Log out
               </a>
             </li>
           </ul>
@@ -249,33 +262,43 @@
     </div>
     <footer class="footer" data-background-color="black">
       <div class="container">
-        <nav class="d-flex justify-content-around">
-          <ul>
-            <li class="px-3 mt-2">
-              <i class="fa fa-2x fa-twitter"></i>
-            </li>
-            <li class="px-3 mt-2">
-              <i class="fa fa-2x fa-facebook"></i>
-            </li>
-            <li class="px-3 mt-2">
-              <i class="fa fa-2x fa-apple"></i>
-            </li>
-            <li class="px-3 mt-2">
-              <i class="fa fa-2x fa-codepen"></i>
-            </li>
-            <li class="px-3 mt-2">
-              <i class="fa fa-2x fa-google"></i>
-            </li>
-          </ul>
-        </nav>
-        <div class="copyright float-right">
-          &copy;
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          , made with <i class="material-icons">favorite</i> by
-          <a href="#" target="_blank">Ali, Caro, Cédric, Rachida </a>
-          Team Led Zeppelin.
+        <div class="contenair pt-5">
+          <nav class="d-flex justify-content-around">
+            <ul>
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-twitter"></i>
+              </li>
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-facebook"></i>
+              </li>
+
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-codepen"></i>
+              </li>
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-google"></i>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright">
+            <ul>
+              <li>
+                <a href="#"> Board </a>
+              </li>
+              <li>
+                <a href="#"> About Us </a>
+              </li>
+              <li>
+                <a href="#"> Contact </a>
+              </li>
+            </ul>
+            Team Led Zeppelin &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            , made with <i class="material-icons">favorite</i> by
+            <a href="#" target="_blank">Ali, Caro, Cédric, Rachida </a>
+          </div>
         </div>
       </div>
     </footer>

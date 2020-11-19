@@ -33,6 +33,7 @@ The above copyright notice and this permission notice shall be included in all c
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
     />
+
     <!-- CSS Files -->
     <link href="../assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
     <link href="../assets/css/comment.css" rel="stylesheet" />
@@ -45,20 +46,47 @@ The above copyright notice and this permission notice shall be included in all c
       id="sectionsNav"
     >
       <div class="container">
+        <div class="navbar-translate">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item"></li>
+            <li class="dropdown nav-item">
               <a
-                class="nav-link"
-                href="javascript:void(0)"
-                onclick="scrollToDownload()"
+                href="#"
+                class="dropdown-toggle nav-link"
+                data-toggle="dropdown"
               >
-                <i class="material-icons">description</i> Register
+                <i class="material-icons">apps</i> Menu
               </a>
+              <div class="dropdown-menu dropdown-with-icons">
+                <a href="../index.html" class="dropdown-item">
+                  <i class="material-icons">dashboard</i> Board
+                </a>
+                <a href="profile-page.html" class="dropdown-item">
+                  <i class="material-icons">account_box</i> Profile
+                </a>
+                <a href="#" class="dropdown-item">
+                  <i class="material-icons">contact_support</i> Contact
+                </a>
+              </div>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#" target="_blank">
-                <i class="material-icons">login</i> Login
+                <i class="material-icons">login</i> Log out
               </a>
             </li>
           </ul>
@@ -93,10 +121,12 @@ The above copyright notice and this permission notice shall be included in all c
               >
             </li>
             <li class="breadcrumb-item">
-              <a href="javascript:;">Board index</a>
+              <a href="#">Board index</a>
             </li>
-            <li class="breadcrumb-item active">Category One</li>
-            <li class="breadcrumb-item active">Topics icon Demo</li>
+            <li class="breadcrumb-item active"><a href="#">Category One</a></li>
+            <li class="breadcrumb-item active">
+              <a href="#">Topics icon Demo</a>
+            </li>
             <li class="breadcrumb-item active" aria-current="page">
               Topics Read (Hot)
             </li>
@@ -105,56 +135,57 @@ The above copyright notice and this permission notice shall be included in all c
       </div>
       <div class="container mt-3">
         <div class="row">
-          <div class="col-lg-9 main-content">
+          <div class="col-lg-9">
             <h4 class="text-left">Topic Read (Hot)</h4>
             <div class="alert alertnew" role="alert">
               <a href="#" class="alert-link">Forum rules</a>
             </div>
-            <button type="button" class="btn btn-primary btn-round">
-              Post Reply<span class="material-icons">
-                undo
-                <div class="mx-3"></div>
-              </span>
-            </button>
-            <button
-              class="btn btn-secondary dropdown-toggle btn-round"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <span class="material-icons"> build </span>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-            <!-- search -->
-            <div class="navbar navbar-expand-lg navbarbtn">
-              <div class="container">
-                <form class="form-inline ml-auto">
-                  <div class="form-group no-border">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Search"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-white btn-just-icon btn-round"
-                  >
-                    <i class="material-icons">search</i>
-                  </button>
-                </form>
+            <div class="row">
+              <div>
+                <button type="button" class="btn btn-primary btn-round">
+                  Post Reply<span class="material-icons">
+                    undo
+                    <div class="mx-3"></div>
+                  </span>
+                </button>
+              </div>
+              <button
+                class="btn btn-secondary dropdown-toggle btn-round"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="material-icons"> build </span>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+              <!-- search -->
+              <div>
+                <div class="container">
+                  <form class="form-inline ml-auto">
+                    <div class="form-group no-border">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      class="btn btn-white btn-just-icon btn-round"
+                    >
+                      <i class="material-icons">search</i>
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
-            <link
-              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-              rel="stylesheet"
-            />
             <div class="container padding-bottom-3x mb-2">
               <div class="row">
                 <div>
@@ -389,16 +420,45 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
       </div>
     </div>
-    <footer class="footer">
+    <footer class="footer" data-background-color="black">
       <div class="container">
-        <div class="copyright float-right">
-          &copy;
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          , made with <i class="material-icons">favorite</i> by
-          <a href="#" target="_blank">Ali, Caro, Cédric, Rachida </a>
-          Team Let Zeppelin.
+        <div class="contenair pt-5">
+          <nav class="d-flex justify-content-around">
+            <ul>
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-twitter"></i>
+              </li>
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-facebook"></i>
+              </li>
+
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-codepen"></i>
+              </li>
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-google"></i>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright">
+            <ul>
+              <li>
+                <a href="#"> Board </a>
+              </li>
+              <li>
+                <a href="#"> About Us </a>
+              </li>
+              <li>
+                <a href="#"> Contact </a>
+              </li>
+            </ul>
+            Team Led Zeppelin &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            , made with <i class="material-icons">favorite</i> by
+            <a href="#" target="_blank">Ali, Caro, Cédric, Rachida </a>
+          </div>
         </div>
       </div>
     </footer>

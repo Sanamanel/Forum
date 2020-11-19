@@ -268,3 +268,7 @@
   text-transform: capitalize;
   font-weight: bold;
 }
+.avatar-xs {
+  height: 2.3rem;
+  width: 2.3rem;
+}
