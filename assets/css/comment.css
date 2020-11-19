@@ -17,3 +17,9 @@
     width: 75%;
     box-shadow: -4px 0 0 #bc2b4d
 }
+.navbarbtn {
+    width: 220px;
+    border-radius: 50px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
