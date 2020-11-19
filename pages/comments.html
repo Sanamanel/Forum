@@ -2,14 +2,10 @@
 =========================================================
 Material Kit - v2.0.7
 =========================================================
-
 Product Page: https://www.creative-tim.com/product/material-kit
 Copyright 2020 Creative Tim (https://www.creative-tim.com/)
-
 Coded by Creative Tim
-
 =========================================================
-
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +35,7 @@ The above copyright notice and this permission notice shall be included in all c
     />
     <!-- CSS Files -->
     <link href="../assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
+    <link href="../assets/css/comment.css" rel="stylesheet" />
   </head>
 
   <body class="landing-page sidebar-collapse">
@@ -48,81 +45,20 @@ The above copyright notice and this permission notice shall be included in all c
       id="sectionsNav"
     >
       <div class="container">
-        <div class="navbar-translate">
-          <a class="navbar-brand" href="#"> Comments </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
-            <li class="dropdown nav-item">
-              <a
-                href="#"
-                class="dropdown-toggle nav-link"
-                data-toggle="dropdown"
-              >
-                <i class="material-icons">apps</i> Menu
-              </a>
-              <div class="dropdown-menu dropdown-with-icons">
-                <a href="../index.html" class="dropdown-item">
-                  <i class="material-icons">layers</i> Home
-                </a>
-                <a href="#" class="dropdown-item">
-                  <i class="material-icons">content_paste</i> Documentation
-                </a>
-              </div>
-            </li>
-
             <li class="nav-item">
               <a
                 class="nav-link"
-                rel="tooltip"
-                title=""
-                data-placement="bottom"
-                href="#"
-                target="_blank"
-                data-original-title="Follow us on Twitter"
-                rel="nofollow"
+                href="javascript:void(0)"
+                onclick="scrollToDownload()"
               >
-                <i class="fa fa-twitter"></i>
+                <i class="material-icons">description</i> Register
               </a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                rel="tooltip"
-                title=""
-                data-placement="bottom"
-                href="#"
-                target="_blank"
-                data-original-title="Like us on Facebook"
-                rel="nofollow"
-              >
-                <i class="fa fa-facebook-square"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                rel="tooltip"
-                title=""
-                data-placement="bottom"
-                href="#"
-                target="_blank"
-                data-original-title="Follow us on Instagram"
-                rel="nofollow"
-              >
-                <i class="fa fa-instagram"></i>
+              <a class="nav-link" href="#" target="_blank">
+                <i class="material-icons">login</i> Login
               </a>
             </li>
           </ul>
@@ -135,255 +71,321 @@ The above copyright notice and this permission notice shall be included in all c
       style="background-image: url('../assets/img/bg3.jpg')"
     >
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h1 class="title">Your Story Starts With Us.</h1>
-            <h4>
-              Every landing page needs a small description after the big bold
-              title, that&apos;s why we added this text here. Add here all the
-              information that can make you or your product create the first
-              impression.
-            </h4>
-            <br />
-          </div>
+        <!-- <div class="row"> -->
+        <!-- <div class="col-md-8 ml-auto mr-auto"> -->
+        <div class="brand">
+          <h1 class="text-center">Led Zeppelin</h1>
+          <!-- </div> -->
+          <!-- </div> -->
         </div>
       </div>
     </div>
     <div class="main main-raised">
-      <div class="container">
-        <div class="section text-center">
-          <nav aria-label="breadcrumb" role="navigation">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-              <li class="breadcrumb-item">
-                <a href="javascript:;">Board index</a>
-              </li>
-              <li class="breadcrumb-item active">Category 1</li>
-              <li class="breadcrumb-item active">Topics icon Demo</li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Topics Read
-              </li>
-            </ol>
-          </nav>
-          <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-              <h2 class="title">Let&apos;s talk product</h2>
-              <h5 class="description">
-                This is the paragraph where you can write more details about
-                your product. Keep you user engaged by providing meaningful
-                information. Remember that by this time, the user is curious,
-                otherwise he wouldn&apos;t scroll to get here. Add a button if
-                you want the user to see more.
-              </h5>
+      <div class="section navbarnewalign">
+        <nav aria-label="breadcrumb" role="navigation">
+          <ol class="breadcrumb breadcrumbnewalign">
+            <li class="breadcrumb-item">
+              <a href="javascript:;"
+                ><span class="material-icons material-icons-home">
+                  home
+                  <div class="mx-3"></div> </span
+                >Home</a
+              >
+            </li>
+            <li class="breadcrumb-item">
+              <a href="javascript:;">Board index</a>
+            </li>
+            <li class="breadcrumb-item active">Category One</li>
+            <li class="breadcrumb-item active">Topics icon Demo</li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Topics Read (Hot)
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="container mt-3">
+        <div class="row">
+          <div class="col-lg-9 main-content">
+            <h4 class="text-left">Topic Read (Hot)</h4>
+            <div class="alert alertnew" role="alert">
+              <a href="#" class="alert-link">Forum rules</a>
             </div>
-          </div>
-          <div class="features">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-info">
-                    <i class="material-icons">chat</i>
-                  </div>
-                  <h4 class="info-title">Free Chat</h4>
-                  <p>
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-success">
-                    <i class="material-icons">verified_user</i>
-                  </div>
-                  <h4 class="info-title">Verified Users</h4>
-                  <p>
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <i class="material-icons">fingerprint</i>
-                  </div>
-                  <h4 class="info-title">Fingerprint</h4>
-                  <p>
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough.
-                  </p>
-                </div>
-              </div>
+            <button type="button" class="btn btn-primary btn-round">
+              Post Reply<span class="material-icons">
+                undo
+                <div class="mx-3"></div>
+              </span>
+            </button>
+            <button
+              class="btn btn-secondary dropdown-toggle btn-round"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="material-icons"> build </span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
-          </div>
-        </div>
-        <div class="section text-center">
-          <h2 class="title">Here is our team</h2>
-          <div class="team">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="team-player">
-                  <div class="card card-plain">
-                    <div class="col-md-6 ml-auto mr-auto">
-                      <img
-                        src="../assets/img/faces/avatar.jpg"
-                        alt="Thumbnail Image"
-                        class="img-raised rounded-circle img-fluid"
-                      />
-                    </div>
-                    <h4 class="card-title">
-                      Gigi Hadid
-                      <br />
-                      <small class="card-description text-muted">Model</small>
-                    </h4>
-                    <div class="card-body">
-                      <p class="card-description">
-                        You can write here details about one of your team
-                        members. You can give more details about what they do.
-                        Feel free to add some <a href="#">links</a> for people
-                        to be able to follow them outside the site.
-                      </p>
-                    </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-twitter"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-instagram"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-facebook-square"></i
-                      ></a>
-                    </div>
+            <!-- search -->
+            <div class="navbar navbar-expand-lg navbarbtn">
+              <div class="container">
+                <form class="form-inline ml-auto">
+                  <div class="form-group no-border">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search"
+                    />
                   </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="team-player">
-                  <div class="card card-plain">
-                    <div class="col-md-6 ml-auto mr-auto">
-                      <img
-                        src="../assets/img/faces/christian.jpg"
-                        alt="Thumbnail Image"
-                        class="img-raised rounded-circle img-fluid"
-                      />
-                    </div>
-                    <h4 class="card-title">
-                      Christian Louboutin
-                      <br />
-                      <small class="card-description text-muted"
-                        >Designer</small
-                      >
-                    </h4>
-                    <div class="card-body">
-                      <p class="card-description">
-                        You can write here details about one of your team
-                        members. You can give more details about what they do.
-                        Feel free to add some <a href="#">links</a> for people
-                        to be able to follow them outside the site.
-                      </p>
-                    </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-twitter"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-linkedin"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="team-player">
-                  <div class="card card-plain">
-                    <div class="col-md-6 ml-auto mr-auto">
-                      <img
-                        src="../assets/img/faces/kendall.jpg"
-                        alt="Thumbnail Image"
-                        class="img-raised rounded-circle img-fluid"
-                      />
-                    </div>
-                    <h4 class="card-title">
-                      Kendall Jenner
-                      <br />
-                      <small class="card-description text-muted">Model</small>
-                    </h4>
-                    <div class="card-body">
-                      <p class="card-description">
-                        You can write here details about one of your team
-                        members. You can give more details about what they do.
-                        Feel free to add some <a href="#">links</a> for people
-                        to be able to follow them outside the site.
-                      </p>
-                    </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-twitter"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-instagram"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-facebook-square"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="section section-contacts">
-          <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-              <h2 class="text-center title">Work with us</h2>
-              <h4 class="text-center description">
-                Divide details about your product or agency work into parts.
-                Write a few lines about each one and contact us about any
-                further collaboration. We will responde get back to you in a
-                couple of hours.
-              </h4>
-              <form class="contact-form">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Your Name</label>
-                      <input type="email" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Your Email</label>
-                      <input type="email" class="form-control" />
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="exampleMessage" class="bmd-label-floating"
-                    >Your Message</label
+                  <button
+                    type="submit"
+                    class="btn btn-white btn-just-icon btn-round"
                   >
-                  <textarea
-                    type="email"
-                    class="form-control"
-                    rows="4"
-                    id="exampleMessage"
-                  ></textarea>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 ml-auto mr-auto text-center">
-                    <button class="btn btn-primary btn-raised">
-                      Send Message
-                    </button>
+                    <i class="material-icons">search</i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <link
+              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+              rel="stylesheet"
+            />
+            <div class="container padding-bottom-3x mb-2">
+              <div class="row">
+                <div>
+                  <!-- Messages-->
+                  <div class="comment">
+                    <div class="comment-author-ava">
+                      <img
+                        src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    <div class="comment-body">
+                      <p class="comment-text">
+                        At vero eos et accusamus et iusto odio dignissimos
+                        ducimus qui blanditiis praesentium voluptatum deleniti
+                        atque corrupti quos dolores et quas molestias excepturi
+                        sint occaecati cupiditate non provident, similique sunt
+                        in culpa qui officia deserunt mollitia animi.
+                      </p>
+                      <div class="comment-footer">
+                        <span class="comment-meta">Daniel Adams</span>
+                      </div>
+                    </div>
                   </div>
+                  <div class="comment">
+                    <div class="comment-author-ava">
+                      <img
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    <div class="comment-body">
+                      <p class="comment-text">
+                        Sed ut perspiciatis unde omnis iste natus error sit
+                        voluptatem accusantium doloremque laudantium, totam rem
+                        aperiam, eaque ipsa quae ab illo inventore veritatis et
+                        quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                        enim ipsam voluptatem quia voluptas sit aspernatur aut
+                        odit aut fugit, sed quia consequuntur magni dolores eos
+                        qui ratione voluptatem sequi nesciunt.
+                      </p>
+                      <div class="comment-footer">
+                        <span class="comment-meta">Jacob Hammond, Staff</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment">
+                    <div class="comment-author-ava">
+                      <img
+                        src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                        alt="Avatar"
+                      />
+                    </div>
+                    <div class="comment-body">
+                      <p class="comment-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                      </p>
+                      <div class="comment-footer">
+                        <span class="comment-meta">Jacob Hammond, Staff</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Reply Form-->
+                  <h5 class="mb-30 padding-top-1x">Leave Message</h5>
+                  <form method="post">
+                    <div class="form-group">
+                      <textarea
+                        class="form-control form-control-rounded"
+                        id="review_text"
+                        rows="8"
+                        placeholder="Write your message here..."
+                        required=""
+                      ></textarea>
+                    </div>
+                    <div class="text-right">
+                      <button class="btn btn-outline-primary" type="submit">
+                        Submit Message
+                      </button>
+                    </div>
+                  </form>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
+          <div class="col-lg-3 blog-aside">
+            <!-- search -->
+            <nav class="navbar navbar-expand-lg navbarbtn">
+              <div class="container">
+                <form class="form-inline ml-auto">
+                  <div class="form-group no-border">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-white btn-just-icon btn-round"
+                  >
+                    <i class="material-icons">search</i>
+                  </button>
+                </form>
+              </div>
+            </nav>
+            <!-- Author -->
+            <div class="widget widget-author">
+              <div class="widget-title">
+                <h3>Author</h3>
+              </div>
+              <div class="widget-body">
+                <div class="media align-items-center">
+                  <div class="avatar">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                      title=""
+                      alt=""
+                    />
+                  </div>
+                  <div class="media-body">
+                    <h6>
+                      Hello, I'm<br />
+                      Rachel Roth
+                    </h6>
+                  </div>
+                </div>
+                <p>
+                  I design and develop services for customers of all sizes,
+                  specializing in creating stylish, modern websites, web
+                  services and online stores
+                </p>
+              </div>
+            </div>
+            <!-- End Author -->
+
+            <!-- Latest Post -->
+            <div class="widget widget-latest-post">
+              <div class="widget-title">
+                <h3>Latest Post</h3>
+              </div>
+              <div class="widget-body">
+                <div class="latest-post-aside media">
+                  <div class="lpa-left media-body">
+                    <div class="lpa-title">
+                      <h5>
+                        <a href="#"
+                          >Prevent 75% of visitors from google analytics</a
+                        >
+                      </h5>
+                    </div>
+                    <div class="lpa-meta">
+                      <a class="name" href="#"> Rachel Roth </a>
+                      <a class="date" href="#"> 26 FEB 2020 </a>
+                    </div>
+                  </div>
+                  <div class="lpa-right">
+                    <a href="#">
+                      <img
+                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
+                        title=""
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="latest-post-aside media">
+                  <div class="lpa-left media-body">
+                    <div class="lpa-title">
+                      <h5>
+                        <a href="#"
+                          >Prevent 75% of visitors from google analytics</a
+                        >
+                      </h5>
+                    </div>
+                    <div class="lpa-meta">
+                      <a class="name" href="#"> Rachel Roth </a>
+                      <a class="date" href="#"> 26 FEB 2020 </a>
+                    </div>
+                  </div>
+                  <div class="lpa-right">
+                    <a href="#">
+                      <img
+                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
+                        title=""
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="latest-post-aside media">
+                  <div class="lpa-left media-body">
+                    <div class="lpa-title">
+                      <h5>
+                        <a href="#"
+                          >Prevent 75% of visitors from google analytics</a
+                        >
+                      </h5>
+                    </div>
+                    <div class="lpa-meta">
+                      <a class="name" href="#"> Rachel Roth </a>
+                      <a class="date" href="#"> 26 FEB 2020 </a>
+                    </div>
+                  </div>
+                  <div class="lpa-right">
+                    <a href="#">
+                      <img
+                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
+                        title=""
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Latest Post -->
+            <!-- Last users -->
+            <div class="widget widget-post">
+              <div class="widget-title">
+                <h3>Last active user</h3>
+              </div>
+              <div class="widget-body"></div>
+            </div>
+            <!-- End Last users-->
+          </div>
+
+          <!-- fin test structure -->
         </div>
       </div>
     </div>
