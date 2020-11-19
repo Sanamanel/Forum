@@ -55,70 +55,20 @@
   cursor: pointer;
   border: none;
 }
-.input_search {
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-  outline: none;
-  border-bottom: none;
-  background: #eee;
-}
-.input_search:focus {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
-.cog {
-  border-top-right-radius: 100px !important;
-  border-bottom-right-radius: 100px !important;
+
+.my_search {
+  padding: 5px;
   border: 1px solid #ccc;
-  background: #eee;
-}
-.cog i {
-  color: #ccc;
-}
-.form {
-  display: inline-block;
-  position: relative;
-}
-.box_search {
-  position: absolute;
   border-radius: 100px;
-  padding: 7px 8px;
-  background-color: #eee;
+  width: 279px;
+}
+.sub_btn_search {
   border: none;
-  width: 300px;
-}
-#itemName {
+  padding: 5px;
+  width: 100px;
   border-radius: 100px;
-  padding: 23px;
-  border-bottom: 0;
 }
-#itemName:focus {
-  border-bottom: none !important;
-  box-shadow: none !important;
-}
-.cog_boxs {
-  position: relative;
-  top: 10px;
-  border-top-right-radius: 100px !important;
-  border-bottom-right-radius: 100px !important;
-  background-color: #ccc !important;
-}
-.search_boxs {
-  position: relative;
-  top: 10px;
-  background-color: #ccc !important;
-}
-.setting {
-  position: absolute;
-  top: 6px;
-  left: 269px;
-}
-.search {
-  position: absolute;
-  top: 6px;
-  left: 209px;
-}
+
 .count_page {
   font-size: 0.7em;
   color: #ccc;
@@ -129,10 +79,6 @@
   width: 281px;
   border-radius: 100px;
   padding: 19px;
-}
-.bmd-form-group {
-  position: relative;
-  /* padding-top: 27px;*/
 }
 
 .card .card-header {
@@ -267,4 +213,61 @@
   font-size: 0.7em;
   text-transform: capitalize;
   font-weight: bold;
+}
+.input-group {
+  top: -48%;
+  width: 350px;
+  left: 17%;
+}
+
+.nav-pills .nav-item i {
+  display: block;
+  font-size: 21px;
+  padding: 15px 0;
+}
+
+.table-bg {
+  background-image: linear-gradient(to right, #b06ab3, #4568dc);
+}
+.first_td {
+  display: flex !important;
+}
+.td_icon {
+  width: 20%;
+}
+.frst_i {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 38px;
+  position: relative;
+  top: 24%;
+  left: 10%;
+}
+.frst_i.green {
+  border: 1px solid green;
+  color: green;
+}
+.frst_i.gray {
+  border: 1px solid gray;
+  color: gray;
+}
+.global {
+  font-size: 0.8em;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.name {
+  font-weight: bold;
+  font-size: 0.8em;
+  display: inline-block;
+  color: #6c757d;
+}
+.first_text_td {
+  flex: 50%;
+}
+.text_cell {
 }
