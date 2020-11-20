@@ -11,14 +11,25 @@
 .alertnew {
   background-color: #ecd5d8;
   border-radius: 10px;
-  width: 75%;
+  width: 100%;
   box-shadow: -4px 0 0 #bc2b4d;
 }
 .navbarbtn {
-  width: 220px;
-  border-radius: 50px;
+  width: 255px;
+  border-radius: 10px;
   margin-right: 0px;
   margin-left: 0px;
+}
+.navbarbtn1 {
+  width: 255px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 0px;
+  margin-left: 20px;
+}
+.reply-btn {
+  margin-left: 15px;
+  margin-right: 20px;
 }
 .back-board {
   background-color: #f9f9f9;
@@ -61,6 +72,9 @@
 
 .breadcrumb-item a {
   color: #6c757d;
+}
+.size-btn {
+  height: 45px;
 }
 
 /* Blog Sidebar
