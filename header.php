@@ -40,8 +40,8 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- CSS Files -->
 
     <link href="./assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
-    <link href="../assets/css/topics.css" rel="stylesheet" />
-    <link href="../assets/css/comment.css" rel="stylesheet" />
+    <link href="./assets/css/topics.css" rel="stylesheet" />
+    <link href="./assets/css/comment.css" rel="stylesheet" />
     <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
 
@@ -84,8 +84,14 @@ The above copyright notice and this permission notice shall be included in all c
                 <a href="./pages/profile-page.html" class="dropdown-item">
                   <i class="material-icons">account_box</i> Profile
                 </a>
-                <a href="#" class="dropdown-item">
-                  <i class="material-icons">contact_support</i> Contact
+                <a href="./pages/topics.html" class="dropdown-item">
+                  <i class="material-icons">topic</i> Topics
+                </a>
+                <a href="./pages/comments.html" class="dropdown-item">
+                  <i class="material-icons">comment</i> Comments
+                </a>
+                <a href="./pages/login.html" class="dropdown-item">
+                  <i class="material-icons">contact_support</i> Login
                 </a>
               </div>
             </li>
@@ -115,4 +121,4 @@ The above copyright notice and this permission notice shall be included in all c
       </div>
     </div>
     <div class="main main-raised">
-       <!-- fin header -->
+      
