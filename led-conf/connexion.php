@@ -9,10 +9,10 @@
         <h1>Bases de données MySQL</h1>  
         <?php
 //connect.php
-$server = 'cl1-sql11';
-$username   = 'p4670_5';
-$password   = '80YRwB0gC9A';
-$database   = 'p4670_5';
+$server = 'debrouxoyiforum.mysql.db';
+$username   = 'debrouxoyiforum';
+$password   = 'ox2hjJet3NmLg7JtmZY';
+$database   = 'debrouxoyiforum';
  
 if(!mysql_connect($server, $username,  $password))
 {
