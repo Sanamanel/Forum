@@ -1,16 +1,27 @@
-<!--
-=========================================================
-Material Kit - v2.0.7
-=========================================================
+<?php session_start();
+require_once("connexion.php"); 
+   if (isset($_POST["todo"])) {
+		$lelogin= addslashes($_POST["login"]);
+		$mdp= addslashes($_POST["mdp"]);
+		
+		//je vais vérifier si un admin correspond a ce login et ce mot de passe
+		$sql = "SELECT * FROM t_users 
+				WHERE user_login ='".$lelogin."'
+				AND user_mdp ='".$mdp."' ";
+		$rs = mysql_query($sql);
+		$combienquiena = mysql_num_rows($rs);
+		
+		if ($combienquiena == 1) { // C'est qui en a un
+			//Alors je crée la variable de session "log"
+			$r = mysql_fetch_array($rs);
+			$_SESSION["log"]=$r;
+			//Et je redirige l'administrateur vers l'espace d'administration
+			header("location:gestion_articles.php");
+		}
+		mysql_free_result($rs);
+   }
 
-Product Page: https://www.creative-tim.com/product/material-kit
-Copyright 2020 Creative Tim (https://www.creative-tim.com/)
-
-Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

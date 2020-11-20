@@ -1,5 +1,5 @@
 <?php session_start();
-require_once("connexion.php"); 
+require_once("./led-conf/connexion.php"); 
    if (isset($_POST["todo"])) {
 		$lelogin= addslashes($_POST["login"]);
 		$mdp= addslashes($_POST["mdp"]);
@@ -15,8 +15,8 @@ require_once("connexion.php");
 			//Alors je crée la variable de session "log"
 			$r = mysql_fetch_array($rs);
 			$_SESSION["log"]=$r;
-			//Et je redirige l'administrateur vers l'espace d'administration
-			header("location:gestion_articles.php");
+			//Et je redirige l'administrateur vers l'espace privée du forum
+			header("location:https://led-zepplin-forum.herokuapp.com/home.php");
 		}
 		mysql_free_result($rs);
    }
