@@ -7,25 +7,25 @@
     </head>
     <body>
         <h1>Bases de données MySQL</h1>  
-<?php
-            $servername = 'remotemysql.com:3306';
-            $username = 'Q2qsa8HqT2 ';
-            $password = 'vkN1eNSWhe';
-            
-            //On essaie de se connecter
-            try{
-                $conn = new PDO("mysql:host=$servername;dbname=Q2qsa8HqT2 ", $username, $password);
-                //On définit le mode d'erreur de PDO sur Exception
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo 'Connexion réussie';
-            }
-            
-            /*On capture les exceptions si une exception est lancée et on affiche
-             *les informations relatives à celle-ci*/
-            catch(PDOException $e){
-              echo "Erreur : " . $e->getMessage();
-            }
-        ?>
+        <?php
+         $dbhost = 'remotemysql.com:3036';
+         $dbuser = 'Q2qsa8HqT2';
+         $dbpass = 'vkN1eNSWhe';
+         $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
+         
+         if(! $conn ) {
+            die('Could not connect: ' . mysqli_error());
+         }
+         echo 'Connected successfully<br />';
+         $sql = 'CREATE DATABASE TUTORIALS';
+         $retval = mysqli_query( $sql, $conn );
+         
+         if(! $retval ) {
+            die('Could not create database: ' . mysqli_error());
+         }
+         echo "Database TUTORIALS created successfully\n";
+         mysqli_close($conn);
+      ?>
 
     </body>
 </html>
