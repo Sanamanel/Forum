@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+</IfModule>
+Options +FollowSymLinks
+RewriteEngine on
+
+# Catch 404 errors
+ErrorDocument 404 http://www.1001robes.be/404.php

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>Connecting MySQL Server</title>
-   </head>
-   <body>
+
       <?php
          $dbhost = 'remotemysql.com:3306';
          $dbuser = 'Q2qsa8HqT2';
@@ -16,5 +11,4 @@
          echo 'Successfully connected';
          mysqli_close($conn);
       ?>
-   </body>
-</html>
+
