@@ -8,13 +8,13 @@
     <body>
         <h1>Bases de données MySQL</h1>  
 <?php
-            $servername = 'debrouxoyiforum.mysql.db';
-            $username = 'debrouxoyiforum';
-            $password = 'ox2hjJet3NmLg7JtmZY';
+            $servername = 'remotemysql.com:3306';
+            $username = 'Q2qsa8HqT2 ';
+            $password = 'vkN1eNSWhe';
             
             //On essaie de se connecter
             try{
-                $conn = new PDO("mysql:host=$servername;dbname=debrouxoyiforum", $username, $password);
+                $conn = new PDO("mysql:host=$servername;dbname=Q2qsa8HqT2 ", $username, $password);
                 //On définit le mode d'erreur de PDO sur Exception
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 echo 'Connexion réussie';
