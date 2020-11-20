@@ -2,14 +2,10 @@
 =========================================================
 Material Kit - v2.0.7
 =========================================================
-
 Product Page: https://www.creative-tim.com/product/material-kit
 Copyright 2020 Creative Tim (https://www.creative-tim.com/)
-
 Coded by Creative Tim
-
 =========================================================
-
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +35,9 @@ The above copyright notice and this permission notice shall be included in all c
     />
     <!-- CSS Files -->
     <link href="../assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
+    <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" > -->
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="../assets/css/topics.css" rel="stylesheet" />
   </head>
 
   <body class="landing-page sidebar-collapse">
@@ -49,7 +48,6 @@ The above copyright notice and this permission notice shall be included in all c
     >
       <div class="container">
         <div class="navbar-translate">
-          <a class="navbar-brand" href="#"> Topics </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -65,6 +63,7 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
+            <li class="nav-item"></li>
             <li class="dropdown nav-item">
               <a
                 href="#"
@@ -75,54 +74,20 @@ The above copyright notice and this permission notice shall be included in all c
               </a>
               <div class="dropdown-menu dropdown-with-icons">
                 <a href="../index.html" class="dropdown-item">
-                  <i class="material-icons">layers</i> Home
+                  <i class="material-icons">dashboard</i> Board
+                </a>
+                <a href="profile-page.html" class="dropdown-item">
+                  <i class="material-icons">account_box</i> Profile
                 </a>
                 <a href="#" class="dropdown-item">
-                  <i class="material-icons">content_paste</i> Documentation
+                  <i class="material-icons">contact_support</i> Contact
                 </a>
               </div>
             </li>
 
             <li class="nav-item">
-              <a
-                class="nav-link"
-                rel="tooltip"
-                title=""
-                data-placement="bottom"
-                href="#"
-                target="_blank"
-                data-original-title="Follow us on Twitter"
-                rel="nofollow"
-              >
-                <i class="fa fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                rel="tooltip"
-                title=""
-                data-placement="bottom"
-                href="#"
-                target="_blank"
-                data-original-title="Like us on Facebook"
-                rel="nofollow"
-              >
-                <i class="fa fa-facebook-square"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                rel="tooltip"
-                title=""
-                data-placement="bottom"
-                href="#"
-                target="_blank"
-                data-original-title="Follow us on Instagram"
-                rel="nofollow"
-              >
-                <i class="fa fa-instagram"></i>
+              <a class="nav-link" href="#" target="_blank">
+                <i class="material-icons">login</i> Log out
               </a>
             </li>
           </ul>
@@ -135,267 +100,851 @@ The above copyright notice and this permission notice shall be included in all c
       style="background-image: url('../assets/img/bg3.jpg')"
     >
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h1 class="title">Your Story Starts With Us.</h1>
-            <h4>
-              Every landing page needs a small description after the big bold
-              title, that&apos;s why we added this text here. Add here all the
-              information that can make you or your product create the first
-              impression.
-            </h4>
-            <br />
-          </div>
+        <!-- <div class="row"> -->
+        <!-- <div class="col-md-8 ml-auto mr-auto"> -->
+        <div class="brand">
+          <h1 class="text-center">Led Zeppelin</h1>
+          <!-- </div> -->
+          <!-- </div> -->
         </div>
       </div>
     </div>
     <div class="main main-raised">
-      <div class="container">
+      <div class="container-fluid">
         <div class="section text-center">
           <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb">
+              <i class="fa fa-home mr-1 pt-1 home_icon" aria-hidden="true"></i>
               <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
               <li class="breadcrumb-item">
                 <a href="javascript:;">Board index</a>
               </li>
-              <li class="breadcrumb-item active">Category 1</li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Topics icon Demo
+              <li class="breadcrumb-item">
+                <a href="javascript:;">Category One</a>
+              </li>
+              <li class="breadcrumb-item" aria-current="page">
+                <a href="javascript:;">Topics icon Demo </a>
               </li>
             </ol>
           </nav>
-          <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-              <h2 class="title">Let&apos;s talk product</h2>
-              <h5 class="description">
-                This is the paragraph where you can write more details about
-                your product. Keep you user engaged by providing meaningful
-                information. Remember that by this time, the user is curious,
-                otherwise he wouldn&apos;t scroll to get here. Add a button if
-                you want the user to see more.
-              </h5>
-            </div>
-          </div>
-          <div class="features">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-info">
-                    <i class="material-icons">chat</i>
-                  </div>
-                  <h4 class="info-title">Free Chat</h4>
-                  <p>
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-success">
-                    <i class="material-icons">verified_user</i>
-                  </div>
-                  <h4 class="info-title">Verified Users</h4>
-                  <p>
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <i class="material-icons">fingerprint</i>
-                  </div>
-                  <h4 class="info-title">Fingerprint</h4>
-                  <p>
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one. A paragraph describing a
-                    feature will be enough.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="section text-center">
-          <h2 class="title">Here is our team</h2>
-          <div class="team">
+
+        <!-- Start New Topic, Box Search -->
+        <div class="row">
+          <div class="col-md-9">
+            <h4 class="topic_title mb-3">topic icon demo</h4>
+            <div class="alert alert-danger my_alert mb-4" role="alert">
+              forum rules
+            </div>
+
+            <!-- Start Row Two -->
             <div class="row">
-              <div class="col-md-4">
-                <div class="team-player">
-                  <div class="card card-plain">
-                    <div class="col-md-6 ml-auto mr-auto">
-                      <img
-                        src="../assets/img/faces/avatar.jpg"
-                        alt="Thumbnail Image"
-                        class="img-raised rounded-circle img-fluid"
-                      />
-                    </div>
-                    <h4 class="card-title">
-                      Gigi Hadid
-                      <br />
-                      <small class="card-description text-muted">Model</small>
-                    </h4>
-                    <div class="card-body">
-                      <p class="card-description">
-                        You can write here details about one of your team
-                        members. You can give more details about what they do.
-                        Feel free to add some <a href="#">links</a> for people
-                        to be able to follow them outside the site.
-                      </p>
-                    </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-twitter"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-instagram"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-facebook-square"></i
-                      ></a>
-                    </div>
-                  </div>
+              <div class="col-md-4 col-sm-12">
+                <div class="col">
+                  <button class="btn_custum text-capitalize text-center mb-2">
+                    new topic
+                    <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i>
+                  </button>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="team-player">
-                  <div class="card card-plain">
-                    <div class="col-md-6 ml-auto mr-auto">
-                      <img
-                        src="../assets/img/faces/christian.jpg"
-                        alt="Thumbnail Image"
-                        class="img-raised rounded-circle img-fluid"
-                      />
-                    </div>
-                    <h4 class="card-title">
-                      Christian Louboutin
-                      <br />
-                      <small class="card-description text-muted"
-                        >Designer</small
+              <div class="col-md-4 col-sm-12">
+                <!-- search -->
+                <div class="navbar navbar-expand-lg navbarbtn">
+                  <div class="container">
+                    <form class="form-inline ml-auto">
+                      <div class="form-group no-border">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn btn-white btn-just-icon btn-round"
                       >
-                    </h4>
-                    <div class="card-body">
-                      <p class="card-description">
-                        You can write here details about one of your team
-                        members. You can give more details about what they do.
-                        Feel free to add some <a href="#">links</a> for people
-                        to be able to follow them outside the site.
-                      </p>
-                    </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-twitter"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-linkedin"></i
-                      ></a>
-                    </div>
+                        <i class="material-icons">search</i>
+                      </button>
+                    </form>
                   </div>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="team-player">
-                  <div class="card card-plain">
-                    <div class="col-md-6 ml-auto mr-auto">
-                      <img
-                        src="../assets/img/faces/kendall.jpg"
-                        alt="Thumbnail Image"
-                        class="img-raised rounded-circle img-fluid"
-                      />
-                    </div>
-                    <h4 class="card-title">
-                      Kendall Jenner
-                      <br />
-                      <small class="card-description text-muted">Model</small>
-                    </h4>
-                    <div class="card-body">
-                      <p class="card-description">
-                        You can write here details about one of your team
-                        members. You can give more details about what they do.
-                        Feel free to add some <a href="#">links</a> for people
-                        to be able to follow them outside the site.
-                      </p>
-                    </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-twitter"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-instagram"></i
-                      ></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"
-                        ><i class="fa fa-facebook-square"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
+
+              <div class="col-md-4 col-sm-12 col-xm-12 text-right count_page">
+                12 topics, pages 1 of 1
               </div>
             </div>
-          </div>
-        </div>
-        <div class="section section-contacts">
-          <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-              <h2 class="text-center title">Work with us</h2>
-              <h4 class="text-center description">
-                Divide details about your product or agency work into parts.
-                Write a few lines about each one and contact us about any
-                further collaboration. We will responde get back to you in a
-                couple of hours.
-              </h4>
-              <form class="contact-form">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Your Name</label>
-                      <input type="email" class="form-control" />
+            <!-- End Row Two-->
+
+            <!-- Start Third Row Card-->
+
+            <table class="table table-bordered mt-5">
+              <thead class="table-bg">
+                <tr class="text-white">
+                  <th class="text-capitalize">Announcements</th>
+                  <th>
+                    <i class="fa fa-comments" aria-hidden="true"></i>
+                  </th>
+                  <th>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                  </th>
+                  <th>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i class="fa fa-bullhorn frst_i" aria-hidden="true"></i>
+                      </div>
+                      <div class="col-10">
+                        <i
+                          class="fa fa-bullhorn float-right text-primary"
+                          aria-hidden="true"
+                        ></i>
+                        <h5 class="global">this is a global announcements</h5>
+
+                        by <span class="name text-capitalize">carla</span>
+                        <span>>> in Unread Forum</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Your Email</label>
-                      <input type="email" class="form-control" />
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by <span>carla</span>
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
                     </div>
-                  </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Third Row Card-->
+
+            <!-- Start Fourth Row Card-->
+
+            <table class="table table-bordered mt-5">
+              <thead class="table-bg">
+                <tr class="text-white">
+                  <th class="text-capitalize">Topics</th>
+                  <th>
+                    <i class="fa fa-comments" aria-hidden="true"></i>
+                  </th>
+                  <th>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                  </th>
+                  <th>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i green"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic unread (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i green"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic unread (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i gray"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic read (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i gray"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic read (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i red"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic unread (located, mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                        <i
+                          class="fa fa-lock float-right text-primary"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>301</td>
+                  <td>401</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 08, 2017 7:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i red"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic unread (located, mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                        <i
+                          class="fa fa-lock float-right text-primary"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>101</td>
+                  <td>701</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 1, 2016 10:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-times frst_i gray"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic unread (located, mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                        <i
+                          class="fa fa-lock float-right text-primary"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>107</td>
+                  <td>701</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 1, 2016 10:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-times frst_i gray"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic unread (located, mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                        <i
+                          class="fa fa-lock float-right text-primary"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>607</td>
+                  <td>701</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 1, 2016 10:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i gray"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic read (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i gray"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic read (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i green"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic read (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i green"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic read (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i gray"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic read (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class=" ">
+                    <div class="row">
+                      <div class="col">
+                        <i
+                          class="fa fa-check frst_i gray"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="col-10">
+                        <h5 class="global">topic read (mine)</h5>
+                        by
+                        <span class="name text-capitalize text-rose"
+                          >plantes styles</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>201</td>
+                  <td>201</td>
+                  <td>
+                    <div class="text_cell">
+                      by
+                      <span class="text-rose text-capitalize name"
+                        >plantes styles</span
+                      >
+                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- End Fourth Row Card-->
+
+            <!-- Start Fiveth Row -->
+            <div class="row mt-5">
+              <div class="col-md-4 col-sm-12">
+                <div class="col">
+                  <button class="btn_custum text-capitalize text-center mb-2">
+                    new topic
+                    <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i>
+                  </button>
                 </div>
-                <div class="form-group">
-                  <label for="exampleMessage" class="bmd-label-floating"
-                    >Your Message</label
+              </div>
+              <div class="col-md-2 col-sm-12">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-primary btn-round dropdown-toggle btn_sort"
+                    type="button"
+                    id="drop"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                  <textarea
-                    type="email"
-                    class="form-control"
-                    rows="4"
-                    id="exampleMessage"
-                  ></textarea>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 ml-auto mr-auto text-center">
-                    <button class="btn btn-primary btn-raised">
-                      Send Message
-                    </button>
+                    <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropd">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </div>
-              </form>
+              </div>
+
+              <div
+                class="col-md-6 col-sm-12 col-xm-12 text-right text-capitalize count_page"
+              >
+                12 topics, pages 1 of 1
+              </div>
             </div>
+            <!-- End Fiveth Row -->
+
+            <!-- Start Sixth Row -->
+            <div class="row mt-5">
+              <div class="col-md-4 col-sm-12">
+                <a href="../index.html" class="text-capitalize return">
+                  <i class="fa fa-angle-left mr-1" aria-hidden="true"></i>
+                  return to board index</a
+                >
+              </div>
+
+              <div class="col-md-8 text-right col-sm-12">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-primary btn-round dropdown-toggle btn_sort text-capitalize"
+                    type="button"
+                    id="drop"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Jumb to
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropd">
+                    <a class="dropdown-item" href="../index.html">Board</a>
+                    <a class="dropdown-item" href="./profile-page.html"
+                      >Profile</a
+                    >
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Sixth Row -->
           </div>
+          <!-- Start Side Bar-->
+          <div class="col-md-3">
+            <hr class="hr_first" />
+            <!-- search -->
+            <div class="navbar navbar-expand-lg navbarbtn">
+              <div class="container">
+                <form class="form-inline ml-auto">
+                  <div class="form-group no-border">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-white btn-just-icon btn-round"
+                  >
+                    <i class="material-icons">search</i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <!-- Author -->
+            <div class="card">
+              <div class="card-header last_post text-capitalize">Author</div>
+
+              <div class="widget-body">
+                <div class="media align-items-center">
+                  <div class="avatar">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                      title=""
+                      alt=""
+                    />
+                  </div>
+                  <div class="media-body">
+                    <h6 class="px-4">
+                      Hello, I'm<br />
+                      Rachel Roth
+                    </h6>
+                  </div>
+                </div>
+                <p class="card_pra px-2">
+                  I design and develop services for customers of all sizes,
+                  specializing in creating stylish, modern websites, web
+                  services and online stores
+                </p>
+              </div>
+            </div>
+
+            <!-- End Author -->
+
+            <div class="line"></div>
+
+            <div class="card">
+              <div class="card-header last_post text-capitalize">last post</div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="box_post">
+                    <h4 class="cat text-capitalize">post-categori3</h4>
+                    <h4 class="hour">2 hours</h4>
+                    <div class="clear_both"></div>
+                    <p class="card_pra">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit
+                    </p>
+                    <span class="tags"
+                      >tags: test <span>workeot repot</span>
+                    </span>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="box_post">
+                    <h4 class="cat text-capitalize">post-categori3</h4>
+                    <h4 class="hour">2 hours</h4>
+                    <div class="clear_both"></div>
+                    <p class="card_pra">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit
+                    </p>
+                    <span class="tags"
+                      >tags: test <span>workeot repot</span>
+                    </span>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="box_post">
+                    <h4 class="cat text-capitalize">post-categori3</h4>
+                    <h4 class="hour">2 hours</h4>
+                    <div class="clear_both"></div>
+                    <p class="card_pra">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit
+                    </p>
+                    <span class="tags"
+                      >tags: test <span>workeot repot</span>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Start Last Active User-->
+
+            <div class="card">
+              <div class="card-header last_post text-capitalize">
+                last active user
+              </div>
+              <ul class="list-group list-group-flush user_active">
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img active"></div>
+                    <p class="neck_name text-capitalize mt-2">#mohnhyfgf</p>
+                    <p class="help text-capitalize">here to help</p>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img"></div>
+                    <p class="neck_name text-capitalize mt-2">#colnhyfgf</p>
+                    <p class="help text-capitalize">here to help</p>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img"></div>
+                    <p class="neck_name text-capitalize mt-2">#egohnhyfgf</p>
+                    <p class="help text-capitalize">here to help</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- End Last Active User-->
+          </div>
+          <!-- End Side Bar-->
         </div>
       </div>
     </div>
-    <footer class="footer">
+
+    <footer class="footer" data-background-color="black">
       <div class="container">
-        <div class="copyright float-right">
-          &copy;
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          , made with <i class="material-icons">favorite</i> by
-          <a href="#" target="_blank">Ali, Caro, Cédric, Rachida </a>
-          Team Let Zeppelin.
+        <div class="contenair pt-5">
+          <nav class="d-flex justify-content-around">
+            <ul>
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-twitter"></i>
+              </li>
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-facebook"></i>
+              </li>
+
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-codepen"></i>
+              </li>
+              <li class="px-3 mt-2">
+                <i class="fa fa-2x fa-google"></i>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright">
+            <ul>
+              <li>
+                <a href="#"> Board </a>
+              </li>
+              <li>
+                <a href="#"> About Us </a>
+              </li>
+              <li>
+                <a href="#"> Contact </a>
+              </li>
+            </ul>
+            Team Led Zeppelin &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            , made with <i class="material-icons">favorite</i> by
+            <a href="#" target="_blank">Ali, Caro, Cédric, Rachida </a>
+          </div>
         </div>
       </div>
     </footer>
