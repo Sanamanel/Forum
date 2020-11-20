@@ -13,7 +13,7 @@
          if(! $conn ) {
             die('Could not connect: ' . mysqli_error());
          }
-         echo 'Connected successfully';
+         echo 'Successfully connected';
          mysqli_close($conn);
       ?>
    </body>
