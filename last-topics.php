@@ -8,29 +8,6 @@
                             ORDER BY new_date DESC;";
 	$rs = mysql_query($sql);
 ?>
-<div class="article">
-   <h2>Last Topics</h2>
-          <div class="clr"></div>
-        <!-- Début de région à répéter --> 
-<? while ($r = mysql_fetch_array($rs)) { ?> 
-   <div class="cat">
-        
-        <h3> <? echo $r["title"];  ?></h3>
-         <? echo $r["ladate"];  ?>
-    <? echo $r["link"];  ?>
-   
-           
-           <p></p><div class="clr"></div></div><? } 
-
-mysql_free_result($rs);
-?>
-<!-- Fin de région à répéter -->
-          
-          <ul class="sb_menu">
-            <li></li>
-          </ul>
-
-
 
             <!-- Latest Post -->
             <div class="widget widget-latest-post">
@@ -66,4 +43,6 @@ mysql_free_result($rs);
                 </div>
                
               </div>
+              mysql_free_result($rs);
+?><!-- Fin de région à répéter -->
             </div>
