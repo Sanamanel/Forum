@@ -195,7 +195,7 @@ require_once("connexion.php");
       </div>
       <footer class="footer">
         <div class="container mt-5">
-          <div class="copyright float-right">
+          <div class="copyright float-center">
             &copy;
             <script>
               document.write(new Date().getFullYear());
