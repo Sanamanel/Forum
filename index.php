@@ -181,9 +181,10 @@ require_once("connexion.php");
                       <div class="group">
                         <input type="submit" class="button" value="Sign Up" />
                       </div>
-                      <div class="hr"></div>
-                      <div class="foot">
-                        <label for="tab-1">Already Member?</label>
+                        <div class="hr">
+                        <div class="foot">
+                          <label for="tab-1">Already Member?</label>
+                        </div>
                       </div>
                     </div>
                   </div>
