@@ -182,9 +182,10 @@ require_once("connexion.php");
                       <div class="group">
                         <input type="submit" class="button" value="Sign Up" />
                       </div>
-                      <div class="hr"></div>
-                      <div class="foot">
-                        <label for="tab-1">Already Member?</label>
+                        <div class="hr">
+                        <div class="foot">
+                          <label for="tab-1">Already Member?</label>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -196,7 +197,7 @@ require_once("connexion.php");
       </div>
       <footer class="footer">
         <div class="container mt-5">
-          <div class="copyright float-right">
+          <div class="copyright float-center">
             &copy;
             <script>
               document.write(new Date().getFullYear());
