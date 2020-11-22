@@ -78,7 +78,7 @@ require_once("connexion.php");
         background-image: url('./assets/img/bg3.jpg');
         background-size: cover;
         background-position: top center;
-        height: 100vh;
+       
       "
     >
       <div class="container">
