@@ -85,29 +85,24 @@ The above copyright notice and this permission notice shall be included in all c
                   <i class="material-icons">dashboard</i> Board
                 </a>
                 <a
-                  href="https://led-zepplin-forum.herokuapp.com/pages/profile-page.html"
+                  href="https://led-zepplin-forum.herokuapp.com/profile-page.php"
                   class="dropdown-item"
                 >
                   <i class="material-icons">account_box</i> Profile
                 </a>
                 <a
-                  href="https://led-zepplin-forum.herokuapp.com/pages/topics.html"
+                  href="https://led-zepplin-forum.herokuapp.com/topics.php"
                   class="dropdown-item"
                 >
                   <i class="material-icons">topic</i> Topics
                 </a>
                 <a
-                  href="https://led-zepplin-forum.herokuapp.com/pages/comments.html"
+                  href="https://led-zepplin-forum.herokuapp.com/comments.php"
                   class="dropdown-item"
                 >
                   <i class="material-icons">comment</i> Comments
                 </a>
-                <a
-                  href="https://led-zepplin-forum.herokuapp.com/pages/login.html"
-                  class="dropdown-item"
-                >
-                  <i class="material-icons">contact_support</i> Login
-                </a>
+              
               </div>
             </li>
 
@@ -128,9 +123,9 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
-            <div class="brand">
-              <h1>Led Zeppelin</h1>
-            </div>
+          <a class="text-white" href="https://led-zepplin-forum.herokuapp.com/" >  <div class="brand">
+            <h1>Led Zeppelin</h1>
+            </div></a>
           </div>
         </div>
       </div>
