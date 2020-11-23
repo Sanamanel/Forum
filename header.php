@@ -79,7 +79,7 @@ The above copyright notice and this permission notice shall be included in all c
               </a>
               <div class="dropdown-menu dropdown-with-icons">
               <a
-                  href="https://led-zepplin-forum.herokuapp.com/"
+                  href="https://led-zepplin-forum.herokuapp.com/home.php"
                   class="dropdown-item"
                 >
                   <i class="material-icons">dashboard</i> Board
