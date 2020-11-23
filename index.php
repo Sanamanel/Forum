@@ -35,6 +35,7 @@ require_once("connexion.php");
    }
 */
 ?>
+<?php include('server.php') ?> 
 <!DOCTYPE html>
 <html lang="en">
   <head>
