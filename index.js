@@ -1,5 +1,5 @@
 (() => {
-    let baseUrl = "http://localhost/forum_bfr/"; //to be adapted
+    let baseUrl = "https://led-zepplin-forum.herokuapp.com/"; //to be adapted
 
     document.getElementById("btn_login").addEventListener("click", async () => {
         document.getElementById("login_errors").innerHTML = "";
