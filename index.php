@@ -11,8 +11,7 @@ Coded by Creative Tim
 =========================================================
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
- <?php include('server.php') ?>  
+<?php include('server.php') ?>  
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +23,7 @@ The above copyright notice and this permission notice shall be included in all c
     />
     <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Led Zeppellin</title>
+    <title>Led Zeppellin Forum</title>
     <meta
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
@@ -46,17 +45,38 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- CSS Files -->
     <link href="./assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
     <link href="./assets/css/log.css" rel="stylesheet" />
+    
   </head>
 
   <body class="login-page sidebar-collapse">
-   
+    <nav
+      class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg"
+      color-on-scroll="100"
+      id="sectionsNav"
+    >
+      <div class="container">
+        <div class="navbar-translate">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
     <div
       class="header-filter clear-filter purple-filter"
       style="
         background-image: url('./assets/img/bg3.jpg');
         background-size: cover;
         background-position: top center;
-       
       "
     >
       <div class="container">
@@ -83,7 +103,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="group">
                         <label for="user" class="label">Username</label>
                         <input
-                          id="user"
+                          id="login_username"
                           type="text"
                           class="input"
                           placeholder="Enter your username"
@@ -92,7 +112,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="group">
                         <label for="pass" class="label">Password</label>
                         <input
-                          id="pass"
+                          id="login_password"
                           type="password"
                           class="input"
                           data-type="password"
@@ -111,7 +131,9 @@ The above copyright notice and this permission notice shall be included in all c
                         >
                       </div>
                       <div class="group">
-                        <input type="submit" class="button" value="Sign In" />
+                        <input type="submit" class="button" id="btn_login" value="Sign In" />
+                      </div>
+                      <div id="login_errors" class="text-danger">
                       </div>
                       <div class="hr"></div>
                       <div class="foot text-white">
@@ -122,7 +144,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="group">
                         <label for="user" class="label">Username</label>
                         <input
-                          id="user"
+                          id="register_username"
                           type="text"
                           class="input"
                           placeholder="Create your Username"
@@ -131,7 +153,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="group">
                         <label for="pass" class="label">Password</label>
                         <input
-                          id="pass"
+                          id="register_password"
                           type="password"
                           class="input"
                           data-type="password"
@@ -141,7 +163,7 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="group">
                         <label for="pass" class="label">Repeat Password</label>
                         <input
-                          id="pass"
+                          id="register_password_confirmation"
                           type="password"
                           class="input"
                           data-type="password"
@@ -151,19 +173,20 @@ The above copyright notice and this permission notice shall be included in all c
                       <div class="group">
                         <label for="pass" class="label">Email Address</label>
                         <input
-                          id="pass"
+                          id="register_email"
                           type="text"
                           class="input"
                           placeholder="Enter your email address"
                         />
                       </div>
                       <div class="group">
-                        <input type="submit" class="button" value="Sign Up" />
+                        <input type="submit" id="btn_register" class="button" value="Sign Up" />
                       </div>
-                        <div class="hr">
-                        <div class="foot">
-                          <label for="tab-1">Already Member?</label>
-                        </div>
+                      <div id="register_errors" class="text-danger">
+                      </div>
+                      <div class="hr"></div>
+                      <div class="foot">
+                        <label for="tab-1">Already Member?</label>
                       </div>
                     </div>
                   </div>
@@ -173,19 +196,7 @@ The above copyright notice and this permission notice shall be included in all c
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class="container mt-5">
-          <div class="copyright float-center">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-            , made with <i class="material-icons">favorite</i> by
-            <a href="#" target="_blank">Ali, Caro, Cédric, Rachida </a>
-            Team Led Zeppelin.
-          </div>
-        </div>
-      </footer>
+  
     </div>
     <!--   Core JS Files   -->
     <script
@@ -219,5 +230,6 @@ The above copyright notice and this permission notice shall be included in all c
     ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
