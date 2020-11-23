@@ -49,30 +49,8 @@ The above copyright notice and this permission notice shall be included in all c
   </head>
 
   <body class="login-page sidebar-collapse">
-    <nav
-      class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg"
-      color-on-scroll="100"
-      id="sectionsNav"
-    >
-      <div class="container">
-        <div class="navbar-translate">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </div>
-    </nav>
     <div
-      class="header-filter clear-filter purple-filter"
+      class="page-header header-filter clear-filter purple-filter"
       style="
         background-image: url('./assets/img/bg3.jpg');
         background-size: cover;
