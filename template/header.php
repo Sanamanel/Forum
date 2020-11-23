@@ -40,9 +40,10 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- CSS Files -->
 
     <link href="./assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
-    <link href="./assets/css/topics.css" rel="stylesheet" />
-    <link href="./assets/css/comment.css" rel="stylesheet" />
+    <link href="../assets/css/topics.css" rel="stylesheet" />
+    <link href="../assets/css/comment.css" rel="stylesheet" />
     <link href="./assets/css/style.css" rel="stylesheet" />
+    
   </head>
 
   <body class="index-page sidebar-collapse">
@@ -78,41 +79,20 @@ The above copyright notice and this permission notice shall be included in all c
                 <i class="material-icons">apps</i> Menu
               </a>
               <div class="dropdown-menu dropdown-with-icons">
-              <a
-                  href="https://led-zepplin-forum.herokuapp.com/"
-                  class="dropdown-item"
-                >
+                <a href="./index.html" class="dropdown-item">
                   <i class="material-icons">dashboard</i> Board
                 </a>
-                <a
-                  href="https://led-zepplin-forum.herokuapp.com/pages/profile-page.html"
-                  class="dropdown-item"
-                >
+                <a href="./pages/profile-page.html" class="dropdown-item">
                   <i class="material-icons">account_box</i> Profile
                 </a>
-                <a
-                  href="https://led-zepplin-forum.herokuapp.com/pages/topics.html"
-                  class="dropdown-item"
-                >
-                  <i class="material-icons">topic</i> Topics
-                </a>
-                <a
-                  href="https://led-zepplin-forum.herokuapp.com/pages/comments.html"
-                  class="dropdown-item"
-                >
-                  <i class="material-icons">comment</i> Comments
-                </a>
-                <a
-                  href="https://led-zepplin-forum.herokuapp.com/pages/login.html"
-                  class="dropdown-item"
-                >
-                  <i class="material-icons">contact_support</i> Login
+                <a href="#" class="dropdown-item">
+                  <i class="material-icons">contact_support</i> Contact
                 </a>
               </div>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="logout.php" >
+              <a class="nav-link" href="#" target="_blank">
                 <i class="material-icons">login</i> Log out
               </a>
             </li>
@@ -136,4 +116,4 @@ The above copyright notice and this permission notice shall be included in all c
       </div>
     </div>
     <div class="main main-raised">
-      
+       <!-- fin header -->

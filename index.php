@@ -11,7 +11,11 @@ Coded by Creative Tim
 =========================================================
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<<<<<<< HEAD
  <?php include('server.php') ?>  
+=======
+<?php include('server.php') ?>  
+>>>>>>> 16da743e39ce2a979160fc31c4841a38da794730
 <!DOCTYPE html>
 <html lang="en">
   <head>
