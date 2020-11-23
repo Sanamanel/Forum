@@ -1,6 +1,3 @@
-/* https://www.geeksforgeeks.org/how-to-display-logged-in-user-information-in-php/ */
-
-
 <?php  
 
   if (isset($_SERVER['REQUEST_METHOD']) == false) { //No request method is sent, do nothing
@@ -9,11 +6,7 @@
 
   session_start(); 
   $errors = array();  
-<<<<<<< HEAD
   switch ($_SERVER['REQUEST_METHOD']) { //switch on request method
-=======
-  switch ($_SERVER['REQUEST_METHOD']) {
->>>>>>> 16da743e39ce2a979160fc31c4841a38da794730
     case 'POST':
       PostRequest();
       break;
@@ -32,14 +25,9 @@
       $content= $_POST['content'];
    
       $decoded = json_decode($content, true);
-<<<<<<< HEAD
       
       //call specific function, according to action
       switch($decoded["action"]) 
-=======
-  
-      switch($decoded["action"])
->>>>>>> 16da743e39ce2a979160fc31c4841a38da794730
       {
         case "login":
           login($decoded);
