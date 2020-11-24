@@ -1,6 +1,3 @@
-
-
-
 <?php  
 
   if (isset($_SERVER['REQUEST_METHOD']) == false) { //No request method is sent, do nothing
@@ -15,6 +12,9 @@
       break;
     case 'GET' :
       GetRequest();
+      break;
+      case 'PUT' :
+        PutRequest();
       break;
     default:
       break;
@@ -45,7 +45,20 @@
 
   function GetRequest()
   {
-
+    global $errors;
+    if (isset($_GET['action'])) { 
+      
+      $action= $_GET['action'];
+      
+      //call specific function, according to action
+      switch($action) 
+      {
+        case "profile":
+          getProfile();
+          break;
+         
+      }
+    }
   }
 
 
@@ -178,6 +191,33 @@
      else
       header("HTTP/1.1 400 Bad Request"); 
      writeErrors($errors);
+  }
+
+  function getProfile()
+  {
+    if (!isset($_SESSION['username'])) {  //user is not authenticated, return a 401
+      header('HTTP/1.1 401');
+      return;
+    } 
+
+    $db = connectDb();
+    $username = $_SESSION['username'];
+
+    $query = "SELECT * FROM users WHERE nickname = '$username'"; 
+    $results = mysqli_query($db, $query); 
+    if (mysqli_num_rows($results) == 1) { //user has been found in database
+      $user=mysqli_fetch_array($results);
+      $profileData = array("email"=> $user['email'], "firstname"=> $user['firstname'], "lastname"=> $user['lastname'],"username"=> $user['nickname'],"signature"=> $user['signature']); //complete with birthdate and country
+      header("HTTP/1.1 200 OK");
+      writeResponse(json_encode($profileData));
+
+    }
+    else
+    {
+      header('HTTP/1.1 500');
+      array_push($errors, `An internal error occurs while getting profile`);
+    }
+
   }
 
   //This method must be used to retrieve hash from a string. 

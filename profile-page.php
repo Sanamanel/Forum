@@ -1,18 +1,17 @@
-<!--
-   =========================================================
-   Material Kit - v2.0.7
-   =========================================================
-   
-   Product Page: https://www.creative-tim.com/product/material-kit
-   Copyright 2020 Creative Tim (https://www.creative-tim.com/)
-   
-   Coded by Creative Tim
-   
-   =========================================================
-   
-   The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-   <?php require('server.php'); ?>  
-<?php include("header.php"); ?>
+<?php
+        session_start(); 
+          
+        // If the session variable is empty, this  
+        // means the user is yet to login 
+        // User will be sent to 'login.php' page 
+        // to allow the user to login 
+        if (!isset($_SESSION['username'])) { 
+            header('location: http://localhost/forum_bfr/index.php'); 
+            exit();
+        } 
+        include("header.php");
+?>
+    
          <div>
            <div class="container">
              <nav aria-label="breadcrumb" role="navigation">
@@ -20,7 +19,7 @@
                  <i class="fa fa-home mr-1 pt-1 home_icon" aria-hidden="true"></i>
                  <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
                  <li class="breadcrumb-item">
-                   <a href="../index.html">Board index</a>
+                   <a href="./home.php">Board index</a>
                  </li>
                  <li class="breadcrumb-item">
                    <a href="./profile-page.html">Profile page</a>
@@ -39,90 +38,96 @@
                    <div class="card-body">
                      <form>
                        <div class="row">
-                         <div class="col-md-5 pr-1">
+                         <div class="col-md-4 pr-1">
                            <div class="form-group">
-                             <label>Email(disabled)</label>
-                             <input
+                             <label>Email (disabled)</label>
+                             <input id="email"
                                type="email"
                                class="form-control"
                                disabled=""
                                placeholder="Email"
-                               value="user@gmail.com"
-                             />
-                           </div>
-                         </div>
-                         <div class="col-md-3">
-                           <div class="form-group">
-                             <label>Nickname</label>
-                             <input
-                               type="text"
-                               class="form-control"
-                               placeholder="Nickname"
-                               value="Spooknick"
                              />
                            </div>
                          </div>
                          <div class="col-md-4">
                            <div class="form-group">
-                             <label for="exampleInputEmail1">Email address</label>
-                             <input
-                               type="email"
+                             <label>Firstname</label>
+                             <input id="firstname"
+                               type="text"
                                class="form-control"
-                               placeholder="Email"
+                               placeholder="First name"
+                             />
+                           </div>
+                         </div>
+                         <div class="col-md-4">
+                           <div class="form-group">
+                             <label for="exampleInputEmail1">Last name</label>
+                             <input id="lastname"
+                               type="text"
+                               class="form-control"
+                               placeholder="Last name"
                              />
                            </div>
                          </div>
                        </div>
                        <div class="row">
-                         <div class="col-md-6">
+                         <div class="col-md-4">
                            <div class="form-group">
-                             <label>First Name</label>
-                             <input
+                             <label>Nickname (disabled)</label>
+                             <input id="username"
                                type="text"
                                class="form-control"
-                               placeholder="First Name"
-                               value="Caroline"
+                               disabled=""
+                               placeholder="Nickname"
                              />
                            </div>
                          </div>
-                         <div class="col-md-6">
+                         <div class="col-md-4">
                            <div class="form-group">
-                             <label>Last Name</label>
-                             <input
-                               type="text"
+                             <label>Date of Birth</label>
+                             <input id="birthdate"
+                               type="date"
                                class="form-control"
-                               placeholder="Last Name"
-                               value="Jansen"
+                               placeholder="Date of Birth"
                              />
                            </div>
                          </div>
+                         <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Country</label>
+                            <input id="country"
+                              type="text"
+                              class="form-control"
+                              placeholder="Country"
+                            />
+                          
+                        </div>
+                      </div>
                        </div>
+                 
                        <div class="row">
                          <div class="col-md-6">
                            <div class="form-group">
-                             <label>Signature</label>
-                             <input
-                               type="text"
-                               class="form-control"
-                               placeholder="Signature"
-                               value="Text"
-                             />
+                             <label>Change signature</label>
+                             <textarea id="signature"
+                              class="form-control" 
+                              placeholder="Signature">
+                            </textarea>
                            </div>
                          </div>
                          <div class="col-md-6">
                            <div class="form-group">
-                             <label>Password</label>
+                             <label>Change password</label>
                              <input
                                type="password"
                                class="form-control"
                                placeholder="Password"
-                               value="B12*rjki"
                              />
                            </div>
                          </div>
                        </div>
-                       <button
-                         type="submit"
+                       <button id="btn_save"
+                       
                          class="btn btn-primary btn-fill pull-right"
                        >
                          Update Profile
@@ -143,16 +148,14 @@
                    </div>
                    <div class="card-body">
                      <div class="author">
-                       <h5 class="title text-primary text-center">
-                         Caroline Jansen
+                       <h5 class="title text-primary text-center" id="fullname_display">
+                      
                        </h5>
-                       <p class="description text-center">Spooknick</p>
+                       <p class="description text-center" id="username_display">></p>
                      </div>
                      <hr />
-                     <p class="description text-center">
-                       Don't worry, be happy :3
-                       <br />
-                       Video games <i class="material-icons">favorite</i>
+                     <p class="description text-center" id="signature_display">
+                      
                      </p>
                    </div>
                  </div>
@@ -160,4 +163,8 @@
              </div>
            </div>
          </div>
+
+         </div>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         <script src="profile-page.js"></script>
          <?php include("footer.php"); ?>
