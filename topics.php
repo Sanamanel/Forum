@@ -9,6 +9,7 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <?php require('server.php'); ?>  
 <?php include("header.php"); ?>
+
       <div class="container-fluid">
         <div class="section text-center">
           <nav aria-label="breadcrumb" role="navigation">

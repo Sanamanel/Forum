@@ -38,7 +38,7 @@
                     <h6>
                       Hello<br />
                      Chandler Bing!
-                     salut Comment ca vas
+                     salut Cosdsdsdsdmment ca vas
                     </h6>
                   </div>
                 </div>
