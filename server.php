@@ -13,8 +13,8 @@
     case 'GET' :
       GetRequest();
       break;
-      case 'PUT' :
-        PutRequest();
+    case 'PUT' :
+      PutRequest();
       break;
     default:
       break;
@@ -22,8 +22,7 @@
 
   function PostRequest()
   {
-    global $errors;
-    if (isset($_POST['content'])) { 
+     if (isset($_POST['content'])) { 
       
       $content= $_POST['content'];
    
@@ -37,7 +36,7 @@
           break;
         case "register":
           register($decoded);
-          break;            
+          break;  
       }
     }
   
@@ -59,6 +58,28 @@
          
       }
     }
+  }
+
+  function PutRequest()
+  {
+    global $errors;
+
+    parse_str(file_get_contents('php://input'), $_PUT);
+    if (isset($_PUT['content'])) { 
+
+      $content= $_PUT['content'];
+   
+      $decoded = json_decode($content, true);
+      
+      //call specific function, according to action
+      switch($decoded["action"]) 
+      {
+        case "updateProfile":
+          updateProfile($decoded);
+          break;     
+      }
+    }
+  
   }
 
 
@@ -207,7 +228,7 @@
     $results = mysqli_query($db, $query); 
     if (mysqli_num_rows($results) == 1) { //user has been found in database
       $user=mysqli_fetch_array($results);
-      $profileData = array("email"=> $user['email'], "firstname"=> $user['firstname'], "lastname"=> $user['lastname'],"username"=> $user['nickname'],"signature"=> $user['signature']); //complete with birthdate and country
+      $profileData = array("email"=> $user['email'], "firstname"=> $user['firstname'], "lastname"=> $user['lastname'],"username"=> $user['nickname'],"signature"=> $user['signature'], "birthdate"=> $user['birthdate'], "country"=> $user['country']); //complete with birthdate and country
       header("HTTP/1.1 200 OK");
       writeResponse(json_encode($profileData));
 
@@ -216,6 +237,60 @@
     {
       header('HTTP/1.1 500');
       array_push($errors, `An internal error occurs while getting profile`);
+    }
+
+  }
+
+  function updateProfile($input)
+  {
+
+    if (!isset($_SESSION['username'])) {  //user is not authenticated, return a 401
+      header('HTTP/1.1 401');
+      return;
+    } 
+
+    global $errors;
+    $db = connectDb();
+    $username = $_SESSION['username'];
+
+    try {
+         
+      $firstname = mysqli_real_escape_string($db, $input['firstname']); 
+      $lastname = mysqli_real_escape_string($db, $input['lastname']); 
+      $birthdate = mysqli_real_escape_string($db, $input['birthdate']); 
+      $country = mysqli_real_escape_string($db, $input['country']); 
+      $signature = mysqli_real_escape_string($db, $input['signature']); 
+      $password = mysqli_real_escape_string($db, $input['password']); 
+
+      $query = "update users set firstname = '$firstname', lastname = '$lastname', birthdate = '$birthdate', country = '$country', signature = '$signature'";
+      
+
+      if (!empty($password)) { 
+        $password = md5($password);
+        $query .= ", password_hash = '$password' ";
+      }
+      $query .= " where nickname = '$username'"; 
+      writeResponse($query);
+      if(!mysqli_query($db, $query)) //if a error occurs
+      {
+        writeResponse("ERROR OCCURS");
+        header('HTTP/1.1 500');
+        array_push($errors, `An internal error occurs while updating profile`);
+        
+      } 
+      else
+      {
+        writeResponse("OK");
+                header("HTTP/1.1 200 OK");
+        return;
+        
+      }
+    }
+    catch(Exception $exception)
+    {
+      header('HTTP/1.1 500');
+      array_push($errors, `An internal error occurs while updating profile : {$exception->getMessage()}`);
+        
     }
 
   }
@@ -245,5 +320,19 @@
     writeResponse($errorMessage);
   }
 
+  /*//gravatar
+  function get_gravatar( $email, $s = 80, $d = 'mp', $r = 'g', $img = false, $atts = array() ) {
+    $url = 'https://www.gravatar.com/avatar/';
+    $url .= md5( strtolower( trim( $email ) ) );
+    $url .= "?s=$s&d=$d&r=$r";
+    if ( $img ) {
+        $url = '<img src="' . $url . '"';
+        foreach ( $atts as $key => $val )
+            $url .= ' ' . $key . '="' . $val . '"';
+        $url .= ' />';
+    }
+    return $url;
+}
+*/
   ?> 
   

@@ -6,7 +6,7 @@
         // User will be sent to 'login.php' page 
         // to allow the user to login 
         if (!isset($_SESSION['username'])) { 
-            header('location: http://localhost/forum_bfr/index.php'); 
+            header('location: https://led-zepplin-forum.herokuapp.com/'); 
             exit();
         } 
         include("header.php");
@@ -84,11 +84,11 @@
                          </div>
                          <div class="col-md-4">
                            <div class="form-group">
-                             <label>Date of Birth</label>
+                             <label>Birthdate</label>
                              <input id="birthdate"
                                type="date"
                                class="form-control"
-                               placeholder="Date of Birth"
+                               placeholder="Birthdate"
                              />
                            </div>
                          </div>
@@ -118,7 +118,7 @@
                          <div class="col-md-6">
                            <div class="form-group">
                              <label>Change password</label>
-                             <input
+                             <input id="password"
                                type="password"
                                class="form-control"
                                placeholder="Password"
@@ -126,12 +126,11 @@
                            </div>
                          </div>
                        </div>
-                       <button id="btn_save"
-                       
-                         class="btn btn-primary btn-fill pull-right"
-                       >
-                         Update Profile
-                       </button>
+                       <input id="btn_save"
+                        type="button"
+                         class="btn btn-primary btn-fill pull-right"  value="Update Profile">
+                         
+                       </input>
                        <div class="clearfix"></div>
                      </form>
                    </div>
@@ -151,7 +150,7 @@
                        <h5 class="title text-primary text-center" id="fullname_display">
                       
                        </h5>
-                       <p class="description text-center" id="username_display">></p>
+                       <p class="description text-center" id="username_display"></p>
                      </div>
                      <hr />
                      <p class="description text-center" id="signature_display">
