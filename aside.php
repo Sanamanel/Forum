@@ -37,7 +37,7 @@
                   <div class="media-body">
                     <h6>
                       Hello<br />
-                      <? echo $r["nickname"];?>   Chandler Bing!
+                     Chandler Bing!
                     </h6>
                   </div>
                 </div>
