@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
   $stm->execute(array($user,$hashPass));
   $row = $stm->fetch();
   $count = $stm->rowCount();
-  //print_r($row);
+  
   
   if($count>0){
     $_SESSION['user'] = $user;

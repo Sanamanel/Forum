@@ -10,5 +10,5 @@ bower_components
 *.sublime-workspace
 *.swp
 
-localIndex.php/
-connect.php/
+localIndex.php
+connect.php
