@@ -116,6 +116,8 @@
     if (count($errors) == 0) { 
 
       $password = getHash($password); //get hash from password
+      //Vous pouvez maintenant utiliser password_hash() pour créer un bcrypt hachage de n'importe quel mot de passe
+      //tester   $password = password_hash($password);
 
       try {
        

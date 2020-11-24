@@ -29,115 +29,111 @@
                 <div class="media align-items-center">
                   <div class="avatar">
                     <img
-                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                      src="./assets/img/hi-chandler.png"
                       title=""
                       alt=""
                     />
                   </div>
                   <div class="media-body">
                     <h6>
-                      Hello, I'm<br />
-                      Rachel Roth
+                      Hello<br />
+                     Chandler Bing!
+                     salut Comment ca vas
                     </h6>
                   </div>
                 </div>
-                <p>
-                  I design and develop services for customers of all sizes,
-                  specializing in creating stylish, modern websites, web
-                  services and online stores
-                </p>
+               
               </div>
             </div>
             <!-- End Author -->
 
-            <!-- Latest Post -->
-            <div class="widget widget-latest-post">
-              <div class="widget-title">
-                <h3>Latest Post</h3>
-              </div>
-              <div class="widget-body">
-                <div class="latest-post-aside media">
-                  <div class="lpa-left media-body">
-                    <div class="lpa-title">
-                      <h5>
-                        <a href="./pages/comments.html"
-                          >Prevent 75% of visitors from google analytics</a
-                        >
-                      </h5>
-                    </div>
-                    <div class="lpa-meta">
-                      <a class="name" href="#"> Rachel Roth </a>
-                      <a class="date" href="#"> 26 FEB 2020 </a>
-                    </div>
-                  </div>
-                  <div class="lpa-right">
-                    <a href="./pages/comments.html">
-                      <img
-                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
-                        title=""
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="latest-post-aside media">
-                  <div class="lpa-left media-body">
-                    <div class="lpa-title">
-                      <h5>
-                        <a href="./pages/comments.html"
-                          >Prevent 75% of visitors from google analytics</a
-                        >
-                      </h5>
-                    </div>
-                    <div class="lpa-meta">
-                      <a class="name" href="#"> Rachel Roth </a>
-                      <a class="date" href="#"> 26 FEB 2020 </a>
-                    </div>
-                  </div>
-                  <div class="lpa-right">
-                    <a href="./pages/comments.html">
-                      <img
-                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
-                        title=""
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="latest-post-aside media">
-                  <div class="lpa-left media-body">
-                    <div class="lpa-title">
-                      <h5>
-                        <a href="./pages/comments.html"
-                          >Prevent 75% of visitors from google analytics</a
-                        >
-                      </h5>
-                    </div>
-                    <div class="lpa-meta">
-                      <a class="name" href="#"> Rachel Roth </a>
-                      <a class="date" href="#"> 26 FEB 2020 </a>
-                    </div>
-                  </div>
-                  <div class="lpa-right">
-                    <a href="./pages/comments.html">
-                      <img
-                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
-                        title=""
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Latest Post -->
+            <div class="line"></div>
+
+<div class="card">
+  <div class="card-header last_post text-capitalize">last post</div>
+  <ul class="list-group list-group-flush">
+
+     
+   
+      
+    <li class="list-group-item">
+      <div class="box_post">
+        <h4 class="cat text-capitalize">post-categori1</h4>
+        <h4 class="hour">4 hours</h4>
+        <div class="clear_both"> Lorem ipsum dolor sit, amet consectetur adipisicing elit</div>
+        <p class="card_pra">
+
+
+
+        </p>
+        <span class="tags"
+          >tags: test <span>workeot repot</span>
+        </span>
+      </div>
+    </li> 
+
+
+    
+    <li class="list-group-item">
+      <div class="box_post">
+        <h4 class="cat text-capitalize">post-categori3</h4>
+        <h4 class="hour">2 hours</h4>
+        <div class="clear_both"></div>
+        <p class="card_pra">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit
+        </p>
+        <span class="tags"
+          >tags: test <span>workeot repot</span>
+        </span>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="box_post">
+        <h4 class="cat text-capitalize">post-categori3</h4>
+        <h4 class="hour">2 hours</h4>
+        <div class="clear_both"></div>
+        <p class="card_pra">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit
+        </p>
+        <span class="tags"
+          >tags: test <span>workeot repot</span>
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
             <!-- Last users -->
-            <div class="widget widget-post">
-              <div class="widget-title">
-                <h3>Last active user</h3>
+            <!-- Start Last Active User-->
+
+            <div class="card">
+              <div class="card-header last_post text-capitalize">
+                last active user
               </div>
-              <div class="widget-body"></div>
+              <ul class="list-group list-group-flush user_active">
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img active"></div>
+                    <p class="neck_name text-capitalize mt-2">#mohnhyfgf</p>
+                    <p class="help text-capitalize">here to help</p>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img"></div>
+                    <p class="neck_name text-capitalize mt-2">#colnhyfgf</p>
+                    <p class="help text-capitalize">here to help</p>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img"></div>
+                    <p class="neck_name text-capitalize mt-2">#egohnhyfgf</p>
+                    <p class="help text-capitalize">here to help</p>
+                  </div>
+                </li>
+              </ul>
             </div>
+            <!-- End Last Active User-->
             <!-- End Last users-->
           </div>
 
