@@ -385,3 +385,5 @@
               </div>
             </div>
           </div>
+          <?php include("aside.php"); ?>
+<?php include("footer.php"); ?>
