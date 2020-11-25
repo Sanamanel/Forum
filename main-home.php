@@ -20,7 +20,7 @@
             <div>
            
            <?php
-            include 'connect.php';
+         
             //---Start Board 
             $sql = 'select * from board ';  // Fetch All Rows From Board Table
             $result = $conn >query($sql);    // Connect to Database and Query from Database
@@ -28,7 +28,7 @@
             $cats_id = array();                  //This Array Stor all Categories
             $counter=0;
 
-           // var_dump($result);
+           var_dump($result);
            
             while ($row = $result->fetch()) {   
               if($counter<sizeof($row)){
