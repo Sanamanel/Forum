@@ -8,7 +8,7 @@
                 $conn = new PDO($servername, $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             }
-            catch(PDOEXCEPTION $e){
+            catch(PDOException $e){
                 echo "Erro" . $e;
             }
             
