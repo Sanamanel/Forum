@@ -1,4 +1,5 @@
-
+<?php require_once("server.php"); ?>
+<?php include("header.php"); ?>
 <div>
         <div class="container">
           <nav aria-label="breadcrumb" role="navigation">
@@ -6,7 +7,7 @@
               <i class="fa fa-home mr-1 pt-1 home_icon" aria-hidden="true"></i>
               <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
               <li class="breadcrumb-item">
-                <a href="./index.html">Board index</a>
+                <a href="./home.php">Board index</a>
               </li>
             </ol>
           </nav>
