@@ -28,7 +28,7 @@
             $cats_id = array();                  //This Array Stor all Categories
             $counter=0;
 
-           var_dump($result);
+          
            
             while ($row = $result->fetch()) {   
               if($counter<sizeof($row)){
@@ -39,7 +39,7 @@
              
                 
             }
-            var_dump($cats);
+          
             //--- End Board
 
             //---Start Topics 
@@ -51,7 +51,8 @@
               $stm = $conn->prepare('select title,content from topics where board_id = ? ');
               $stm->execute(array($cats_id[0]));
           
-            
+             
+              print_r($titles);
 
               while ($row = $stm->fetch()) {  
                 if($counter <= sizeof($row)){
@@ -61,7 +62,7 @@
                 }
 
               }
-
+              print_r($contents);
               $counter=0;
                 //---------------- Normal ------------------
               $m = array();
