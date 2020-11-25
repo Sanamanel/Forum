@@ -13,5 +13,5 @@
         echo "Erro" . $e->getMessage();
     }
 
-    var_dump($conn);
+  
 ?>
