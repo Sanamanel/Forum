@@ -1,9 +1,3 @@
-<?php 
-
-include 'connect.php' ;
-//include 'connect.php' ;
-
-?>
 
 <div>
         <div class="container">
