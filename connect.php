@@ -1,11 +1,14 @@
 <?php
-$dsn = 'mysql:host=remotemysql.com:3306;dbname=Q2qsa8HqT2';
-$user = 'Q2qsa8HqT2';
-$pass = 'vkN1eNSWhe';
-try {
-    $con = new PDO($dsn, $user, $pass);
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Fail Connecting" . $e;
-}
-?>
+            $servername = 'remotemysql.com:3306;dbname=Q2qsa8HqT2';
+            $username = 'Q2qsa8HqT2';
+            $password = 'vkN1eNSWhe';
+
+            //On établit la connexion
+            $conn = new mysqli($servername, $username, $password);
+
+            //On vérifie la connexion
+            if($conn->connect_error){
+                die('Erreur : ' .$conn->connect_error);
+            }
+            echo 'Connexion réussie';
+        ?>
