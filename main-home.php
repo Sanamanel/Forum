@@ -1,5 +1,4 @@
-<?php require_once("connect.php"); ?>
-<?php include("header.php"); ?>
+
 <div>
         <div class="container">
           <nav aria-label="breadcrumb" role="navigation">
@@ -28,17 +27,18 @@
             $cats = array();                  //This Array Stor all Catigories
             $cats_id = array();                  //This Array Stor all Catigories
             $counter=0;
-
+            var_dump($result);
+           
             while ($row = $result->fetch()) {   
               if($counter<sizeof($row)){
                 $cats[$counter] = $row['name'];  //Stor Only The Name of Categories to Array
                 $cats_id [$counter] = $row['id'];  //Stor Only The Id of Categories to Array
                 $counter++;
               }
-
+             
                 
             }
-
+            var_dump($cats);
             //--- End Board
 
             //---Start Topics 

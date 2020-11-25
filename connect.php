@@ -11,4 +11,4 @@
                 die('Erreur : ' .$conn->connect_error);
             }
             echo 'Connexion réussie';
-        ?>
+?>
