@@ -38,7 +38,7 @@
              
                 
             }
-            var_dump($cats);
+            //var_dump($cats);
             //--- End Board
 
             //---Start Topics 
