@@ -9,3 +9,6 @@ try {
 } catch (PDOException $e) {
     echo "Fail Connecting" . $e;
 }
+
+
+include("header.php");

@@ -1,3 +1,6 @@
+
+
+
 <!-- div aside -->
 <div class="col-lg-3 m-15px-tb blog-aside">
             <!-- search -->
@@ -35,11 +38,8 @@
                     />
                   </div>
                   <div class="media-body">
-                    <h6>
-                      Hello<br />
-                     Chandler Bing!
-                     salut Cosdsdsdsdmment ca vas
-                    </h6>
+
+                    <h6>Ali Mundher saeed</h6>
                   </div>
                 </div>
                

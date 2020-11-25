@@ -1,4 +1,9 @@
+<?php 
 
+include 'server.php' ;
+//include 'connect.php' ;
+
+?>
 
 <div>
         <div class="container">
@@ -35,8 +40,10 @@
                 $cats_id [$counter] = $row['id'];  //Stor Only The Id of Categories to Array
                 $counter++;
               }
+
                 
             }
+
             //--- End Board
 
             //---Start Topics 
@@ -59,22 +66,53 @@
 
               }
 
-                //----------------------------------
-
-              $stm1 = $con->prepare('select title,content from topics where board_id_fk = ? ');
-              $stm1->execute(array($cats_id[1]));
+              $counter=0;
+                //---------------- Normal ------------------
+              $m = array();
+              $n = array();
+                  $stm1 = $con->prepare('select title,content from topics where board_id_fk = ? ');
+                  $stm1->execute(array($cats_id[1]));
               
+                while ($row = $stm1->fetch()) {  
+                  if($counter <= sizeof($row)){
+                    $m[$counter] = $row["title"];      //Stor Only The Tilte to Array  
+                    $n[$counter] = $row["content"];  //Stor Only The Content to Array
+                    $counter++;
+                  }
+                  
+                } 
               
-
-              while ($row = $stm1->fetch()) {  
-                if($counter <= sizeof($row)){
-                  $titles[$counter] = $row[0];      //Stor Only The Tilte to Array  
-                  $contents[$counter] = $row[0];  //Stor Only The Content to Array
-                  $counter++;
-                }
-                
-              } 
+                $counter=0;
+                //---------------- Design ------------------
+              $d_titles = array();
+              $d_contents = array();
+                  $stm1 = $con->prepare('select title,content from topics where board_id_fk = ? ');
+                  $stm1->execute(array($cats_id[2]));
+              
+                while ($row = $stm1->fetch()) {  
+                  if($counter <= sizeof($row)){
+                    $d_titles[$counter] = $row["title"];      //Stor Only The Tilte to Array  
+                    $d_contents[$counter] = $row["content"];  //Stor Only The Content to Array
+                    $counter++;
+                  }
+                  
+                } 
             
+                $counter=0;
+                //---------------- Events ------------------
+              $e_titles = array();
+              $e_contents = array();
+                  $stm1 = $con->prepare('select title,content from topics where board_id_fk = ? ');
+                  $stm1->execute(array($cats_id[3]));
+              
+                while ($row = $stm1->fetch()) {  
+                  if($counter <= sizeof($row)){
+                    $e_titles[$counter] = $row["title"];      //Stor Only The Tilte to Array  
+                    $e_contents[$counter] = $row["content"];  //Stor Only The Content to Array
+                    $counter++;
+                  }
+                  
+                } 
             
 
             //--- End Topics
@@ -201,13 +239,13 @@
               <div class="d-flex flex-row flex-wrap justify-content-center">
                 <div class="card mx-3" style="width: 15rem">
                   <div class="card-body">
-                    <h4 class="card-title"><?php echo $titles[0] ?></h4>
+                    <h4 class="card-title"><?php echo $m[0]  ?></h4>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <i
                       class="fa fa-3x fa-code text-info pr-3"
                       aria-hidden="true"
                     ></i>
-                    <p class="card-text"><?php echo  $cats[1]? $contents[0] : '' ?></p>
+                    <p class="card-text"><?php echo $n[0] ?></p>
                     <a href="./pages/topics.html" class="card-link"
                       >Card link</a
                     >
@@ -218,16 +256,13 @@
                 </div>
                 <div class="card mx-3" style="width: 15rem">
                   <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
+                    <h4 class="card-title"><?php echo $m[1]  ?></h4>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <i
                       class="fa fa-3x fa-desktop text-warning pr-3"
                       aria-hidden="true"
                     ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                    <p class="card-text"><?php echo $n[1] ?></p>
                     <a href="./pages/topics.html" class="card-link"
                       >Card link</a
                     >
@@ -243,16 +278,13 @@
               <div class="d-flex flex-row flex-wrap justify-content-center">
                 <div class="card mx-3" style="width: 15rem">
                   <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
+                    <h4 class="card-title"><?php echo $d_titles[0] ?></h4>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <i
                       class="fa fa-3x fa-comments text-success pr-3"
                       aria-hidden="true"
                     ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                    <p class="card-text"><?php echo $d_contents[0] ?></p>
                     <a href="./pages/topics.html" class="card-link"
                       >Card link</a
                     >
@@ -263,16 +295,13 @@
                 </div>
                 <div class="card mx-3" style="width: 15rem">
                   <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
+                    <h4 class="card-title"><?php echo $d_titles[1] ?></h4>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <i
                       class="fa fa-3x fa-quote-right text-info pr-3"
                       aria-hidden="true"
                     ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                    <p class="card-text"><?php echo $d_contents[1] ?></p>
                     <a href="./pages/topics.html" class="card-link"
                       >Card link</a
                     >
@@ -283,16 +312,13 @@
                 </div>
                 <div class="card mx-3" style="width: 15rem">
                   <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
+                    <h4 class="card-title"><?php echo $d_titles[2] ?></h4>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <i
                       class="fa fa-3x fa-angellist text-primary pr-3"
                       aria-hidden="true"
                     ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                    <p class="card-text"><?php echo $d_contents[2] ?></p>
                     <a href="./pages/topics.html" class="card-link"
                       >Card link</a
                     >
@@ -309,16 +335,13 @@
               <div class="d-flex flex-row flex-wrap justify-content-center">
                 <div class="card mx-3" style="width: 15rem">
                   <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
+                    <h4 class="card-title"><?php echo $e_titles[0] ?></h4>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <i
                       class="fa fa-3x fa-user-plus text-info pr-3"
                       aria-hidden="true"
                     ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                    <p class="card-text"><?php echo $e_contents[0] ?></p>
                     <a href="./pages/topics.html" class="card-link"
                       >Card link</a
                     >
@@ -329,7 +352,7 @@
                 </div>
                 <div class="card mx-3" style="width: 15rem">
                   <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
+                    <h4 class="card-title"><?php echo $e_titles[1] ?></h4>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
 
                     <i
@@ -337,10 +360,7 @@
                       aria-hidden="true"
                     ></i>
 
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                    <p class="card-text"><?php echo $e_contents[1] ?></p>
                     <a href="./pages/topics.html" class="card-link"
                       >Card link</a
                     >
@@ -351,17 +371,14 @@
                 </div>
                 <div class="card mx-3" style="width: 15rem">
                   <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
+                    <h4 class="card-title"><?php echo $e_titles[2] ?></h4>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <i
                       class="fa fa-3x fa-envelope-square text-success pr-3"
                       aria-hidden="true"
                     ></i>
 
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                    <p class="card-text"><?php echo $e_contents[2] ?></p>
                     <a href="./pages/topics.html" class="card-link"
                       >Card link</a
                     >
