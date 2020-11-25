@@ -23,9 +23,9 @@
 
             //---Start Board 
             $sql = 'select * from board ';  // Fetch All Rows From Board Table
-            $result = $con->query($sql);    // Connect to Database and Query from Database
-            $cats = array();                  //This Array Stor all Catigories
-            $cats_id = array();                  //This Array Stor all Catigories
+            $result = $conn->query($sql);    // Connect to Database and Query from Database
+            $cats = array();                  //This Array Stor all Categories
+            $cats_id = array();                  //This Array Stor all Categories
             $counter=0;
             var_dump($result);
            
@@ -47,14 +47,14 @@
             $counter = 0;
             //$id_of_cat = 0;
 
-              $stm = $con->prepare('select title,content from topics where board_id_fk = ? ');
+              $stm = $conn->prepare('select title,content from topics where board_id_fk = ? ');
               $stm->execute(array($cats_id[0]));
           
             
 
               while ($row = $stm->fetch()) {  
                 if($counter <= sizeof($row)){
-                  $titles[$counter] = $row['title'];      //Stor Only The Tilte to Array  $cats[0] 
+                  $titles[$counter] = $row['title'];      //Stor Only The Title to Array  $cats[0] 
                   $contents[$counter] = $row['content'];  //Stor Only The Content to Array
                   $counter++;
                 }
@@ -65,12 +65,12 @@
                 //---------------- Normal ------------------
               $m = array();
               $n = array();
-                  $stm1 = $con->prepare('select title,content from topics where board_id_fk = ? ');
+                  $stm1 = $conn->prepare('select title,content from topics where board_id_fk = ? ');
                   $stm1->execute(array($cats_id[1]));
               
                 while ($row = $stm1->fetch()) {  
                   if($counter <= sizeof($row)){
-                    $m[$counter] = $row["title"];      //Stor Only The Tilte to Array  
+                    $m[$counter] = $row["title"];      //Stor Only The Title to Array  
                     $n[$counter] = $row["content"];  //Stor Only The Content to Array
                     $counter++;
                   }
@@ -81,12 +81,12 @@
                 //---------------- Design ------------------
               $d_titles = array();
               $d_contents = array();
-                  $stm1 = $con->prepare('select title,content from topics where board_id_fk = ? ');
+                  $stm1 = $conn->prepare('select title,content from topics where board_id_fk = ? ');
                   $stm1->execute(array($cats_id[2]));
               
                 while ($row = $stm1->fetch()) {  
                   if($counter <= sizeof($row)){
-                    $d_titles[$counter] = $row["title"];      //Stor Only The Tilte to Array  
+                    $d_titles[$counter] = $row["title"];      //Stor Only The Title to Array  
                     $d_contents[$counter] = $row["content"];  //Stor Only The Content to Array
                     $counter++;
                   }
@@ -97,12 +97,12 @@
                 //---------------- Events ------------------
               $e_titles = array();
               $e_contents = array();
-                  $stm1 = $con->prepare('select title,content from topics where board_id_fk = ? ');
+                  $stm1 = $conn->prepare('select title,content from topics where board_id_fk = ? ');
                   $stm1->execute(array($cats_id[3]));
               
                 while ($row = $stm1->fetch()) {  
                   if($counter <= sizeof($row)){
-                    $e_titles[$counter] = $row["title"];      //Stor Only The Tilte to Array  
+                    $e_titles[$counter] = $row["title"];      //Stor Only The Title to Array  
                     $e_contents[$counter] = $row["content"];  //Stor Only The Content to Array
                     $counter++;
                   }
