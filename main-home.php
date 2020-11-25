@@ -1,4 +1,4 @@
-<?php require_once("server.php"); ?>
+<?php require_once("connect.php"); ?>
 <?php include("header.php"); ?>
 <div>
         <div class="container">
