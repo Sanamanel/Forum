@@ -52,7 +52,7 @@
               $stm->execute(array($cats_id[0]));
 
 
-              print_r($titles);
+              
 
               while ($row = $stm->fetch()) {
                 if($counter <= sizeof($row)){
@@ -62,7 +62,7 @@
                 }
 
               }
-              print_r($contents);
+             
               $counter=0;;
                 //---------------- Normal ------------------
               $m = array();
