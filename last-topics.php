@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+
 <?php
   $host = 'remotemysql.com:3306';
   $dbname = 'Q2qsa8HqT2';
@@ -23,7 +23,7 @@
     echo $e->getMessage();
   }
 ?>
-
+<?php include("header.php"); ?>
 
   <!-- Author -->
   <div class="widget widget-author">

@@ -1,4 +1,25 @@
-
+<?php
+  $host = 'remotemysql.com:3306';
+  $dbname = 'Q2qsa8HqT2';
+  $username = 'Q2qsa8HqT2';
+  $password = 'vkN1eNSWhe';
+    
+  $dsn = "mysql:host=$host;dbname=$dbname"; 
+  // 3 - Titre des 3 derniers Posts
+	$sql ="select * from board";
+   
+  try{
+   $pdo = new PDO($dsn, $username, $password);
+   $stmt = $pdo->query($sql);
+   
+   if($stmt === false){
+    die("Erreur");
+   }
+   
+  }catch (PDOException $e){
+    echo $e->getMessage();
+  }
+?>
 <div>
         <div class="container">
           <nav aria-label="breadcrumb" role="navigation">
@@ -23,14 +44,15 @@
          
             //---Start Board 
             $sql = 'select * from board ';  // Fetch All Rows From Board Table
-            $result = $conn ->query($sql);    // Connect to Database and Query from Database
+            $result = $pdo >query($sql); 
+            $stmt = $pdo->query($sql);   // Connect to Database and Query from Database
             $cats = array();                  //This Array Stor all Categories
             $cats_id = array();                  //This Array Stor all Categories
             $counter=0;
 
           
            
-            while ($row = $result->fetch()) {   
+            while ($row = $stmt->fetch()) {   
               if($counter<sizeof($row)){
                 $cats[$counter] = $row['name'];  //Stor Only The Name of Categories to Array
                 $cats_id [$counter] = $row['id'];  //Stor Only The Id of Categories to Array
@@ -48,7 +70,7 @@
             $counter = 0;
             //$id_of_cat = 0;
 
-              $stm = $conn->prepare('select title,content from topics where board_id = ? ');
+              $stm = $pdo->prepare('select title,content from topics where board_id = ? ');
               $stm->execute(array($cats_id[0]));
           
              
@@ -67,7 +89,7 @@
                 //---------------- Normal ------------------
               $m = array();
               $n = array();
-                  $stm1 = $conn->prepare('select title,content from topics where board_id = ? ');
+                  $stm1 = $pdo->prepare('select title,content from topics where board_id = ? ');
                   $stm1->execute(array($cats_id[1]));
               
                 while ($row = $stm1->fetch()) {  
@@ -83,7 +105,7 @@
                 //---------------- Design ------------------
               $d_titles = array();
               $d_contents = array();
-                  $stm1 = $conn->prepare('select title,content from topics where board_id = ? ');
+                  $stm1 = $pdo->prepare('select title,content from topics where board_id = ? ');
                   $stm1->execute(array($cats_id[2]));
               
                 while ($row = $stm1->fetch()) {  
@@ -99,7 +121,7 @@
                 //---------------- Events ------------------
               $e_titles = array();
               $e_contents = array();
-                  $stm1 = $conn->prepare('select title,content from topics where board_id = ? ');
+                  $stm1 = $pdo->prepare('select title,content from topics where board_id = ? ');
                   $stm1->execute(array($cats_id[3]));
               
                 while ($row = $stm1->fetch()) {  
