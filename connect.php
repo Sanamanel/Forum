@@ -4,7 +4,9 @@
             $password = 'vkN1eNSWhe';
 
             //On établit la connexion
-            var_dump($_SERVER);
+
+            var_dump("leny test");
+
             try{
                 $conn = new PDO($servername, $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -12,5 +14,5 @@
             catch(PDOException $e){
                 echo "Erro" . $e->getMessage();
             }
-            
+
 ?>
