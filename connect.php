@@ -1,7 +1,7 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=forum';
-$user = 'root';
-$pass = '';
+$dsn = 'mysql:host=remotemysql.com:3306;dbname=Q2qsa8HqT2';
+$user = 'Q2qsa8HqT2';
+$pass = 'vkN1eNSWhe';
 
 try {
     $con = new PDO($dsn, $user, $pass);
