@@ -4,6 +4,7 @@
             $password = 'vkN1eNSWhe';
 
             //On établit la connexion
+            var_dump($_SERVER);
             try{
                 $conn = new PDO($servername, $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
