@@ -324,7 +324,7 @@
       }   
       $errorMessage .= $errors[$i];
     }
-    writeResponse($errorMessage);
+    writeResponse($errorMessage); //test
   }
 
   /*//gravatar
