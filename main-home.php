@@ -18,7 +18,6 @@
 
           <div class="col-lg-9 m-15px-tb main-content">
             <div>
-<<<<<<< HEAD
            
            <?php
          
@@ -117,8 +116,6 @@
 
 
           ?>
-=======
->>>>>>> 072d0f277a0709030ba033e37fcf4c35fd55ef37
               <h2 class="text-muted font-weight-bold"><?php echo $cats[0]  ?></h2>
 
               <div class="d-flex flex-row flex-wrap justify-content-center">

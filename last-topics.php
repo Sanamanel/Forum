@@ -1,4 +1,4 @@
-
+<?php include("header.php"); ?>
 <?php
   $host = 'remotemysql.com:3306';
   $dbname = 'Q2qsa8HqT2';
@@ -52,4 +52,4 @@
    
   </ul>
 </div>
-         
+<?php include("footer.php"); ?>
