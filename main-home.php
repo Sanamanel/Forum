@@ -23,6 +23,7 @@
 
             //---Start Board
             $sql = 'select * from board ';  // Fetch All Rows From Board Table
+            var_dump("---");
             var_dump($conn);
             $result = $conn->exec($sql);    // Connect to Database and Query from Database
             var_dump($result);
