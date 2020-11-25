@@ -23,7 +23,7 @@
          
             //---Start Board 
             $sql = 'select * from board ';  // Fetch All Rows From Board Table
-            $result = $conn ->query($sql);    // Connect to Database and Query from Database
+            $result = $conn->exec($sql);    // Connect to Database and Query from Database
             $cats = array();                  //This Array Stor all Categories
             $cats_id = array();                  //This Array Stor all Categories
             $counter=0;
