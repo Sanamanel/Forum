@@ -63,7 +63,7 @@
 
               }
               print_r($contents);
-              $counter=0;
+              $counter=0;;
                 //---------------- Normal ------------------
               $m = array();
               $n = array();

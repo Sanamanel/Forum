@@ -1,48 +1,55 @@
 
-<?php require_once("connexion.php"); ?>
 <?php
-	$sql = "SELECT id, title, creation_date, link,
-                            DATE_FORMAT(new_date,'%d-%m-%Y' ) 
-                            AS ladate 
-                            FROM topics 
-                            ORDER BY new_date DESC;";
-	$rs = mysql_query($sql);
+  $host = 'remotemysql.com:3306';
+  $dbname = 'Q2qsa8HqT2';
+  $username = 'Q2qsa8HqT2';
+  $password = 'vkN1eNSWhe';
+    
+  $dsn = "mysql:host=$host;dbname=$dbname"; 
+  // 3 - Titre des 3 derniers Posts
+	$sql ="SELECT title,creation_date,SUBSTRING_INDEX(content, '... ', 5) AS resume from topics
+  Order by creation_date DESC
+  Limit 3";
+   
+  try{
+   $pdo = new PDO($dsn, $username, $password);
+   $stmt = $pdo->query($sql);
+   
+   if($stmt === false){
+    die("Erreur");
+   }
+   
+  }catch (PDOException $e){
+    echo $e->getMessage();
+  }
 ?>
+<!--  3 - Titre des 3 derniers Posts-->
 
             <!-- Latest Post -->
-            <div class="widget widget-latest-post">
-              <div class="widget-title">
-                <h3>Latest Post</h3>
-              </div>
-                      <!-- Début de région à répéter --> 
-<? while ($r = mysql_fetch_array($rs)) { ?> 
-              <div class="widget-body">
-                <div class="latest-post-aside media">
-                  <div class="lpa-left media-body">
-                    <div class="lpa-title">
-                      <h5>
-                        <a href="./pages/comments.html"
-                          ><? echo $r["title"];  ?></a
-                        >
-                      </h5>
-                    </div>
-                    <div class="lpa-meta">
-                      <a class="name" href="#"> Rachel Roth </a>
-                      <a class="date" href="#">  <? echo $r["ladate"];  ?></a>
-                    </div>
-                  </div>
-                  <div class="lpa-right">
-                    <a href="<? echo $r["link"];  ?>">
-                      <img
-                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
-                        title=""
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-               
-              </div>
-              mysql_free_result($rs);
-?><!-- Fin de région à répéter -->
-            </div>
+            <  < class="line"></>
+
+<div class="card">
+  <div class="card-header last_post text-capitalize">last post</div>
+  <ul class="list-group list-group-flush">
+ 
+     
+   
+  <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+    <li class="list-group-item">
+
+      <div class="box_post">
+        <h4 class="cat text-capitalize"><?php echo htmlspecialchars($row["title"]);?></h4>
+        <h4 class="hour"><?php echo htmlspecialchars($row["creation_date"]);?></h4>
+        <div class="clear_both"></div>
+        <p class="card_pra"><?php echo htmlspecialchars($row["resume"]);?></p>
+  
+        <span class="tags">tags: test <span>workeot repot</span></div></li> <?php endwhile; ?>
+
+<!-- Fin de région à répéter -->
+
+
+    
+   
+  </ul>
+</div>
+         
