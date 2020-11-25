@@ -23,10 +23,35 @@
     echo $e->getMessage();
   }
 ?>
+
+
+  <!-- Author -->
+  <div class="widget widget-author">
+              <div class="widget-title">
+                <h3>Author</h3>
+              </div>
+              <div class="widget-body">
+                <div class="media align-items-center">
+                  <div class="avatar">
+                    <img
+                      src="./assets/img/hi-chandler.png"
+                      title=""
+                      alt=""
+                    />
+                  </div>
+                  <div class="media-body">
+
+                    <h6>Ali Mundher saeed</h6>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+            <!-- End Author -->
 <!--  3 - Titre des 3 derniers Posts-->
 
             <!-- Latest Post -->
-            <  < class="line"></>
+           
 
 <div class="card">
   <div class="card-header last_post text-capitalize">last post</div>
@@ -52,4 +77,41 @@
    
   </ul>
 </div>
+<!-- Start Last Active User-->
+
+<div class="card">
+              <div class="card-header last_post text-capitalize">
+                last active user
+              </div>
+              <ul class="list-group list-group-flush user_active">
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img active"></div>
+                    <p class="neck_name text-capitalize mt-2">#mohnhyfgf</p>
+                    <p class="help text-capitalize">here to help</p>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img"></div>
+                    <p class="neck_name text-capitalize mt-2">#colnhyfgf</p>
+                    <p class="help text-capitalize">here to help</p>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img"></div>
+                    <p class="neck_name text-capitalize mt-2">#egohnhyfgf</p>
+                    <p class="help text-capitalize">here to help</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- End Last Active User-->
+            <!-- End Last users-->
+          </div>
+
+          <!-- fin test structure -->
+        </div>
+      </div>
 <?php include("footer.php"); ?>
