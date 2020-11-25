@@ -18,31 +18,31 @@
 
           <div class="col-lg-9 m-15px-tb main-content">
             <div>
-           
+
            <?php
-         
-            //---Start Board 
+
+            //---Start Board
             $sql = 'select * from board ';  // Fetch All Rows From Board Table
+            var_dump($conn);
             $result = $conn->exec($sql);    // Connect to Database and Query from Database
+            var_dump($result);
             $cats = array();                  //This Array Stor all Categories
             $cats_id = array();                  //This Array Stor all Categories
             $counter=0;
 
-          
-           
-            while ($row = $result->fetch()) {   
+            while ($row = $result->fetch()) {
               if($counter<sizeof($row)){
                 $cats[$counter] = $row['name'];  //Stor Only The Name of Categories to Array
                 $cats_id [$counter] = $row['id'];  //Stor Only The Id of Categories to Array
                 $counter++;
               }
-             
-                
+
+
             }
-          
+
             //--- End Board
 
-            //---Start Topics 
+            //---Start Topics
             $titles = array();    //This Array Stor all Title
             $contents = array();  //This Array Stor all Contents
             $counter = 0;
@@ -50,13 +50,13 @@
 
               $stm = $conn->prepare('select title,content from topics where board_id = ? ');
               $stm->execute(array($cats_id[0]));
-          
-             
+
+
               print_r($titles);
 
-              while ($row = $stm->fetch()) {  
+              while ($row = $stm->fetch()) {
                 if($counter <= sizeof($row)){
-                  $titles[$counter] = $row['title'];      //Stor Only The Title to Array  $cats[0] 
+                  $titles[$counter] = $row['title'];      //Stor Only The Title to Array  $cats[0]
                   $contents[$counter] = $row['content'];  //Stor Only The Content to Array
                   $counter++;
                 }
@@ -69,48 +69,48 @@
               $n = array();
                   $stm1 = $conn->prepare('select title,content from topics where board_id = ? ');
                   $stm1->execute(array($cats_id[1]));
-              
-                while ($row = $stm1->fetch()) {  
+
+                while ($row = $stm1->fetch()) {
                   if($counter <= sizeof($row)){
-                    $m[$counter] = $row["title"];      //Stor Only The Title to Array  
+                    $m[$counter] = $row["title"];      //Stor Only The Title to Array
                     $n[$counter] = $row["content"];  //Stor Only The Content to Array
                     $counter++;
                   }
-                  
-                } 
-              
+
+                }
+
                 $counter=0;
                 //---------------- Design ------------------
               $d_titles = array();
               $d_contents = array();
                   $stm1 = $conn->prepare('select title,content from topics where board_id = ? ');
                   $stm1->execute(array($cats_id[2]));
-              
-                while ($row = $stm1->fetch()) {  
+
+                while ($row = $stm1->fetch()) {
                   if($counter <= sizeof($row)){
-                    $d_titles[$counter] = $row["title"];      //Stor Only The Title to Array  
+                    $d_titles[$counter] = $row["title"];      //Stor Only The Title to Array
                     $d_contents[$counter] = $row["content"];  //Stor Only The Content to Array
                     $counter++;
                   }
-                  
-                } 
-            
+
+                }
+
                 $counter=0;
                 //---------------- Events ------------------
               $e_titles = array();
               $e_contents = array();
                   $stm1 = $conn->prepare('select title,content from topics where board_id = ? ');
                   $stm1->execute(array($cats_id[3]));
-              
-                while ($row = $stm1->fetch()) {  
+
+                while ($row = $stm1->fetch()) {
                   if($counter <= sizeof($row)){
-                    $e_titles[$counter] = $row["title"];      //Stor Only The Title to Array  
+                    $e_titles[$counter] = $row["title"];      //Stor Only The Title to Array
                     $e_contents[$counter] = $row["content"];  //Stor Only The Content to Array
                     $counter++;
                   }
-                  
-                } 
-            
+
+                }
+
 
             //--- End Topics
 
@@ -231,7 +231,7 @@
               </div>
             </div>
             <div>
-            
+
               <h2 class="text-muted font-weight-bold"><?php echo $cats[1] ?></h2>
               <div class="d-flex flex-row flex-wrap justify-content-center">
                 <div class="card mx-3" style="width: 15rem">
@@ -387,4 +387,4 @@
               </div>
             </div>
           </div>
-        
+
