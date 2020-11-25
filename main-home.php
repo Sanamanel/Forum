@@ -1,4 +1,4 @@
-
+<?php echo "connect.php" ?>
 <div>
         <div class="container">
           <nav aria-label="breadcrumb" role="navigation">
@@ -27,6 +27,7 @@
             $cats = array();                  //This Array Stor all Categories
             $cats_id = array();                  //This Array Stor all Categories
             $counter=0;
+
             var_dump($result);
            
             while ($row = $result->fetch()) {   
