@@ -264,8 +264,12 @@
       $signature = mysqli_real_escape_string($db, $input['signature']); 
       $password = mysqli_real_escape_string($db, $input['password']); 
 
-      $query = "update users set firstname = '$firstname', lastname = '$lastname', birthdate = '$birthdate', country = '$country', signature = '$signature'";
-      
+      $query = "update users set firstname = '$firstname', lastname = '$lastname', country = '$country', signature = '$signature'";
+    
+      if (!empty($birthdate)) 
+        $query .= ", birthdate = '$birthdate' ";
+      else
+        $query .= ", birthdate = null ";
 
       if (!empty($password)) { 
         $password = md5($password);
