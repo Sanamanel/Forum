@@ -1,5 +1,5 @@
-<?php include('connect.php');?>
-<?php include("header.php");?>
-<?php include("main-home.php");?>
-<?php include("aside.php"); ?>
-<?php include("footer.php"); ?>
+<?php include('connect.php');
+ include("header.php");
+include("main-home.php");
+ include("aside.php"); 
+ include("footer.php"); ?>
