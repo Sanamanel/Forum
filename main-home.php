@@ -1,4 +1,4 @@
-<?php echo "connect.php" ?>
+
 <div>
         <div class="container">
           <nav aria-label="breadcrumb" role="navigation">
@@ -20,7 +20,7 @@
             <div>
            
            <?php
-
+            include 'connect.php';
             //---Start Board 
             $sql = 'select * from board ';  // Fetch All Rows From Board Table
             $result = $conn >query($sql);    // Connect to Database and Query from Database
