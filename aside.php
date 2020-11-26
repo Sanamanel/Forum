@@ -2,13 +2,17 @@
 
 	
   <?php
+
   $sql ="SELECT title,creation_date,SUBSTRING_INDEX(content, '... ', 5) AS resume from topics
   Order by creation_date DESC
   Limit 3";
   $stmt = $conn->query($sql);
   $sql ="SELECT * from users WHERE user_active=1 order by id desc Limit 3";
   $stmt2 = $conn->query($sql);
- 
+  $currentUsername = $_SESSION['username'];
+  $sql = "SELECT email from users WHERE nickname = '$currentUsername'";
+  $stmt3 = $conn->query($sql);
+  $currentUserRow = $stmt3->fetch(PDO::FETCH_ASSOC);
   ?>
  
 
@@ -47,18 +51,16 @@
               <div class="widget-body">
                 <div class="media align-items-center">
                   <div class="avatar">
-                    <?php
-                    $size = 80;
-                    $gravatar = "https://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?"."&s=".$size;?>
+       
                     <img 
-                      src="<?php echo $gravatar;?>"
+                      src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";?>"
                       alt=""
                     />
                   </div>
                   <div class="media-body">
                     <h6>
                       Hello<br />
-                      <?php echo $_SESSION['username'];?> !
+                      <?php echo $currentUsername; ?> !
                     </h6>
                   </div>
                 </div>
@@ -96,7 +98,12 @@
               <?php while($row = $stmt2->fetch(PDO::FETCH_ASSOC)) : ?>
                 <li class="list-group-item">
                   <div class="box_post box_image">
-                    <div class="img active"></div>
+                    <div class="img active">
+                    <img 
+                      src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($row['email'])))."?"."&s=80";?>"
+                      alt=""
+                    />
+                    </div>
                     <p class="neck_name text-capitalize mt-2"><?php echo ($row["nickname"]);?></p>
                     <p class="help text-capitalize">here to help</p>
                   </div>

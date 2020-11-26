@@ -309,6 +309,8 @@
       return md5($toBeHashed);
   }
 
+
+
   function writeResponse( $content ){
     echo  $content ;
   }
