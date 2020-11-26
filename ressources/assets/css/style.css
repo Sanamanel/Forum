@@ -162,5 +162,6 @@ footer .menu-footer {
   padding: 30px 5px 0;
 }
 .gravatar_profil {
-  width: 70%;
+  width: 200px;
+  height: auto;
 }
