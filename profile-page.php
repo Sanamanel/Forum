@@ -140,9 +140,11 @@
                <div class="col-md-4">
                  <div class="card card-user">
                    <div class="card-image">
+                     <?php
+                   $gravatar="http://2.gravatar.com/avatar/".md5($email)."?s=100&";?>
                      <img
-                       src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
-                       alt="..."
+                      scr="<?php echo $gravatar; ?>"
+                       alt="Gravatar"
                      />
                    </div>
                    <div class="card-body">
