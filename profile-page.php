@@ -141,7 +141,8 @@
                  <div class="card card-user">
                    <div class="card-image">
                      <?php
-                   $gravatar="https://www.gravatar.com/avatar/".($email)."?s=100&";?>
+                   $gravatar="https://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?s=100&";?>
+                   <!-- test -->
                      <img
                       scr="<?php echo $gravatar; ?>"
                        alt="Gravatar"
