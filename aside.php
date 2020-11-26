@@ -10,7 +10,7 @@
   $sql ="SELECT * from users WHERE user_active=1";
   $stmt = $conn->query($sql);
   $row = $stmt->fetch();
-  var_dump($row);
+ 
   ?>
  
 
@@ -93,28 +93,16 @@
                 active user
               </div>
               <ul class="list-group list-group-flush user_active">
-              
+              <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
                 <li class="list-group-item">
                   <div class="box_post box_image">
                     <div class="img active"></div>
-                    <p class="neck_name text-capitalize mt-2">#mohnhyfgf</p>
+                    <p class="neck_name text-capitalize mt-2"><?php echo ($row["nickname"]);?></p>
                     <p class="help text-capitalize">here to help</p>
                   </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="box_post box_image">
-                    <div class="img"></div>
-                    <p class="neck_name text-capitalize mt-2">#colnhyfgf</p>
-                    <p class="help text-capitalize">here to help</p>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="box_post box_image">
-                    <div class="img"></div>
-                    <p class="neck_name text-capitalize mt-2">#egohnhyfgf</p>
-                    <p class="help text-capitalize">here to help</p>
-                  </div>
-                </li>
+                </li><?php endwhile; ?>
+               
+               
               </ul>
             </div>
             <!-- End Last Active User-->
