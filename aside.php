@@ -11,7 +11,7 @@
   $stmt2 = $conn->query($sql);
   $row = $stmt2->fetch();
 
-  $nickname = arra();
+  $nickname = array();
 
               
   while($row = $stmt2->fetch(PDO::FETCH_ASSOC)) 
