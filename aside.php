@@ -63,9 +63,6 @@
               </div>
             </div>
             <!-- End Author -->
-
-            <div class="line"></div>
-
 <div class="card">
   <div class="card-header last_post text-capitalize">last post</div>
   <ul class="list-group list-group-flush">
