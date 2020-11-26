@@ -140,10 +140,8 @@
                <div class="col-md-4">
                  <div class="card card-user">
                    <div class="card-image">
-                     <?php
-                   $gravatar="http://2.gravatar.com/avatar/".md5($email)."?s=100&";?>
-                     <img
-                      scr="<?php echo $gravatar; ?>"
+                     <img id="avatar"
+                      scr=""
                        alt="Gravatar"
                      />
                    </div>
@@ -167,5 +165,6 @@
 
          </div>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         <script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
          <script src="profile-page.js"></script>
          <?php include("footer.php"); ?>
