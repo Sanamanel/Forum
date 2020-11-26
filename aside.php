@@ -89,7 +89,7 @@ var_dump($row);
 
             <div class="card">
               <div class="card-header last_post text-capitalize">
-                last active user
+                active user
               </div>
               <ul class="list-group list-group-flush user_active">
               <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
