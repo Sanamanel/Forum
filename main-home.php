@@ -21,370 +21,98 @@
 
            <?php
 
-            //---Start Board
-            $sql = 'select * from board ';  // Fetch All Rows From Board Table
+        
+            $sql = 'select board.id as boardId,board.name as boardName,topics.title as topicTitle,topics.content as topicContent,topics.modification_date as topicModificationDate from board inner join topics on topics.board_id = board.id order by board.id ';  //Get all boards - topics - datas
    
             $result = $conn->query($sql);    // Connect to Database and Query from Database
         
-            $cats = array();                  //This Array Stor all Categories
-            $cats_id = array();                  //This Array Stor all Categories
-            $counter=0;
+           $previousBoardId = NULL; //Store the previous board id, will be used to detect if we change board
 
             while ($row = $result->fetch()) {
-              if($counter<sizeof($row)){
-                $cats[$counter] = $row['name'];  //Stor Only The Name of Categories to Array
-                $cats_id [$counter] = $row['id'];  //Stor Only The Id of Categories to Array
-                $counter++;
-              }
+                  $boardId = $row['boardId'];
+                  $boardName = $row['boardName'];
+                  $topicTitle = $row['topicTitle'];
+                  $topicContent = $row['topicContent'];
+                  $topicModificationDate = $row['topicModificationDate'];
 
+                  if($previousBoardId != $boardId) //When we change board
+                    {
+                      
+                      if (!is_null($previousBoardId)) //End of previous board
+                        ?></div><?php
+
+                      ?><h2 class="text-muted font-weight-bold"><?php echo $boardName  ?></h2> <div class="d-flex flex-row flex-wrap justify-content-center"><?php
+                      $previousBoardId = $boardId;
+                    }
+
+                    ?>
+                      <div class="card mx-3" style="width: 15rem">
+                      <div class="card-body">
+                        <h4 class="card-title"><?php echo $topicTitle ?></h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p>
+                          <i
+                            class="fa <?php echo getRandomTopicImageClasses()?> fa-3x pr-3"
+                            aria-hidden="true"
+                          ></i>
+                        </p>
+                        <p class="card-text"><?php echo $topicContent ?></p>
+                        <p class="card-text">
+                      <small class="text-muted"><?php echo getLastModificationText($topicModificationDate) ?></small>
+                        </p>
+                        <a href="./pages/topics.html" class="card-link"
+                          >Card link</a
+                        >
+                        <a href="./pages/topics.html" class="card-link"
+                          >Another link</a
+                        >
+                      </div>
+                      </div>
+                    <?php
+
+              }
+              ?></div></div><?php
+              
+
+
+
+            function getLastModificationText($modificationDate) //Get last modification text
+            {
+              if (is_null($modificationDate))
+                return "";
+              $modifDate  = new DateTime($modificationDate);
+              $nowDate = new DateTime();
+              
+              $interval = $modifDate->diff($nowDate); //Compute time interval between 2 dates
+              return "Last updated " . formatTimeLapse($interval) . " ago";
 
             }
 
-            //--- End Board
-
-            //---Start Topics
-            $titles = array();    //This Array Stor all Title
-            $contents = array();  //This Array Stor all Contents
-            $counter = 0;
-            //$id_of_cat = 0;
-
-              $stm = $conn->prepare('select title,content from topics where board_id = ? ');
-              $stm->execute(array($cats_id[0]));
-
-
+            function formatTimeLapse($interval) //format time lapse
+            {
+              if($interval->d > 0)
+                return $interval->d . " " . "days";
               
+              if($interval->h > 0)
+                return $interval->h . " " . "hours";
 
-              while ($row = $stm->fetch()) {
-                if($counter <= sizeof($row)){
-                  $titles[$counter] = $row['title'];      //Stor Only The Title to Array  $cats[0]
-                  $contents[$counter] = $row['content'];  //Stor Only The Content to Array
-                  $counter++;
-                }
+              if($interval->i > 0)
+                return $interval->i. " " . "minutes";
 
-              }
-             
-              $counter=0;;
-                //---------------- Normal ------------------
-              $m = array();
-              $n = array();
-                  $stm1 = $conn->prepare('select title,content from topics where board_id = ? ');
-                  $stm1->execute(array($cats_id[1]));
+            }
 
-                while ($row = $stm1->fetch()) {
-                  if($counter <= sizeof($row)){
-                    $m[$counter] = $row["title"];      //Stor Only The Title to Array
-                    $n[$counter] = $row["content"];  //Stor Only The Content to Array
-                    $counter++;
-                  }
+            
+            function getRandomTopicImageClasses()
+            {
+              $images_types = array("fa-code","fa-desktop","fa-comments","fa-quote-right","fa-angellist","fa-user-plus","fa-bullhorn","fa-envelope-square");
+              $images_colors = array("text-success","text-warning","text-info","text-primary");
 
-                }
+              $rand_type = array_rand($images_types, 1);
+              $rand_color = array_rand($images_colors, 1);
 
-                $counter=0;
-                //---------------- Design ------------------
-              $d_titles = array();
-              $d_contents = array();
-                  $stm1 = $conn->prepare('select title,content from topics where board_id = ? ');
-                  $stm1->execute(array($cats_id[2]));
-
-                while ($row = $stm1->fetch()) {
-                  if($counter <= sizeof($row)){
-                    $d_titles[$counter] = $row["title"];      //Stor Only The Title to Array
-                    $d_contents[$counter] = $row["content"];  //Stor Only The Content to Array
-                    $counter++;
-                  }
-
-                }
-
-                $counter=0;
-                //---------------- Events ------------------
-              $e_titles = array();
-              $e_contents = array();
-                  $stm1 = $conn->prepare('select title,content from topics where board_id = ? ');
-                  $stm1->execute(array($cats_id[3]));
-
-                while ($row = $stm1->fetch()) {
-                  if($counter <= sizeof($row)){
-                    $e_titles[$counter] = $row["title"];      //Stor Only The Title to Array
-                    $e_contents[$counter] = $row["content"];  //Stor Only The Content to Array
-                    $counter++;
-                  }
-
-                }
+              return $images_types[$rand_type] . " " . $images_colors[$rand_color];
+            }
+           ?>
 
 
-            //--- End Topics
-
-
-          ?>
-              <h2 class="text-muted font-weight-bold"><?php echo $cats[0]  ?></h2>
-
-              <div class="d-flex flex-row flex-wrap justify-content-center">
-                <div class="card mr-2" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $titles[0] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-bell fa-3x text-primary pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text"><?php echo $contents[0] ?></p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $titles[1] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-birthday-cake fa-3x text-success pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text"><?php echo $contents[1] ?></p>
-                    <p class="blockquote-footer">
-                      <small class="text-muted">
-                        Someone famous in
-                        <cite title="Source Title">Source Title</cite>
-                      </small>
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $titles[2] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-bolt fa-3x text-warning pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text"><?php echo $contents[2] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $titles[3] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-bug fa-3x text-info pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text"><?php echo $contents[3] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $titles[4] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-heart fa-3x text-danger pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text"><?php echo $contents[4] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-
-              <h2 class="text-muted font-weight-bold"><?php echo $cats[1] ?></h2>
-              <div class="d-flex flex-row flex-wrap justify-content-center">
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $m[0]  ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-code text-info pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text"><?php echo $n[0] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $m[1]  ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-desktop text-warning pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text"><?php echo $n[1] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h2 class="text-muted font-weight-bold"><?php echo $cats[2] ?></h2>
-              <div class="d-flex flex-row flex-wrap justify-content-center">
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $d_titles[0] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-comments text-success pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text"><?php echo $d_contents[0] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $d_titles[1] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-quote-right text-info pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text"><?php echo $d_contents[1] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $d_titles[2] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-angellist text-primary pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text"><?php echo $d_contents[2] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h2 class="text-muted font-weight-bold"><?php echo $cats[3] ?></h2>
-              <div class="d-flex flex-row flex-wrap justify-content-center">
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $e_titles[0] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-user-plus text-info pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text"><?php echo $e_contents[0] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $e_titles[1] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-
-                    <i
-                      class="fa fa-3x fa-bullhorn text-warning pr-3"
-                      aria-hidden="true"
-                    ></i>
-
-                    <p class="card-text"><?php echo $e_contents[1] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title"><?php echo $e_titles[2] ?></h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-envelope-square text-success pr-3"
-                      aria-hidden="true"
-                    ></i>
-
-                    <p class="card-text"><?php echo $e_contents[2] ?></p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
