@@ -18,10 +18,10 @@
               
   while($row = $stmt2->fetch()) 
   {
-    if($count <= sizeof($row)) {
+   
       $nickname[$count] = $row['nickname'];
       $count++;
-    }
+     
 
   }
 
