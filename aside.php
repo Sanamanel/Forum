@@ -47,9 +47,11 @@
               <div class="widget-body">
                 <div class="media align-items-center">
                   <div class="avatar">
-                    <img
-                      src="./assets/img/hi-chandler.png"
-                      title=""
+                    <?php
+                    $size = 80;
+                    $gravatar = "https://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?"."&s=".$size;?>
+                    <img 
+                      src="<?php echo $gravatar;?>"
                       alt=""
                     />
                   </div>
