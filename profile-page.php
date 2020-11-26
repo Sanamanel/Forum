@@ -140,7 +140,7 @@
                <div class="col-md-4">
                  <div class="card card-user">
                    <div class="card-image">
-                     <img id="avatar"
+                     <img class="mt-5 rounded img-thumbnail mx-auto d-block" id="avatar"
                       scr=""
                        alt="Gravatar"
                      />
