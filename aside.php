@@ -6,8 +6,10 @@
   $sql ="SELECT title,creation_date,SUBSTRING_INDEX(content, '... ', 5) AS resume from topics
   Order by creation_date DESC
   Limit 3";
- 
   $stmt = $conn->query($sql);
+  $sql ="SELECT * from users WHERE user_active=1";
+  $row = $conn->query($sql);
+var_dump($row);
   ?>
  
 
@@ -90,13 +92,14 @@
                 last active user
               </div>
               <ul class="list-group list-group-flush user_active">
+              <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
                 <li class="list-group-item">
                   <div class="box_post box_image">
                     <div class="img active"></div>
                     <p class="neck_name text-capitalize mt-2">#mohnhyfgf</p>
                     <p class="help text-capitalize">here to help</p>
                   </div>
-                </li>
+                </li><?php endwhile; ?>
                 <li class="list-group-item">
                   <div class="box_post box_image">
                     <div class="img"></div>
