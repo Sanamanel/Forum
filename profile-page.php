@@ -165,6 +165,6 @@
 
          </div>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-         <script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
+         <script src="md5.js"></script>
          <script src="profile-page.js"></script>
          <?php include("footer.php"); ?>
