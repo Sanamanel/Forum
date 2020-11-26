@@ -14,9 +14,9 @@
   $row = $stmt2->fetch();
 
   $nickname = array();
-  $count=0;
+  $count = 0;
               
-  while($row = $stmt2->fetch(PDO::FETCH_ASSOC)) 
+  while($row = $stmt2->fetch()) 
   {
     if($count <= sizeof($row)) {
       $nickname[$count] = $row['nickname'];
