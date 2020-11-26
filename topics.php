@@ -1,6 +1,6 @@
 
-<?php require('server.php'); ?>  
-<?php include("header.php"); ?>
+<?php require('connect.php'); 
+     include("header.php"); ?>
 
       <div class="container-fluid">
         <div class="section text-center">
@@ -662,138 +662,7 @@
             <!-- End Sixth Row -->
           </div>
           <!-- Start Side Bar-->
-          <div class="col-md-3">
-            <hr class="hr_first" />
-            <!-- search -->
-            <div class="navbar navbar-expand-lg navbarbtn">
-              <div class="container">
-                <form class="form-inline ml-auto">
-                  <div class="form-group no-border">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Search"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-white btn-just-icon btn-round"
-                  >
-                    <i class="material-icons">search</i>
-                  </button>
-                </form>
-              </div>
-            </div>
-            <!-- Author -->
-            <div class="card">
-              <div class="card-header last_post text-capitalize">Author</div>
-
-              <div class="widget-body">
-                <div class="media align-items-center">
-                  <div class="avatar">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
-                      title=""
-                      alt=""
-                    />
-                  </div>
-                  <div class="media-body">
-                    <h6 class="px-4">
-                      Hello, I'm<br />
-                      Rachel Roth
-                    </h6>
-                  </div>
-                </div>
-                <p class="card_pra px-2">
-                  I design and develop services for customers of all sizes,
-                  specializing in creating stylish, modern websites, web
-                  services and online stores
-                </p>
-              </div>
-            </div>
-
-            <!-- End Author -->
-
-            <div class="line"></div>
-
-            <div class="card">
-              <div class="card-header last_post text-capitalize">last post</div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <div class="box_post">
-                    <h4 class="cat text-capitalize">post-categori3</h4>
-                    <h4 class="hour">2 hours</h4>
-                    <div class="clear_both"></div>
-                    <p class="card_pra">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit
-                    </p>
-                    <span class="tags"
-                      >tags: test <span>workeot repot</span>
-                    </span>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="box_post">
-                    <h4 class="cat text-capitalize">post-categori3</h4>
-                    <h4 class="hour">2 hours</h4>
-                    <div class="clear_both"></div>
-                    <p class="card_pra">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit
-                    </p>
-                    <span class="tags"
-                      >tags: test <span>workeot repot</span>
-                    </span>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="box_post">
-                    <h4 class="cat text-capitalize">post-categori3</h4>
-                    <h4 class="hour">2 hours</h4>
-                    <div class="clear_both"></div>
-                    <p class="card_pra">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit
-                    </p>
-                    <span class="tags"
-                      >tags: test <span>workeot repot</span>
-                    </span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Start Last Active User-->
-
-            <div class="card">
-              <div class="card-header last_post text-capitalize">
-                last active user
-              </div>
-              <ul class="list-group list-group-flush user_active">
-                <li class="list-group-item">
-                  <div class="box_post box_image">
-                    <div class="img active"></div>
-                    <p class="neck_name text-capitalize mt-2">#mohnhyfgf</p>
-                    <p class="help text-capitalize">here to help</p>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="box_post box_image">
-                    <div class="img"></div>
-                    <p class="neck_name text-capitalize mt-2">#colnhyfgf</p>
-                    <p class="help text-capitalize">here to help</p>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="box_post box_image">
-                    <div class="img"></div>
-                    <p class="neck_name text-capitalize mt-2">#egohnhyfgf</p>
-                    <p class="help text-capitalize">here to help</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <!-- End Last Active User-->
-          </div>
-          <!-- End Side Bar-->
+          <?php include("aside.php"); ?>
         </div>
       </div>
       <?php include("footer.php"); ?>
