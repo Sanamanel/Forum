@@ -1,4 +1,5 @@
-<?php require("connect.php");
+<?php 
+      require("connect.php");
       include("server.php");
       include("header.php");
       include("main-home.php");

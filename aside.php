@@ -2,14 +2,12 @@
 
 	
   <?php
-  session_start();
   $sql ="SELECT title,creation_date,SUBSTRING_INDEX(content, '... ', 5) AS resume from topics
   Order by creation_date DESC
   Limit 3";
   $stmt = $conn->query($sql);
   $sql ="SELECT * from users WHERE user_active=1 order by id desc Limit 3";
   $stmt2 = $conn->query($sql);
-  $results = mysqli_query($db, $query);
  
   ?>
  
