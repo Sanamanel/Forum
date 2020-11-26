@@ -7,17 +7,20 @@
   Order by creation_date DESC
   Limit 3";
   $stmt = $conn->query($sql);
+
+
   $sql ="SELECT * from users WHERE user_active=1 Limit 3";
   $stmt2 = $conn->query($sql);
   $row = $stmt2->fetch();
 
   $nickname = array();
-
+  $count=0;
               
   while($row = $stmt2->fetch(PDO::FETCH_ASSOC)) 
   {
-    if($row <= sizeof($row)) {
-      $nickname[0] = $row['nickname'];
+    if($count <= sizeof($row)) {
+      $nickname[$count] = $row['nickname'];
+      $count++;
     }
 
   }
