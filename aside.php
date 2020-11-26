@@ -58,7 +58,7 @@
                   <div class="media-body">
                     <h6>
                       Hello<br />
-                      <?php echo $_SESSION["username"];?> " "!
+                      <?php echo $username;?> !
                     </h6>
                   </div>
                 </div>
