@@ -8,8 +8,8 @@
   Limit 3";
   $stmt = $conn->query($sql);
   $sql ="SELECT * from users WHERE user_active=1";
-  $stmt = $conn->query($sql);
-  $row = $stmt->fetch();
+  $stmt2 = $conn->query($sql);
+  $row = $stmt2->fetch();
  
   ?>
  
@@ -93,7 +93,7 @@
                 active user
               </div>
               <ul class="list-group list-group-flush user_active">
-              <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+              <?php while($row = $stmt2->fetch(PDO::FETCH_ASSOC)) : ?>
                 <li class="list-group-item">
                   <div class="box_post box_image">
                     <div class="img active"></div>
