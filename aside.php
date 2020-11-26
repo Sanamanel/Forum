@@ -1,4 +1,21 @@
 
+
+	
+  <?php
+
+  $sql ="SELECT title,creation_date,SUBSTRING_INDEX(content, '... ', 5) AS resume from topics
+  Order by creation_date DESC
+  Limit 3";
+ 
+  $stmt = $conn->query($sql);
+  ?>
+ 
+
+<!--  3 - Titre des 3 derniers Posts-->
+
+
+
+
 <!-- div aside -->
 <div class="col-lg-3 m-15px-tb blog-aside">
             <!-- search -->
@@ -36,8 +53,10 @@
                     />
                   </div>
                   <div class="media-body">
-
-                    <h6>Ali Mundher saeed</h6>
+                    <h6>
+                      Hello<br />
+                      <? echo $r["nickname"];?>   Chandler Bing!
+                    </h6>
                   </div>
                 </div>
                
@@ -50,54 +69,20 @@
 <div class="card">
   <div class="card-header last_post text-capitalize">last post</div>
   <ul class="list-group list-group-flush">
-
+ 
      
    
-      
+  <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
     <li class="list-group-item">
+
       <div class="box_post">
-        <h4 class="cat text-capitalize">post-categori1</h4>
-        <h4 class="hour">4 hours</h4>
-        <div class="clear_both"> Lorem ipsum dolor sit, amet consectetur adipisicing elit</div>
-        <p class="card_pra">
-
-
-
-        </p>
-        <span class="tags"
-          >tags: test <span>workeot repot</span>
-        </span>
-      </div>
-    </li> 
-
-
-    
-    <li class="list-group-item">
-      <div class="box_post">
-        <h4 class="cat text-capitalize">post-categori3</h4>
-        <h4 class="hour">2 hours</h4>
+        <h4 class="cat text-capitalize"><?php echo htmlspecialchars($row["title"]);?></h4>
+        <h4 class="hour"><?php echo htmlspecialchars($row["creation_date"]);?></h4>
         <div class="clear_both"></div>
-        <p class="card_pra">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit
-        </p>
-        <span class="tags"
-          >tags: test <span>workeot repot</span>
-        </span>
-      </div>
-    </li>
-    <li class="list-group-item">
-      <div class="box_post">
-        <h4 class="cat text-capitalize">post-categori3</h4>
-        <h4 class="hour">2 hours</h4>
-        <div class="clear_both"></div>
-        <p class="card_pra">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit
-        </p>
-        <span class="tags"
-          >tags: test <span>workeot repot</span>
-        </span>
-      </div>
-    </li>
+        <p class="card_pra"><?php echo htmlspecialchars($row["resume"]);?></p>
+        <span class="tags">tags: test <span>workeot repot</span></div></li> <?php endwhile; ?>
+
+<!-- Fin de région à répéter -->  
   </ul>
 </div>
             <!-- Last users -->
