@@ -9,7 +9,7 @@
   $stmt = $conn->query($sql);
   $sql ="SELECT * from users WHERE user_active=1 order by id desc Limit 3";
   $stmt2 = $conn->query($sql);
-  
+  print_r($_SESSION);
  
   ?>
  
