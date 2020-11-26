@@ -140,15 +140,8 @@
                <div class="col-md-4">
                  <div class="card card-user">
                    <div class="card-image">
-<<<<<<< HEAD
                      <img id="avatar"
                       scr=""
-=======
-                     <?php
-                   $gravatar="https://www.gravatar.com/avatar/".md5(strtolower(trim($user["email"])))."?s=100&";?>
-                     <img
-                      scr="<?php echo $gravatar; ?>"
->>>>>>> 5cfe998229b62e2e864409fc7dfcf5f77a05ce55
                        alt="Gravatar"
                      />
                    </div>
