@@ -8,8 +8,9 @@
   Limit 3";
   $stmt = $conn->query($sql);
   $sql ="SELECT * from users WHERE user_active=1";
-  $row = $sql->fetch();
-var_dump($row);
+  $stmt = $conn->query($sql);
+  $row = $stmt->fetch();
+  var_dump($row);
   ?>
  
 
