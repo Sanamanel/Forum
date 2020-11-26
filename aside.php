@@ -2,7 +2,7 @@
 
 	
   <?php
-
+  session_start();
   $sql ="SELECT title,creation_date,SUBSTRING_INDEX(content, '... ', 5) AS resume from topics
   Order by creation_date DESC
   Limit 3";
@@ -58,7 +58,7 @@
                   <div class="media-body">
                     <h6>
                       Hello<br />
-                      <? echo $r["nickname"];?>   Chandler Bing!
+                      <?php echo $_SESSION["username"];?> " "!
                     </h6>
                   </div>
                 </div>
