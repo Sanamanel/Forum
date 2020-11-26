@@ -26,7 +26,6 @@
   }
 
   ?>
- 
 
 <!--  3 - Titre des 3 derniers Posts-->
 
@@ -101,11 +100,26 @@
               </div>
               <ul class="list-group list-group-flush user_active">
               
-
                   <li class="list-group-item">
                     <div class="box_post box_image">
                       <div class="img active"></div>
                       <p class="neck_name text-capitalize mt-2"><?php echo $nickname[0]?></p>
+                      <p class="help text-capitalize">here to help</p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item">
+                    <div class="box_post box_image">
+                      <div class="img active"></div>
+                      <p class="neck_name text-capitalize mt-2"><?php echo $nickname[1]?></p>
+                      <p class="help text-capitalize">here to help</p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item">
+                    <div class="box_post box_image">
+                      <div class="img active"></div>
+                      <p class="neck_name text-capitalize mt-2"><?php echo $nickname[2]?></p>
                       <p class="help text-capitalize">here to help</p>
                     </div>
                   </li>
