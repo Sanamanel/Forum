@@ -49,7 +49,7 @@
                   <div class="avatar">
                     <?php
                     $size = 80;
-                    $gravatar = "https://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?"."&s=".$size;?>
+                    $gravatar = "https://www.gravatar.com/avatar/".md5(strtolower(trim($user['email'])))."?"."&s=".$size;?>
                     <img 
                       src="<?php echo $gravatar;?>"
                       alt=""
