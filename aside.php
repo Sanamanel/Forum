@@ -7,7 +7,7 @@
   Order by creation_date DESC
   Limit 3";
   $stmt = $conn->query($sql);
-  $sql ="SELECT * from users WHERE user_active=1";
+  $sql ="SELECT * from users WHERE user_active=1 Limit 3";
   $stmt2 = $conn->query($sql);
   $row = $stmt2->fetch();
  
