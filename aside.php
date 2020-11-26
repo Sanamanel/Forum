@@ -7,17 +7,27 @@
   Order by creation_date DESC
   Limit 3";
   $stmt = $conn->query($sql);
+
+
   $sql ="SELECT * from users WHERE user_active=1 Limit 3";
   $stmt2 = $conn->query($sql);
   $row = $stmt2->fetch();
- 
+
+  $nickname = array();
+  $count = 0;
+              
+  while($row = $stmt2->fetch()) 
+  {
+   
+      $nickname[$count] = $row['nickname'];
+      $count++;
+     
+
+  }
+
   ?>
- 
 
 <!--  3 - Titre des 3 derniers Posts-->
-
-
-
 
 <!-- div aside -->
 <div class="col-lg-3 m-15px-tb blog-aside">
@@ -66,25 +76,21 @@
               </div>
             </div>
             <!-- End Author -->
-<div class="card">
-  <div class="card-header last_post text-capitalize">last post</div>
-  <ul class="list-group list-group-flush">
- 
-     
-   
-  <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
-    <li class="list-group-item">
+            <div class="card">
+              <div class="card-header last_post text-capitalize">last post</div>
+                  <ul class="list-group list-group-flush">
+                      
+                      <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+                          <li class="list-group-item">
 
-      <div class="box_post">
-        <h4 class="cat text-capitalize"><?php echo htmlspecialchars($row["title"]);?></h4>
-        <h4 class="hour"><?php echo htmlspecialchars($row["creation_date"]);?></h4>
-        <div class="clear_both"></div>
-        <p class="card_pra"><?php echo htmlspecialchars($row["resume"]);?></p>
-        <span class="tags">tags: test <span>workeot repot</span></div></li> <?php endwhile; ?>
-
-<!-- Fin de région à répéter -->  
-  </ul>
-</div>
+                            <div class="box_post">
+                              <h4 class="cat text-capitalize"><?php echo htmlspecialchars($row["title"]);?></h4>
+                              <h4 class="hour"><?php echo htmlspecialchars($row["creation_date"]);?></h4>
+                              <div class="clear_both"></div>
+                              <p class="card_pra"><?php echo htmlspecialchars($row["resume"]);?></p>
+                              <span class="tags">tags: test <span>workeot repot</span></div></li> <?php endwhile; ?>
+                  </ul>
+            </div>
             <!-- Last users -->
             <!-- Start Last Active User-->
 
@@ -93,22 +99,39 @@
                 active user
               </div>
               <ul class="list-group list-group-flush user_active">
-              <?php while($row = $stmt2->fetch(PDO::FETCH_ASSOC)) : ?>
-                <li class="list-group-item">
-                  <div class="box_post box_image">
-                    <div class="img active"></div>
-                    <p class="neck_name text-capitalize mt-2"><?php echo ($row["nickname"]);?></p>
-                    <p class="help text-capitalize">here to help</p>
-                  </div>
-                </li><?php endwhile; ?>
-               
-               
+              
+                  <li class="list-group-item">
+                    <div class="box_post box_image">
+                      <div class="img active"></div>
+                      <p class="neck_name text-capitalize mt-2"><?php echo $nickname[0]?></p>
+                      <p class="help text-capitalize">here to help</p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item">
+                    <div class="box_post box_image">
+                      <div class="img active"></div>
+                      <p class="neck_name text-capitalize mt-2"><?php echo $nickname[1]?></p>
+                      <p class="help text-capitalize">here to help</p>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item">
+                    <div class="box_post box_image">
+                      <div class="img active"></div>
+                      <p class="neck_name text-capitalize mt-2"><?php echo $nickname[2]?></p>
+                      <p class="help text-capitalize">here to help</p>
+                    </div>
+                  </li>
+
               </ul>
             </div>
             <!-- End Last Active User-->
             <!-- End Last users-->
           </div>
-
-          <!-- fin test structure -->
         </div>
-      </div>
+          <!-- fin test structure -->
+       
+  </div>
+
+    
