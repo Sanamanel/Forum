@@ -79,9 +79,9 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="login-space">
                     <div class="login">
                       <div class="group">
-                        <label for="user" class="label">Username</label>
+                        <label for="user" class="label">Email</label>
                         <input
-                          id="login_username"
+                          id="login_email"
                           type="text"
                           class="input"
                           placeholder="Enter your username"

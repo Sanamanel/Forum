@@ -106,11 +106,11 @@
     $db = connectDb();
     //To prevent SQL injection
     
-    $username =  mysqli_real_escape_string($db, $input['username']); 
+    $email =  mysqli_real_escape_string($db, $input['email']); 
     $password = mysqli_real_escape_string($db,$input['password']); 
 
-    //Username & password must be checked in front AND in back.
-    if (empty($username)) { array_push($errors, "Username is required"); } 
+    //Email & password must be checked in front AND in back.
+    if (empty($email)) { array_push($errors, "Email is required"); } 
     if (empty($password)) { array_push($errors, "Password is required"); } 
 
     if (count($errors) == 0) { 
@@ -121,13 +121,13 @@
 
       try {
        
-        $query = "SELECT * FROM users WHERE nickname = '$username' and password_hash = '$password'"; 
+        $query = "SELECT * FROM users WHERE email= '$email' and password_hash = '$password'"; 
         $results = mysqli_query($db, $query); 
-
+       
         if (mysqli_num_rows($results) == 1) { //Login succeed
-                
-          $query = "UPDATE users SET last_login_date =  now() WHERE nickname = '$username'";  
           
+          $query = "UPDATE users SET last_login_date =  now() WHERE email = '$email'";  
+          writeResponse($query);
           //Execute the query, that will insert a new user in table users
           if(!mysqli_query($db, $query)) //if a error occurs
           {
@@ -137,8 +137,10 @@
           }
           else
           {
+            $user=mysqli_fetch_array($results);
+
             // Storing username in session variable 
-            $_SESSION['username'] = $username; 
+            $_SESSION['username'] = $user['nickname']; 
             header("HTTP/1.1 200 OK");
             return;
           }

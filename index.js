@@ -3,10 +3,10 @@
 
     document.getElementById("btn_login").addEventListener("click", async () => {
         document.getElementById("login_errors").innerHTML = "";
-        let usernameValue = document.querySelector("#login_username").value; 
-        if(!usernameValue) // If username is empty, display ar error message
+        let emailValue = document.querySelector("#login_email").value; 
+        if(!emailValue) // If email is empty, display ar error message
         {
-            document.getElementById("login_errors").innerHTML = "Please enter a login";
+            document.getElementById("login_errors").innerHTML = "Please enter an email";
             return;
         }
 
@@ -20,7 +20,7 @@
        
         let content = {
             'action': 'login',
-            'username': usernameValue,
+            'email': emailValue,
             'password': passwordValue
         };
         let contentStr = JSON.stringify(content);
