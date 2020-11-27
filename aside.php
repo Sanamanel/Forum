@@ -105,7 +105,6 @@
                     />
                     </div>
                     <p class="neck_name text-capitalize mt-2"><?php echo ($row["nickname"]);?></p>
-                    <p class="help text-capitalize">here to help</p>
                   </div>
                 </li><?php endwhile; ?>
                
