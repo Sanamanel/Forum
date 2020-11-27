@@ -7,7 +7,17 @@ Copyright 2020 Creative Tim (https://www.creative-tim.com/)
 Coded by Creative Tim
 =========================================================
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-<?php require('connect.php'); 
+<?php session_start(); 
+// If the session variable is empty, this  
+        // means the user is yet to login 
+        // User will be sent to 'login.php' page 
+        // to allow the user to login 
+        if (!isset($_SESSION['username'])) { 
+            header('location: https://led-zepplin-forum.herokuapp.com/'); 
+            exit();
+        } 
+ob_start();
+require('connect.php'); 
      include("header.php"); ?>
 <div class="container">
         <nav aria-label="breadcrumb" role="navigation">
