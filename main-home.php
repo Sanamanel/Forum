@@ -22,7 +22,7 @@
            <?php
 
         
-            $sql = 'select board.id as boardId,board.name as boardName,topics.title as topicTitle,topics.content as topicContent,topics.modification_date as topicModificationDate from board inner join topics on topics.board_id = board.id order by board.id ';  //Get all boards - topics - datas
+            $sql = 'select board.id as boardId,board.name as boardName,topics.title as topicTitle,topics.content as topicContent,topics.modification_date as topicModificationDate from board inner join topics on topics.board_id = board.id order by board.id LIMIT 3';  //Get all boards - topics - datas
    
             $result = $conn->query($sql);    // Connect to Database and Query from Database
         
@@ -60,10 +60,10 @@
                         <p class="card-text">
                       <small class="text-muted"><?php echo getLastModificationText($topicModificationDate) ?></small>
                         </p>
-                        <a href="./pages/topics.php" class="card-link"
+                        <a href="./topics.php" class="card-link"
                           >Card link</a
                         >
-                        <a href="./pages/topics.php" class="card-link"
+                        <a href="./topics.php" class="card-link"
                           >Another link</a
                         >
                       </div>
