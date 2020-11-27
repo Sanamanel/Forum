@@ -29,7 +29,7 @@
 
               ?><h2 class="text-muted font-weight-bold"><?php echo $boardName  ?></h2> <div class="d-flex flex-row flex-wrap justify-content-center"><?php
 
-              $sql = "select topics.title as topicTitle,topics.content as topicContent,topic.id as topicId, topics.modification_date as topicModificationDate from topics where board_id = '$boardId' order by id desc limit 3";  //Get all topics for board
+              $sql = "select topics.title as topicTitle,topics.content as topicContent,topics.id as topicId, topics.modification_date as topicModificationDate from topics where board_id = '$boardId' order by id desc limit 3";  //Get all topics for board
 
               $topics_results = $conn->query($sql); 
               while ($topic_row = $topics_results->fetch()) {
