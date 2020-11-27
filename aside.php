@@ -99,7 +99,7 @@
                 <li class="list-group-item">
                   <div class="box_post box_image">
                     <div class="img active">
-                    <img 
+                    <img class="rounded-circle border border-primary"
                       src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($row['email'])))."?"."&s=80";?>"
                       alt=""
                     />
