@@ -52,7 +52,7 @@
                   <p class="card-text">
                 <small class="text-muted"><?php echo getLastModificationText($topicModificationDate) ?></small>
                   </p>
-                  <a href="./comments.php" class="card-link">All comments</a
+                  <a href="./comments.php?id=<?php echo $boardId?>" class="card-link">All comments</a
                   >
                  
                 </div>
