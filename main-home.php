@@ -22,7 +22,7 @@
            <?php
 
         
-            $sql = 'select board.id as boardId,board.name as boardName,topics.title as topicTitle,topics.content as topicContent,topics.modification_date as topicModificationDate from board inner join topics on topics.board_id = board.id order by board.id LIMIT 3';  //Get all boards - topics - datas
+            $sql = 'select board.id as boardId,board.name as boardName,topics.title as topicTitle,topics.content as topicContent,topics.modification_date as topicModificationDate from board inner join topics on topics.board_id = board.id order by board.id ';  //Get all boards - topics - datas
    
             $result = $conn->query($sql);    // Connect to Database and Query from Database
         
