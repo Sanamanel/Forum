@@ -29,12 +29,13 @@
 
               ?><h2 class="text-muted font-weight-bold"><?php echo $boardName  ?></h2> <div class="d-flex flex-row flex-wrap justify-content-center"><?php
 
-              $sql = "select topics.title as topicTitle,topics.content as topicContent,topics.modification_date as topicModificationDate from topics where board_id = '$boardId' order by id desc limit 3";  //Get all topics for board
+              $sql = "select topics.title as topicTitle,topics.content as topicContent,topic.id as topicId, topics.modification_date as topicModificationDate from topics where board_id = '$boardId' order by id desc limit 3";  //Get all topics for board
 
               $topics_results = $conn->query($sql); 
               while ($topic_row = $topics_results->fetch()) {
                 $topicTitle = $topic_row['topicTitle'];
                 $topicContent = $topic_row['topicContent'];
+                $topicID= $topic_row['topicId'];
                 $topicModificationDate = $topic_row['topicModificationDate'];
                 
                 ?>
@@ -52,7 +53,7 @@
                   <p class="card-text">
                 <small class="text-muted"><?php echo getLastModificationText($topicModificationDate) ?></small>
                   </p>
-                  <a href="./comments.php?id=<?php echo $boardId?>" class="card-link">All comments</a
+                  <a href="./comments.php?id=<?php echo $topicdId?>" class="card-link">All comments</a
                   >
                  
                 </div>
