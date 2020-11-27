@@ -14,7 +14,7 @@
       </div>
       <div class="container mt-3">
         <div class="row">
-          <!-- structure contenu board -->
+          <!-- structure contenu board --->
 
           <div class="col-lg-9 m-15px-tb main-content">
             <div>
