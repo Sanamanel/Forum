@@ -126,10 +126,24 @@
 
         if (mysqli_num_rows($results) == 1) { //Login succeed
                 
-          // Storing username in session variable 
-          $_SESSION['username'] = $username; 
-          header("HTTP/1.1 200 OK");
-          return;
+          $query = "UPDATE users SET last_login_date =  now() WHERE nickname = '$username')";  
+          
+          //Execute the query, that will insert a new user in table users
+          if(!mysqli_query($db, $query)) //if a error occurs
+          {
+            header('HTTP/1.1 500');
+            $error = mysql_error($db);
+            array_push($errors, `An error occurs while logging : ` . $error);
+          }
+          else
+          {
+            // Storing username in session variable 
+            $_SESSION['username'] = $username; 
+            header("HTTP/1.1 200 OK");
+            return;
+          }
+
+          
         } 
         else { 
               
@@ -178,7 +192,7 @@
           
          try {
          
-          $query = "INSERT INTO users (nickname, email, password_hash) VALUES('$username', '$email', '$password')";  
+          $query = "INSERT INTO users (nickname, email, password_hash, last_login_date) VALUES('$username', '$email', '$password', now())";  
           //Execute the query, that will insert a new user in table users
           if(!mysqli_query($db, $query)) //if a error occurs
           {
@@ -280,9 +294,9 @@
       if(!mysqli_query($db, $query)) //if a error occurs
       {
         $error = mysql_error($db);
-        writeResponse("ERROR OCCURS : "  . $error);
+        
         header('HTTP/1.1 500');
-        array_push($errors, `An internal error occurs while updating profile`);
+        array_push($errors, `An internal error occurs while updating profile` . $error );
         
       } 
       else
