@@ -28,7 +28,7 @@
    
       $decoded = json_decode($content, true);
       
-      //call specific function, according to action
+      //call specific function, according to action-
       switch($decoded["action"]) 
       {
         case "login":
