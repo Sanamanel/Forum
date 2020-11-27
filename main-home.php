@@ -64,9 +64,9 @@
               <?php
               }
               ?></div>
-              <button class="btn_custum text-capitalize text-center mb-2">
+             <div class="d-flex justify-content-center"><button class="btn_custum btn btn-center text-capitalize text-center justify-content-center">
                 All topics
-              </button>
+    </button></div> 
               <?php
              
             }
