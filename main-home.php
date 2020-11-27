@@ -64,9 +64,9 @@
               <?php
               }
               ?></div>
-             <div class="d-flex justify-content-end mr-4"><button class="btn btn-primary btn-round btn-center text-capitalize text-center justify-content-center">
+            <a href="./topics.php?"><div class="d-flex justify-content-end mr-4"><button class="btn btn-primary btn-round btn-center text-capitalize text-center justify-content-center">
                 All topics
-    </button></div> 
+    </button></div> </a>
               <?php
              
             }
