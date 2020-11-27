@@ -64,7 +64,7 @@
               <?php
               }
               ?></div>
-             <div class="d-flex justify-content-center"><button class="btn_custum btn btn-center text-capitalize text-center justify-content-center">
+             <div class="d-flex justify-content-center"><button class="btn btn-primary btn-round btn-center text-capitalize text-center justify-content-center">
                 All topics
     </button></div> 
               <?php
