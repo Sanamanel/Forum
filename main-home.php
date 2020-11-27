@@ -53,11 +53,9 @@
                 <small class="text-muted"><?php echo getLastModificationText($topicModificationDate) ?></small>
                   </p>
                   <a href="./topics.php" class="card-link"
-                    >Card link</a
+                    >All comments</a
                   >
-                  <a href="./topics.php" class="card-link"
-                    >Another link</a
-                  >
+                 
                 </div>
                   
                 </div>
