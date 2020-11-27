@@ -59,6 +59,10 @@
                     >Another link</a
                   >
                 </div>
+                    <button class="btn_custum text-capitalize text-center mb-2">
+                      All topics
+                  
+                    </button>
                 </div>
               <?php
               }
