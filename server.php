@@ -126,7 +126,7 @@
 
         if (mysqli_num_rows($results) == 1) { //Login succeed
                 
-          $query = "UPDATE users SET last_login_date =  now() WHERE nickname = '$username')";  
+          $query = "UPDATE users SET last_login_date =  now() WHERE nickname = '$username'";  
           
           //Execute the query, that will insert a new user in table users
           if(!mysqli_query($db, $query)) //if a error occurs
