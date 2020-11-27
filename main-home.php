@@ -52,8 +52,7 @@
                   <p class="card-text">
                 <small class="text-muted"><?php echo getLastModificationText($topicModificationDate) ?></small>
                   </p>
-                  <a href="./topics.php" class="card-link"
-                    >All comments</a
+                  <a href="./comments.php" class="card-link">All comments</a
                   >
                  
                 </div>
@@ -62,7 +61,7 @@
               <?php
               }
               ?></div>
-            <a href="./topics.php?"><div class="d-flex justify-content-end mr-4"><button class="btn btn-primary btn-round btn-center text-capitalize text-center justify-content-center">
+            <a href="./topics.php?<?php echo $boardId?>"><div class="d-flex justify-content-end mr-4"><button class="btn btn-primary btn-round btn-center text-capitalize text-center justify-content-center">
                More about this
     </button></div> </a>
               <?php
