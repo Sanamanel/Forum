@@ -60,10 +60,10 @@
                         <p class="card-text">
                       <small class="text-muted"><?php echo getLastModificationText($topicModificationDate) ?></small>
                         </p>
-                        <a href="./pages/topics.html" class="card-link"
+                        <a href="./pages/topics.php" class="card-link"
                           >Card link</a
                         >
-                        <a href="./pages/topics.html" class="card-link"
+                        <a href="./pages/topics.php" class="card-link"
                           >Another link</a
                         >
                       </div>

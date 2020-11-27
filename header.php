@@ -123,7 +123,7 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
-          <a class="text-white" href="https://led-zepplin-forum.herokuapp.com/" >  <div class="brand">
+          <a class="text-white" href="https://led-zepplin-forum.herokuapp.com/home.php" >  <div class="brand">
             <h1>Led Zeppelin</h1>
             </div></a>
           </div>
