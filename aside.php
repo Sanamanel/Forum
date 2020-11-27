@@ -52,7 +52,7 @@
                 <div class="media align-items-center">
                   <div class="avatar">
        
-                    <img class="rounded-circle" 
+                    <img class="rounded-circle border border-primary" 
                       src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";?>"
                       alt=""
                     />
