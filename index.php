@@ -79,7 +79,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="login-space">
                     <div class="login">
                       <div class="group">
-                        <label for="user" class="label">Email</label>
+                        <label for="email" class="label">Email</label>
                         <input
                           id="login_email"
                           type="text"
