@@ -61,12 +61,13 @@
                 </div>
                   
                 </div>
-                    <button class="btn_custum text-capitalize text-center mb-2">
-                      All topics
-                    </button>
               <?php
               }
-              ?></div><?php
+              ?></div>
+              <button class="btn_custum text-capitalize text-center mb-2">
+                All topics
+              </button>
+              <?php
              
             }
 
