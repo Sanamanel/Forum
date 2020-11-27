@@ -84,7 +84,7 @@ The above copyright notice and this permission notice shall be included in all c
                           id="login_email"
                           type="text"
                           class="input"
-                          placeholder="Enter your username"
+                          placeholder="Enter your email"
                         />
                       </div>
                       <div class="group">
