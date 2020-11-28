@@ -90,18 +90,8 @@ The above copyright notice and this permission notice shall be included in all c
                 >
                   <i class="material-icons">account_box</i> Profile
                 </a>
-                <a
-                  href="https://led-zepplin-forum.herokuapp.com/topics.php"
-                  class="dropdown-item"
-                >
-                  <i class="material-icons">topic</i> Topics
-                </a>
-                <a
-                  href="https://led-zepplin-forum.herokuapp.com/comments.php"
-                  class="dropdown-item"
-                >
-                  <i class="material-icons">comment</i> Comments
-                </a>
+             
+               
               
               </div>
             </li>
