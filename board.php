@@ -1,4 +1,62 @@
+<?php
+require ('connect.php');
+$redirect = false;
+$boardId = 0;
+$board_result = NULL;
 
+if (!isset($_GET["board_id"]))
+{
+    $redirect = true;
+}
+else
+{
+    $boardId = $_GET["board_id"];
+    $sql = "select * from board where id = $boardId";
+    $board_result = $conn->query($sql);
+
+    if ($board_result->rowCount() != 1) $redirect = true;
+}
+
+if ($redirect)
+{
+    header('location: https://led-zepplin-forum.herokuapp.com/home.php');
+    exit();
+}
+
+$boardRow = $board_result->fetch();
+echo $boardRow['name'];
+$sql = "select topics.title as topicTitle,topics.content as topicContent,topics.id as topicId, topics.modification_date as topicModificationDate,users.nickname as authorNickname from topics inner join users on topics.topic_by = users.id where board_id = '$boardId' order by creation_date DESC";
+$topics_results = $conn->query($sql);
+session_start();
+include ("header.php");
+
+function getRandomTopicImageClasses()
+{
+    $images_types = array(
+        "fa-check green ",
+        "fa-check green",
+        "fa-check red",
+        "fa-times gray",
+        "fa-check gray"
+    );
+
+    $rand_type = array_rand($images_types, 1);
+
+    return $images_types[$rand_type];
+}
+
+function getDateDisplay($input)
+{
+  if(is_null($input))
+    return "";
+
+  $date  = new DateTime($input);
+  return date_format($date,"D M j, Y, g:i a");
+}
+
+?>
+  
+  
   <div class="section text-center">
           <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb">
@@ -7,7 +65,7 @@
              
              
               <li class="breadcrumb-item" aria-current="page">
-                <a href="./topics.php?id=1">Topics of General </a>
+                <a href="./board.php?board_id=<?php echo $boardRow["id"] ?>">Topics of <?php echo $boardRow['name'] ?> </a>
               </li>
             </ol>
           </nav>
@@ -16,9 +74,9 @@
         <!-- Start New Topic, Box Search -->
         <div class="row">
           <div class="col-md-9">
-            <h4 class="topic_title mb-3">Topics of General</h4>
+            <h4 class="topic_title mb-3">Topics of <?php echo $boardRow['name'] ?></h4>
             <div class="alert alert-danger my_alert mb-4" role="alert">
-            Forum Rules Of the Général Board
+            Forum rules of the <?php echo $boardRow['name'] ?> Board
             </div>
 
             <!-- Start Row Two -->
@@ -55,7 +113,7 @@
               </div>
 
               <div class="col-md-4 col-sm-12 col-xm-12 text-right count_page">
-                12 topics, pages 1 of 1
+              <?php echo $topics_results->rowCount() ?> topics, pages 1 of 1
               </div>
             </div>
             <!-- End Row Two-->
@@ -129,39 +187,25 @@
               </thead>
               <tbody>
               <?php
-
-$sql = "select topics.title as topicTitle,topics.id as topicId,topics.modification_date as topicModificationDate,users.nickname as topicBy from topics INNER JOIN users on topic_by = users.id  where board_id = '1' order by topicModificationDate DESC";
-$topics_results = $conn->query($sql); 
-$board=$_GET['id'];
-
-
-while ($topic_row = $topics_results->fetch()) {
-$topicTitle = $topic_row['topicTitle'];
-$topicID= $topic_row['topicId'];
-
-$topicModificationDate = $topic_row['topicModificationDate'];
-//$topicModificationDate= date("F j, Y, g:i a");
-
-//var_dump($topicModificationDate);
-$topicBy = $topic_row['topicBy'];
-
+while ($topic_row = $topics_results->fetch())
+{
 ?>
                 <tr>
                   <td class=" ">
                     <div class="row">
                       <div class="col">
                         <i
-                          class="fa frst_i  <?php echo getRandomTopicImageClasses()?> "
+                          class="fa frst_i  <?php echo getRandomTopicImageClasses() ?> "
                           aria-hidden="true"
                         ></i>
                       </div>
   
                       
                       <div class="col-10">
-                        <h5 class="global"><?php echo $topicTitle ?></h5>
+                        <h5 class="global"> <a href="https://led-zepplin-forum.herokuapp.com//topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"  target="_blank"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
                         by
                         <span class="name text-capitalize text-rose"
-                          ><?php echo $topicBy ?></span
+                          ><?php echo $topic_row['authorNickname'] ?></span
                         >
                       </div>
                
@@ -174,326 +218,17 @@ $topicBy = $topic_row['topicBy'];
                     <div class="text_cell">
                       by
                       <span class="text-rose text-capitalize name"
-                        ><?php echo $topicBy ?></span
+                        ><?php echo $topic_row['authorNickname'] ?></span
                       >
-                      <p><?php echo $topicModificationDate ?></p>
+                      <p><?php echo getDateDisplay($topic_row['topicModificationDate']) ?></p>
                     </div>
                   </td>
                 </tr>
-                <?php
-              }
-              ?>
-
-              <?php
-               function getRandomTopicImageClasses()
-               {
-                 $images_types = array("fa-check green ","fa-check green","fa-check red","fa-times gray","fa-check gray");
-                 
-   
-                 $rand_type = array_rand($images_types, 1);
-                 
-   
-                 return $images_types[$rand_type] ;
-               }
-              ?>
-                <tr>
-                  <td class=" ">
-                    <div class="row">
-                      <div class="col">
-                        <i
-                          class="fa fa-check frst_i green"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="col-10">
-                        <h5 class="global">topic unread (mine)</h5>
-                        by
-                        <span class="name text-capitalize text-rose"
-                          >plantes styles</span
-                        >
-                      </div>
-                    </div>
-                  </td>
-
-                  <td>201</td>
-                  <td>201</td>
-                  <td>
-                    <div class="text_cell">
-                      by
-                      <span class="text-rose text-capitalize name"
-                        >plantes styles</span
-                      >
-                      <p>Sun Oct 09, 2016 5:58 pm</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=" ">
-                    <div class="row">
-                      <div class="col">
-                        <i
-                          class="fa fa-check frst_i gray"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="col-10">
-                        <h5 class="global">topic read (mine)</h5>
-                        by
-                        <span class="name text-capitalize text-rose"
-                          >plantes styles</span
-                        >
-                      </div>
-                    </div>
-                  </td>
-
-                  <td>201</td>
-                  <td>201</td>
-                  <td>
-                    <div class="text_cell">
-                      by
-                      <span class="text-rose text-capitalize name"
-                        >plantes styles</span
-                      >
-                      <p>Sun Oct 09, 2016 5:58 pm</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=" ">
-                    <div class="row">
-                      <div class="col">
-                        <i
-                          class="fa fa-check frst_i gray"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="col-10">
-                        <h5 class="global">topic read (mine)</h5>
-                        by
-                        <span class="name text-capitalize text-rose"
-                          >plantes styles</span
-                        >
-                      </div>
-                    </div>
-                  </td>
-
-                  <td>201</td>
-                  <td>201</td>
-                  <td>
-                    <div class="text_cell">
-                      by
-                      <span class="text-rose text-capitalize name"
-                        >plantes styles</span
-                      >
-                      <p>Sun Oct 09, 2016 5:58 pm</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=" ">
-                    <div class="row">
-                      <div class="col">
-                        <i
-                          class="fa fa-check frst_i red"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="col-10">
-                        <h5 class="global">topic unread (located, mine)</h5>
-                        by
-                        <span class="name text-capitalize text-rose"
-                          >plantes styles</span
-                        >
-                        <i
-                          class="fa fa-lock float-right text-primary"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                    </div>
-                  </td>
-
-                  <td>301</td>
-                  <td>401</td>
-                  <td>
-                    <div class="text_cell">
-                      by
-                      <span class="text-rose text-capitalize name"
-                        >plantes styles</span
-                      >
-                      <p>Sun Oct 08, 2017 7:58 pm</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=" ">
-                    <div class="row">
-                      <div class="col">
-                        <i
-                          class="fa fa-check frst_i red"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="col-10">
-                        <h5 class="global">topic unread (located, mine)</h5>
-                        by
-                        <span class="name text-capitalize text-rose"
-                          >plantes styles</span
-                        >
-                        <i
-                          class="fa fa-lock float-right text-primary"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                    </div>
-                  </td>
-
-                  <td>101</td>
-                  <td>701</td>
-                  <td>
-                    <div class="text_cell">
-                      by
-                      <span class="text-rose text-capitalize name"
-                        >plantes styles</span
-                      >
-                      <p>Sun Oct 1, 2016 10:58 pm</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=" ">
-                    <div class="row">
-                      <div class="col">
-                        <i
-                          class="fa fa-times frst_i gray"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="col-10">
-                        <h5 class="global">topic unread (located, mine)</h5>
-                        by
-                        <span class="name text-capitalize text-rose"
-                          >plantes styles</span
-                        >
-                        <i
-                          class="fa fa-lock float-right text-primary"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                    </div>
-                  </td>
-
-                  <td>107</td>
-                  <td>701</td>
-                  <td>
-                    <div class="text_cell">
-                      by
-                      <span class="text-rose text-capitalize name"
-                        >plantes styles</span
-                      >
-                      <p>Sun Oct 1, 2016 10:58 pm</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=" ">
-                    <div class="row">
-                      <div class="col">
-                        <i
-                          class="fa fa-times frst_i gray"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="col-10">
-                        <h5 class="global">topic unread (located, mine)</h5>
-                        by
-                        <span class="name text-capitalize text-rose"
-                          >plantes styles</span
-                        >
-                        <i
-                          class="fa fa-lock float-right text-primary"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                    </div>
-                  </td>
-
-                  <td>607</td>
-                  <td>701</td>
-                  <td>
-                    <div class="text_cell">
-                      by
-                      <span class="text-rose text-capitalize name"
-                        >plantes styles</span
-                      >
-                      <p>Sun Oct 1, 2016 10:58 pm</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=" ">
-                    <div class="row">
-                      <div class="col">
-                        <i
-                          class="fa fa-check frst_i gray"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="col-10">
-                        <h5 class="global">topic read (mine)</h5>
-                        by
-                        <span class="name text-capitalize text-rose"
-                          >plantes styles</span
-                        >
-                      </div>
-                    </div>
-                  </td>
-
-                  <td>201</td>
-                  <td>201</td>
-                  <td>
-                    <div class="text_cell">
-                      by
-                      <span class="text-rose text-capitalize name"
-                        >plantes styles</span
-                      >
-                      <p>Sun Oct 09, 2016 5:58 pm</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=" ">
-                    <div class="row">
-                      <div class="col">
-                        <i
-                          class="fa fa-check frst_i gray"
-                          aria-hidden="true"
-                        ></i>
-                      </div>
-                      <div class="col-10">
-                        <h5 class="global">topic read (mine)</h5>
-                        by
-                        <span class="name text-capitalize text-rose"
-                          >plantes styles</span
-                        >
-                      </div>
-                    </div>
-                  </td>
-
-                  <td>201</td>
-                  <td>201</td>
-                  <td>
-                    <div class="text_cell">
-                      by
-                      <span class="text-rose text-capitalize name"
-                        >plantes styles</span
-                      >
-                      <p>Sun Oct 09, 2016 5:58 pm</p>
-                    </div>
-                  </td>
-                </tr>
-              
-              
-               
+<?php
+}
+?>
+ 
+    
                
               </tbody>
             </table>
@@ -532,7 +267,7 @@ $topicBy = $topic_row['topicBy'];
               <div
                 class="col-md-6 col-sm-12 col-xm-12 text-right text-capitalize count_page"
               >
-                12 topics, pages 1 of 1
+              <?php echo $topics_results->rowCount() ?> topics, pages 1 of 1
               </div>
             </div>
             <!-- End Fiveth Row -->
@@ -559,8 +294,8 @@ $topicBy = $topic_row['topicBy'];
                     Jumb to
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropd">
-                    <a class="dropdown-item" href="../index.html">Board</a>
-                    <a class="dropdown-item" href="./profile-page.html"
+                    <a class="dropdown-item" href="../index.php">Board</a>
+                    <a class="dropdown-item" href="./profile-page.php"
                       >Profile</a
                     >
                     <a class="dropdown-item" href="#">Something else here</a>
@@ -568,5 +303,12 @@ $topicBy = $topic_row['topicBy'];
                 </div>
               </div>
             </div>
-          
-          
+
+                    
+            <!-- End Sixth Row -->
+          </div>
+          <!-- Start Side Bar-->
+          <?php include ("aside.php"); ?>
+        </div>
+      </div>
+      <?php include ("footer.php"); ?>

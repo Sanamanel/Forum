@@ -190,6 +190,7 @@
      
      //If no validation error, register the user
      if (count($errors) == 0) { 
+        
          $password = getHash($password); 
           
          try {
@@ -288,7 +289,7 @@
         $query .= ", birthdate = null ";
 
       if (!empty($password)) { 
-        $password = md5($password);
+        $password = getHash($password);
         $query .= ", password_hash = '$password' ";
       }
       $query .= " where nickname = '$username'"; 
@@ -322,7 +323,7 @@
   //TODO  It's currently a MD5, but that not secure enough. Must be improved . (with salt)
   function getHash($toBeHashed)
   {
-      return md5($toBeHashed);
+    return hash('sha512', $toBeHashed);
   }
 
 
