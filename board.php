@@ -204,7 +204,7 @@ while ($topic_row = $topics_results->fetch())
   
                       
                       <div class="col-10">
-                        <h5 class="global"> <a href="https://led-zepplin-forum.herokuapp.com//topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"  target="_blank"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
+                        <h5 class="global"> <a href="https://led-zepplin-forum.herokuapp.com//topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
                         by
                         <span class="name text-capitalize text-rose"
                           ><?php echo $topic_row['authorNickname'] ?></span
