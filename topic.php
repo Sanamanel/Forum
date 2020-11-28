@@ -29,17 +29,17 @@ The above copyright notice and this permission notice shall be included in all c
   
   if ($redirect)
   {
-      header('location: http://localhost:8888/Forum-local/home.php');
+      header('location: https://led-zepplin-forum.herokuapp.com/home.php');
       exit();
   }
   
   $topicRow = $topic_result->fetch();
- 
 
-  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname from messages inner join users on messages.message_by = users.id where topic_id = '$topicId' order by creation_date DESC";
+
+  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
   $messages_results = $conn->query($sql);
-  var_dump($messages_results);
-  //session_start();
+ 
+  session_start();
   include ("header.php");
   function getDateDisplay($input)
   {
@@ -58,7 +58,7 @@ The above copyright notice and this permission notice shall be included in all c
             <li class="breadcrumb-item"><a href="./home.php">Home</a></li>
            
             <li class="breadcrumb-item">
-              <a href="javascript:;"><?php echo $boardRow['name'] ?></a>
+              <a href="./board.php?board_id=<?php echo $boardRow["id"] ?>"><?php echo $boardRow['name'] ?></a>
             </li>
             <li class="breadcrumb-item" aria-current="page">
               <a href="./topic.php?topic_id=<?php echo $topicRow["id"] ?>"><?php echo $topicRow["title"] ?> </a>
@@ -180,21 +180,17 @@ while ($message_row = $messages_results->fetch())
                               <?php echo $message_row['messageContent'] ?>
                               </p>
                             </div>
+
+                           
+                            </div> <!-- end message -->
                             <?php
 }
 ?>
-                            <!-- end message -->
-                          </div>
-                          
-                            
-                          
-                         
-                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-             
+              </div>
               </div>
               <!-- message -->
               <h5 class="mb-30 padding-top-1x">Leave Message</h5>
