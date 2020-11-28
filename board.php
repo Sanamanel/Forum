@@ -24,10 +24,11 @@ if ($redirect)
 }
 
 $boardRow = $board_result->fetch();
-echo $boardRow['name'];
+
 $sql = "select topics.title as topicTitle,topics.content as topicContent,topics.id as topicId, topics.modification_date as topicModificationDate,users.nickname as authorNickname from topics inner join users on topics.topic_by = users.id where board_id = '$boardId' order by creation_date DESC";
 $topics_results = $conn->query($sql);
 session_start();
+ob_start();
 include ("header.php");
 
 function getRandomTopicImageClasses()
