@@ -57,6 +57,7 @@ function getDateDisplay($input)
 ?>
   
   
+<div class="container-fluid">
   <div class="section text-center">
           <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb">
@@ -304,11 +305,11 @@ while ($topic_row = $topics_results->fetch())
               </div>
             </div>
 
-                    
-            <!-- End Sixth Row -->
-          </div>
+
+             <!-- End Sixth Row -->
+             </div>
           <!-- Start Side Bar-->
-          <?php include ("aside.php"); ?>
+          <?php include("aside.php"); ?>
         </div>
       </div>
-      <?php include ("footer.php"); ?>
+      <?php include("footer.php"); ?>
