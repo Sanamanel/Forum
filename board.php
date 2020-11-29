@@ -77,7 +77,7 @@ function getDateDisplay($input)
         <div class="row">
           <div class="col-md-9">
             <h4 class="topic_title mb-3">Topics of <?php echo $boardRow['name'] ?></h4>
-            <div class="alert alert-danger my_alert mb-4" role="alert">
+            <div class="alert alertnew mb-4" role="alert">
             Forum rules of the <?php echo $boardRow['name'] ?> Board
             </div>
 
@@ -204,7 +204,7 @@ while ($topic_row = $topics_results->fetch())
   
                       
                       <div class="col-10">
-                        <h5 class="global"> <a href="https://led-zepplin-forum.herokuapp.com//topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
+                        <h5 class="global"> <a class="text-dark" href="https://led-zepplin-forum.herokuapp.com//topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
                         by
                         <span class="name text-capitalize text-rose"
                           ><?php echo $topic_row['authorNickname'] ?></span
