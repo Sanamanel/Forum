@@ -30,7 +30,7 @@ ob_start();
   else
   {
       $topicId = $_GET["topic_id"];
-      $sql = "select * from topics where id = $topicId";
+      $sql = "select topics.id as topicId,topics.title as topicTitle,topics.content as topicContent,board.id as boardId,board.name as boardName from topics inner join board on topics.board_id = board.id where topics.id = $topicId";
       $topic_result = $conn->query($sql);
      
   
@@ -68,10 +68,10 @@ ob_start();
             <li class="breadcrumb-item"><a href="./home.php">Home</a></li>
            
             <li class="breadcrumb-item">
-              <a href="./board.php?board_id=<?php echo $boardRow["id"] ?>"><?php echo $boardRow['name'] ?></a>
+              <a href="./board.php?board_id=<?php echo $topicRow["boardId"] ?>"><?php echo $topicRow['boardName'] ?></a>
             </li>
             <li class="breadcrumb-item" aria-current="page">
-              <a href="./topic.php?topic_id=<?php echo $topicRow["id"] ?>"><?php echo $topicRow["title"] ?> </a>
+              <a href="./topic.php?topic_id=<?php echo $topicRow["topicId"] ?>"><?php echo $topicRow["topicTitle"] ?> </a>
             </li>
             
           </ol>
@@ -80,7 +80,7 @@ ob_start();
       <div class="container mt-3">
         <div class="row">
           <div class="col-lg-9">
-            <h4 class="text-left"><?php echo $topicRow['title'] ?></h4>
+            <h4 class="text-left"><?php echo $topicRow['topicTitle'] ?></h4>
             <div class="alert alertnew" role="alert">
               <a href="#" class="alert-link">Forum rules</a>
             </div>
@@ -138,9 +138,9 @@ ob_start();
 
               <div class="row">
                 <div class="col-md-8 mx-auto">
-                  <h2><?php echo $topicRow['title'] ?></h2>
+                  <h2><?php echo $topicRow['topicTitle'] ?></h2>
                   <h4>
-                  <?php echo $topicRow['content'] ?>
+                  <?php echo $topicRow['topicContent'] ?>
                   </h4>
                 </div>
                 <!-- comments -->
@@ -164,10 +164,10 @@ while ($message_row = $messages_results->fetch())
                             <div class="p-2">
                               <span class="round"
                                 ><img
-                                  src="https://i.imgur.com/uIgDDDd.jpg"
+                                  src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message_row['authorEmail'])))."?"."&s=80";?>"
                                   alt="user"
-                                  width="50"
-                              /></span>
+                                  width="50"/> 
+                                </span>
                             </div>
                             <div class="comment-text w-100">
                               <h5><?php echo $message_row['authorNickname'] ?></h5>
@@ -208,16 +208,16 @@ while ($message_row = $messages_results->fetch())
                 <div class="form-group">
                   <textarea
                     class="form-control form-control-rounded"
-                    id="review_text"
+                    id="message_text"
                     rows="8"
                     placeholder="Write your message here..."
                     required=""
                   ></textarea>
                 </div>
                 <div class="text-right">
-                  <button class="btn btn-outline-primary" type="submit">
-                    Submit Message
-                  </button>
+                  <input id="btn_submit" data-topicId="<?php echo $topicId ?>" class="btn btn-primary btn-fill pull-right" value="Submit Message" type="button">
+                    
+                  </input>
                 </div>
               </form>
             </div>
@@ -227,4 +227,5 @@ while ($message_row = $messages_results->fetch())
           <!-- fin test structure -->
         </div>
       </div>
+      <script type="text/javascript" src="./topic.js"></script>
       <?php include("footer.php"); ?>

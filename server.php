@@ -37,6 +37,9 @@
         case "register":
           register($decoded);
           break;  
+        case "create_message":
+            createMessage($decoded);
+            break;  
       }
     }
   
@@ -226,6 +229,56 @@
           header('HTTP/1.1 500');
           array_push($errors, `An internal error occurs while registration : {$exception->getMessage()}`);
             
+        }
+     } 
+     else
+      header("HTTP/1.1 400 Bad Request"); 
+     writeErrors($errors);
+  }
+
+  function createMessage($input) {
+
+    if (!isset($_SESSION['username'])) {  //user is not authenticated, return a 401
+      header('HTTP/1.1 401');
+      return;
+    } 
+
+    global $errors;
+    $db = connectDb();
+
+     $message = mysqli_real_escape_string($db, trim($input['message'])); 
+     $topicId = mysqli_real_escape_string($db, $input['topicId']); 
+     $currentUserName = $_SESSION["username"];
+    
+     //Verify input
+     if (empty($message)) { array_push($errors, "Message is required"); } 
+     
+     //If no validation error, create message
+     if (count($errors) == 0) { 
+        
+       
+         try {
+         
+          $query = "INSERT INTO messages (content,creation_date,message_by,message_topic) VALUES('$message', now(), (select id from users where nickname = '$currentUserName'),$topicId )";  
+    
+          //Execute the query, that will insert a new message in table messages
+          if(!mysqli_query($db, $query)) //if a error occurs
+          {
+           
+              header('HTTP/1.1 500');
+              array_push($errors, 'An internal error occurs while message creation');
+          } 
+          else
+          {
+            header("HTTP/1.1 200 OK");
+            return;
+            
+          }
+        }
+        catch(Exception $exception)
+        {
+          header('HTTP/1.1 500');
+          array_push($errors, `An internal error occurs while registration : {$exception->getMessage()}`);
         }
      } 
      else
