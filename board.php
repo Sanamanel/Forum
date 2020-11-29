@@ -5,7 +5,7 @@ session_start();
         // User will be sent to 'login.php' page 
         // to allow the user to login 
         if (!isset($_SESSION['username'])) { 
-            header('location: http://localhost/forum_bfr/'); 
+            header('https://led-zepplin-forum.herokuapp.com/'); 
             exit();
         } 
 ob_start();
@@ -29,7 +29,7 @@ else
 
 if ($redirect)
 {
-    header('location: http://localhost/forum_bfr/home.php');
+    header('https://led-zepplin-forum.herokuapp.com/');
     exit();
 }
 
@@ -213,7 +213,7 @@ while ($topic_row = $topics_results->fetch())
   
                       
                       <div class="col-10">
-                        <h5 class="global"> <a class="text-dark" href="http://localhost/forum_bfr/topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
+                        <h5 class="global"> <a class="text-dark" href="https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
                         by
                         <span class="name text-capitalize text-rose"
                           ><?php echo $topic_row['authorNickname'] ?></span
