@@ -13,6 +13,15 @@
   $sql = "SELECT email from users WHERE nickname = '$currentUsername'";
   $stmt3 = $conn->query($sql);
   $currentUserRow = $stmt3->fetch(PDO::FETCH_ASSOC);
+  function getDateDisplay($input)
+{
+  if(is_null($input))
+    return "";
+
+  $date  = new DateTime($input);
+  return date_format($date,"D M j, Y, g:i a");
+}
+
   ?>
  
 
@@ -79,7 +88,7 @@
 
       <div class="box_post">
         <h4 class="cat text-capitalize"><?php echo htmlspecialchars($row["title"]);?></h4>
-        <h4 class="hour"><?php echo htmlspecialchars($row["creation_date"]);?></h4>
+        <h4 class="hour"><?php echo getDateDisplay($row["creation_date"]) ?></h4>
         <div class="clear_both"></div>
         <p class="card_pra"><?php echo htmlspecialchars($row["resume"]);?></p>
         <span class="tags">tags: test <span>workeot repot</span></div></li> <?php endwhile; ?>
