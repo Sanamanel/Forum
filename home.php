@@ -9,7 +9,14 @@ session_start();
             exit();
         } 
 ob_start();
- 
+function getDateDisplay($input)
+{
+  if(is_null($input))
+    return "";
+
+  $date  = new DateTime($input);
+  return date_format($date,"D M j, Y, g:i a");
+}
         
 include('connect.php');
 include("header.php");
