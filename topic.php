@@ -46,7 +46,7 @@ ob_start();
   $topicRow = $topic_result->fetch();
 
 
-  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
+  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
   $messages_results = $conn->query($sql);
  
  
@@ -164,7 +164,7 @@ while ($message_row = $messages_results->fetch())
                             <div class="p-2">
                               <span class="round"
                                 ><img
-                                  src="https://i.imgur.com/uIgDDDd.jpg"
+                                  src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message_row['authorEmail'])))."?"."&s=80";?>"
                                   alt="user"
                                   width="50"
                               /></span>
