@@ -8,6 +8,16 @@ Coded by Creative Tim
 =========================================================
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <?php 
+session_start(); 
+// If the session variable is empty, this  
+        // means the user is yet to login 
+        // User will be sent to 'login.php' page 
+        // to allow the user to login 
+        if (!isset($_SESSION['username'])) { 
+            header('location: https://led-zepplin-forum.herokuapp.com/'); 
+            exit();
+        } 
+ob_start();
   require ('connect.php');
   $redirect = false;
   $topicId = 0;
@@ -39,7 +49,7 @@ The above copyright notice and this permission notice shall be included in all c
   $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
   $messages_results = $conn->query($sql);
  
-  session_start();
+ 
   include ("header.php");
   function getDateDisplay($input)
   {

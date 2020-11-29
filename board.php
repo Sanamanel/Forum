@@ -1,4 +1,14 @@
 <?php
+session_start(); 
+// If the session variable is empty, this  
+        // means the user is yet to login 
+        // User will be sent to 'login.php' page 
+        // to allow the user to login 
+        if (!isset($_SESSION['username'])) { 
+            header('location: https://led-zepplin-forum.herokuapp.com/'); 
+            exit();
+        } 
+ob_start();
 require ('connect.php');
 $redirect = false;
 $boardId = 0;
@@ -27,8 +37,7 @@ $boardRow = $board_result->fetch();
 
 $sql = "select topics.title as topicTitle,topics.content as topicContent,topics.id as topicId, topics.modification_date as topicModificationDate,users.nickname as authorNickname from topics inner join users on topics.topic_by = users.id where board_id = '$boardId' order by creation_date DESC";
 $topics_results = $conn->query($sql);
-session_start();
-ob_start();
+
 include ("header.php");
 
 function getRandomTopicImageClasses()
