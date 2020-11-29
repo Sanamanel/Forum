@@ -213,7 +213,7 @@ while ($topic_row = $topics_results->fetch())
   
                       
                       <div class="col-10">
-                        <h5 class="global"> <a class="text-dark" href="https://led-zepplin-forum.herokuapp.com//topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
+                        <h5 class="global"> <a class="text-dark" href="https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
                         by
                         <span class="name text-capitalize text-rose"
                           ><?php echo $topic_row['authorNickname'] ?></span
@@ -286,7 +286,7 @@ while ($topic_row = $topics_results->fetch())
             <!-- Start Sixth Row -->
             <div class="row mt-5">
               <div class="col-md-4 col-sm-12">
-                <a href="../index.html" class="text-capitalize return">
+                <a href="./index.php" class="text-capitalize return">
                   <i class="fa fa-angle-left mr-1" aria-hidden="true"></i>
                   return to board index</a
                 >
