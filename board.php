@@ -305,7 +305,7 @@ while ($topic_row = $topics_results->fetch())
                     Jumb to
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropd">
-                    <a class="dropdown-item" href="../index.php">Board</a>
+                    <a class="dropdown-item" href="./index.php">Board</a>
                     <a class="dropdown-item" href="./profile-page.php"
                       >Profile</a
                     >
