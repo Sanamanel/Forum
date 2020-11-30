@@ -8,7 +8,10 @@ Coded by Creative Tim
 =========================================================
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <?php 
-session_start(); 
+session_start();
+ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL); 
 // If the session variable is empty, this  
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
@@ -189,8 +192,8 @@ while ($message_row = $messages_results->fetch())
                               </div>
                               <p class="m-b-5 m-t-10">
                               <?php 
-                                var_dump($message_row['messageContent']);
-                                $markdowned_comment = Markdown($message_row['messageContent']);
+                                $comment = $message_row['messageContent'];
+                                $markdowned_comment = Markdown($comment);
                                 var_dump($markdowned_comment);
                                 echo $markdowned_comment;
                                 
