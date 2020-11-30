@@ -63,7 +63,7 @@
                       Hello<br />
                       <?php echo $currentUsername; ?> !
                     </h6>
-                  <<a name="" id="" class="btn btn-primary btn-round" href="https://led-zepplin-forum.herokuapp.com/profile-page.php" role="button">My profile </a>  
+                  <a name="" id="" class="btn btn-primary btn-round" href="https://led-zepplin-forum.herokuapp.com/profile-page.php" role="button">My profile </a>  
                   </div>
                 </div>
                
