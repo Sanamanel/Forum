@@ -179,10 +179,18 @@
                       scr=""
                        alt="Gravatar"
                      />
-                     <form action="#upload" method='post' enctype="multipart/form-data">
-<input type="file" name="file"/><br><br>
-	<input type="submit" value="Upload"/>
-</form>
+                     <form class="md-form">
+                       <div class="file-field">
+                         <div class="btn btn-outline-secondary btn-rounded waves-effect btn-sm float-left">
+                           <span>choose photo</span>
+                           <input type="file">
+                         </div>
+                         <div class="file-path-wrapper">
+                           <input class="file-path validate" type="text" placeholder="Upload your file"><br>
+                           <input type="submit" value="Upload"/>
+                         </div>
+                       </div>
+                     </form>  
                    </div>
                    <div class="card-body">
                      <div class="author">
