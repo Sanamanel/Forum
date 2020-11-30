@@ -36,7 +36,7 @@
               document.write(new Date().getFullYear());
             </script>
             , made with <i class="material-icons">favorite</i> by
-            <a href="#" target="_blank">Ali, Caro, Cédric, Rachida </a>
+            <a href="#" target="_blank">Ali, Caro, Cédric, Jonathan, Rachida </a>
           </div>
         </div>
       </div>
