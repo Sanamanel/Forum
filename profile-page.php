@@ -179,7 +179,7 @@
                       scr=""
                        alt="Gravatar"
                      /><br>
-                     <div class="justify-content-center">
+                     <div class="mx-auto">
                      <form action="#upload" method='post' enctype="multipart/form-data">
                       <input type="file" class="btn btn-round btn-outline-primary btn-sm" name="file"/><br><br>
                     	<input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>
