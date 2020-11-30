@@ -189,9 +189,9 @@ while ($message_row = $messages_results->fetch())
                               </div>
                               <p class="m-b-5 m-t-10">
                               <?php 
-                                $markdowned_comment = Markdown($message_row['messageContent']);
-                                echo $markdowned_comment;
-                                var_dump($markdowned_comment);
+                                //$markdowned_comment = Markdown($message_row['messageContent']);
+                                //echo $markdowned_comment;
+                                //var_dump($markdowned_comment);
                               ?>
                               </p>
                             </div>
