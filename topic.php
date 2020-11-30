@@ -194,7 +194,6 @@ while ($message_row = $messages_results->fetch())
                               <?php 
                                 $comment = $message_row['messageContent'];
                                 $markdowned_comment = Michelf\Markdown::defaultTransform($comment);
-                                var_dump($markdowned_comment);
                                 echo $markdowned_comment;
                                 
                               ?>
