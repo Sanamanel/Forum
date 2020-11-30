@@ -11,7 +11,8 @@ session_start();
         if($_GET['board_id'] == 5){
           if($_GET['pass'] != 1234){
 
-            header('HTTP/1.0 403 Forbidden');
+            //header('HTTP/1.0 403 Forbidden');
+            echo 'Access Denied, this board is top secret';
             exit();
           }
         }
