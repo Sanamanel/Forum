@@ -23,7 +23,7 @@
         
         if (isset($name)) {
         
-        $path= 'Uploads/images/';
+        $path= '\Uploads\images\\';
         if (empty($name))
         {
         echo "Please choose a file";
