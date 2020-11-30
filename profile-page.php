@@ -174,7 +174,7 @@
                <!--	Profil Card with gravatard-->
                <div class="col-md-4">
                  <div class="card card-user">
-                   <div class="card-image">
+                   <div class="card-image pl-4">
                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" id="avatar"
                       scr=""
                        alt="Gravatar"
@@ -184,10 +184,10 @@
                      <div class="mx-auto">
                       <form action="#upload" method='post' enctype="multipart/form-data">
                       <div class="custum_file btn btn-round btn-outline-primary btn-sm">
-                        <span class="text-capitalize">upload file</span>
+                        <span class="text-capitalize text-center">upload file</span>
                         <input type="file" class="input_file" name="file"/><br><br>
                       </div>
-                          <input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>
+                          <input type="submit" class="opload_btn  btn btn-round btn-outline-primary btn-sm" value="Upload"/>
                       </form>
                      </div>
 
