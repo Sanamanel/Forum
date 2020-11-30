@@ -51,7 +51,7 @@ ob_start();
  
  
   include ("header.php");
-  require_once "Markdown.inc.php";
+  require_once 'Michelf/Markdown.inc.php';
   function getDateDisplay($input)
   {
     if(is_null($input))
