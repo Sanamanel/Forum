@@ -17,7 +17,7 @@ session_start();
 ob_start();
 require ('connect.php');
 $redirect = false;
-$boardId = is_numeric($_GET["board_id"]) ? intval($_GET["board_id"]): 0;
+$boardId = isset($_GET["board_id"]) && is_numeric($_GET["board_id"]) ? intval($_GET["board_id"]): 0;
 $board_result = NULL;
 
 if (!isset($_GET["board_id"]))
