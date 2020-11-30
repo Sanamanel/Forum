@@ -109,7 +109,7 @@ The above copyright notice and this permission notice shall be included in all c
                         >
                       </div>
                       <div class="group">
-                        <input type="submit" class="button" id="btn_login" value="Sign In" />
+                        <input type="submit" class="button btn" id="btn_login" value="Sign In" />
                       </div>
                       <div id="login_errors" class="text-danger">
                       </div>
