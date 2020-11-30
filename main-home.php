@@ -66,7 +66,7 @@
               }
               ?></div>
               <?php
-                if($boardId != $idDuBoardSecret){
+                if($boardId != 5){
                   echo '<a href="./board.php?board_id='.$boardId.'"><div class="d-flex justify-content-end mr-4"><button class="btn btn-primary btn-round btn-center text-capitalize text-center justify-content-center">More about this</button></div></a>';
                 }
               ?>
