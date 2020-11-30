@@ -191,6 +191,7 @@ while ($message_row = $messages_results->fetch())
                               <?php 
                                 $markdowned_comment = Markdown($message_row['messageContent']);
                                 echo $markdowned_comment;
+                                var_dump($markdowned_comment);
                               ?>
                               </p>
                             </div>
