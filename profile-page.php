@@ -184,6 +184,7 @@
                      <div class="mx-auto">
                       <form action="#upload" method='post' enctype="multipart/form-data">
                       <div class="custum_file btn btn-round btn-outline-primary btn-sm">
+                        <span class="text-capitalize">upload file</span>
                         <input type="file" class="input_file" name="file"/><br><br>
                       </div>
                           <input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>

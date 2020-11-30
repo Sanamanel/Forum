@@ -169,6 +169,6 @@ footer .menu-footer {
 }
 .custum_file .input_file {
   width: 100%;
-  height: 100%;
+  height: 100% !important;
   opacity: 0;
 }
