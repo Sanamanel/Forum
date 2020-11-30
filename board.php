@@ -7,7 +7,13 @@ session_start();
         if (!isset($_SESSION['username'])) { 
             header('https://led-zepplin-forum.herokuapp.com/'); 
             exit();
-        } 
+        }
+        if($_GET['board_id'] == 5){
+          if($_GET['pass'] != 1234){
+            header('https://led-zepplin-forum.herokuapp.com/');
+            exit();
+          }
+        }
 ob_start();
 require ('connect.php');
 $redirect = false;
