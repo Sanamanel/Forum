@@ -37,7 +37,7 @@
         
         else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))
         {
-        if (move_uploaded_file($tmp_name,$_SERVER["DOCUMENT_ROOT"],$path.$name)) {
+        if (move_uploaded_file($tmp_name,$_SERVER["DOCUMENT_ROOT"].$path.$name)) {
         echo 'Uploaded!';
         }
         }
