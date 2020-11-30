@@ -54,7 +54,7 @@ ob_start();
  
  
   include ("header.php");
-  require_once 'Michelf/Markdown.inc.php';
+  
   function getDateDisplay($input)
   {
     if(is_null($input))
@@ -193,6 +193,7 @@ while ($message_row = $messages_results->fetch())
                               <p class="m-b-5 m-t-10">
                               <?php 
                                 $comment = $message_row['messageContent'];
+                                include 'Michelf/Markdown.inc.php';
                                 $markdowned_comment = Markdown::defaultTransform($comment);
                                 var_dump($markdowned_comment);
                                 echo $markdowned_comment;
