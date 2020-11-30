@@ -246,7 +246,8 @@
     global $errors;
     $db = connectDb();
 
-     $message = mysqli_real_escape_string($db, trim($input['message'])); 
+     $commentCorrect = htmlspecialchars($input['message']);
+     $message = mysqli_real_escape_string($db, trim($commentCorrect)); 
      $topicId = mysqli_real_escape_string($db, $input['topicId']); 
      $currentUserName = $_SESSION["username"];
     
