@@ -3,7 +3,7 @@
 
     document.getElementById("btn_submit").addEventListener("click", async () => {
         
-        let messageValue = document.getElementById("message_text").value;
+        let messageValue = document.getElementById("message_text").innerHTML;
         console.log(messageValue); 
         if(!messageValue) // If message is empty, display an alert
         {
