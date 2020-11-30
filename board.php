@@ -10,14 +10,15 @@ session_start();
         }
         if($_GET['board_id'] == 5){
           if($_GET['pass'] != 1234){
-            header('home.php');
+
+            header('HTTP/1.0 403 Forbidden');
             exit();
           }
         }
 ob_start();
 require ('connect.php');
 $redirect = false;
-$boardId = 0;
+$boardId = isset($_GET["board_id"]) && is_numeric($_GET["board_id"]) ? intval($_GET["board_id"]): 0;
 $board_result = NULL;
 
 if (!isset($_GET["board_id"]))
