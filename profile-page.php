@@ -178,11 +178,11 @@
                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" id="avatar"
                       scr=""
                        alt="Gravatar"
-                     />
+                     /><br>
                      <div class="form-inline">
                      <form action="#upload" method='post' enctype="multipart/form-data">
                       <input type="file" class="btn btn-round btn-outline-primary btn-sm" name="file"/><br><br>
-                    	<input type="submit" value="Upload"/>
+                    	<input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>
                      </form>
                      </div>
                    </div>
