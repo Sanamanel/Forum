@@ -163,7 +163,7 @@
                        </div>
                        <input id="btn_save"
                         type="button"
-                         class="btn btn-primary btn-fill pull-right"  value="Update Profile">
+                         class="btn btn-primary btn-round btn-fill pull-right"  value="Update Profile">
                          
                        </input>
                        <div class="clearfix"></div>
