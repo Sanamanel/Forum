@@ -51,7 +51,7 @@ ob_start();
  
  
   include ("header.php");
-  include ("Markdown.php");
+  include ("Markdown.inc.php");
   function getDateDisplay($input)
   {
     if(is_null($input))
