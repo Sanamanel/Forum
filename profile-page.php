@@ -174,7 +174,7 @@
                <!--	Profil Card with gravatard-->
                <div class="col-md-4">
                  <div class="card card-user">
-                   <div class="card-image pl-4">
+                   <div class="card-image">
                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" id="avatar"
                       scr=""
                        alt="Gravatar"

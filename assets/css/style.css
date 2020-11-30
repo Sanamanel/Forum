@@ -187,3 +187,6 @@ footer .menu-footer {
   width: 160px;
   font-size: 1.1em;
 }
+.card-image {
+  padding-left: 8px;
+}
