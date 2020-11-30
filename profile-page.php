@@ -179,12 +179,17 @@
                       scr=""
                        alt="Gravatar"
                      /><br>
+
+
                      <div class="mx-auto">
-                     <form action="#upload" method='post' enctype="multipart/form-data">
-                      <input type="file" class="btn btn-round btn-outline-primary btn-sm" name="file"/><br><br>
-                    	<input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>
-                     </form>
+                      <form action="#upload" method='post' enctype="multipart/form-data">
+                      <div class="custum_file btn btn-round btn-outline-primary btn-sm">
+                        <input type="file" class="input_file" name="file"/><br><br>
+                      </div>
+                          <input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>
+                      </form>
                      </div>
+
                    </div>
                    <div class="card-body">
                      <div class="author">
