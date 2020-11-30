@@ -193,7 +193,7 @@ while ($message_row = $messages_results->fetch())
                               <p class="m-b-5 m-t-10">
                               <?php 
                                 $comment = $message_row['messageContent'];
-                                $markdowned_comment = Markdown($comment);
+                                $markdowned_comment = Markdown::defaultTransform($comment);
                                 var_dump($markdowned_comment);
                                 echo $markdowned_comment;
                                 
