@@ -47,7 +47,7 @@
             <!-- Author -->
             <div class="widget widget-author">
               <div class="widget-title">
-                <h3>User/h3>
+                <h3>User</h3>
               </div>
               <div class="widget-body">
                 <div class="media align-items-center">
