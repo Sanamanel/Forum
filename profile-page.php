@@ -1,5 +1,8 @@
 <?php
         session_start(); 
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL); 
           
         // If the session variable is empty, this  
         // means the user is yet to login 
@@ -23,7 +26,7 @@
         
         if (isset($name)) {
         
-        $path= 'Uploads/images/';
+        $path= '\Uploads\images\\';
         if (empty($name))
         {
         echo "Please choose a file";
