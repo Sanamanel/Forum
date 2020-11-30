@@ -10,6 +10,39 @@
             exit();
         } 
         include("header.php");
+        name= $_FILES['file']['name'];
+
+$tmp_name= $_FILES['file']['tmp_name'];
+
+$position= strpos($name, ".");
+
+$fileextension= substr($name, $position + 1);
+
+$fileextension= strtolower($fileextension);
+
+
+if (isset($name)) {
+
+$path= 'Uploads/images/';
+if (empty($name))
+{
+echo "Please choose a file";
+}
+else if (!empty($name)){
+if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "png") && ($fileextension !== "bmp"))
+{
+echo "The file extension must be .jpg, .jpeg, .png, or .bmp in order to be uploaded";
+}
+
+
+else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))
+{
+if (move_uploaded_file($tmp_name, $path.$name)) {
+echo 'Uploaded!';
+}
+}
+}
+}
 ?>
     
          <div>
@@ -18,11 +51,9 @@
                <ol class="breadcrumb">
                  <i class="fa fa-home mr-1 pt-1 home_icon" aria-hidden="true"></i>
                  <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+               
                  <li class="breadcrumb-item">
-                   <a href="./home.php">Board index</a>
-                 </li>
-                 <li class="breadcrumb-item">
-                   <a href="./profile-page.html">Profile page</a>
+                   <a href="./profile-page.php">Profile page</a>
                  </li>
                </ol>
              </nav>
@@ -144,6 +175,10 @@
                       scr=""
                        alt="Gravatar"
                      />
+                     <form action="#upload" method='post' enctype="multipart/form-data">
+<input type="file" name="file"/><br><br>
+	<input type="submit" value="Upload"/>
+</form>
                    </div>
                    <div class="card-body">
                      <div class="author">
