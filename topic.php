@@ -51,6 +51,7 @@ ob_start();
  
  
   include ("header.php");
+  include ("Markdown.php");
   function getDateDisplay($input)
   {
     if(is_null($input))
@@ -187,7 +188,10 @@ while ($message_row = $messages_results->fetch())
                                 </span>
                               </div>
                               <p class="m-b-5 m-t-10">
-                              <?php echo $message_row['messageContent'] ?>
+                              <?php 
+                                $markdowned_comment = Markdown($message_row['messageContent']);
+                                echo $markdowned_comment;
+                              ?>
                               </p>
                             </div>
 
