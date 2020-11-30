@@ -179,10 +179,12 @@
                       scr=""
                        alt="Gravatar"
                      />
+                     <div class="form-inline">
                      <form action="#upload" method='post' enctype="multipart/form-data">
-                    <input type="file" name="file"/><br><br>
+                      <input type="file" class="btn btn-round btn-outline-primary btn-sm" name="file"/><br><br>
                     	<input type="submit" value="Upload"/>
-                    </form>
+                     </form>
+                     </div>
                    </div>
                    <div class="card-body">
                      <div class="author">
