@@ -10,7 +10,7 @@ session_start();
         }
         if($_GET['board_id'] == 5){
           if($_GET['pass'] != 1234){
-            header('https://led-zepplin-forum.herokuapp.com/');
+            header('home.php');
             exit();
           }
         }
