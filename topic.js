@@ -27,7 +27,8 @@
             complete: function(response) {
                 console.log(response);
                 if (response.status == 200)
-                    window.location.href = baseUrl + `topic.php?topic_id=${topicId}`;
+                    console.log(contentStr);
+                    //window.location.href = baseUrl + `topic.php?topic_id=${topicId}`;
                 else
                 {
                     alert(response.responseText);

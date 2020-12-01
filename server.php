@@ -256,8 +256,7 @@
     $db = connectDb();
 
     $messageHTML =  emoji_entitizer($input['message']);
-    print_r($messageHTML);
-    print_r($input['message']);
+    
 
      $message = mysqli_real_escape_string($db, trim($messageHTML)); 
      $topicId = mysqli_real_escape_string($db, $input['topicId']); 
