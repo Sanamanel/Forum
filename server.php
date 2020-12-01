@@ -251,14 +251,14 @@
       header('HTTP/1.1 401');
       return;
     } 
-
+    $messageHTML =  emoji_entitizer($input['message']);
     global $errors;
     $db = connectDb();
 
-    $messageHTML =  emoji_entitizer($input['message']);
+    
     
 
-     $message = mysqli_real_escape_string($db, trim($messageHTML)); 
+     $message = mysqli_real_escape_string($db, $messageHTML); 
      $topicId = mysqli_real_escape_string($db, $input['topicId']); 
      $currentUserName = $_SESSION["username"];
     
