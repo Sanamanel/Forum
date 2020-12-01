@@ -161,9 +161,9 @@ ob_start();
                         <div class="comment-widgets m-b-20">
                             <!-- start messages -->
                             <?php
-while ($message_row = $messages_results->fetch())
-{
-?>
+                      while ($message_row = $messages_results->fetch())
+                      {
+                      ?>
                           <div class="d-flex flex-row comment-row">
                             <div class="p-2">
                               <span class="round"

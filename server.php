@@ -98,6 +98,8 @@
     $dbpass = 'vkN1eNSWhe';
     $dbdatabase = 'Q2qsa8HqT2';
     $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbdatabase);
+    $db->set_charset('utf8mb4');
+    $db->query("SET NAMES utf8mb4 COLLATE utf8mb4_0900_ai_ci");
     // if(! $db ) {
     //   writeResponse('Internal error. Please contact support.');
     // }
@@ -255,10 +257,8 @@
     global $errors;
     $db = connectDb();
 
-    
-    
 
-     $message = mysqli_real_escape_string($db, $input['message']); 
+     $message = mysqli_real_escape_string($db, trim($input['message'])); 
      $topicId = mysqli_real_escape_string($db, $input['topicId']); 
      $currentUserName = $_SESSION["username"];
     

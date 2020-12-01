@@ -1,5 +1,5 @@
 <?php
-    $mysqlServername = 'mysql:host=remotemysql.com:3306;dbname=Q2qsa8HqT2';
+    $mysqlServername = 'mysql:host=remotemysql.com:3306;dbname=Q2qsa8HqT2;charset=utf8mb4';
     $mysqlUsername = 'Q2qsa8HqT2';
     $mysqlPassword = 'vkN1eNSWhe';
 
