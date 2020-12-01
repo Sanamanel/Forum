@@ -66,37 +66,37 @@
 .emo-like {
   left: 10px;
   transition-delay: 0s;
-  background-image: url("./images/reactions_like.png");
+  background-image: url("../../images/reactions_like.png");
 }
 
 .emo-love {
   left: 68px;
   transition-delay: 0.05s;
-  background-image: url("./images/reactions_love.png");
+  background-image: url("../../images/reactions_love.png");
 }
 
 .emo-haha {
   left: 126px;
   transition-delay: 0.1s;
-  background-image: url("./images/reactions_haha.png");
+  background-image: url("../../images/reactions_haha.png");
 }
 
 .emo-wow {
   left: 184px;
   transition-delay: 0.15s;
-  background-image: url("./images/reactions_wow.png");
+  background-image: url("../../images/reactions_wow.png");
 }
 
 .emo-sad {
   left: 242px;
   transition-delay: 0.2s;
-  background-image: url("./images/reactions_sad.png");
+  background-image: url("../../images/reactions_sad.png");
 }
 
 .emo-angry {
   left: 300px;
   transition-delay: 0.25s;
-  background-image: url("./images/reactions_angry.png");
+  background-image: url("../../images/reactions_angry.png");
 }
 
 .reaction-btn:hover .emoji {
