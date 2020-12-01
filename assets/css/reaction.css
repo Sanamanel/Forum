@@ -202,42 +202,42 @@
 }
 
 .like-btn-like {
-  background-image: url("./images/reaction-small.png");
+  background-image: url("../../images/reactions_like.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: -17px -151px;
 }
 
 .like-btn-love {
-  background-image: url("./images/reaction-small.png");
+  background-image: url("../../images/reaction-small.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: 0 -168px;
 }
 
 .like-btn-haha {
-  background-image: url("./images/reaction-small.png");
+  background-image: url("../../images/reaction-small.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: 0 -151px;
 }
 
 .like-btn-wow {
-  background-image: url("./images/reaction-small.png");
+  background-image: url("../../images/reaction-small.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: -17px -185px;
 }
 
 .like-btn-sad {
-  background-image: url("./images/reaction-small.png");
+  background-image: url("../../images/reaction-small.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: -17px -168px;
 }
 
 .like-btn-angry {
-  background-image: url("./images/reaction-small.png");
+  background-image: url("../../images/reaction-small.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: -17px -117px;
