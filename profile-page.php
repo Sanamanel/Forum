@@ -186,7 +186,7 @@ echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!
                        alt="Gravatar"
                      /><br>
                       <form action="#upload" method='post' enctype="multipart/form-data">
-                        <div class="custom_file btn btn-round btn-outline-primary btn-sm">New avatar
+                        <div class="custom_file btn btn-round btn-outline-primary btn-sm">New avatar --> click here
                           <input type="file" class="custom_file input_file" name="file"/>
                         </div>
                             <input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>
