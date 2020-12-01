@@ -1,8 +1,8 @@
 <?php
         session_start(); 
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL); 
+       // ini_set('display_errors', 1);
+       // ini_set('display_startup_errors', 1);
+       // error_reporting(E_ALL); 
           
         // If the session variable is empty, this  
         // means the user is yet to login 
@@ -13,39 +13,7 @@
             exit();
         } 
         include("header.php");
-        $name= $_FILES['file']['name'];
-
-        $tmp_name= $_FILES['file']['tmp_name'];
-        
-        $position= strpos($name, ".");
-        
-        $fileextension= substr($name, $position + 1);
-        
-        $fileextension= strtolower($fileextension);
-        
-        
-        if (isset($name)) {
-        
-        $path= '/Uploads/images/';
-        if (empty($name))
-        {
-        echo "Please choose a file";
-        }
-        else if (!empty($name)){
-        if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "png") && ($fileextension !== "bmp"))
-        {
-        echo "The file extension must be .jpg, .jpeg, .png, or .bmp in order to be uploaded";
-        }
-        
-        
-        else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))
-        {
-        if (move_uploaded_file($tmp_name,$_SERVER["DOCUMENT_ROOT"].$path.$name)) {
-        echo 'Uploaded!';
-        }
-        }
-        }
-        }
+      
         
 ?>
     
@@ -173,6 +141,44 @@
                </div>
                <!--	Profil Card with gravatard-->
                <div class="col-md-4">
+               <?php
+
+
+$name= $_FILES['file']['name'];
+
+$tmp_name= $_FILES['file']['tmp_name'];
+
+$position= strpos($name, ".");
+
+$fileextension= substr($name, $position + 1);
+
+$fileextension= strtolower($fileextension);
+
+
+if (isset($name)) {
+
+$path= 'Uploads/images/';
+if (empty($name))
+{
+echo '<div class="alert alert-warning rounded rounded-lg" role="alert">Please choose a file</div>';
+}
+else if (!empty($name)){
+if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "png") && ($fileextension !== "bmp"))
+{
+echo '<div class="alert alert-warning rounded rounded-lg" role="alert">The file extension must be .jpg, .jpeg, .png, or .bmp in order to be uploaded</div>';
+}
+
+
+else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))
+{
+if (move_uploaded_file($tmp_name, $path.$name)) {
+echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!</div>';
+}
+}
+}
+}
+
+?>
                  <div class="card card-user">
                    <div class="card-image">
                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" id="avatar"
