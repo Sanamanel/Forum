@@ -163,7 +163,13 @@ footer .menu-footer {
 }
 
 /*Custum Input File*/
-.custom_file .input_file {
+.custom_file  {
+  position: relative;
+  max-width: 100%;
+}
+.input_file {
   opacity: 0;
-  width: 100%;
+  max-width: 100%; 
+  position: relative;
+  left: -80px;
 }
