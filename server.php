@@ -258,7 +258,7 @@
     
     
 
-     $message = mysqli_real_escape_string($db, $input['message']); 
+     $message = mysqli_real_escape_string($db, trim($input['message'])); 
      $topicId = mysqli_real_escape_string($db, $input['topicId']); 
      $currentUserName = $_SESSION["username"];
     
