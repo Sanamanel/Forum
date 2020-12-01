@@ -209,6 +209,16 @@ echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!
                      <p class="description text-center" id="signature_display">
                       
                      </p>
+                     <?php
+
+if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")) {
+echo "The image you uploaded is shown below<br><br>";
+echo "<img src='$path" . "$name'>";
+echo "<br><br>";
+
+}
+
+?>
                    </div>
                  </div>
                </div>
