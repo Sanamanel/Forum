@@ -252,7 +252,7 @@
     global $errors;
     $db = connectDb();
 
-    $messageHTML =  emoji_entitizer($input['message'])
+    $messageHTML =  emoji_entitizer($input['message']);
 
      $message = mysqli_real_escape_string($db, trim($messageHTML)); 
      $topicId = mysqli_real_escape_string($db, $input['topicId']); 
