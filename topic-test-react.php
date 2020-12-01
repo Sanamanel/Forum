@@ -257,7 +257,8 @@ while ($message_row = $messages_results->fetch())
           <!-- fin test structure -->
         </div>
       </div>
+     
       <script type="text/javascript" src="./topic.js"></script>
-      <script type="text/javascript" src="./assets/js/reaction.js"></script>
-      <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+     
+    
       <?php include("footer.php"); ?>
