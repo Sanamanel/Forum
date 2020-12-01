@@ -98,6 +98,7 @@
     $dbpass = 'vkN1eNSWhe';
     $dbdatabase = 'Q2qsa8HqT2';
     $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbdatabase);
+    $db->set_charset('utf8mb4');
     // if(! $db ) {
     //   writeResponse('Internal error. Please contact support.');
     // }
@@ -255,8 +256,6 @@
     global $errors;
     $db = connectDb();
 
-    
-    
 
      $message = mysqli_real_escape_string($db, trim($input['message'])); 
      $topicId = mysqli_real_escape_string($db, $input['topicId']); 
