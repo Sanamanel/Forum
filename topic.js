@@ -5,8 +5,7 @@
         
         let messageValue = String(document.getElementById("message_text").value);
         console.log(messageValue);
-        messageValue = messageValue.replace(/U+/g, "0x");
-        console.log(messageValue); 
+        
         if(!messageValue) // If message is empty, display an alert
         {
             alert("Please enter a message");
