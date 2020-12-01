@@ -185,18 +185,12 @@ echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!
                       scr=""
                        alt="Gravatar"
                      /><br>
-
-
-                     <div class="mx-auto">
                       <form action="#upload" method='post' enctype="multipart/form-data">
-                      <div class="custum_file btn btn-round btn-outline-primary btn-sm">
-                        <span class="text-capitalize text-center">chose file</span>
-                        <input type="file" class="input_file" name="file"/><br><br>
-                      </div>
-                          <input type="submit" class="opload_btn  btn btn-round btn-outline-primary btn-sm" value="Upload"/>
+                        <div class="custom_file btn btn-round btn-outline-primary btn-sm">New avatar
+                          <input type="file" class="custom_file input_file" name="file"/>
+                        </div>
+                            <input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>
                       </form>
-                     </div>
-
                    </div>
                    <div class="card-body">
                      <div class="author">
