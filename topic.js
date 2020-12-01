@@ -3,8 +3,9 @@
 
     document.getElementById("btn_submit").addEventListener("click", async () => {
         
-        let messageValue = document.getElementById("message_text").value;
-        console.log(messageValue); 
+        let messageValue = String(document.getElementById("message_text").value);
+        console.log(messageValue);
+        
         if(!messageValue) // If message is empty, display an alert
         {
             alert("Please enter a message");
