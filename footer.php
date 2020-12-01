@@ -42,10 +42,14 @@
       </div>
     </footer>
     <!--   Core JS Files   -->
+
+
     <script
       src="./assets/js/core/jquery.min.js"
       type="text/javascript"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+
     <script
       src="./assets/js/core/popper.min.js"
       type="text/javascript"
@@ -72,6 +76,11 @@
       type="text/javascript"
     ></script>
     <script>
+
+      $("#message_text").emojioneArea({
+            pickerPosition: "right"
+        });
+
       $(document).ready(function () {
         //init DateTimePickers
         materialKit.initFormExtendedDatetimepickers();
@@ -93,3 +102,5 @@
     </script>
   </body>
 </html>
+
+   

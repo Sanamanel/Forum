@@ -43,6 +43,8 @@ The above copyright notice and this permission notice shall be included in all c
     <link href="./assets/css/topics.css" rel="stylesheet" />
     <link href="./assets/css/comment.css" rel="stylesheet" />
     <link href="./assets/css/style.css" rel="stylesheet" />
+    <!-- Emoji Lib-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css" />
   </head>
 
   <body class="index-page sidebar-collapse">
