@@ -318,7 +318,7 @@ while ($topic_row = $topics_results->fetch())
                              <input id="subject"
                                type="text"
                                class="form-control"
-                               disabled=""
+                               
                                placeholder="Subject"
                              />
                            </div>
