@@ -20,8 +20,7 @@ The above copyright notice and this permission notice shall be included in all c
       rel="apple-touch-icon"
       sizes="76x76"
       href="./assets/img/apple-icon.png"
-    />
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5fc7f882bfc76d001839b41a&product=inline-reaction-buttons-buttons' async='async'></script>
+
     <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Led Zeppellin Forum</title>
