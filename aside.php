@@ -56,7 +56,7 @@
        
                     <img class="rounded-circle border border-primary" 
                       src="<?php 
-                        if(!is_null($currentUserRow['image']) && file_exists('https://led-zepplin-forum.herokuapp.com/Uploads/images/'.$currentUserRow['image'])){
+                        if(!is_null($currentUserRow['image']) && file_exists('./Uploads/images/'.$currentUserRow['image'])){
                           echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$currentUserRow['image'];
                         }
                         else{
