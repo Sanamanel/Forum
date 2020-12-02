@@ -66,6 +66,7 @@
                       ?>"
                       alt=""
                     />
+                    <?php print_r($currentUserRow['image']) ?>
                   </div>
                   <div class="media-body">
                     <h6>
