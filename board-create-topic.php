@@ -73,9 +73,9 @@ function createTopic($input) {
   global $errors;
   $db = connectDb();
 
-
+  $subject = mysqli_real_escape_string($db, trim($input['subject'])); 
    $message = mysqli_real_escape_string($db, trim($input['message'])); 
-   $topicId = mysqli_real_escape_string($db, $input['boardId']); 
+   $boardId = mysqli_real_escape_string($db, $input['boardId']); 
    $currentUserName = $_SESSION["username"];
   
    //Verify input
@@ -87,7 +87,7 @@ function createTopic($input) {
      
        try {
        
-        $query = "INSERT INTO topics (content,creation_date,topic_by,board_id) VALUES('$message', now(), (select id from users where nickname = '$currentUserName'),$boardId )";  
+        $query = "INSERT INTO topics (title,content,creation_date,topic_by,board_id) VALUES('$subject','$message', now(), (select id from users where nickname = '$currentUserName'),$boardId )";  
   
         //Execute the query, that will insert a new message in table messages
         if(!mysqli_query($db, $query)) //if a error occurs
@@ -313,6 +313,15 @@ while ($topic_row = $topics_results->fetch())
                  <!-- create topic -->
               <h5 id="#create-topic" class="mb-30 padding-top-1x">Create a topic</h5>
               <form method="post">
+              <div class="form-group">
+                             <label>Subject</label>
+                             <input id="subject"
+                               type="text"
+                               class="form-control"
+                               disabled=""
+                               placeholder="Subject"
+                             />
+                           </div>
                 <div class="form-group">
                   <textarea
                     class="form-control form-control-rounded"
