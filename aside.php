@@ -60,7 +60,7 @@
                           echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$currentUserRow['image'];
                         }
                         else{
-                          echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($row['email'])))."?"."&s=80";
+                          echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";
                         }
                         
                       ?>"
