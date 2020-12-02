@@ -184,7 +184,7 @@ if (isset($name)) {
       $query=$conn->prepare('UPDATE users
                 SET image = :avatar 
                 WHERE id = :id');
-                $query->bindValue(':avatar',$path.$id.'.'.$fileextension,PDO::PARAM_STR);
+                $query->bindValue(':avatar',$id.'.'.$fileextension,PDO::PARAM_STR);
                 $query->bindValue(':id',$id,PDO::PARAM_INT);
                 $query->execute();
                 $query->CloseCursor();
