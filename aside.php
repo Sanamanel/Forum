@@ -112,7 +112,15 @@
                   <div class="box_post box_image">
                     <div class="img active">
                     <img class="rounded-circle border border-primary"
-                      src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($row['email'])))."?"."&s=80";?>"
+                      src="<?php 
+                        if(is_null($row['image'])){
+                          echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($row['email'])))."?"."&s=80";
+                        }
+                        else{
+                          echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$row['image'];
+                        }
+                        
+                      ?>"
                       alt=""
                     />
                     </div>
