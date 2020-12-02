@@ -159,8 +159,6 @@ if (isset($_FILES['file']['name'])){
 
   $id = $_SESSION['id'];
 
-  print_r($id);
-
 }
 
 if (isset($name)) {
@@ -183,13 +181,13 @@ if (isset($name)) {
       echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!</div>';
       }
 
-      /*$query=$conn->prepare('UPDATE users
+      $query=$conn->prepare('UPDATE users
                 SET image = :avatar 
                 WHERE id = :id');
                 $query->bindValue(':avatar',$path.$id.'.'.$fileextension,PDO::PARAM_STR);
                 $query->bindValue(':id',$id,PDO::PARAM_INT);
                 $query->execute();
-                $query->CloseCursor();*/
+                $query->CloseCursor();
     }
   }
 }
@@ -223,7 +221,7 @@ if (isset($name)) {
 
 if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")) {
 echo "The image you uploaded is shown below<br><br>";
-//echo "<img src='"$path.$id.".".$fileextension"'>";
+echo "<img src='"$path.$id.".".$fileextension"'>";
 echo "<br><br>";
 
 }
