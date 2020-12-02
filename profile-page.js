@@ -23,10 +23,13 @@
                     document.getElementById("signature_display").innerHTML = profile.signature;
                     document.getElementById("fullname_display").innerHTML = `${Strings.orEmpty(profile.firstname)} ${Strings.orEmpty(profile.lastname) }`;
                     
-                    //document.getElementById("avatar").src = "http://2.gravatar.com/avatar/" + md5(profile.email.toLowerCase());
-                    console.log(profile.image);
-                    document.getElementById("avatar").src = "https://led-zepplin-forum.herokuapp.com/Uploads/images/" + profile.image;
-
+                    //If avatar is set, select it or show gravatar
+                    if(profile.image != null){
+                        document.getElementById("avatar").src = "https://led-zepplin-forum.herokuapp.com/Uploads/images/" + profile.image;
+                    }
+                    else{
+                        document.getElementById("avatar").src = "http://2.gravatar.com/avatar/" + md5(profile.email.toLowerCase());
+                    }
                 }
                 else if (response.status == 401 ) // When user is not authenticated, redirect to login page
                     window.location.href = baseUrl + 'index.php';
