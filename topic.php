@@ -51,6 +51,7 @@ ob_start();
 
   $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
   $messages_results = $conn->query($sql);
+  print_r($messages_results);
  
  
   include ("header.php");
