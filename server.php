@@ -148,7 +148,8 @@
             $user=mysqli_fetch_array($results);
 
             // Storing username in session variable 
-            $_SESSION['username'] = $user['nickname']; 
+            $_SESSION['username'] = $user['nickname'];
+            $_SESSION['id'] = $user['id']; 
             header("HTTP/1.1 200 OK");
             return;
           }
