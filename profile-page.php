@@ -11,7 +11,9 @@
         if (!isset($_SESSION['username'])) { 
             header('location: https://led-zepplin-forum.herokuapp.com/'); 
             exit();
-        } 
+        }
+        
+        include("connect.php");
         include("header.php");
       
         
@@ -143,39 +145,51 @@
                <div class="col-md-4">
                <?php
 
+if (isset($_FILES['file']['name'])){
 
-$name= $_FILES['file']['name'];
+  $name= $_FILES['file']['name'];
 
-$tmp_name= $_FILES['file']['tmp_name'];
+  $tmp_name= $_FILES['file']['tmp_name'];
 
-$position= strpos($name, ".");
+  $position= strpos($name, ".");
 
-$fileextension= substr($name, $position + 1);
+  $fileextension= substr($name, $position + 1);
 
-$fileextension= strtolower($fileextension);
+  $fileextension= strtolower($fileextension);
 
+  $id = $_SESSION['id'];
+
+}
 
 if (isset($name)) {
 
-$path= 'Uploads/images/';
-if (empty($name))
-{
-echo '<div class="alert alert-warning rounded rounded-lg" role="alert">Please choose a file</div>';
-}
-else if (!empty($name)){
-if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "png") && ($fileextension !== "bmp"))
-{
-echo '<div class="alert alert-warning rounded rounded-lg" role="alert">The file extension must be .jpg, .jpeg, .png, or .bmp in order to be uploaded</div>';
-}
+  $path= 'Uploads/images/';
+  if (empty($name))
+  {
+    echo '<div class="alert alert-warning rounded rounded-lg" role="alert">Please choose a file</div>';
+  }
+  else if (!empty($name)){
+    if (($fileextension !== "jpg") && ($fileextension !== "jpeg") && ($fileextension !== "png") && ($fileextension !== "bmp"))
+    {
+      echo '<div class="alert alert-warning rounded rounded-lg" role="alert">The file extension must be .jpg, .jpeg, .png, or .bmp in order to be uploaded</div>';
+    }
 
 
-else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))
-{
-if (move_uploaded_file($tmp_name, $path.$name)) {
-echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!</div>';
-}
-}
-}
+    else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))
+    {
+      if (move_uploaded_file($tmp_name, $path.$id.'.'.$fileextension)) {
+      echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!</div>';
+      }
+
+      $query=$conn->prepare('UPDATE users
+                SET image = :avatar 
+                WHERE id = :id');
+                $query->bindValue(':avatar',$path.$id.'.'.$fileextension,PDO::PARAM_STR);
+                $query->bindValue(':id',$id,PDO::PARAM_INT);
+                $query->execute();
+                $query->CloseCursor();
+    }
+  }
 }
 
 ?>
