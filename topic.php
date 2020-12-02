@@ -49,9 +49,9 @@ ob_start();
   $topicRow = $topic_result->fetch();
 
 
-  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
+  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
   $messages_results = $conn->query($sql);
-  print_r($messages_results);
+
  
  
   include ("header.php");
@@ -169,7 +169,17 @@ ob_start();
                             <div class="p-2">
                               <span class="round"
                                 ><img
-                                  src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message_row['authorEmail'])))."?"."&s=80";?>"
+                                  src="<?php //authorId authorAvatar
+
+                                          if(!is_null($message_row['authorAvatar']) && file_exists('./Uploads/images/'.$message_row['authorAvatar'])){
+                                            echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$message_row['authorAvatar'];
+                                          }
+                                          else{
+                                            echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message_row['authorEmail'])))."?"."&s=80";
+                                          }
+                                  
+
+                                  ?>"
                                   alt="user"
                                   width="50"/> 
                                 </span>
