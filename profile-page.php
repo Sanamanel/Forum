@@ -157,7 +157,9 @@ if (isset($_FILES['file']['name'])){
 
   $fileextension= strtolower($fileextension);
 
-  //$id = $_SESSION['id'];
+  $id = $_SESSION['id'];
+
+  print_r($id);
 
 }
 
