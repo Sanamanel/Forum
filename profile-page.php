@@ -221,7 +221,7 @@ if (isset($name)) {
 
 if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")) {
 echo "The image you uploaded is shown below<br><br>";
-echo "<img src='"$path.$id.".".$fileextension"'>";
+//echo "<img src='"$path.$id.".".$fileextension"'>";
 echo "<br><br>";
 
 }
