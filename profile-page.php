@@ -181,13 +181,13 @@ if (isset($name)) {
       echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!</div>';
       }
 
-      $query=$conn->prepare('UPDATE users
+      /*$query=$conn->prepare('UPDATE users
                 SET image = :avatar 
                 WHERE id = :id');
                 $query->bindValue(':avatar',$path.$id.'.'.$fileextension,PDO::PARAM_STR);
                 $query->bindValue(':id',$id,PDO::PARAM_INT);
                 $query->execute();
-                $query->CloseCursor();
+                $query->CloseCursor();*/
     }
   }
 }
