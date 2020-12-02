@@ -24,6 +24,7 @@
                     document.getElementById("fullname_display").innerHTML = `${Strings.orEmpty(profile.firstname)} ${Strings.orEmpty(profile.lastname) }`;
                     
                     //document.getElementById("avatar").src = "http://2.gravatar.com/avatar/" + md5(profile.email.toLowerCase());
+                    console.log(profile.image);
                     document.getElementById("avatar").src = "https://led-zepplin-forum.herokuapp.com/Uploads/images/" + profile.image;
 
                 }
