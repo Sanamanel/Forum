@@ -113,7 +113,7 @@
                     <div class="img active">
                     <img class="rounded-circle border border-primary"
                       src="<?php 
-                        if(!is_null($row['image']) && file_exists('https://led-zepplin-forum.herokuapp.com/Uploads/images/'.$row['image'])){
+                        if(!is_null($row['image']) && file_exists('./Uploads/images/'.$row['image'])){
                           echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$row['image'];
                         }
                         else{
