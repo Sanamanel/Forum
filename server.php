@@ -313,7 +313,7 @@
     $results = mysqli_query($db, $query); 
     if (mysqli_num_rows($results) == 1) { //user has been found in database
       $user=mysqli_fetch_array($results);
-      $profileData = array("email"=> $user['email'], "firstname"=> $user['firstname'], "lastname"=> $user['lastname'],"username"=> $user['nickname'],"signature"=> $user['signature'], "birthdate"=> $user['birthdate'], "country"=> $user['country']); //complete with birthdate and country
+      $profileData = array("email"=> $user['email'], "firstname"=> $user['firstname'], "lastname"=> $user['lastname'],"username"=> $user['nickname'],"signature"=> $user['signature'], "birthdate"=> $user['birthdate'],"image"=> $user['image'], "country"=> $user['country']); //complete with birthdate and country
       header("HTTP/1.1 200 OK");
       writeResponse(json_encode($profileData));
 
