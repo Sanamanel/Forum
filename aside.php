@@ -57,7 +57,7 @@
                     <img class="rounded-circle border border-primary" 
                       src="<?php 
                         if(is_null($currentUserRow['image'])){
-                          echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";
+                          //echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";
                         }
                         else{
                           echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$currentUserRow['image'];
@@ -66,7 +66,7 @@
                       ?>"
                       alt=""
                     />
-                    <?php print_r($currentUserRow['image']) ?>
+          
                   </div>
                   <div class="media-body">
                     <h6>
