@@ -218,12 +218,14 @@ if (isset($name)) {
                       
                      </p>
                      <?php
+if (isset($_FILES['file']['name'])){
 
-if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")) {
-echo "The image you uploaded is shown below<br><br>";
-//echo "<img src='"$path.$id.".".$fileextension"'>";
-echo "<br><br>";
+  if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")) {
+  echo "The image you uploaded is shown below<br><br>";
+  echo "<img src='Uploads/images/"$id.".".$fileextension"'>";
+  echo "<br><br>";
 
+  }
 }
 
 ?>
