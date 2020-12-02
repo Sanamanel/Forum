@@ -113,11 +113,11 @@
                     <div class="img active">
                     <img class="rounded-circle border border-primary"
                       src="<?php 
-                        if(is_null($row['image'])){
-                          echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($row['email'])))."?"."&s=80";
+                        if(!is_null($row['image']) && file_exists('https://led-zepplin-forum.herokuapp.com/Uploads/images/'.$row['image'])){
+                          echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$row['image'];
                         }
                         else{
-                          echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$row['image'];
+                          echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($row['email'])))."?"."&s=80";
                         }
                         
                       ?>"
