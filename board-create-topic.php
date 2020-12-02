@@ -62,7 +62,24 @@ function getRandomTopicImageClasses()
 
     return $images_types[$rand_type];
 }
-//create topic
+//create topic test 2
+
+if(isset($_POST['t_submit'])) {
+  if(isset($_POST['t_subject'],$_POST['t_content'])) {
+    $subject = htmlspecialchars($_POST['t_subject']);
+         $content = htmlspecialchars($_POST['t_content']);
+         if(!empty($subject) AND !empty($content)) {
+            if(strlen($subject) <= 70) {
+               if(isset($_POST['t_mail'])) {
+                  $notif_mail = 1;
+               } else {
+                  $notif_mail = 0;
+               }
+               $ins = $bdd->prepare
+
+} 
+
+//create topic test 1
 function createTopic($input) {
 
   if (!isset($_SESSION['username'])) {  //user is not authenticated, return a 401
@@ -318,7 +335,7 @@ while ($topic_row = $topics_results->fetch())
                              <input id="subject"
                                type="text"
                                class="form-control"
-                               
+                               name="t_subject"
                                placeholder="Subject"
                              />
                            </div>
@@ -326,13 +343,23 @@ while ($topic_row = $topics_results->fetch())
                   <textarea
                     class="form-control form-control-rounded"
                     id="message_text"
+                    name="t_content"
                     rows="8"
                     placeholder="Write your message here..."
                     required=""
                   ></textarea>
                 </div>
+                <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" name="t_mail" type="checkbox" value="">
+                  Notify me by mail
+                  <span class="form-check-sign">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
                 <div class="text-right">
-                  <input id="btn_submit" data-boardId="<?php echo $boardId ?>" class="btn btn-primary btn-fill pull-right" value="Submit Message" type="button">
+                  <input id="btn_submit" name="t_submit" data-boardId="<?php echo $boardId ?>" class="btn btn-primary btn-fill pull-right" value="Submit Message" type="button">
                     
                   </input>
                 </div>

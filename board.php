@@ -205,9 +205,10 @@ function getDateDisplay($input)
                 </tr>
               </thead>
               <tbody>
-              <?php
+              <?php  if($boardId==6){ include "random_board.php";}
+              else { 
 while ($topic_row = $topics_results->fetch())
-{
+{ 
 ?>
                 <tr>
                   <td class=" ">
@@ -240,10 +241,9 @@ while ($topic_row = $topics_results->fetch())
                     </div>
                   </td>
                 </tr>
-<?php
-}
-?>
- 
+                <?php
+} };
+?> 
     
                
               </tbody>
