@@ -57,7 +57,7 @@
                     <img class="rounded-circle border border-primary" 
                       src="<?php 
                         if(!is_null($currentUserRow['image']) && file_exists('./Uploads/images/'.$currentUserRow['image'])){
-                          echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$currentUserRow['image'];
+                          echo "./Uploads/images/".$currentUserRow['image'];
                         }
                         else{
                           echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";
@@ -114,7 +114,7 @@
                     <img class="rounded-circle border border-primary"
                       src="<?php 
                         if(!is_null($row['image']) && file_exists('./Uploads/images/'.$row['image'])){
-                          echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$row['image'];
+                          echo "./Uploads/images/".$row['image'];
                         }
                         else{
                           echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($row['email'])))."?"."&s=80";

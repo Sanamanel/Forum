@@ -172,7 +172,7 @@ ob_start();
                                   src="<?php //authorId authorAvatar
 
                                           if(!is_null($message_row['authorAvatar']) && file_exists('./Uploads/images/'.$message_row['authorAvatar'])){
-                                            echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$message_row['authorAvatar'];
+                                            echo "./Uploads/images/".$message_row['authorAvatar'];
                                           }
                                           else{
                                             echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message_row['authorEmail'])))."?"."&s=80";
