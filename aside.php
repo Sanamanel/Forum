@@ -10,6 +10,7 @@
   $sql ="SELECT * from users WHERE user_active=1 order by last_login_date desc Limit 3";
   $stmt2 = $conn->query($sql);
   $currentUsername = $_SESSION['username'];
+  $currentId = $_SESSION['id'];
   $sql = "SELECT email from users WHERE nickname = '$currentUsername'";
   $stmt3 = $conn->query($sql);
   $currentUserRow = $stmt3->fetch(PDO::FETCH_ASSOC);
@@ -54,7 +55,15 @@
                   <div class="avatar">
        
                     <img class="rounded-circle border border-primary" 
-                      src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";?>"
+                      src="<?php 
+                        if(is_null($currentUserRow['image'])){
+                          echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";
+                        }
+                        else{
+                          echo "https://led-zepplin-forum.herokuapp.com/Uploads/images/".$currentUserRow['image'];
+                        }
+                        
+                      ?>"
                       alt=""
                     />
                   </div>
