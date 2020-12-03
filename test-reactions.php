@@ -7,15 +7,15 @@ session_start();
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
         // to allow the user to login 
-     //   if (!isset($_SESSION['username'])) { 
-          //  header('location: https://led-zepplin-forum.herokuapp.com/'); 
-         //   exit();
-     //   } 
-//ob_start();
+        if (!isset($_SESSION['username'])) { 
+            header('location: https://led-zepplin-forum.herokuapp.com/'); 
+            exit();
+        } 
+ob_start();
 // Here the member id is harcoded.
 // You can integrate your authentication code here to get the logged in member id
 //$member_id = $_SESSION['username'];
-$member_id = 7;
+$member_id = $_SESSION['username'];
 $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
 require_once ("Rate.php");
 $rate = new Rate();

@@ -9,12 +9,12 @@ session_start();
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
         // to allow the user to login 
-       // if (!isset($_SESSION['username'])) { 
-         //   header('location: https://led-zepplin-forum.herokuapp.com/'); 
-           // exit();
-       // } 
-//ob_start();
-$member_id = 7;
+        if (!isset($_SESSION['username'])) { 
+            header('location: https://led-zepplin-forum.herokuapp.com/'); 
+            exit();
+        } 
+ob_start();
+$member_id = $_SESSION['username'];
 if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
     require_once ("Rate.php");
     $rate = new Rate();
