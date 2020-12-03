@@ -14,14 +14,14 @@ class Rate extends DBController
         return $postResult;
     }
 
-    function getRatingByTopic($topic_id)
+    function getRatingByMessage($message_id)
     {
         $query = "SELECT messages.*, COUNT(user_rate.rating) as rating_count, group_concat(distinct rating) as emoji_rating FROM messages LEFT JOIN user_rate ON messages.id = user_rate.message_rate_id WHERE user_rate.message_rate_id = ? GROUP BY user_rate.message_rate_id";
         
         $params = array(
             array(
                 "param_type" => "i",
-                "param_value" => $topic_id
+                "param_value" => $message_id
             )
         );
         
@@ -29,7 +29,7 @@ class Rate extends DBController
         return $postResult;
     }
 
-    function getRatingByTopicForMember($message_id, $member_id)
+    function getRatingByMessageForMember($message_id, $member_id)
     {
         $query = "SELECT * FROM user_rate WHERE message_rate_id = ? AND user_rate_id = ?";
         
