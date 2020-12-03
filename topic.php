@@ -49,7 +49,7 @@ ob_start();
   $topicRow = $topic_result->fetch();
 
 
-  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
+  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar  from messages inner join users on messages.message_by = users.id inner join topic on messages.message_topic = topics.id where message_topic = '$topicId' order by creation_date DESC";
   $messages_results = $conn->query($sql);
 
  
@@ -95,7 +95,7 @@ ob_start();
                 <form method="POST" action="#">
                   <button type="submit" class="btn btn-primary btn-round reply-btn">Lock this topic</button>
                 </form>
-                
+
               </div>
               <button
                 class="btn btn-secondary dropdown-toggle btn-round size-btn"
