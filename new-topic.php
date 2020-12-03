@@ -15,7 +15,7 @@ $terror ='';
          $contenu = htmlspecialchars($_POST['content']);
          if(!empty($sujet) AND !empty($contenu)) {
             if(strlen($sujet) <= 70) {
-               $ins = $sql->prepare('INSERT INTO `topics` (`title`, `creation_date`, `content`, `board_id`, `topic_by`) VALUES(?,NOW(),?,?,?');
+               $ins = $conn->prepare('INSERT INTO `topics` (`title`, `creation_date`, `content`, `board_id`, `topic_by`) VALUES(?,NOW(),?,?,?');
                $ins->execute(array($sujet,$contenu,$_GET['board_id'],$_SESSION['id']));
             } else {
                $terror = "Votre sujet ne peut pas dépasser 70 caractères";
