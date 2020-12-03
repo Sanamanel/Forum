@@ -283,7 +283,7 @@ ob_start();
                       </input>
                     </div>
                   </form>';
-                }
+                })
               ?>
 
               
