@@ -286,14 +286,14 @@ while ($topic_row = $topics_results->fetch())
               }
             ?>
 
-            <form>
+            <form method='POST' action='#'>
             <div class="form-group">
             <p class="font-weight-bold" id="new topic">Post a new topic</p>
 
               <input type="text" name="title" maxlength="70" class="form-control" placeholder="Choose title">
             </div>
             <div class="form-group">
-              <input type="text" name="content" class="form-control" placeholder="Please enter your content">
+              <textarea type="text" name="content" class="form-control" placeholder="Please enter your content">
             </div>
             <div>
             <bouton type="submit" name="tsubmit" class="btn btn-round btn-primary">Submit</button>
