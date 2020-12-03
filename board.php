@@ -224,7 +224,7 @@ while ($topic_row = $topics_results->fetch())
                       </div>
 
                       <div class="lock col">
-                        <a href=""><i class="fa fa-lock" aria-hidden="true"></i></a>
+                        <a href="./board.php?board_id=<?php echo $boardId; ?>"><i class="fa fa-lock" aria-hidden="true"></i></a>
                       </div>
                
                     </div>
