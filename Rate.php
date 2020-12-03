@@ -7,6 +7,8 @@ class Rate extends DBController
     function getAllPost()
     {
         $query = "SELECT topics.*, COUNT(user_rate.rating) as rating_count, group_concat(distinct rating) as emoji_rating FROM topics LEFT JOIN user_rate ON topics.id = user_rate.topic_rate_id GROUP BY topics.id";
+    // $sql = "select messages.*, COUNT(user_rate.rating) as  rating_count, group_concat(distinct rating) as emoji_rating  inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
+       // $messages_results = $conn->query($sql);
         
         $postResult = $this->getDBResult($query);
         return $postResult;

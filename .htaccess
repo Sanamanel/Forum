@@ -1,8 +1,4 @@
 
-<files https://led-zepplin-forum.herokuapp.com/led-conf/connexion.php>
-order allow,deny
-deny from all
-</files>
 # Catch 404 errors
 ErrorDocument 404 https://led-zepplin-forum.herokuapp.com/
 

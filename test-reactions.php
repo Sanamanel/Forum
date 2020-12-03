@@ -19,12 +19,9 @@ $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
 require_once ("Rate.php");
 $rate = new Rate();
 $result = $rate->getAllPost();
+include("header.php");
 ?>
-<HTML>
-<HEAD>
-<TITLE>Facebook Like Emoji Rating with PHP using jQuery AJAX</TITLE>
-<link href="style.css" rel="stylesheet" type="text/css" />
-<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+include("header.php");<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
 <script>
 function showEmojiPanel(obj) {
         $(".emoji-icon-container").hide();
@@ -49,11 +46,7 @@ function addUpdateRating(obj,id) {
 }
 </script>
 
-</HEAD>
-<BODY>
-    <h2>
-        Facebook Like Emoji Rating with PHP using jQuery AJAX
-    </h2>
+
     <table class="demo-table">
         <tbody>
 <?php
@@ -124,5 +117,4 @@ if (! empty($result)) {
 ?>
 </tbody>
     </table>
-</BODY>
-</HTML>
+  <?php include("footer.php"); ?>
