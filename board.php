@@ -222,8 +222,11 @@ while ($topic_row = $topics_results->fetch())
                         <h5 class="global"> <a class="text-dark" href="https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
                         by
                         <span class="name text-capitalize text-rose"
-                          ><?php echo $topic_row['authorNickname'] ?></span
-                        >
+                          ><?php echo $topic_row['authorNickname'] ?></span>
+                      </div>
+
+                      <div class="lock col">
+                        <a href=""><i class="fa fa-lock" aria-hidden="true"></i></a>
                       </div>
                
                     </div>
