@@ -297,7 +297,7 @@ while ($topic_row = $topics_results->fetch())
               </textarea>
             </div>
             <div>
-            <bouton type="submit" name="tsubmit" class="btn btn-round btn-primary">Submit</button>
+            <button type="submit" name="tsubmit" class="btn btn-round btn-primary">Submit</button>
             </div>
             </form>
 
