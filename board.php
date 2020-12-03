@@ -294,6 +294,7 @@ while ($topic_row = $topics_results->fetch())
             </div>
             <div class="form-group">
               <textarea type="text" name="content" class="form-control" placeholder="Please enter your content">
+              </textarea>
             </div>
             <div>
             <bouton type="submit" name="tsubmit" class="btn btn-round btn-primary">Submit</button>
