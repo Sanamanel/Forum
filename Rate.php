@@ -1,5 +1,5 @@
 <?php
-require_once "connect.php";
+require_once "DBController.php";
 
 class Rate extends DBController
 {
