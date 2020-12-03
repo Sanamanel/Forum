@@ -17,6 +17,7 @@ $terror ='';
             if(strlen($sujet) <= 70) {
                $ins = $conn->prepare('INSERT INTO `topics` (`title`, `content`, `board_id`, `topic_by`, `creation_date`) VALUES(?,?,?,?,NOW()');
                $ins->execute(array($sujet,$contenu,$_GET['board_id'],$_SESSION['id']));
+               var_dump($ins);
             } else {
                $terror = "Votre sujet ne peut pas dépasser 70 caractères";
             }
