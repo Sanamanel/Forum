@@ -33,7 +33,7 @@ ob_start();
   else
   {
       $topicId = $_GET["topic_id"];
-      $sql = "select topics.id as topicId,topics.title as topicTitle,topics.content as topicContent,board.id as boardId,board.name as boardName from topics inner join board on topics.board_id = board.id where topics.id = $topicId";
+      $sql = "select topics.id as topicId,topics.title as topicTitle,topics.locked as locked, topics.topic_by as topicAuthor, topics.content as topicContent,board.id as boardId,board.name as boardName from topics inner join board on topics.board_id = board.id where topics.id = $topicId";
       $topic_result = $conn->query($sql);
      
   
@@ -48,9 +48,20 @@ ob_start();
   
   $topicRow = $topic_result->fetch();
 
+  //print_r($topicRow['locked']);
+  //print_r($topicRow['topicAuthor']);
+
 
   $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
   $messages_results = $conn->query($sql);
+
+  //LOCK THE TOPIC
+  if(isset($_POST['tolock'])){
+    print_r('lock is set');
+    if($_POST['tolock']){
+      print_r('and it works');
+    }
+  }
 
  
  
@@ -91,15 +102,16 @@ ob_start();
             </div>
             <div class="row">
               <div>
-                <button
-                  type="button"
-                  class="btn btn-primary btn-round reply-btn"
-                >
-                  Post Reply<span class="material-icons">
-                    undo
-                    <div class="mx-3"></div>
-                  </span>
-                </button>
+              
+              <?php if((!$topicRow['locked']) && ($topicRow['topicAuthor'] == $_SESSION['id'])){
+                echo '<form method="POST" action="#">
+                <input type="hidden" name="tolock" id="tolock" value="true">
+                <button type="submit" class="btn btn-primary btn-round reply-btn">Lock this topic</button>
+              </form>';
+              }
+              ?>
+                
+                
               </div>
               <button
                 class="btn btn-secondary dropdown-toggle btn-round size-btn"

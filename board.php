@@ -43,7 +43,7 @@ if ($redirect)
 
 $boardRow = $board_result->fetch();
 
-$sql = "select topics.title as topicTitle,topics.content as topicContent,topics.id as topicId, topics.modification_date as topicModificationDate,users.nickname as authorNickname from topics inner join users on topics.topic_by = users.id where board_id = '$boardId' order by creation_date DESC";
+$sql = "select topics.title as topicTitle,topics.content as topicContent,topics.id as topicId, topics.modification_date as topicModificationDate, topics.locked as locked, users.nickname as authorNickname from topics inner join users on topics.topic_by = users.id where board_id = '$boardId' order by creation_date DESC";
 $topics_results = $conn->query($sql);
 
 include ("header.php");
@@ -212,7 +212,9 @@ while ($topic_row = $topics_results->fetch())
                   <td class=" ">
                     <div class="row">
                       <div class="col">
-                      
+                        <?php if($topic_row['locked']){
+                          echo '<i class="fa fa-lock" aria-hidden="true"></i>';
+                        }?>
                       </div>
   
                       
@@ -223,9 +225,7 @@ while ($topic_row = $topics_results->fetch())
                           ><?php echo $topic_row['authorNickname'] ?></span>
                       </div>
 
-                      <div class="lock col">
-                        <a href="./board.php?board_id=<?php echo $boardId; ?>"><i class="fa fa-lock" aria-hidden="true"></i></a>
-                      </div>
+                      
                
                     </div>
                   </td>
