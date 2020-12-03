@@ -258,24 +258,37 @@ ob_start();
                 </div>
               </div>
               </div>
+
+
               <!-- message -->
-              <h5 class="mb-30 padding-top-1x">Leave Message</h5>
-              <form method="post">
-                <div class="form-group">
-                  <textarea
-                    class="form-control form-control-rounded"
-                    id="message_text"
-                    rows="8"
-                    placeholder="Write your message here..."
-                    required=""
-                  ></textarea>
-                </div>
-                <div class="text-right">
-                  <input id="btn_submit" data-topicId="<?php echo $topicId ?>" class="btn btn-primary btn-fill pull-right" value="Submit Message" type="button">
-                    
-                  </input>
-                </div>
-              </form>
+              <?php 
+                if(($topicRow['locked']){
+                  echo '<h5 class="mb-30 padding-top-1x">This topic is locked</h5>';
+                }
+                else{
+                  echo '<h5 class="mb-30 padding-top-1x">Leave Message</h5>
+                  <form method="post">
+                    <div class="form-group">
+                      <textarea
+                        class="form-control form-control-rounded"
+                        id="message_text"
+                        rows="8"
+                        placeholder="Write your message here..."
+                        required=""
+                      ></textarea>
+                    </div>
+                    <div class="text-right">
+                      <input id="btn_submit" data-topicId="'.$topicId.'" class="btn btn-primary btn-fill pull-right" value="Submit Message" type="button">
+                        
+                      </input>
+                    </div>
+                  </form>';
+                }
+              ?>
+
+              
+
+
             </div>
           </div>
           <?php include("aside.php"); ?>
