@@ -177,11 +177,12 @@ ob_start();
                             <!-- start messages -->
                             <?php
                       $count = 0;
+                      $lastId = 0;
                       while ($message_row = $messages_results->fetch())
                       {
                         //get if of most recent author
                         if($count == 0){
-                          
+
                           $lastId = $message_row['authorId'];
 
                         }
