@@ -22,6 +22,7 @@ session_start();
         } 
 ob_start();
 
+
   require ('connect.php');
   $redirect = false;
   $topicId = 0;
@@ -65,6 +66,11 @@ ob_start();
     return date_format($date,"D M j, Y, g:i a");
   }
   
+$currentUserName = $_SESSION["username"];
+$emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
+require_once ("Rate.php");
+$rate = new Rate();
+$result = $rate->getAllPost();
   ?>
 <div class="container">
         <nav aria-label="breadcrumb" role="navigation">
