@@ -62,6 +62,8 @@ ob_start();
       //print_r('and it works');
       $lock = $conn->prepare('UPDATE topics SET locked = 1 WHERE id = ? ');
       $lock->execute(array($topicRow['topicId']));
+      header("Location: https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=".$topicRow['topicId']."");
+      exit();
     }
   }
 
