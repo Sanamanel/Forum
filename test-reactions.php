@@ -14,7 +14,8 @@ session_start();
 ob_start();
 // Here the member id is harcoded.
 // You can integrate your authentication code here to get the logged in member id
-$member_id = $_SESSION['username'];
+//$member_id = $_SESSION['username'];
+$member_id = 7;
 $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
 require_once ("Rate.php");
 $rate = new Rate();
@@ -138,7 +139,7 @@ $result = $rate->getAllPost();
       </div>
     </div>
     <div class="main main-raised">
-    <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
 <script>
 function showEmojiPanel(obj) {
         $(".emoji-icon-container").hide();
