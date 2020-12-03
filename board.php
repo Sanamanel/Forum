@@ -102,8 +102,8 @@ function getDateDisplay($input)
             <div class="row">
               <div class="col-md-4 col-sm-12">
                 <div class="col">
-                <a href="new-topic.php?board_id=<?php echo $_GET['board_id'] ; ?>" class="btn btn-round btn-primary">new topic
-                    <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i></a>
+                <a href="#new topic" class="btn btn-round btn-primary">new topic
+                  <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i></a>
                 </div>
               </div>
               <div class="col-md-4 col-sm-12">
@@ -253,40 +253,55 @@ while ($topic_row = $topics_results->fetch())
 
             <!-- Start Fiveth Row -->
             <div class="row mt-5">
-              <div class="col-md-4 col-sm-12">
-                <div class="col">
-                  <button class="btn_custum text-capitalize text-center mb-2">
-                    new topic
-                    <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </div>
               <div class="col-md-2 col-sm-12">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-primary btn-round dropdown-toggle btn_sort"
-                    type="button"
-                    id="drop"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropd">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
                 </div>
-              </div>
-
               <div
                 class="col-md-6 col-sm-12 col-xm-12 text-right text-capitalize count_page"
               >
               <?php echo $topics_results->rowCount() ?> topics, pages 1 of 1
               </div>
             </div>
+
+            <!-- post new topic -->
+            <?php
+               if(isset($_SESSION['id'])) {
+                 if(isset($_POST['tsubmit'])) {
+                    if(isset($_POST['title'],$_POST['content'])) {
+                       $sujet = htmlspecialchars($_POST['title']);
+                       $contenu = htmlspecialchars($_POST['content']);
+                       if(!empty($sujet) AND !empty($contenu)) {
+                          if(strlen($sujet) <= 70) {
+                             $ins = $conn->prepare('INSERT INTO topics(title, content, board_id, topic_by, creation_date, modification_date) VALUES(?,?,?,?,NOW(),NOW())');
+                             $ins->execute(array($sujet,$contenu,$_GET['board_id'],$_SESSION['id']));
+                          } else {
+                             $terror = "Votre sujet ne peut pas dépasser 70 caractères";
+                          }
+                       } else {
+                          $terror = "Veuillez compléter tous les champs";
+                       }
+                    }
+                 }
+              } else {
+                 $terror = "Veuillez vous connecter pour poster un nouveau topic";
+              }
+            ?>
+
+            <form>
+            <div class="form-group">
+            <p class="font-weight-bold" id="new topic">Post a new topic</p>
+
+              <input type="text" name="title" maxlength="70" class="form-control" placeholder="Choose title">
+            </div>
+            <div class="form-group">
+              <input type="text" name="content" class="form-control" placeholder="Please enter your content">
+            </div>
+            <div>
+            <bouton type="submit" name="tsubmit" class="btn btn-round btn-primary">Submit</button>
+            </div>
+            </form>
+
+            <!-- end post new topic -->
+
             <!-- End Fiveth Row -->
 
             <!-- Start Sixth Row -->
@@ -298,27 +313,6 @@ while ($topic_row = $topics_results->fetch())
                 >
               </div>
 
-              <div class="col-md-8 text-right col-sm-12">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-primary btn-round dropdown-toggle btn_sort text-capitalize"
-                    type="button"
-                    id="drop"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Jumb to
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropd">
-                    <a class="dropdown-item" href="./index.php">Board</a>
-                    <a class="dropdown-item" href="./profile-page.php"
-                      >Profile</a
-                    >
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </div>
-              </div>
             </div>
 
 
