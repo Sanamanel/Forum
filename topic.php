@@ -57,9 +57,11 @@ ob_start();
 
   //LOCK THE TOPIC
   if(isset($_POST['tolock'])){
-    print_r('lock is set');
+    //print_r('lock is set');
     if($_POST['tolock']){
-      print_r('and it works');
+      //print_r('and it works');
+      $lock = $conn->prepare('UPDATE topics SET locked = 1 WHERE id = ? ');
+      $lock->execute(array($topicRow['topicId']));
     }
   }
 
