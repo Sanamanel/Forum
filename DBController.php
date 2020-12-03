@@ -15,7 +15,7 @@ class DBController
 
     function __construct()
     {
-        $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);// Connecting to a database
     }
 
     public static function getConnection()

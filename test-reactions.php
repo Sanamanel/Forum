@@ -21,7 +21,7 @@ $rate = new Rate();
 $result = $rate->getAllPost();
 include("header.php");
 ?>
-<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+
 <script>
 function showEmojiPanel(obj) {
         $(".emoji-icon-container").hide();
