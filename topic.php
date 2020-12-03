@@ -176,8 +176,14 @@ ob_start();
                         <div class="comment-widgets m-b-20">
                             <!-- start messages -->
                             <?php
+                      $count = 0;
                       while ($message_row = $messages_results->fetch())
                       {
+                        //get if of most recent author
+                        if ($count = 0){
+                          $lastId = $message_row['authorId'];
+                        }
+                        $count = $count + 1;
                       ?>
                           <div class="d-flex flex-row comment-row">
                             <div class="p-2">
@@ -264,6 +270,9 @@ ob_start();
               <?php 
                 if($topicRow['locked']){
                   echo '<h5 class="mb-30 padding-top-1x">This topic is locked</h5>';
+                }
+                else if($lastId == $_SESSION['id']){
+                  echo '<h5 class="mb-30 padding-top-1x">You cannot post two messages in a row.</h5>';
                 }
                 else{
                   echo '<h5 class="mb-30 padding-top-1x">Leave Message</h5>
