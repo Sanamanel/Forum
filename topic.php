@@ -208,6 +208,8 @@ ob_start();
                                 echo $markdowned_comment;
                                 
                               ?><!-- Reaction system start -->
+                              
+                              </p>
                               <div class="reaction-container"><!-- container div for reaction system -->
                                   <span class="reaction-btn"> <!-- Default like button -->
                                       <span class="reaction-btn-emo like-btn-default"></span> <!-- Default like button emotion-->
@@ -229,7 +231,6 @@ ob_start();
                                   </div>
                               </div>
                               <!-- Reaction system end -->
-                              </p>
                             </div>
 
                            
