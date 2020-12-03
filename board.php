@@ -102,7 +102,7 @@ function getDateDisplay($input)
             <div class="row">
               <div class="col-md-4 col-sm-12">
                 <div class="col">
-                <a href="#new topic" class="btn btn-round btn-primary">new topic
+                <a href="#new_topic" class="btn btn-round btn-primary">new topic
                   <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i></a>
                 </div>
               </div>
@@ -288,7 +288,7 @@ while ($topic_row = $topics_results->fetch())
 
             <form method='POST' action='#'>
             <div class="form-group">
-            <p class="font-weight-bold" id="new topic">Post a new topic</p>
+            <p class="font-weight-bold" id="new_topic">Post a new topic</p>
 
               <input type="text" name="title" maxlength="70" class="form-control" placeholder="Choose title">
             </div>
