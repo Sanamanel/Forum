@@ -7,11 +7,11 @@ session_start();
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
         // to allow the user to login 
-        if (!isset($_SESSION['username'])) { 
-            header('location: https://led-zepplin-forum.herokuapp.com/'); 
-            exit();
-        } 
-ob_start();
+     //   if (!isset($_SESSION['username'])) { 
+          //  header('location: https://led-zepplin-forum.herokuapp.com/'); 
+         //   exit();
+     //   } 
+//ob_start();
 // Here the member id is harcoded.
 // You can integrate your authentication code here to get the logged in member id
 //$member_id = $_SESSION['username'];
@@ -170,7 +170,7 @@ function addUpdateRating(obj,id) {
 if (! empty($result)) {
     $i = 0;
     foreach ($result as $message) {
-        $ratingResult = $rate->getRatingByTopicForMember($message["id"], $member_id);
+        $ratingResult = $rate->getRatingByMessageForMember($message["id"], $member_id);
         $ratingVal = "";
         if (! empty($ratingResult[0]["rating"])) {
             $ratingVal = $ratingResult[0]["rating"];
