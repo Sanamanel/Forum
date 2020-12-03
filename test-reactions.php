@@ -1,0 +1,115 @@
+<?php
+// Here the member id is harcoded.
+// You can integrate your authentication code here to get the logged in member id
+$member_id = $_SESSION['username'];
+$emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
+require_once ("Rate.php");
+$rate = new Rate();
+$result = $rate->getAllPost();
+?>
+<HTML>
+<HEAD>
+<TITLE>Facebook Like Emoji Rating with PHP using jQuery AJAX</TITLE>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+<script>
+function showEmojiPanel(obj) {
+        $(".emoji-icon-container").hide();
+	    $(obj).next(".emoji-icon-container").show();
+}
+function hideEmojiPanel(obj) {
+    setTimeout(function() {
+    $(obj).next(".emoji-icon-container").hide();
+    }, 2000);
+}
+
+function addUpdateRating(obj,id) {
+	$(obj).closest(".emoji-icon-container").hide();
+	$.ajax({
+	url: "addUpdateRating.php",
+	data:'id='+id+'&rating='+$(obj).data("emoji-rating"),
+	type: "POST",
+    success: function(data) {
+        $("#emoji-rating-count-"+id).html(data);    
+        }
+	});
+}
+</script>
+
+</HEAD>
+<BODY>
+    <h2>
+        Facebook Like Emoji Rating with PHP using jQuery AJAX
+    </h2>
+    <table class="demo-table">
+        <tbody>
+<?php
+if (! empty($result)) {
+    $i = 0;
+    foreach ($result as $topic) {
+        $ratingResult = $rate->getRatingByTopicForMember($topic["id"], $member_id);
+        $ratingVal = "";
+        if (! empty($ratingResult[0]["rating"])) {
+            $ratingVal = $ratingResult[0]["rating"];
+        }
+        ?>
+        <tr>
+            <td valign="top">
+                <div class="feed_title"><?php echo $topic["title"]; ?></div>
+                    <div><?php echo $topic['messageContent']; ?></div>
+                    <div id="topic-<?php echo $topic["id"]; ?>"
+                        class="emoji-rating-box">
+                        <input type="hidden" name="rating" id="rating"
+                            value="<?php echo $ratingVal; ?>" />
+
+                        <div class="emoji-section">
+                            <a class="like-link"
+                                onmouseover="showEmojiPanel(this)"
+                                onmouseout="hideEmojiPanel(this)"><img
+                                src="like.png" /> Like</a>
+                            <ul class="emoji-icon-container">
+                            <?php
+                            foreach ($emojiArray as $icon) {
+                            ?>
+                                <li><img src="icons/<?php echo $icon; ?>.png" class="emoji-icon"
+                                    data-emoji-rating="<?php echo $icon; ?>"
+                                    onClick="addUpdateRating(this, <?php echo $topic["id"]; ?>)" /></li>
+                            <?php
+                            }
+                            ?>
+                            </ul>
+                        </div>
+                        <div
+                            id="emoji-rating-count-<?php echo $topic["id"]; ?>"
+                            class="emoji-rating-count">
+                                <?php
+                                if (! empty($topic["rating_count"])) {
+                                    echo $topic["rating_count"] . " Likes";
+                                ?>
+                                <?php
+                                    if (! empty($topic["emoji_rating"])) {
+                                        $emojiRatingArray = explode(",", $topic["emoji_rating"]);
+                                        foreach ($emojiRatingArray as $emojiData) {
+                               ?>
+                                        <img
+                                src="icons/<?php echo $emojiData; ?>.png"
+                                class="emoji-data" />
+                                    <?php
+                                        }
+                                    }
+                                } else {
+                               ?>
+                                No Ratings
+                               <?php  } ?>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+<?php
+    }
+}
+?>
+</tbody>
+    </table>
+</BODY>
+</HTML>
