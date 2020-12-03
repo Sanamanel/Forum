@@ -1,4 +1,17 @@
 <?php
+session_start();
+//ini_set('display_errors', 1);
+   // ini_set('display_startup_errors', 1);
+   // error_reporting(E_ALL); 
+// If the session variable is empty, this  
+        // means the user is yet to login 
+        // User will be sent to 'login.php' page 
+        // to allow the user to login 
+        if (!isset($_SESSION['username'])) { 
+            header('location: https://led-zepplin-forum.herokuapp.com/'); 
+            exit();
+        } 
+ob_start();
 // Here the member id is harcoded.
 // You can integrate your authentication code here to get the logged in member id
 $member_id = $_SESSION['username'];
