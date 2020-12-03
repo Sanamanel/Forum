@@ -262,7 +262,7 @@ ob_start();
 
               <!-- message -->
               <?php 
-                if(($topicRow['locked']){
+                if($topicRow['locked']){
                   echo '<h5 class="mb-30 padding-top-1x">This topic is locked</h5>';
                 }
                 else{
@@ -283,7 +283,7 @@ ob_start();
                       </input>
                     </div>
                   </form>';
-                })
+                }
               ?>
 
               
