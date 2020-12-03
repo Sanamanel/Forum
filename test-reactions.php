@@ -1,8 +1,8 @@
 <?php
 session_start();
-ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-   error_reporting(E_ALL); 
+//ini_set('display_errors', 1);
+  //  ini_set('display_startup_errors', 1);
+  // error_reporting(E_ALL); 
 // If the session variable is empty, this  
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
@@ -138,7 +138,7 @@ $result = $rate->getAllPost();
       </div>
     </div>
     <div class="main main-raised">
-
+    <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
 <script>
 function showEmojiPanel(obj) {
         $(".emoji-icon-container").hide();
@@ -233,4 +233,3 @@ if (! empty($result)) {
 ?>
 </tbody>
     </table>
-  <?php include("footer.php"); ?>
