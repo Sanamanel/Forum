@@ -21,7 +21,7 @@ $rate = new Rate();
 $result = $rate->getAllPost();
 include("header.php");
 ?>
-include("header.php");<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
 <script>
 function showEmojiPanel(obj) {
         $(".emoji-icon-container").hide();
@@ -53,7 +53,7 @@ function addUpdateRating(obj,id) {
 if (! empty($result)) {
     $i = 0;
     foreach ($result as $topic) {
-        $ratingResult = $rate->getRatingByTopicForMember($topic["id"], $member_id);
+        $ratingResult = $rate->getRatingByTopicForMember($message["id"], $member_id);
         $ratingVal = "";
         if (! empty($ratingResult[0]["rating"])) {
             $ratingVal = $ratingResult[0]["rating"];
@@ -61,9 +61,9 @@ if (! empty($result)) {
         ?>
         <tr>
             <td valign="top">
-                <div class="feed_title"><?php echo $topic["title"]; ?></div>
-                    <div><?php echo $topic['messageContent']; ?></div>
-                    <div id="topic-<?php echo $topic["id"]; ?>"
+                <div class="feed_title"><?php //echo $message["title"]; ?></div>
+                    <div><?php echo $message['content']; ?></div>
+                    <div id="topic-<?php echo $message["id"]; ?>"
                         class="emoji-rating-box">
                         <input type="hidden" name="rating" id="rating"
                             value="<?php echo $ratingVal; ?>" />
@@ -79,22 +79,22 @@ if (! empty($result)) {
                             ?>
                                 <li><img src="icons/<?php echo $icon; ?>.png" class="emoji-icon"
                                     data-emoji-rating="<?php echo $icon; ?>"
-                                    onClick="addUpdateRating(this, <?php echo $topic["id"]; ?>)" /></li>
+                                    onClick="addUpdateRating(this, <?php echo $message["id"]; ?>)" /></li>
                             <?php
                             }
                             ?>
                             </ul>
                         </div>
                         <div
-                            id="emoji-rating-count-<?php echo $topic["id"]; ?>"
+                            id="emoji-rating-count-<?php echo $message["id"]; ?>"
                             class="emoji-rating-count">
                                 <?php
-                                if (! empty($topic["rating_count"])) {
-                                    echo $topic["rating_count"] . " Likes";
+                                if (! empty($message["rating_count"])) {
+                                    echo $message["rating_count"] . " Likes";
                                 ?>
                                 <?php
-                                    if (! empty($topic["emoji_rating"])) {
-                                        $emojiRatingArray = explode(",", $topic["emoji_rating"]);
+                                    if (! empty($message["emoji_rating"])) {
+                                        $emojiRatingArray = explode(",", $message["emoji_rating"]);
                                         foreach ($emojiRatingArray as $emojiData) {
                                ?>
                                         <img

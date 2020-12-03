@@ -6,7 +6,7 @@ class Rate extends DBController
 
     function getAllPost()
     {
-        $query = "SELECT topics.*, COUNT(user_rate.rating) as rating_count, group_concat(distinct rating) as emoji_rating FROM topics LEFT JOIN user_rate ON topics.id = user_rate.topic_rate_id GROUP BY topics.id";
+        $query = "SELECT messages.*, COUNT(user_rate.rating) as rating_count, group_concat(distinct rating) as emoji_rating FROM messages LEFT JOIN user_rate ON messages.id = user_rate.message_rate_id GROUP BY messages.id";
     // $sql = "select messages.*, COUNT(user_rate.rating) as  rating_count, group_concat(distinct rating) as emoji_rating  inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
        // $messages_results = $conn->query($sql);
         
@@ -16,7 +16,7 @@ class Rate extends DBController
 
     function getRatingByTopic($topic_id)
     {
-        $query = "SELECT topics.*, COUNT(user_rate.rating) as rating_count, group_concat(distinct rating) as emoji_rating FROM topics LEFT JOIN user_rate ON topics.id = user_rate.topic_rate_id WHERE user_rate.topic_rate_id = ? GROUP BY user_rate.topic_rate_id";
+        $query = "SELECT messages.*, COUNT(user_rate.rating) as rating_count, group_concat(distinct rating) as emoji_rating FROM messages LEFT JOIN user_rate ON messages.id = user_rate.message_rate_id WHERE user_rate.message_rate_id = ? GROUP BY user_rate.message_rate_id";
         
         $params = array(
             array(
@@ -29,14 +29,14 @@ class Rate extends DBController
         return $postResult;
     }
 
-    function getRatingByTopicForMember($topic_id, $member_id)
+    function getRatingByTopicForMember($message_id, $member_id)
     {
-        $query = "SELECT * FROM user_rate WHERE topic_rate_id = ? AND user_rate_id = ?";
+        $query = "SELECT * FROM user_rate WHERE message_rate_id = ? AND user_rate_id = ?";
         
         $params = array(
             array(
                 "param_type" => "i",
-                "param_value" => $topic_id
+                "param_value" => $message_id
             ),
             array(
                 "param_type" => "i",
@@ -48,14 +48,14 @@ class Rate extends DBController
         return $ratingResult;
     }
 
-    function addRating($topic_id, $rating, $member_id)
+    function addRating($message_id, $rating, $member_id)
     {
-        $query = "INSERT INTO user_rate (topic_rate_id,rating,user_rate_id) VALUES (?, ?, ?)";
+        $query = "INSERT INTO user_rate (message_rate_id,rating,user_rate_id) VALUES (?, ?, ?)";
         
         $params = array(
             array(
                 "param_type" => "i",
-                "param_value" => $topic_id
+                "param_value" => $message_id
             ),
             array(
                 "param_type" => "s",
