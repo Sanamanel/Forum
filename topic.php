@@ -180,9 +180,10 @@ ob_start();
                       while ($message_row = $messages_results->fetch())
                       {
                         //get if of most recent author
-                        if($count = 0){
-                          $lastId = $message_row['authorNickname'];
-                          print_r($lastId);
+                        if($count == 0){
+                          
+                          $lastId = $message_row['authorId'];
+
                         }
                         $count = $count + 1;
                       ?>
