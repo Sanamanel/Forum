@@ -102,10 +102,8 @@ function getDateDisplay($input)
             <div class="row">
               <div class="col-md-4 col-sm-12">
                 <div class="col">
-                  <button class="btn_custum text-capitalize text-center mb-2">
-                    new topic
-                    <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i>
-                  </button>
+                <a href="new-topic.php?board_id=<?php echo $_GET['board_id'] ; ?>" class="btn btn-round btn-primary">new topic
+                    <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i></a>
                 </div>
               </div>
               <div class="col-md-4 col-sm-12">
