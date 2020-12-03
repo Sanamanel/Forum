@@ -52,7 +52,7 @@ function addUpdateRating(obj,id) {
 <?php
 if (! empty($result)) {
     $i = 0;
-    foreach ($result as $topic) {
+    foreach ($result as $message) {
         $ratingResult = $rate->getRatingByTopicForMember($message["id"], $member_id);
         $ratingVal = "";
         if (! empty($ratingResult[0]["rating"])) {
