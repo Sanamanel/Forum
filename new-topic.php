@@ -3,6 +3,7 @@ session_start();
 ob_start();
 require('connect.php');
 include('header.php');
+$terror ='';
 
  if(isset($_SESSION['id'])) {
    if(isset($_POST['tsubmit'])) {
