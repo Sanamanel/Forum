@@ -91,15 +91,11 @@ ob_start();
             </div>
             <div class="row">
               <div>
-                <button
-                  type="button"
-                  class="btn btn-primary btn-round reply-btn"
-                >
-                  Post Reply<span class="material-icons">
-                    undo
-                    <div class="mx-3"></div>
-                  </span>
-                </button>
+            
+                <form method="POST" action="#">
+                  <button type="submit" class="btn btn-primary btn-round reply-btn">Lock this topic</button>
+                </form>
+                
               </div>
               <button
                 class="btn btn-secondary dropdown-toggle btn-round size-btn"
