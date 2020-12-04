@@ -69,13 +69,13 @@ ob_start();
 
   //DELETE MESSAGE
 
-  if(isset($_POST['deleteMessageId'])){
+  /*if(isset($_POST['deleteMessageId'])){
     if (!empty($_POST['deleteMessageId'])){
       $delete = $conn->prepare('UPDATE messages SET content = ? WHERE id = ? AND message_by = ?');
       $delete->execute(array("*This message was deleted*", $_POST['deleteMessageId'], $_SESSION['id']));
       header("Location: https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=".$topicRow['topicId']."");
       exit();
-    }
+    }*/
   
 
     
