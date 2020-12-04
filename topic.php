@@ -223,7 +223,7 @@ ob_start();
                                     
                                     <form method="POST" action="#">
                                       <input type="hidden" value="true" name="editMessage" id="editMessage">
-                                      <button type="submit" value=""><i class="fa fa-pencil"></i></button>
+                                      <button type="submit" class="btn"><i class="fa fa-pencil"></i></button>
                                     </form>
                                     
                                   </span>';
