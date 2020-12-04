@@ -68,6 +68,9 @@ ob_start();
   }
 
   //EDIT MESSAGE
+  if(isset($_POST['message_text_edit'])){
+    print_r($messageToEditId);
+  }
 
  
  
@@ -219,6 +222,7 @@ ob_start();
                                   if(($count == 0) && ($_SESSION['id'] == $lastId)){
 
                                     $messageToEditId = $message_row['messageId'];
+                                    $commentToEdit = $message_row['messageContent'];
                                     echo '<span class="action-icons">
                                     
                                     <form method="POST" action="#">
@@ -228,6 +232,7 @@ ob_start();
                                     
                                   </span>';
                                   }
+                                  
                                 ?>
                                 
                               </div>
@@ -281,6 +286,25 @@ ob_start();
               <?php 
                 if($topicRow['locked']){
                   echo '<h5 class="mb-30 padding-top-1x bg-danger text-center text-white rounded font-weight-bold">This topic is locked</h5>';
+                }
+                else if(($_POST['editMessage']) && (isset($messageToEditId))){
+                  echo '<h5 class="mb-30 padding-top-1x bg-light text-center text-dark rounded ">Edit your message</h5>
+                  <form method="post">
+                    <div class="form-group">
+                      <textarea
+                        class="form-control form-control-rounded"
+                        id="message_text_edit"
+                        rows="8"
+                        placeholder=""
+                        required=""
+                      >'.$commentToEdit.'</textarea>
+                    </div>
+                    <div class="text-right">
+                    <input id="edit_submit" data-topicId="'.$messageToEditId.'" class="btn btn-primary btn-fill pull-right" value="Edit Message" type="submit">
+                        
+                      </input>
+                    </div>
+                  </form>';
                 }
                 else if($lastId == $_SESSION['id']){
                   echo '<h5 class="mb-30 padding-top-1x bg-danger text-center text-white rounded font-weight-bold">You cannot post two messages in a row.</h5>';
