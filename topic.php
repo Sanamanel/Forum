@@ -184,7 +184,7 @@ ob_start();
                                     echo getDateDisplay($message_row['messageCreationDate']);
 
                                     if(!is_null($message_row['messageModificationDate'])){
-                                      echo ' <strong><em>Edited on<em><strong> '.getDateDisplay($message_row['messageModificationDate']);
+                                      echo ' <strong><em>Edited on</em></strong> '.getDateDisplay($message_row['messageModificationDate']);
                                     }
                                     
                                   
