@@ -261,8 +261,8 @@ ob_start();
                 }
                 else if((isset($_POST['editMessage'])) && ($_POST['editMessage']) && (isset($messageToEditId))){
                  
-                  echo '<h5 class="mb-30 padding-top-1x bg-light text-center text-dark rounded ">Edit your message</h5>
-                  <form method="post" id="form-edit">
+                  echo '<h5 id="form-edit" class="mb-30 padding-top-1x bg-light text-center text-dark rounded ">Edit your message</h5>
+                  <form method="post">
                     <div class="form-group">
                       <textarea
                         class="form-control form-control-rounded"
