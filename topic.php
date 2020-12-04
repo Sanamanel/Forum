@@ -67,6 +67,20 @@ ob_start();
     }
   }
 
+  //DELETE MESSAGE
+
+  if(isset($_POST['deleteMessageId']){
+    if (!empty($_POST['deleteMessageId'])){
+      $delete = $conn->prepare('UPDATE messages SET content = ? WHERE id = ? AND message_by = ?');
+      $delete->execute(array("*This message was deleted*", $_POST['deleteMessageId'], $_SESSION['id']));
+      header("Location: https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=".$topicRow['topicId']."");
+      exit();
+    }
+  
+
+    
+  
+
   
 
  
@@ -147,7 +161,7 @@ ob_start();
                       $lastId = 0;
                       while ($message_row = $messages_results->fetch())
                       {
-                        //get if of most recent author
+                        //get ID of most recent author and most recent message
                         if($count == 0){
 
                           $lastId = $message_row['authorId'];
@@ -160,7 +174,7 @@ ob_start();
                             <div class="p-2">
                               <span class="round"
                                 ><img
-                                  src="<?php //authorId authorAvatar
+                                  src="<?php 
 
                                           if(!is_null($message_row['authorAvatar']) && file_exists('./Uploads/images/'.$message_row['authorAvatar'])){
                                             echo "./Uploads/images/".$message_row['authorAvatar'];
@@ -190,23 +204,30 @@ ob_start();
                                   
                                   ?>
                                 </span>
+                                <span class="text-right">
                                 <?php 
                                   if(($count == 0) && ($_SESSION['id'] == $lastId)){
 
                                     $messageToEditId = $message_row['messageId'];
                                     $commentToEdit = $message_row['messageContent'];
-                                    echo '<span class="action-icons">
-                                    
-                                    <form method="POST" action="#form-edit">
+
+                                    echo '<form method="POST" action="#form-edit">
                                       <input type="hidden" value="true" name="editMessage" id="editMessage">
                                       <button type="submit" class="btn"><i class="fa fa-pencil"></i></button>
-                                    </form>
+                                    </form>';
                                     
-                                  </span>';
+                                  
+                                  }
+                                  if($_SESSION['id'] == $message_row['authorId']){
+                                    echo '<form method="POST" action="#">
+                                    <input type="hidden" value="true" name="deleteMessage" id="deleteMessage">
+                                    <input type="hidden" value="'.$message_row['messageId'].'" name="deleteMessageId" id="deleteMessageId">
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i></button>
+                                  </form>';
                                   }
                                   
                                 ?>
-                                
+                                </span>
                               </div>
                               <p class="m-b-5 m-t-10">
                               <?php 
