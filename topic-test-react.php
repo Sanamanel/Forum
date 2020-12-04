@@ -41,6 +41,7 @@ $result = $rate->getAllPost();
       $topicId = $_GET["topic_id"];
       $sql = "select topics.id as topicId,topics.title as topicTitle,topics.content as topicContent,board.id as boardId,board.name as boardName from topics inner join board on topics.board_id = board.id where topics.id = $topicId";
       $topic_result = $conn->query($sql);
+      var_dump($topic_result);
      
   
       if ($topic_result->rowCount() != 1) $redirect = true;
