@@ -68,10 +68,9 @@ ob_start();
   }
 
   //EDIT MESSAGE
-  if(isset($_POST['message_text_edit'])){
-    print_r($_POST['messageToEditId']);
+  if((isset($_POST['message_text_edit'])) && ($lastId == $_SESSION['id'])){
+    print_r($lastMessageId);
     print_r('you did good');
-    //lol
   }
 
  
@@ -193,6 +192,7 @@ ob_start();
                         if($count == 0){
 
                           $lastId = $message_row['authorId'];
+                          $lastMessageId = $message_row['messageId'];
 
                         }
                         
