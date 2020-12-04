@@ -67,11 +67,7 @@ ob_start();
     }
   }
 
-  //EDIT MESSAGE
-  if((isset($_POST['message_text_edit'])) && ($lastId == $_SESSION['id'])){
-    print_r($lastMessageId);
-    print_r('you did good');
-  }
+  
 
  
  
@@ -331,6 +327,12 @@ ob_start();
                       </input>
                     </div>
                   </form>';
+                }
+
+                //EDIT MESSAGE
+                if((isset($_POST['message_text_edit'])) && ($lastId == $_SESSION['id'])){
+                  print_r($lastMessageId);
+                  print_r('you did good');
                 }
               ?>
 
