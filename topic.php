@@ -280,13 +280,13 @@ ob_start();
               <!-- message -->
               <?php 
                 if($topicRow['locked']){
-                  echo '<h5 class="mb-30 padding-top-1x">This topic is locked</h5>';
+                  echo '<h5 class="mb-30 padding-top-1x bg-danger text-center text-white rounded font-weight-bold">This topic is locked</h5>';
                 }
                 else if($lastId == $_SESSION['id']){
-                  echo '<h5 class="mb-30 padding-top-1x">You cannot post two messages in a row.</h5>';
+                  echo '<h5 class="mb-30 padding-top-1x bg-danger text-center text-white rounded font-weight-bold">You cannot post two messages in a row.</h5>';
                 }
                 else{
-                  echo '<h5 class="mb-30 padding-top-1x">Leave Message</h5>
+                  echo '<h5 class="mb-30 padding-top-1x bg-light text-center rounded font-weight-bold">Leave Message</h5>
                   <form method="post">
                     <div class="form-group">
                       <textarea

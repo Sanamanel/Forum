@@ -9,9 +9,9 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <?php 
 session_start();
-//ini_set('display_errors', 1);
-   // ini_set('display_startup_errors', 1);
-   // error_reporting(E_ALL); 
+ini_set('display_errors', 1);
+   ini_set('display_startup_errors', 1);
+   error_reporting(E_ALL); 
 // If the session variable is empty, this  
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
@@ -23,7 +23,11 @@ session_start();
 ob_start();
 
 
-  require ('connect.php');
+$member_id = $_SESSION['username'];
+$emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
+require_once ("Rate.php");
+$rate = new Rate();
+$result = $rate->getAllPost();
   $redirect = false;
   $topicId = 0;
   $topic_result = NULL;
@@ -51,8 +55,8 @@ ob_start();
   $topicRow = $topic_result->fetch();
 
 
-  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
-  $messages_results = $conn->query($sql);
+  //$sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
+ // $messages_results = $conn->query($sql);
  
  
   include ("header.php");
@@ -66,11 +70,7 @@ ob_start();
     return date_format($date,"D M j, Y, g:i a");
   }
   
-$currentUserName = $_SESSION["username"];
-$emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
-require_once ("Rate.php");
-$rate = new Rate();
-$result = $rate->getAllPost();
+
   ?>
 <div class="container">
         <nav aria-label="breadcrumb" role="navigation">
@@ -166,24 +166,57 @@ $result = $rate->getAllPost();
                           </h6>
                         </div>
                         <div class="comment-widgets m-b-20">
+                        <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+<script>
+function showEmojiPanel(obj) {
+        $(".emoji-icon-container").hide();
+	    $(obj).next(".emoji-icon-container").show();
+}
+function hideEmojiPanel(obj) {
+    setTimeout(function() {
+    $(obj).next(".emoji-icon-container").hide();
+    }, 2000);
+}
+
+function addUpdateRating(obj,id) {
+	$(obj).closest(".emoji-icon-container").hide();
+	$.ajax({
+	url: "addUpdateRating.php",
+	data:'id='+id+'&rating='+$(obj).data("emoji-rating"),
+	type: "POST",
+    success: function(data) {
+        $("#emoji-rating-count-"+id).html(data);    
+        }
+	});
+}
+</script>
                             <!-- start messages -->
-                            <?php
-while ($message_row = $messages_results->fetch())
-{
-?>
+                           
+
+<?php
+if (! empty($result)) {
+    $i = 0;
+    foreach ($result as $message) {
+        $ratingResult = $rate->getRatingByMessageForMember($message["id"], $member_id);
+        $ratingVal = "";
+        if (! empty($ratingResult[0]["rating"])) {
+            $ratingVal = $ratingResult[0]["rating"];
+        }
+        ?>
+
                           <div class="d-flex flex-row comment-row">
                             <div class="p-2">
                               <span class="round"
                                 ><img
-                                  src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message_row['authorEmail'])))."?"."&s=80";?>"
+                                  src="<?php echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message['authorEmail'])))."?"."&s=80";?>"
                                   alt="user"
                                   width="50"/> 
                                 </span>
                             </div>
                             <div class="comment-text w-100">
-                              <h5><?php echo $message_row['authorNickname'] ?></h5>
+                              <h5><?php echo $message['authorNickname'] ?></h5>
                               <div class="comment-footer">
-                                <span class="date"><?php echo getDateDisplay($message_row['messageCreationDate']) ?></span>
+                                <span class="date"><?php echo getDateDisplay($message['messageCreationDate']) ?></span>
                                 <span class="label label-info">Pending</span>
                                 <span class="action-icons">
                                   <a href="#" data-abc="true"
@@ -194,38 +227,65 @@ while ($message_row = $messages_results->fetch())
                               </div>
                               <p class="m-b-5 m-t-10">
                               <?php 
-                                $comment = $message_row['messageContent'];
+                                $comment = $message['messageContent'];
                                 $markdowned_comment = Michelf\Markdown::defaultTransform($comment);
                                 echo $markdowned_comment;
                                 
                               ?><!-- Reaction system start -->
-                              <div class="reaction-container"><!-- container div for reaction system -->
-                                  <span class="reaction-btn"> <!-- Default like button -->
-                                      <span class="reaction-btn-emo like-btn-default"></span> <!-- Default like button emotion-->
-                                      <span class="reaction-btn-text">Like</span> <!-- Default like button text,(Like, wow, sad..) default:Like  -->
-                                      <ul class="emojies-box"> <!-- Reaction buttons container-->
-                                          <li class="emoji emo-like" data-reaction="Like"></li>
-                                          <li class="emoji emo-love" data-reaction="Love"></li>
-                                          <li class="emoji emo-haha" data-reaction="HaHa"></li>
-                                          <li class="emoji emo-wow" data-reaction="Wow"></li>
-                                          <li class="emoji emo-sad" data-reaction="Sad"></li>
-                                          <li class="emoji emo-angry" data-reaction="Angry"></li>
-                                      </ul>
-                                  </span>
-                                  <div class="like-stat"> <!-- Like statistic container-->
-                                      <span class="like-emo"> <!-- like emotions container -->
-                                          <span class="like-btn-like"></span> <!-- given emotions like, wow, sad (default:Like) -->
-                                      </span>
-                                      <span class="like-details">Knowband and 10k others</span>
-                                  </div>
-                              </div>
-                              <!-- Reaction system end -->
+                              
                               </p>
+                              <div id="topic-<?php echo $message["id"]; ?>"
+                        class="emoji-rating-box">
+                        <input type="hidden" name="rating" id="rating"
+                            value="<?php echo $ratingVal; ?>" />
+
+                        <div class="emoji-section">
+                            <a class="like-link"
+                                onmouseover="showEmojiPanel(this)"
+                                onmouseout="hideEmojiPanel(this)"><img
+                                src="like.png" /> Like</a>
+                            <ul class="emoji-icon-container">
+                            <?php
+                            foreach ($emojiArray as $icon) {
+                            ?>
+                                <li><img src="icons/<?php echo $icon; ?>.png" class="emoji-icon"
+                                    data-emoji-rating="<?php echo $icon; ?>"
+                                    onClick="addUpdateRating(this, <?php echo $message["id"]; ?>)" /></li>
+                            <?php
+                            }
+                            ?>
+                            </ul>
+                        </div>
+                        <div
+                            id="emoji-rating-count-<?php echo $message["id"]; ?>"
+                            class="emoji-rating-count">
+                                <?php
+                                if (! empty($message["rating_count"])) {
+                                    echo $message["rating_count"] . " Likes";
+                                ?>
+                                <?php
+                                    if (! empty($message["emoji_rating"])) {
+                                        $emojiRatingArray = explode(",", $message["emoji_rating"]);
+                                        foreach ($emojiRatingArray as $emojiData) {
+                               ?>
+                                        <img
+                                src="icons/<?php echo $emojiData; ?>.png"
+                                class="emoji-data" />
+                                    <?php
+                                        }
+                                    }
+                                } else {
+                               ?>
+                                No Ratings
+                               <?php  } ?>
+                        </div>
+                    </div>
                             </div>
 
                            
                             </div> <!-- end message -->
                             <?php
+    }
 }
 ?>
                       </div>
