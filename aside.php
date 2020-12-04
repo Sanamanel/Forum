@@ -3,10 +3,11 @@
 	
   <?php
 
-  $sql ="SELECT title,creation_date,CONCAT(SUBSTRING_INDEX(content, ' ', 5),'...') AS resume from topics
+  $sql ="SELECT topics.id as topicId,title,creation_date,CONCAT(SUBSTRING_INDEX(content, ' ', 5),'...') AS resume from topics
   Order by creation_date DESC
   Limit 3";
   $stmt = $conn->query($sql);
+
   $sql ="SELECT * from users WHERE user_active=1 order by last_login_date desc Limit 3";
   $stmt2 = $conn->query($sql);
   $currentUsername = $_SESSION['username'];
@@ -26,25 +27,16 @@
 <!-- div aside -->
 <div class="col-lg-3 m-15px-tb blog-aside">
             <!-- search -->
-            <div class="navbar navbar-expand-lg navbarbtn">
+            <nav class="navbar navbar-light bg-light">
               <div class="container">
-                <form class="form-inline ml-auto">
-                  <div class="form-group no-border">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Search"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-white btn-just-icon btn-round"
-                  >
-                    <i class="material-icons">search</i>
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-primary btn-round btn-sm" type="submit">
+                  <i class="material-icons">search</i>
                   </button>
                 </form>
               </div>
-            </div>
+            </nav>                   
             <!-- Author -->
             <div class="widget widget-author">
               <div class="widget-title">
@@ -90,7 +82,8 @@
     <li class="list-group-item">
 
       <div class="box_post">
-        <h4 class="cat text-capitalize"><?php echo htmlspecialchars($row["title"]);?></h4>
+        <h4 class="cat text-capitalize"><a href="https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=<?php echo $row["topicId"] ?>"><?php echo htmlspecialchars($row["title"]);?></a></h4>
+        
         <h4 class="hour"><?php echo getDateDisplay($row["creation_date"]) ?></h4>
         <div class="clear_both"></div>
         <p class="card_pra"><?php echo htmlspecialchars($row["resume"]);?></p>

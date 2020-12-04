@@ -317,7 +317,7 @@ ob_start();
                       ></textarea>
                     </div>
                     <div class="text-right">
-                      <input id="btn_submit" data-topicId="'.$topicId.'" class="btn btn-primary btn-fill pull-right" value="Submit Message" type="button">
+                      <input id="btn_submit" data-topicId="'.$topicId.'" class="btn btn-round btn-primary btn-fill pull-right" value="Submit Message" type="button">
                         
                       </input>
                     </div>
