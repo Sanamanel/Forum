@@ -286,7 +286,7 @@ ob_start();
                   echo '<h5 class="mb-30 padding-top-1x bg-danger text-center text-white rounded font-weight-bold">This topic is locked</h5>';
                 }
                 else if((isset($_POST['editMessage'])) && ($_POST['editMessage']) && (isset($messageToEditId))){
-                  $_POST['messageToEditId'] = $messageToEditId;
+                 
                   echo '<h5 class="mb-30 padding-top-1x bg-light text-center text-dark rounded ">Edit your message</h5>
                   <form method="post" id="form-edit">
                     <div class="form-group">
@@ -331,8 +331,12 @@ ob_start();
 
                 //EDIT MESSAGE
                 if((isset($_POST['message_text_edit'])) && ($lastId == $_SESSION['id'])){
-                  print_r($lastMessageId);
-                  print_r('you did good');
+                  //print_r($lastMessageId);
+                  //print_r('you did good');
+                  $edit = $conn->prepare('UPDATE messages SET content = ? WHERE id = ?');
+                  $edit->execute(array($_POST['message_text_edit'], $lastMessageId));
+                  header("Location: https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=".$topicRow['topicId']."");
+                  exit();
                 }
               ?>
 
