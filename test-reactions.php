@@ -17,7 +17,7 @@ ob_start();
 //$member_id = $_SESSION['username'];
 $member_id = $_SESSION['username'];
 $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
-require_once ("Rate.php");
+require_once ("Rate2.php");
 $rate = new Rate();
 $result = $rate->getAllPost();
 
