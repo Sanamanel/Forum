@@ -223,7 +223,7 @@ ob_start();
                                     $commentToEdit = $message_row['messageContent'];
                                     echo '<span class="action-icons">
                                     
-                                    <form method="POST" action="#">
+                                    <form method="POST" action="#form-edit">
                                       <input type="hidden" value="true" name="editMessage" id="editMessage">
                                       <button type="submit" class="btn"><i class="fa fa-pencil"></i></button>
                                     </form>
@@ -288,7 +288,7 @@ ob_start();
                 else if((isset($_POST['editMessage'])) && ($_POST['editMessage']) && (isset($messageToEditId))){
                   $_POST['messageToEditId'] = $messageToEditId;
                   echo '<h5 class="mb-30 padding-top-1x bg-light text-center text-dark rounded ">Edit your message</h5>
-                  <form method="post">
+                  <form method="post" id="form-edit">
                     <div class="form-group">
                       <textarea
                         class="form-control form-control-rounded"
