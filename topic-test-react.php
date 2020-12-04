@@ -31,6 +31,7 @@ $result = $rate->getAllPost();
   $redirect = false;
   $topicId = 0;
   $topic_result = NULL;
+  $this->conn = $conn;
   
   if (!isset($_GET["topic_id"]))
   {
@@ -45,7 +46,7 @@ $result = $rate->getAllPost();
      
   
       if ($topic_result->rowCount() != 1) $redirect = true;
-  }
+  } var_dump($topic_result);
   
   if ($redirect)
   {
