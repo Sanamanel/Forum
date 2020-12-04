@@ -26,12 +26,13 @@ ob_start();
 $member_id = $_SESSION['username'];
 $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
 require_once ("Rate.php");
+require_once ("connect.php");
 $rate = new Rate();
 $result = $rate->getAllPost();
   $redirect = false;
   $topicId = 0;
   $topic_result = NULL;
-  $this->conn = $conn;
+ // $this->conn = $conn;
   
   if (!isset($_GET["topic_id"]))
   {
