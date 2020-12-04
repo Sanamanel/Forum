@@ -286,7 +286,7 @@ ob_start();
                   echo '<h5 class="mb-30 padding-top-1x bg-danger text-center text-white rounded font-weight-bold">You cannot post two messages in a row.</h5>';
                 }
                 else{
-                  echo '<h5 class="mb-30 padding-top-1x bg-light text-center rounded font-weight-bold">Leave Message</h5>
+                  echo '<h5 class="mb-30 padding-top-1x bg-light text-center text-dark rounded ">Leave a message</h5>
                   <form method="post">
                     <div class="form-group">
                       <textarea
