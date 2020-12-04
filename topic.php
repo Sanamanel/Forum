@@ -52,7 +52,7 @@ ob_start();
   //print_r($topicRow['topicAuthor']);
 
 
-  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
+  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate, messages.deleted as isDeleted, users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
   $messages_results = $conn->query($sql);
 
   //LOCK THE TOPIC
@@ -212,14 +212,16 @@ ob_start();
                                     $messageToEditId = $message_row['messageId'];
                                     $commentToEdit = $message_row['messageContent'];
 
+                                    if(!$message_row['isDeleted']){
                                     echo '<form method="POST" action="#form-edit">
                                       <input type="hidden" value="true" name="editMessage" id="editMessage">
                                       <button type="submit" class="btn"><i class="fa fa-pencil"></i></button>
                                     </form>';
+                                    }
                                     
                                   
                                   }
-                                  if($_SESSION['id'] == $message_row['authorId']){
+                                  if(($_SESSION['id'] == $message_row['authorId']) && (!$message_row['isDeleted'])){
                                     echo '<form method="POST" action="#">
                                     <input type="hidden" value="true" name="deleteMessage" id="deleteMessage">
                                     <input type="hidden" value="'.$message_row['messageId'].'" name="deleteMessageId" id="deleteMessageId">
