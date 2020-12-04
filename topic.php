@@ -178,7 +178,14 @@ ob_start();
                             <div class="comment-text w-100">
                               <h5><?php echo $message_row['authorNickname'] ?></h5>
                               <div class="comment-footer">
-                                <span class="date"><?php echo getDateDisplay($message_row['messageCreationDate']); ?></span>
+                                <span class="date">
+                                  <?php 
+                                  
+                                    echo getDateDisplay($message_row['messageCreationDate']);
+                                    echo ' Edited on '.getDateDisplay($message_row['messageModificationDate']);
+                                  
+                                  ?>
+                                </span>
                                 <?php 
                                   if(($count == 0) && ($_SESSION['id'] == $lastId)){
 
