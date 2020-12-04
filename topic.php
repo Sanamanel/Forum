@@ -69,7 +69,7 @@ ob_start();
 
   //EDIT MESSAGE
   if(isset($_POST['message_text_edit'])){
-    print_r($messageToEditId);
+    print_r($_POST['messageToEditId']);
     print_r('you did good');
   }
 
@@ -289,6 +289,7 @@ ob_start();
                   echo '<h5 class="mb-30 padding-top-1x bg-danger text-center text-white rounded font-weight-bold">This topic is locked</h5>';
                 }
                 else if((isset($_POST['editMessage'])) && ($_POST['editMessage']) && (isset($messageToEditId))){
+                  $_POST['messageToEditId'] = $messageToEditId;
                   echo '<h5 class="mb-30 padding-top-1x bg-light text-center text-dark rounded ">Edit your message</h5>
                   <form method="post">
                     <div class="form-group">
@@ -302,7 +303,7 @@ ob_start();
                       >'.$commentToEdit.'</textarea>
                     </div>
                     <div class="text-right">
-                    <input id="edit_submit" data-topicId="'.$messageToEditId.'" class="btn btn-primary btn-fill pull-right" value="Edit Message" type="submit">
+                    <input id="edit_submit" class="btn btn-primary btn-fill pull-right" value="Edit Message" type="submit">
                         
                       </input>
                     </div>
