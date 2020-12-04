@@ -106,28 +106,6 @@ function getDateDisplay($input)
                   <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i></a>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12">
-                <!-- search -->
-                <div class="navbar navbar-expand-lg navbarbtn">
-                  <div class="container">
-                    <form class="form-inline ml-auto">
-                      <div class="form-group no-border">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Search"
-                        />
-                      </div>
-                      <button
-                        type="submit"
-                        class="btn btn-white btn-just-icon btn-round"
-                      >
-                        <i class="material-icons">search</i>
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
 
               <div class="col-md-4 col-sm-12 col-xm-12 text-right count_page">
               <?php echo $topics_results->rowCount() ?> topics, pages 1 of 1
