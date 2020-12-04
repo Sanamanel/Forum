@@ -106,30 +106,8 @@ function getDateDisplay($input)
                   <i class="fa fa-pencil ml-1 p" aria-hidden="true"></i></a>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12">
-                <!-- search -->
-                <div class="navbar navbar-expand-lg navbarbtn">
-                  <div class="container">
-                    <form class="form-inline ml-auto">
-                      <div class="form-group no-border">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Search"
-                        />
-                      </div>
-                      <button
-                        type="submit"
-                        class="btn btn-white btn-just-icon btn-round"
-                      >
-                        <i class="material-icons">search</i>
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
 
-              <div class="col-md-4 col-sm-12 col-xm-12 text-right count_page">
+              <div class="col-md-12 col-sm-12 col-xm-12 text-right count_page">
               <?php echo $topics_results->rowCount() ?> topics, pages 1 of 1
               </div>
             </div>
@@ -256,7 +234,7 @@ while ($topic_row = $topics_results->fetch())
               <div class="col-md-2 col-sm-12">
                 </div>
               <div
-                class="col-md-6 col-sm-12 col-xm-12 text-right text-capitalize count_page"
+                class="col-md-12 col-sm-12 col-xm-12 text-right text-capitalize count_page"
               >
               <?php echo $topics_results->rowCount() ?> topics, pages 1 of 1
               </div>
@@ -307,7 +285,7 @@ while ($topic_row = $topics_results->fetch())
             <!-- Start Sixth Row -->
             <div class="row mt-5">
               <div class="col-md-4 col-sm-12">
-                <a href="./index.php" class="text-capitalize return">
+                <a href="./home.php" class="text-capitalize return">
                   <i class="fa fa-angle-left mr-1" aria-hidden="true"></i>
                   return to board index</a
                 >

@@ -119,43 +119,6 @@ ob_start();
                 
                 
               </div>
-              <button
-                class="btn btn-secondary dropdown-toggle btn-round size-btn"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span class="material-icons"> build </span>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-              <!-- search -->
-              <div>
-                <nav class="navbar navbar-expand-lg navbarbtn1">
-                  <div class="container">
-                    <form class="form-inline ml-auto">
-                      <div class="form-group no-border">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Search"
-                        />
-                      </div>
-                      <button
-                        type="submit"
-                        class="btn btn-white btn-just-icon btn-round"
-                      >
-                        <i class="material-icons">search</i>
-                      </button>
-                    </form>
-                  </div>
-                </nav>
-              </div>
             </div>
             <div class="container padding-bottom-3x mb-2">
 
