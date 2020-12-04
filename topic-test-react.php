@@ -199,12 +199,14 @@ function addUpdateRating(obj,id) {
 <?php
 if (! empty($result)) {
     $i = 0;
+    var_dump($result);
     foreach ($result as $message) {
         $ratingResult = $rate->getRatingByMessageForMember($message["id"], $member_id);
         $ratingVal = "";
         if (! empty($ratingResult[0]["rating"])) {
             $ratingVal = $ratingResult[0]["rating"];
-        }var_dump($message);
+        }
+        var_dump($message);
         ?>
 
                           <div class="d-flex flex-row comment-row">
