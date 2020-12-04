@@ -3,10 +3,11 @@
 	
   <?php
 
-  $sql ="SELECT title,creation_date,CONCAT(SUBSTRING_INDEX(content, ' ', 5),'...') AS resume from topics
+  $sql ="SELECT topics.id as topicId,title,creation_date,CONCAT(SUBSTRING_INDEX(content, ' ', 5),'...') AS resume from topics
   Order by creation_date DESC
   Limit 3";
   $stmt = $conn->query($sql);
+  $topicID= $topic_row['topicId'];
   $sql ="SELECT * from users WHERE user_active=1 order by last_login_date desc Limit 3";
   $stmt2 = $conn->query($sql);
   $currentUsername = $_SESSION['username'];
@@ -82,6 +83,7 @@
 
       <div class="box_post">
         <h4 class="cat text-capitalize"><a href="https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo htmlspecialchars($row["title"]);?></a></h4>
+        <h5 class="global"> <a class="text-dark" href="https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo $topic_row['topicTitle'] ?></a>  </h5>
         <h4 class="hour"><?php echo getDateDisplay($row["creation_date"]) ?></h4>
         <div class="clear_both"></div>
         <p class="card_pra"><?php echo htmlspecialchars($row["resume"]);?></p>
