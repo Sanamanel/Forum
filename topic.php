@@ -295,6 +295,7 @@ ob_start();
                       <textarea
                         class="form-control form-control-rounded"
                         id="message_text_edit"
+                        name="message_text_edit"
                         rows="8"
                         placeholder=""
                         required=""
