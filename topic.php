@@ -296,7 +296,7 @@ ob_start();
                 if((isset($_POST['message_text_edit'])) && ($lastId == $_SESSION['id'])){
                   //print_r($lastMessageId);
                   //print_r('you did good');
-                  $edit = $conn->prepare('UPDATE messages SET content = ? WHERE id = ?');
+                  $edit = $conn->prepare('UPDATE messages SET content = ?, modification_date = NOW() WHERE id = ?');
                   $edit->execute(array($_POST['message_text_edit'], $lastMessageId));
                   header("Location: https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=".$topicRow['topicId']."");
                   exit();
