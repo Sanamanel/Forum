@@ -9,9 +9,9 @@ Coded by Creative Tim
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <?php 
 session_start();
-ini_set('display_errors', 1);
-   ini_set('display_startup_errors', 1);
-   error_reporting(E_ALL); 
+//ini_set('display_errors', 1);
+   //ini_set('display_startup_errors', 1);
+  // error_reporting(E_ALL); 
 // If the session variable is empty, this  
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
@@ -43,11 +43,11 @@ $result = $rate->getAllPost();
       $topicId = $_GET["topic_id"];
       $sql = "select topics.id as topicId,topics.title as topicTitle,topics.content as topicContent,board.id as boardId,board.name as boardName from topics inner join board on topics.board_id = board.id where topics.id = $topicId";
       $topic_result = $conn->query($sql);
-      var_dump($topic_result);
+     
      
   
       if ($topic_result->rowCount() != 1) $redirect = true;
-  } var_dump($topic_result);
+  } 
   
   if ($redirect)
   {
@@ -204,7 +204,7 @@ if (! empty($result)) {
         $ratingVal = "";
         if (! empty($ratingResult[0]["rating"])) {
             $ratingVal = $ratingResult[0]["rating"];
-        }
+        }var_dump($message);
         ?>
 
                           <div class="d-flex flex-row comment-row">
