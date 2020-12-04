@@ -90,7 +90,7 @@
     <li class="list-group-item">
 
       <div class="box_post">
-        <h4 class="cat text-capitalize"><?php echo htmlspecialchars($row["title"]);?></h4>
+        <h4 class="cat text-capitalize"><a class="text-dark" href="https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=<?php echo $topic_row["topicId"] ?>"><?php echo htmlspecialchars($row["title"]);?></a> </h4>
         <h4 class="hour"><?php echo getDateDisplay($row["creation_date"]) ?></h4>
         <div class="clear_both"></div>
         <p class="card_pra"><?php echo htmlspecialchars($row["resume"]);?></p>
