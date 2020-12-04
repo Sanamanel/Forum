@@ -26,25 +26,16 @@
 <!-- div aside -->
 <div class="col-lg-3 m-15px-tb blog-aside">
             <!-- search -->
-            <div class="navbar navbar-expand-lg navbarbtn">
+            <nav class="navbar navbar-light bg-light">
               <div class="container">
-                <form class="form-inline ml-auto">
-                  <div class="form-group no-border">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Search"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-white btn-just-icon btn-round"
-                  >
-                    <i class="material-icons">search</i>
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-primary btn-round btn-sm" type="submit">
+                  <i class="material-icons">search</i>
                   </button>
                 </form>
               </div>
-            </div>
+            </nav>                   
             <!-- Author -->
             <div class="widget widget-author">
               <div class="widget-title">
