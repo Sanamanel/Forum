@@ -67,6 +67,8 @@ ob_start();
     }
   }
 
+  //EDIT MESSAGE
+
  
  
   include ("header.php");
@@ -188,7 +190,7 @@ ob_start();
                           $lastId = $message_row['authorId'];
 
                         }
-                        $count = $count + 1;
+                        
                       ?>
                           <div class="d-flex flex-row comment-row">
                             <div class="p-2">
@@ -212,19 +214,22 @@ ob_start();
                             <div class="comment-text w-100">
                               <h5><?php echo $message_row['authorNickname'] ?></h5>
                               <div class="comment-footer">
-                                <span class="date"><?php echo getDateDisplay($message_row['messageCreationDate']) ?></span>
-                                <span class="label label-info">Pending</span>
-                                <span class="action-icons">
-                                  <a href="#" data-abc="true"
-                                    ><i class="fa fa-pencil"></i
-                                  ></a>
-                                  <a href="#" data-abc="true"
-                                    ><i class="fa fa-rotate-right"></i
-                                  ></a>
-                                  <a href="#" data-abc="true"
-                                    ><i class="fa fa-heart"></i
-                                  ></a>
-                                </span>
+                                <span class="date"><?php echo getDateDisplay($message_row['messageCreationDate']); ?></span>
+                                <?php 
+                                  if(($count == 0) && ($_SESSION['id'] == $lastId)){
+
+                                    $messageToEditId = $message_row['messageId'];
+                                    echo '<span class="action-icons">
+                                    
+                                    <form method="POST" action="#">
+                                      <input type="hidden" value="true" name="editMessage" id="editMessage">
+                                      <input type="submit"><i class="fa fa-pencil"></i></input>
+                                    </form>
+                                    
+                                  </span>';
+                                  }
+                                ?>
+                                
                               </div>
                               <p class="m-b-5 m-t-10">
                               <?php 
@@ -261,6 +266,7 @@ ob_start();
                            
                             </div> <!-- end message -->
                             <?php
+                            $count = $count + 1;
 }
 ?>
                       </div>
