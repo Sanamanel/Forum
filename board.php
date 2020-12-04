@@ -285,7 +285,7 @@ while ($topic_row = $topics_results->fetch())
             <!-- Start Sixth Row -->
             <div class="row mt-5">
               <div class="col-md-4 col-sm-12">
-                <a href="./index.php" class="text-capitalize return">
+                <a href="./home.php" class="text-capitalize return">
                   <i class="fa fa-angle-left mr-1" aria-hidden="true"></i>
                   return to board index</a
                 >
