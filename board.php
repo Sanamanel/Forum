@@ -107,7 +107,7 @@ function getDateDisplay($input)
                 </div>
               </div>
 
-              <div class="col-md-4 col-sm-12 col-xm-12 text-right count_page">
+              <div class="col-md-12 col-sm-12 col-xm-12 text-right count_page">
               <?php echo $topics_results->rowCount() ?> topics, pages 1 of 1
               </div>
             </div>
@@ -234,7 +234,7 @@ while ($topic_row = $topics_results->fetch())
               <div class="col-md-2 col-sm-12">
                 </div>
               <div
-                class="col-md-6 col-sm-12 col-xm-12 text-right text-capitalize count_page"
+                class="col-md-12 col-sm-12 col-xm-12 text-right text-capitalize count_page"
               >
               <?php echo $topics_results->rowCount() ?> topics, pages 1 of 1
               </div>
