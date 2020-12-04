@@ -195,7 +195,7 @@ if (isset($name)) {
 ?>
                  <div class="card card-user">
                    <div class="card-image">
-                     <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" id="avatar"
+                     <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
                       scr=""
                        alt="Gravatar"
                      /><br>
@@ -217,18 +217,7 @@ if (isset($name)) {
                      <p class="description text-center" id="signature_display">
                       
                      </p>
-                     <?php
-if (isset($_FILES['file']['name'])){
-
-  if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")) {
-  echo "The image you uploaded is shown below<br><br>";
-  echo "<img src='Uploads/images/".$id.".".$fileextension."'>";
-  echo "<br><br>";
-
-  }
-}
-
-?>
+  
                    </div>
                  </div>
                </div>

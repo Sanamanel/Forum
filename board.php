@@ -191,7 +191,7 @@ while ($topic_row = $topics_results->fetch())
                     <div class="row">
                       <div class="col">
                         <?php if($topic_row['locked']){
-                          echo '<i class="fa fa-lock" aria-hidden="true"></i>';
+                          echo '<i class="fa fa-lock text-primary" aria-hidden="true"></i>';
                         }?>
                       </div>
   

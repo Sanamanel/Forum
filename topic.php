@@ -67,6 +67,8 @@ ob_start();
     }
   }
 
+  
+
  
  
   include ("header.php");
@@ -149,9 +151,10 @@ ob_start();
                         if($count == 0){
 
                           $lastId = $message_row['authorId'];
+                          $lastMessageId = $message_row['messageId'];
 
                         }
-                        $count = $count + 1;
+                        
                       ?>
                           <div class="d-flex flex-row comment-row">
                             <div class="p-2">
@@ -175,19 +178,24 @@ ob_start();
                             <div class="comment-text w-100">
                               <h5><?php echo $message_row['authorNickname'] ?></h5>
                               <div class="comment-footer">
-                                <span class="date"><?php echo getDateDisplay($message_row['messageCreationDate']) ?></span>
-                                <span class="label label-info">Pending</span>
-                                <span class="action-icons">
-                                  <a href="#" data-abc="true"
-                                    ><i class="fa fa-pencil"></i
-                                  ></a>
-                                  <a href="#" data-abc="true"
-                                    ><i class="fa fa-rotate-right"></i
-                                  ></a>
-                                  <a href="#" data-abc="true"
-                                    ><i class="fa fa-heart"></i
-                                  ></a>
-                                </span>
+                                <span class="date"><?php echo getDateDisplay($message_row['messageCreationDate']); ?></span>
+                                <?php 
+                                  if(($count == 0) && ($_SESSION['id'] == $lastId)){
+
+                                    $messageToEditId = $message_row['messageId'];
+                                    $commentToEdit = $message_row['messageContent'];
+                                    echo '<span class="action-icons">
+                                    
+                                    <form method="POST" action="#form-edit">
+                                      <input type="hidden" value="true" name="editMessage" id="editMessage">
+                                      <button type="submit" class="btn"><i class="fa fa-pencil"></i></button>
+                                    </form>
+                                    
+                                  </span>';
+                                  }
+                                  
+                                ?>
+                                
                               </div>
                               <p class="m-b-5 m-t-10">
                               <?php 
@@ -224,6 +232,7 @@ ob_start();
                            
                             </div> <!-- end message -->
                             <?php
+                            $count = $count + 1;
 }
 ?>
                       </div>
@@ -237,13 +246,34 @@ ob_start();
               <!-- message -->
               <?php 
                 if($topicRow['locked']){
-                  echo '<h5 class="mb-30 padding-top-1x">This topic is locked</h5>';
+                  echo '<h5 class="mb-30 padding-top-1x bg-danger text-center text-white rounded font-weight-bold">This topic is locked</h5>';
+                }
+                else if((isset($_POST['editMessage'])) && ($_POST['editMessage']) && (isset($messageToEditId))){
+                  $_POST['messageToEditId'] = $messageToEditId;
+                  echo '<h5 class="mb-30 padding-top-1x bg-light text-center text-dark rounded ">Edit your message</h5>
+                  <form method="post" id="form-edit">
+                    <div class="form-group">
+                      <textarea
+                        class="form-control form-control-rounded"
+                        id="message_text_edit"
+                        name="message_text_edit"
+                        rows="8"
+                        placeholder=""
+                        required=""
+                      >'.$commentToEdit.'</textarea>
+                    </div>
+                    <div class="text-right">
+                    <input id="edit_submit" class="btn btn-primary btn-fill pull-right" value="Edit Message" type="submit">
+                        
+                      </input>
+                    </div>
+                  </form>';
                 }
                 else if($lastId == $_SESSION['id']){
-                  echo '<h5 class="mb-30 padding-top-1x">You cannot post two messages in a row.</h5>';
+                  echo '<h5 class="mb-30 padding-top-1x bg-danger text-center text-white rounded font-weight-bold">You cannot post two messages in a row.</h5>';
                 }
                 else{
-                  echo '<h5 class="mb-30 padding-top-1x">Leave Message</h5>
+                  echo '<h5 class="mb-30 padding-top-1x bg-light text-center text-dark rounded ">Leave a message</h5>
                   <form method="post">
                     <div class="form-group">
                       <textarea
@@ -260,6 +290,12 @@ ob_start();
                       </input>
                     </div>
                   </form>';
+                }
+
+                //EDIT MESSAGE
+                if((isset($_POST['message_text_edit'])) && ($lastId == $_SESSION['id'])){
+                  print_r($lastMessageId);
+                  print_r('you did good');
                 }
               ?>
 
