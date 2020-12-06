@@ -24,7 +24,39 @@ ob_start();
 
 require_once ("connect.php");
 $member_id = $_SESSION['username'];
-$emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
+
+  $redirect = false;
+  $topicId = 0;
+  $topic_result = NULL;
+ // $this->conn = $conn;
+  
+  if (!isset($_GET["topic_id"]))
+  {
+      $redirect = true;
+  }
+  else
+  {
+      $topicId = $_GET["topic_id"];
+      $sql = "select topics.id as topicId,topics.title as topicTitle,topics.content as topicContent,board.id as boardId,board.name as boardName from topics inner join board on topics.board_id = board.id where topics.id = $topicId";
+      $topic_result = $conn->query($sql);
+     
+     
+  
+      if ($topic_result->rowCount() != 1) $redirect = true;
+  } 
+  
+  if ($redirect)
+  {
+      header('location: https://led-zepplin-forum.herokuapp.com/home.php');
+      exit();
+  }
+  
+  $topicRow = $topic_result->fetch();
+
+
+  //$sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
+ // $messages_results = $conn->query($sql);
+ $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
 require_once "DBController.php";
 class Rate extends DBController
 {
@@ -125,37 +157,6 @@ class Rate extends DBController
 
 $rate = new Rate();
 $result = $rate->getAllPost();
-  $redirect = false;
-  $topicId = 0;
-  $topic_result = NULL;
- // $this->conn = $conn;
-  
-  if (!isset($_GET["topic_id"]))
-  {
-      $redirect = true;
-  }
-  else
-  {
-      $topicId = $_GET["topic_id"];
-      $sql = "select topics.id as topicId,topics.title as topicTitle,topics.content as topicContent,board.id as boardId,board.name as boardName from topics inner join board on topics.board_id = board.id where topics.id = $topicId";
-      $topic_result = $conn->query($sql);
-     
-     
-  
-      if ($topic_result->rowCount() != 1) $redirect = true;
-  } 
-  
-  if ($redirect)
-  {
-      header('location: https://led-zepplin-forum.herokuapp.com/home.php');
-      exit();
-  }
-  
-  $topicRow = $topic_result->fetch();
-
-
-  //$sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
- // $messages_results = $conn->query($sql);
  
  
   include ("header.php");
