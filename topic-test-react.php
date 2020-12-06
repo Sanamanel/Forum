@@ -26,7 +26,79 @@ require_once ("connect.php");
 $member_id = $_SESSION['username'];
 $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
 class Rate extends DBController
-{
+{class DBController
+  {
+  
+      private $host = "remotemysql.com:3306";
+  
+      private $user = "Q2qsa8HqT2";
+  
+      private $password = "vkN1eNSWhe";
+  
+      private $database = "Q2qsa8HqT2";
+  
+      private static $conn;
+  
+      function __construct()
+      {
+          $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);// Connecting to a database
+      }
+  
+      public static function getConnection()
+      {
+          if (empty($this->conn)) {
+              new Database();
+          }
+      }
+  
+      function getDBResult($query, $params = array())
+      {
+          $sql_statement = $this->conn->prepare($query);
+          if (! empty($params)) {
+              $this->bindParams($sql_statement, $params);
+          }
+          $sql_statement->execute();
+          $result = $sql_statement->get_result();
+          
+          if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                  $resultset[] = $row;
+              }
+          }
+          
+          if (! empty($resultset)) {
+              return $resultset;
+          }
+      }
+  
+      function updateDB($query, $params = array())
+      {
+          $sql_statement = $this->conn->prepare($query);
+          if (! empty($params)) {
+              $this->bindParams($sql_statement, $params);
+          }
+          $sql_statement->execute();
+      }
+  
+      function bindParams($sql_statement, $params)
+      {
+          $param_type = "";
+          foreach ($params as $query_param) {
+              $param_type .= $query_param["param_type"];
+          }
+          
+          $bind_params[] = & $param_type;
+          foreach ($params as $k => $query_param) {
+              $bind_params[] = & $params[$k]["param_value"];
+          }
+          
+          call_user_func_array(array(
+              $sql_statement,
+              'bind_param'
+          ), $bind_params);
+      }
+  }
+  
 
     function getAllPost()
     {
@@ -385,6 +457,62 @@ if (! empty($result)) {
                            
                             </div> <!-- end message -->
                             <?php
+    }
+}
+?>
+ <tr>
+            <td valign="top">
+                <div class="feed_title"><?php //echo $message["title"]; ?></div>
+                    <div><?php echo $message['content']; ?></div>
+                    <div id="topic-<?php echo $message["id"]; ?>"
+                        class="emoji-rating-box">
+                        <input type="hidden" name="rating" id="rating"
+                            value="<?php echo $ratingVal; ?>" />
+
+                        <div class="emoji-section">
+                            <a class="like-link"
+                                onmouseover="showEmojiPanel(this)"
+                                onmouseout="hideEmojiPanel(this)"><img
+                                src="like.png" /> Like</a>
+                            <ul class="emoji-icon-container">
+                            <?php
+                            foreach ($emojiArray as $icon) {
+                            ?>
+                                <li><img src="icons/<?php echo $icon; ?>.png" class="emoji-icon"
+                                    data-emoji-rating="<?php echo $icon; ?>"
+                                    onClick="addUpdateRating(this, <?php echo $message["id"]; ?>)" /></li>
+                            <?php
+                            }
+                            ?>
+                            </ul>
+                        </div>
+                        <div
+                            id="emoji-rating-count-<?php echo $message["id"]; ?>"
+                            class="emoji-rating-count">
+                                <?php
+                                if (! empty($message["rating_count"])) {
+                                    echo $message["rating_count"] . " Likes";
+                                ?>
+                                <?php
+                                    if (! empty($message["emoji_rating"])) {
+                                        $emojiRatingArray = explode(",", $message["emoji_rating"]);
+                                        foreach ($emojiRatingArray as $emojiData) {
+                               ?>
+                                        <img
+                                src="icons/<?php echo $emojiData; ?>.png"
+                                class="emoji-data" />
+                                    <?php
+                                        }
+                                    }
+                                } else {
+                               ?>
+                                No Ratings
+                               <?php  } ?>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+<?php
     }
 }
 ?>
