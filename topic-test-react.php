@@ -23,12 +23,10 @@ session_start();
 ob_start();
 
 
-$member_id = $_SESSION['username'];
-$emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
-require_once ("Rate.php");
+
+
 require_once ("connect.php");
-$rate = new Rate();
-$result = $rate->getAllPost();
+
   $redirect = false;
   $topicId = 0;
   $topic_result = NULL;
@@ -60,7 +58,11 @@ $result = $rate->getAllPost();
 
   //$sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
  // $messages_results = $conn->query($sql);
- 
+ $member_id = $_SESSION['username'];
+$emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
+ require_once ("Rate.php");
+ $rate = new Rate();
+$result = $rate->getAllPost();
  
   include ("header.php");
   require_once 'Michelf/Markdown.inc.php';
