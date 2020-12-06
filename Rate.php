@@ -14,8 +14,8 @@ class Rate extends DBController
     // "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar , COUNT(user_rate.rating) as  rating_count, group_concat(distinct rating) as emoji_rating  inner join users on topics.message_by = users.id where message_topic = '$topicId' from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' LEFT JOIN user_rate ON messages.id = user_rate.message_rate_id GROUP BY messages.id order by creation_date DESC";
        // $messages_results = $conn->query($sql);
         
-       $messages_results = $this->getDBResult($query);
-        return $messages_results;
+       $postResult = $this->getDBResult($query);
+        return $postResult;
     }
 
     function getRatingByMessage($message_id)
@@ -29,8 +29,8 @@ class Rate extends DBController
             )
         );
         
-        $messages_results = $this->getDBResult($query, $params);
-        return $messages_results;
+        $postResult = $this->getDBResult($query, $params);
+        return $postResult;
     }
 
     function getRatingByMessageForMember($message_id, $member_id)
