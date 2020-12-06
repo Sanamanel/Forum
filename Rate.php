@@ -3,7 +3,33 @@ require_once "DBController.php";
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL); 
-$topicId = $_GET["topic_id"];
+$redirect = false;
+$topicId = 0;
+$topic_result = NULL;
+// $this->conn = $conn;
+
+if (!isset($_GET["topic_id"]))
+{
+    $redirect = true;
+}
+else
+{
+    $topicId = $_GET["topic_id"];
+    $sql = "select topics.id as topicId,topics.title as topicTitle,topics.content as topicContent,board.id as boardId,board.name as boardName from topics inner join board on topics.board_id = board.id where topics.id = $topicId";
+    $topic_result = $conn->query($sql);
+   
+   
+
+    if ($topic_result->rowCount() != 1) $redirect = true;
+} 
+
+if ($redirect)
+{
+    header('location: https://led-zepplin-forum.herokuapp.com/home.php');
+    exit();
+}
+
+$topicRow = $topic_result->fetch();
 
 class Rate extends DBController
 {

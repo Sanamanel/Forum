@@ -22,9 +22,6 @@ session_start();
         } 
 ob_start();
 
-
-
-
 require_once ("connect.php");
 
   $redirect = false;
