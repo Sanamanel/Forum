@@ -16,6 +16,7 @@ class Rate extends DBController
         
        $postResult = $this->getDBResult($query);
         return $postResult;
+        var_dump($postResult );
     }
 
     function getRatingByMessage($message_id)
@@ -31,7 +32,9 @@ class Rate extends DBController
         
         $postResult = $this->getDBResult($query, $params);
         return $postResult;
+        var_dump($postResult );
     }
+ 
 
     function getRatingByMessageForMember($message_id, $member_id)
     {
@@ -50,8 +53,9 @@ class Rate extends DBController
         
         $ratingResult = $this->getDBResult($query, $params);
         return $ratingResult;
+        var_dump( $ratingResult);
     }
-
+  
     function addRating($message_id, $rating, $member_id)
     {
         $query = "INSERT INTO user_rate (message_rate_id,rating,user_rate_id) VALUES (?, ?, ?)";
