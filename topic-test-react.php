@@ -27,6 +27,7 @@ require_once ("connect.php");
   $redirect = false;
   $topicId = 0;
   $topic_result = NULL;
+ 
  // $this->conn = $conn;
   
   if (!isset($_GET["topic_id"]))
@@ -207,7 +208,7 @@ if (! empty($result)) {
         }
         var_dump($message);
         ?>
-
+  <div><?php echo $message['messageContent']; ?></div>
                           <div class="d-flex flex-row comment-row">
                             <div class="p-2">
                               <span class="round"
