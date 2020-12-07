@@ -14,8 +14,10 @@ ini_set('display_errors', 1);
             exit();
         } 
 ob_start();
-var_dump($_POST);
-print_r($_POST);
+var_dump($_POST['id']);
+var_dump($_POST['rating']);
+print_r($_POST['rating']);
+print_r($_POST['id']);
 
 
 
