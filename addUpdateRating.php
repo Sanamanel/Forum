@@ -14,10 +14,7 @@ ini_set('display_errors', 1);
             exit();
         } 
 ob_start();
-var_dump($_POST['id']);
-var_dump($_POST['rating']);
-print_r($_POST['rating']);
-print_r($_POST['id']);
+
 
 
 
@@ -25,6 +22,10 @@ $member_id = $_SESSION['id'];
 if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
     require_once ("Rate.php");
     $rate = new Rate();
+    var_dump($_POST['id']);
+var_dump($_POST['rating']);
+print_r($_POST['rating']);
+print_r($_POST['id']);
     
     
     $ratingResult = $rate->getRatingByMessageForMember($_POST["id"], $member_id);
