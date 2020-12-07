@@ -15,7 +15,9 @@ class DBController
 
     function __construct()
     {
-        $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);// Connecting to a database
+        $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        $this->conn->set_charset('utf8mb4');
+        $this->conn->query("SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci");// Connecting to a database
     }
 
     public static function getConnection()
