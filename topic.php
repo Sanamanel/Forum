@@ -164,29 +164,7 @@ ob_start();
 
 
 
-                        <script>
-function showEmojiPanel(obj) {
-        $(".emoji-icon-container").hide();
-	    $(obj).next(".emoji-icon-container").show();
-}
-function hideEmojiPanel(obj) {
-    setTimeout(function() {
-    $(obj).next(".emoji-icon-container").hide();
-    }, 2000);
-}
-
-function addUpdateRating(obj,id) {
-	$(obj).closest(".emoji-icon-container").hide();
-	$.ajax({
-	url: "addUpdateRating.php",
-	data:'id='+id+'&rating='+$(obj).data("emoji-rating"),
-	type: "POST",
-    success: function(data) {
-        $("#emoji-rating-count-"+id).html(data);    
-        }
-	});
-}
-</script>
+      
 
                             <!-- start messages -->
                             <?php
@@ -333,6 +311,30 @@ function addUpdateRating(obj,id) {
 }
 }
 ?>
+
+<script>
+function showEmojiPanel(obj) {
+        $(".emoji-icon-container").hide();
+	    $(obj).next(".emoji-icon-container").show();
+}
+function hideEmojiPanel(obj) {
+    setTimeout(function() {
+    $(obj).next(".emoji-icon-container").hide();
+    }, 2000);
+}
+
+function addUpdateRating(obj,id) {
+	$(obj).closest(".emoji-icon-container").hide();
+	$.ajax({
+	url: "addUpdateRating.php",
+	data:'id='+id+'&rating='+$(obj).data("emoji-rating"),
+	type: "POST",
+    success: function(data) {
+        $("#emoji-rating-count-"+id).html(data);    
+        }
+	});
+}
+</script>
 
                       </div>
                     </div>
