@@ -14,6 +14,10 @@ ini_set('display_errors', 1);
             exit();
         } 
 ob_start();
+var_dump($_POST);
+print_r($_POST);
+
+
 
 $member_id = $_SESSION['id'];
 if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
