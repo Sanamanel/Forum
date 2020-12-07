@@ -14,7 +14,7 @@ session_start();
             exit();
         } 
 ob_start();
-$member_id = $_SESSION['username'];
+$member_id = $_SESSION['id'];
 if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
     require_once ("Rate.php");
     $rate = new Rate();
