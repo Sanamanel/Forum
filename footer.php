@@ -82,8 +82,7 @@
         //init DateTimePickers
         materialKit.initFormExtendedDatetimepickers();
 
-        // Sliders Init
-        materialKit.initSliders();
+       
       });
 
       function scrollToDownload() {
