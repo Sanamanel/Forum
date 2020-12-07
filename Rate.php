@@ -21,7 +21,7 @@ class Rate extends DBController
         
        $postResult = $this->getDBResult($query);
         return $postResult;
-        var_dump($postResult );
+       
     }
 
     function getRatingByMessage($message_id)
@@ -37,7 +37,7 @@ class Rate extends DBController
         
         $postResult = $this->getDBResult($query, $params);
         return $postResult;
-        var_dump($postResult );
+      
     }
  
 
@@ -58,7 +58,7 @@ class Rate extends DBController
         
         $ratingResult = $this->getDBResult($query, $params);
         return $ratingResult;
-        var_dump( $ratingResult);
+      
     }
   
     function addRating($message_id, $rating, $member_id)

@@ -56,7 +56,7 @@ require_once ("connect.php");
 
   //$sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
  // $messages_results = $conn->query($sql);
- $member_id = $_SESSION['username'];
+ $member_id = $_SESSION['id'];
 $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
  require_once ("Rate.php");
  $rate = new Rate();
@@ -199,14 +199,14 @@ function addUpdateRating(obj,id) {
 <?php
 if (! empty($result)) {
     $i = 0;
-    var_dump($result);
+  
     foreach ($result as $message) {
         $ratingResult = $rate->getRatingByMessageForMember($message["id"], $member_id);
         $ratingVal = "";
         if (! empty($ratingResult[0]["rating"])) {
             $ratingVal = $ratingResult[0]["rating"];
         }
-        var_dump($message);
+       
         ?>
   <div><?php echo $message['messageContent']; ?></div>
                           <div class="d-flex flex-row comment-row">
