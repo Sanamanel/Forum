@@ -44,3 +44,4 @@ if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
     }
 }
 ?>
+<h1>Test </h1>
