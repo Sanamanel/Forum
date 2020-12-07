@@ -209,7 +209,7 @@ function addUpdateRating(obj,id) {
         }
                         
                       ?>
-                          <div class="d-flex flex-row comment-row">
+                          <div class="d-flex flex-row comment-row demo-table">
                             <div class="p-2">
                               <span class="round"
                                 ><img
