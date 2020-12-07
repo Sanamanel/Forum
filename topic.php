@@ -324,7 +324,9 @@ function addUpdateRating(obj,id) {
                                 No Ratings
                                <?php  } ?>
                         </div>
-                           
+                        </div>
+                            </div>
+
                             </div> <!-- end message -->
                             <?php
                             $count = $count + 1;
