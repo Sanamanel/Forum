@@ -52,8 +52,8 @@ ob_start();
   //print_r($topicRow['topicAuthor']);
 
 
-  $sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate, messages.deleted as isDeleted, users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
-  $messages_results = $conn->query($sql);
+  //$sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate, messages.deleted as isDeleted, users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
+ // $messages_results = $conn->query($sql);
 
   //LOCK THE TOPIC
   if(isset($_POST['tolock'])){
@@ -160,12 +160,41 @@ ob_start();
                           </h6>
                         </div>
                         <div class="comment-widgets m-b-20">
+
+
+
+
+                        <script>
+function showEmojiPanel(obj) {
+        $(".emoji-icon-container").hide();
+	    $(obj).next(".emoji-icon-container").show();
+}
+function hideEmojiPanel(obj) {
+    setTimeout(function() {
+    $(obj).next(".emoji-icon-container").hide();
+    }, 2000);
+}
+
+function addUpdateRating(obj,id) {
+	$(obj).closest(".emoji-icon-container").hide();
+	$.ajax({
+	url: "addUpdateRating.php",
+	data:'id='+id+'&rating='+$(obj).data("emoji-rating"),
+	type: "POST",
+    success: function(data) {
+        $("#emoji-rating-count-"+id).html(data);    
+        }
+	});
+}
+</script>
+
                             <!-- start messages -->
                             <?php
+                            if (! empty($result)) {
+                              $i = 0;
                       $count = 0;
                       $lastId = 0;
-                      while ($message_row = $messages_results->fetch())
-                      {
+                      foreach ($result as $message) {
                         //get ID of most recent author and most recent message
                         if($count == 0){
 
@@ -173,6 +202,11 @@ ob_start();
                           $lastMessageId = $message_row['messageId'];
 
                         }
+                        $ratingResult = $rate->getRatingByMessageForMember($message["id"], $member_id);
+        $ratingVal = "";
+        if (! empty($ratingResult[0]["rating"])) {
+            $ratingVal = $ratingResult[0]["rating"];
+        }
                         
                       ?>
                           <div class="d-flex flex-row comment-row">
@@ -181,11 +215,11 @@ ob_start();
                                 ><img
                                   src="<?php 
 
-                                          if(!is_null($message_row['authorAvatar']) && file_exists('./Uploads/images/'.$message_row['authorAvatar'])){
-                                            echo "./Uploads/images/".$message_row['authorAvatar'];
+                                          if(!is_null($message['authorAvatar']) && file_exists('./Uploads/images/'.$message['authorAvatar'])){
+                                            echo "./Uploads/images/".$message['authorAvatar'];
                                           }
                                           else{
-                                            echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message_row['authorEmail'])))."?"."&s=80";
+                                            echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message['authorEmail'])))."?"."&s=80";
                                           }
                                   
 
@@ -195,15 +229,15 @@ ob_start();
                                 </span>
                             </div>
                             <div class="comment-text w-100">
-                              <h5><?php echo $message_row['authorNickname'] ?></h5>
+                            <h5><?php echo $message['authorNickname'] ?></h5>
                               <div class="comment-footer">
                                 <span class="date">
                                   <?php 
                                   
-                                    echo getDateDisplay($message_row['messageCreationDate']);
+                                    echo getDateDisplay($message['messageCreationDate']);
 
-                                    if(!is_null($message_row['messageModificationDate'])){
-                                      echo ' <strong><em>Edited on</em></strong> '.getDateDisplay($message_row['messageModificationDate']);
+                                    if(!is_null($message['messageModificationDate'])){
+                                      echo ' <strong><em>Edited on</em></strong> '.getDateDisplay($message['messageModificationDate']);
                                     }
                                     
                                   
@@ -213,10 +247,10 @@ ob_start();
                                 <?php 
                                   if(($count == 0) && ($_SESSION['id'] == $lastId)){
 
-                                    $messageToEditId = $message_row['messageId'];
-                                    $commentToEdit = $message_row['messageContent'];
+                                    $messageToEditId = $message['messageId'];
+                                    $commentToEdit = $message['messageContent'];
 
-                                    if(!$message_row['isDeleted']){
+                                    if(!$message['isDeleted']){
                                     echo '<form method="POST" action="#form-edit">
                                       <input type="hidden" value="true" name="editMessage" id="editMessage">
                                       <button type="submit" class="btn"><i class="fa fa-pencil"></i></button>
@@ -225,10 +259,10 @@ ob_start();
                                     
                                   
                                   }
-                                  if(($_SESSION['id'] == $message_row['authorId']) && (!$message_row['isDeleted'])){
+                                  if(($_SESSION['id'] == $message['authorId']) && (!$message['isDeleted'])){
                                     echo '<form method="POST" action="#">
                                     <input type="hidden" value="true" name="deleteMessage" id="deleteMessage">
-                                    <input type="hidden" value="'.$message_row['messageId'].'" name="deleteMessageId" id="deleteMessageId">
+                                    <input type="hidden" value="'.$message['messageId'].'" name="deleteMessageId" id="deleteMessageId">
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i></button>
                                   </form>';
                                   }
@@ -238,42 +272,66 @@ ob_start();
                               </div>
                               <p class="m-b-5 m-t-10">
                               <?php 
-                                $comment = $message_row['messageContent'];
+                                $comment = $message['messageContent'];
                                 $markdowned_comment = Michelf\Markdown::defaultTransform($comment);
                                 echo $markdowned_comment;
                                 
                               ?><!-- Reaction system start -->
                               
                               </p>
-                              <div class="reaction-container"><!-- container div for reaction system -->
-                                  <span class="reaction-btn"> <!-- Default like button -->
-                                      <span class="reaction-btn-emo like-btn-default"></span> <!-- Default like button emotion-->
-                                      <span class="reaction-btn-text">Like</span> <!-- Default like button text,(Like, wow, sad..) default:Like  -->
-                                      <ul class="emojies-box"> <!-- Reaction buttons container-->
-                                          <li class="emoji emo-like" data-reaction="Like"></li>
-                                          <li class="emoji emo-love" data-reaction="Love"></li>
-                                          <li class="emoji emo-haha" data-reaction="HaHa"></li>
-                                          <li class="emoji emo-wow" data-reaction="Wow"></li>
-                                          <li class="emoji emo-sad" data-reaction="Sad"></li>
-                                          <li class="emoji emo-angry" data-reaction="Angry"></li>
-                                      </ul>
-                                  </span>
-                                  <div class="like-stat"> <!-- Like statistic container-->
-                                      <span class="like-emo"> <!-- like emotions container -->
-                                          <span class="like-btn-like"></span> <!-- given emotions like, wow, sad (default:Like) -->
-                                      </span>
-                                      <span class="like-details">Knowband and 10k others</span>
-                                  </div>
-                              </div>
-                              <!-- Reaction system end -->
-                            </div>
+                              <div id="topic-<?php echo $message["id"]; ?>"
+                        class="emoji-rating-box">
+                        <input type="hidden" name="rating" id="rating"
+                            value="<?php echo $ratingVal; ?>" />
 
+                        <div class="emoji-section">
+                            <a class="like-link"
+                                onmouseover="showEmojiPanel(this)"
+                                onmouseout="hideEmojiPanel(this)"><img
+                                src="like.png" /> Like</a>
+                            <ul class="emoji-icon-container">
+                            <?php
+                            foreach ($emojiArray as $icon) {
+                            ?>
+                                <li><img src="icons/<?php echo $icon; ?>.png" class="emoji-icon"
+                                    data-emoji-rating="<?php echo $icon; ?>"
+                                    onClick="addUpdateRating(this, <?php echo $message["id"]; ?>)" /></li>
+                            <?php
+                            }
+                            ?> 
+                             </ul>
+                            </div>
+                            <div
+                            id="emoji-rating-count-<?php echo $message["id"]; ?>"
+                            class="emoji-rating-count">
+                                <?php
+                                if (! empty($message["rating_count"])) {
+                                    echo $message["rating_count"] . " Likes";
+                                ?>
+                                <?php
+                                    if (! empty($message["emoji_rating"])) {
+                                        $emojiRatingArray = explode(",", $message["emoji_rating"]);
+                                        foreach ($emojiRatingArray as $emojiData) {
+                               ?>
+                                        <img
+                                src="icons/<?php echo $emojiData; ?>.png"
+                                class="emoji-data" />
+                                    <?php
+                                        }
+                                    }
+                                } else {
+                               ?>
+                                No Ratings
+                               <?php  } ?>
+                        </div>
                            
                             </div> <!-- end message -->
                             <?php
                             $count = $count + 1;
 }
+}
 ?>
+
                       </div>
                     </div>
                   </div>

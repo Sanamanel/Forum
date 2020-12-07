@@ -239,7 +239,7 @@ if (! empty($result)) {
         }
        
         ?>
-  <div><?php echo $message['messageContent']; ?></div>
+  
                           <div class="d-flex flex-row comment-row">
                             <div class="p-2">
                               <span class="round"
