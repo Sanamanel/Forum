@@ -19,6 +19,7 @@ $member_id = $_SESSION['id'];
 if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
     require_once ("Rate.php");
     $rate = new Rate();
+    var_dump($_POST);
     
     $ratingResult = $rate->getRatingByMessageForMember($_POST["id"], $member_id);
     if (! empty($ratingResult)) {
@@ -44,4 +45,3 @@ if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
     }
 }
 ?>
-<h1>Test </h1>
