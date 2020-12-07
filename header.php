@@ -43,11 +43,12 @@ The above copyright notice and this permission notice shall be included in all c
     <link href="./assets/css/topics.css" rel="stylesheet" />
     <link href="./assets/css/comment.css" rel="stylesheet" />
     <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/rating.css" rel="stylesheet" />
      <!-- Css for reaction system -->
      <link rel="stylesheet" type="text/css" href="./assets/css/reaction.css" />
     <!-- Emoji Lib-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css" />
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5fc7f882bfc76d001839b41a&product=sticky-share-buttons" async="async"></script>
+
   </head>
 
   <body class="index-page sidebar-collapse">
