@@ -11,7 +11,11 @@ class Rate extends DBController
     function getAllPost()
     {
         $topicId = $_GET["topic_id"];
-        $query = "SELECT messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar , COUNT(user_rate.rating) as  rating_count, group_concat(distinct rating) as emoji_rating from messages
+        $query = "SELECT messages.content as messageContent,messages.id as messageId,messages.creation_date
+        as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname
+        as authorNickname, users.email as authorEmail, users.id as authorId, users.image as
+        authorAvatar , COUNT(user_rate.rating) as  rating_count, group_concat(distinct rating) 
+        as emoji_rating from messages
         join user_rate ON messages.id = user_rate.message_rate_id 
         join users on messages.message_by = users.id
         where message_topic ='$topicId' GROUP BY messages.id order by creation_date DESC";
@@ -25,8 +29,12 @@ class Rate extends DBController
     }
 
     function getRatingByMessage($message_id)
-    {
-        $query = "SELECT messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar , COUNT(user_rate.rating) as rating_count, group_concat(distinct rating) as emoji_rating from messages join user_rate ON messages.id = user_rate.message_rate_id join users on messages.message_by = users.id where message_topic ='1' AND user_rate.message_rate_id = ? GROUP BY messages.id order by creation_date DESC";
+    {    
+        $topicId = $_GET["topic_id"];
+        $query = "SELECT messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar , COUNT(user_rate.rating) as rating_count, group_concat(distinct rating) as emoji_rating from messages
+         join user_rate ON messages.id = user_rate.message_rate_id 
+        join users on messages.message_by = users.id 
+        where message_topic ='$topicId' AND user_rate.message_rate_id = ? GROUP BY messages.id order by creation_date DESC";
         
         $params = array(
             array(

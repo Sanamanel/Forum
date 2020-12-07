@@ -253,17 +253,17 @@ if (! empty($result)) {
                               <h5><?php echo $message['authorNickname'] ?></h5>
                               <div class="comment-footer">
                                 <span class="date"><?php echo getDateDisplay($message['messageCreationDate']);
-                                 if(!is_null($message_row['messageModificationDate'])){
-                                  echo ' <strong><em>Edited on</em></strong> '.getDateDisplay($message_row['messageModificationDate']);
+                                 if(!is_null($message['messageModificationDate'])){
+                                  echo ' <strong><em>Edited on</em></strong> '.getDateDisplay($message['messageModificationDate']);
                                 } ?></span>
 
                                 <span class="text-right">  <?php 
                                   if(($count == 0) && ($_SESSION['id'] == $lastId)){
 
-                                    $messageToEditId = $message_row['messageId'];
-                                    $commentToEdit = $message_row['messageContent'];
+                                    $messageToEditId = $message['messageId'];
+                                    $commentToEdit = $message['messageContent'];
 
-                                    if(!$message_row['isDeleted']){
+                                    if(!$message['isDeleted']){
                                     echo '<form method="POST" action="#form-edit">
                                       <input type="hidden" value="true" name="editMessage" id="editMessage">
                                       <button type="submit" class="btn"><i class="fa fa-pencil"></i></button>
@@ -272,10 +272,10 @@ if (! empty($result)) {
                                     
                                   
                                   }
-                                  if(($_SESSION['id'] == $message_row['authorId']) && (!$message_row['isDeleted'])){
+                                  if(($_SESSION['id'] == $message['authorId']) && (!$message['isDeleted'])){
                                     echo '<form method="POST" action="#">
                                     <input type="hidden" value="true" name="deleteMessage" id="deleteMessage">
-                                    <input type="hidden" value="'.$message_row['messageId'].'" name="deleteMessageId" id="deleteMessageId">
+                                    <input type="hidden" value="'.$message['messageId'].'" name="deleteMessageId" id="deleteMessageId">
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i></button>
                                   </form>';
                                   }
