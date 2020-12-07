@@ -53,6 +53,28 @@ require_once ("connect.php");
   
   $topicRow = $topic_result->fetch();
 
+//LOCK THE TOPIC
+if(isset($_POST['tolock'])){
+  //print_r('lock is set');
+  if($_POST['tolock']){
+    //print_r('and it works');
+    $lock = $conn->prepare('UPDATE topics SET locked = 1 WHERE id = ? ');
+    $lock->execute(array($topicRow['topicId']));
+    header("Location: https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=".$topicRow['topicId']."");
+    exit();
+  }
+}
+
+//DELETE MESSAGE
+
+if(isset($_POST['deleteMessageId'])){
+  if (!empty($_POST['deleteMessageId'])){
+    $delete = $conn->prepare('UPDATE messages SET content = ?, deleted = ? WHERE id = ? AND message_by = ?');
+    $delete->execute(array("*This message was deleted*", 1, $_POST['deleteMessageId'], $_SESSION['id']));
+    header("Location: https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=".$topicRow['topicId']."");
+    exit();
+  }
+}
 
   //$sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate,users.nickname as authorNickname, users.email as authorEmail  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
  // $messages_results = $conn->query($sql);
@@ -199,8 +221,17 @@ function addUpdateRating(obj,id) {
 <?php
 if (! empty($result)) {
     $i = 0;
+    $count = 0;
+    $lastId = 0;
   
     foreach ($result as $message) {
+       //get ID of most recent author and most recent message
+       if($count == 0){
+
+        $lastId = $message_row['authorId'];
+        $lastMessageId = $message_row['messageId'];
+
+      }
         $ratingResult = $rate->getRatingByMessageForMember($message["id"], $member_id);
         $ratingVal = "";
         if (! empty($ratingResult[0]["rating"])) {
@@ -221,14 +252,36 @@ if (! empty($result)) {
                             <div class="comment-text w-100">
                               <h5><?php echo $message['authorNickname'] ?></h5>
                               <div class="comment-footer">
-                                <span class="date"><?php echo getDateDisplay($message['messageCreationDate']) ?></span>
-                                <span class="label label-info">Pending</span>
-                                <span class="action-icons">
-                                  <a href="#" data-abc="true"
-                                    ><i class="upd fa fa-pencil"></i
-                                  ></a>
+                                <span class="date"><?php echo getDateDisplay($message['messageCreationDate']);
+                                 if(!is_null($message_row['messageModificationDate'])){
+                                  echo ' <strong><em>Edited on</em></strong> '.getDateDisplay($message_row['messageModificationDate']);
+                                } ?></span>
+
+                                <span class="text-right">  <?php 
+                                  if(($count == 0) && ($_SESSION['id'] == $lastId)){
+
+                                    $messageToEditId = $message_row['messageId'];
+                                    $commentToEdit = $message_row['messageContent'];
+
+                                    if(!$message_row['isDeleted']){
+                                    echo '<form method="POST" action="#form-edit">
+                                      <input type="hidden" value="true" name="editMessage" id="editMessage">
+                                      <button type="submit" class="btn"><i class="fa fa-pencil"></i></button>
+                                    </form>';
+                                    }
+                                    
                                   
-                                </span>
+                                  }
+                                  if(($_SESSION['id'] == $message_row['authorId']) && (!$message_row['isDeleted'])){
+                                    echo '<form method="POST" action="#">
+                                    <input type="hidden" value="true" name="deleteMessage" id="deleteMessage">
+                                    <input type="hidden" value="'.$message_row['messageId'].'" name="deleteMessageId" id="deleteMessageId">
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i></button>
+                                  </form>';
+                                  }
+                                  
+                                ?></span>
+                                
                               </div>
                               <p class="m-b-5 m-t-10">
                               <?php 

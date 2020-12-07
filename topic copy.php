@@ -80,11 +80,7 @@ ob_start();
   
 
     
-  $member_id = $_SESSION['id'];
-  $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
-   require_once ("Rate.php");
-   $rate = new Rate();
-  $result = $rate->getAllPost();
+  
 
   
 
