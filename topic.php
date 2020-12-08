@@ -273,14 +273,14 @@ ob_start();
                             ?>
                                 <li><img src="icons/<?php echo $icon; ?>.png" class="emoji-icon"
                                     data-emoji-rating="<?php echo $icon; ?>"
-                                    onClick="addUpdateRating(this, <?php echo $message["id"]; ?>)" /></li>
+                                    onClick="addUpdateRating(this, <?php echo $message["messageId"]; ?>)" /></li>
                             <?php
                             }
                             ?> 
                              </ul>
                             </div>
                             <div
-                            id="emoji-rating-count-<?php echo $message["id"]; ?>"
+                            id="emoji-rating-count-<?php echo $message["messageId"]; ?>"
                             class="emoji-rating-count">
                                 <?php
                                 if (! empty($message["rating_count"])) {
