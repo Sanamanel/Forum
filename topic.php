@@ -257,7 +257,7 @@ ob_start();
                               ?><!-- Reaction system start -->
                               
                               </p>
-                              <div id="topic-<?php echo $message["id"]; ?>"
+                              <div id="tutorial-<?php echo $message["id"]; ?>"
                         class="emoji-rating-box">
                         <input type="hidden" name="rating" id="rating"
                             value="<?php echo $ratingVal; ?>" />

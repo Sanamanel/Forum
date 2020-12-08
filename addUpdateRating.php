@@ -1,19 +1,19 @@
 <?php
 // Here the member id is harcoded.
 // You can integrate your authentication code here to get the logged in member id
-session_start();
-ini_set('display_errors', 1);
-   ini_set('display_startup_errors', 1);
-   error_reporting(E_ALL); 
+//session_start();
+//ini_set('display_errors', 1);
+  // ini_set('display_startup_errors', 1);
+  // error_reporting(E_ALL); 
 // If the session variable is empty, this  
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
         // to allow the user to login 
-        if (!isset($_SESSION['username'])) { 
-            header('location: https://led-zepplin-forum.herokuapp.com/'); 
-            exit();
-        } 
-ob_start();
+    //    if (!isset($_SESSION['username'])) { 
+     //       header('location: https://led-zepplin-forum.herokuapp.com/'); 
+      //      exit();
+      //  } 
+//ob_start();
 
 
 
@@ -22,10 +22,7 @@ $member_id = $_SESSION['id'];
 if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
     require_once ("Rate.php");
     $rate = new Rate();
-    var_dump($_POST['id']);
-var_dump($_POST['rating']);
-print_r($_POST['rating']);
-print_r($_POST['id']);
+ 
     
     
     $ratingResult = $rate->getRatingByMessageForMember($_POST["id"], $member_id);
