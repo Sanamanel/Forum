@@ -10,7 +10,7 @@ class Rate extends DBController
 
     function getAllPost()
     {
-        $topicId = $_GET["topic_id"];
+        $topicId = $_GET["topicId"];
         $query = "SELECT messages.content as messageContent,messages.id as messageId,messages.creation_date
         as messageCreationDate, messages.modification_date as messageModificationDate, messages.deleted as isDeleted, users.nickname
         as authorNickname, users.email as authorEmail, users.id as authorId, users.image as
@@ -30,7 +30,7 @@ class Rate extends DBController
 
     function getRatingByMessage($message_id)
     {    
-        $topicId = $_GET["topic_id"];
+        $topicId = $_GET["topicId"];
         $query = "SELECT messages.content as messageContent,messages.id as messageId,messages.creation_date
         as messageCreationDate, messages.modification_date as messageModificationDate, messages.deleted as isDeleted, users.nickname
         as authorNickname, users.email as authorEmail, users.id as authorId, users.image as
