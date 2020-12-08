@@ -30,12 +30,10 @@ class Rate extends DBController
 
     function getRatingByMessage($message_id)
     {    
-        if(isset($_GET["topic_id"])){
-            $topicId = $_GET["topic_id"];
-        }
-        else{
-            $topicId = $_POST["topic_id"];
-        }
+        
+        $topicId = $_GET["topic_id"];
+        
+        
         
         $query = "SELECT messages.content as messageContent,messages.id as messageId,messages.creation_date
         as messageCreationDate, messages.modification_date as messageModificationDate, messages.deleted as isDeleted, users.nickname
