@@ -41,7 +41,7 @@ if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
             $emojiRatingArray = explode(",", $postRating[0]["emoji_rating"]);
             foreach ($emojiRatingArray as $emojiData) {
                 ?>
-                                        <img data-toggle="tooltip" data-html="true" data-placement="top" title="" data-original-title="<?php 
+                                        <img data-toggle="tooltip" data-html="true" data-placement="top" title="<?php 
                                           $reactions = $rate->getRatingNicknames($_POST["id"], $emojiData);
                                           foreach ($reactions as $reaction){
                                             echo $reaction['rateNickname'].'<br>';
@@ -55,3 +55,30 @@ if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
     }
 }
 ?>
+
+<script
+      src="./assets/js/core/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="./assets/js/core/popper.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="./assets/js/core/bootstrap-material-design.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="./assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script
+      src="./assets/js/plugins/bootstrap-datetimepicker.js"
+      type="text/javascript"
+    ></script>
+    
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script
+      src="./assets/js/material-kit.js?v=2.0.7"
+      type="text/javascript"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
