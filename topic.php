@@ -180,7 +180,7 @@ ob_start();
                           $lastMessageId = $message['messageId'];
 
                         }
-                        $ratingResult = $rate->getRatingByMessageForMember($message["id"], $member_id);
+                        $ratingResult = $rate->getRatingByMessageForMember($message["messageId"], $member_id);
         $ratingVal = "";
         if (! empty($ratingResult[0]["rating"])) {
             $ratingVal = $ratingResult[0]["rating"];
@@ -291,7 +291,7 @@ ob_start();
                                         $emojiRatingArray = explode(",", $message["emoji_rating"]);
                                         foreach ($emojiRatingArray as $emojiData) {
                                ?>
-                                        <img data-toggle="tooltip" data-placement="top" title="<?php echo $message["username"]; ?>"
+                                        <img data-toggle="tooltip" data-placement="top" title="<?php echo $ratingResult["username"]; ?>"
                                 src="icons/<?php echo $emojiData; ?>.png"
                                 class="emoji-data" />
                                     <?php
