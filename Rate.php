@@ -34,7 +34,7 @@ class Rate extends DBController
             $topicId = $_GET["topic_id"];
         }
         else{
-            $topicId = $_POST["id"];
+            $topicId = $_POST["topic_id"];
         }
         
         $query = "SELECT messages.content as messageContent,messages.id as messageId,messages.creation_date
