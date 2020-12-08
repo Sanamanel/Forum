@@ -294,7 +294,7 @@ ob_start();
                                         <img data-toggle="tooltip" data-html="true" data-placement="top" title="<?php 
                                           $reactions = $rate->getRatingNicknames($message['messageId'], $emojiData);
                                           foreach ($reactions as $reaction){
-                                            echo $reaction['rateNickname'].'&#13; <br>';
+                                            echo $reaction['rateNickname'].'<br>';
                                           }
                                         ?>"
                                 src="icons/<?php echo $emojiData; ?>.png"
