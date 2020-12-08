@@ -296,7 +296,7 @@ ob_start();
                                 class="emoji-data" />
                                     <?php
                                     $test = $rate->getRatingNicknames($message['messageId'], $emojiData);
-                                    var_dump($test);
+                                    var_dump($test["rateNickname"]);
                                         }
                                     }
                                 } else {
