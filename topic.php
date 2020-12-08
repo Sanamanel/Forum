@@ -295,7 +295,7 @@ ob_start();
                                 src="icons/<?php echo $emojiData; ?>.png"
                                 class="emoji-data" />
                                     <?php
-                                    var_dump( $message["username"]);
+                                    var_dump( $ratingResult["username"]);
                                         }
                                     }
                                 } else {
