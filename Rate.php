@@ -31,7 +31,7 @@ class Rate extends DBController
     function getRatingNicknames($message_id, $rating){
         $query = "SELECT users.nickname as rateNickname from user_rate
         join users on user_rate.user_rate_id = users.id
-        WHERE user_rate.message_rate_id = $message_id AND user_rate.rating = $rating";
+        WHERE user_rate.message_rate_id = '$message_id' AND user_rate.rating = '$rating'";
 
         $postResult = $this->getDBResult($query);
         return $postResult;
