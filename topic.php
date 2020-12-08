@@ -291,7 +291,7 @@ ob_start();
                                         $emojiRatingArray = explode(",", $message["emoji_rating"]);
                                         foreach ($emojiRatingArray as $emojiData) {
                                ?>
-                                        <img
+                                        <img data-toggle="tooltip" data-placement="top" title="<?php echo $message["username"]; ?>"
                                 src="icons/<?php echo $emojiData; ?>.png"
                                 class="emoji-data" />
                                     <?php

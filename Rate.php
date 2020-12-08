@@ -68,7 +68,9 @@ class Rate extends DBController
 
     function getRatingByMessageForMember($message_id, $member_id)
     {
-        $query = "SELECT * FROM user_rate WHERE message_rate_id = ? AND user_rate_id = ?";
+       // $query = "SELECT * FROM user_rate WHERE message_rate_id = ? AND user_rate_id = ?";
+        $query =  "SELECT user_rate.id, message_rate_id, user_rate_id, rating, users.nickname as username FROM user_rate
+                    join users on user_rate_id  = users.id  WHERE message_rate_id = ? AND user_rate_id = ?";
         
         $params = array(
             array(
