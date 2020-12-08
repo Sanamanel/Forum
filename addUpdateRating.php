@@ -2,9 +2,9 @@
 // Here the member id is harcoded.
 // You can integrate your authentication code here to get the logged in member id
 session_start();
-ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-   error_reporting(E_ALL); 
+//ini_set('display_errors', 1);
+  //ini_set('display_startup_errors', 1);
+   //error_reporting(E_ALL); 
 // If the session variable is empty, this  
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
