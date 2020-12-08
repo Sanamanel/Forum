@@ -41,7 +41,7 @@ if (! empty($_POST["rating"]) && ! empty($_POST["id"])) {
             $emojiRatingArray = explode(",", $postRating[0]["emoji_rating"]);
             foreach ($emojiRatingArray as $emojiData) {
                 ?>
-                                        <img data-toggle="tooltip" data-html="true" data-placement="top" title="<?php 
+                                        <img data-toggle="tooltip" data-html="true" data-placement="top" title="" data-original-title="<?php 
                                           $reactions = $rate->getRatingNicknames($_POST["id"], $emojiData);
                                           foreach ($reactions as $reaction){
                                             echo $reaction['rateNickname'].'<br>';
