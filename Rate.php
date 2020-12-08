@@ -31,7 +31,7 @@ class Rate extends DBController
     function getRatingByMessage($message_id)
     {    
         
-        $topicId = $_GET["topic_id"];
+        //$topicId = $_GET["topic_id"];
         
         
         
@@ -42,7 +42,7 @@ class Rate extends DBController
         as emoji_rating from messages
       join user_rate ON messages.id = user_rate.message_rate_id 
        join users on messages.message_by = users.id
-        where message_topic ='$topicId'  GROUP BY messages.id order by creation_date DESC";
+        where messages.id ='$message_id'  GROUP BY messages.id order by creation_date DESC";
         
         $params = array(
             array(
