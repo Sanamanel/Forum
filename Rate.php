@@ -15,7 +15,7 @@ class Rate extends DBController
         as messageCreationDate, messages.modification_date as messageModificationDate, messages.deleted as isDeleted, users.nickname
         as authorNickname, users.email as authorEmail, users.id as authorId, users.image as
         authorAvatar , COUNT(user_rate.rating) as  rating_count, group_concat(distinct rating) 
-        as emoji_rating from messages
+        as emoji_rating, user_rate.user_rate_id as rateId from messages
       left join user_rate ON messages.id = user_rate.message_rate_id 
        left join users on messages.message_by = users.id
         where message_topic ='$topicId' GROUP BY messages.id order by creation_date DESC";
