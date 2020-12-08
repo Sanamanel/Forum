@@ -257,7 +257,7 @@ ob_start();
                               ?><!-- Reaction system start -->
                               
                               </p>
-                              <div id="tutorial-<?php echo $message["id"]; ?>"
+                              <div id="tutorial-<?php echo $message["messageId"]; ?>"
                         class="emoji-rating-box">
                         <input type="hidden" name="rating" id="rating"
                             value="<?php echo $ratingVal; ?>" />
@@ -327,8 +327,8 @@ function addUpdateRating(obj,id) {
 	$(obj).closest(".emoji-icon-container").hide();
 	$.ajax({
 	url: "https://led-zepplin-forum.herokuapp.com/addUpdateRating.php",
-	data:{'id='+id+'&rating='+$(obj).data("emoji-rating")},
-	method: "POST",
+	data:'id='+id+'&rating='+$(obj).data("emoji-rating"),
+	type: "POST",
     success: function(data) {
         $("#emoji-rating-count-"+id).html(data);    
         }
