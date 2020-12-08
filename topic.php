@@ -327,7 +327,7 @@ function addUpdateRating(obj,id) {
 	$(obj).closest(".emoji-icon-container").hide();
 	$.ajax({
 	url: "https://led-zepplin-forum.herokuapp.com/addUpdateRating.php",
-	data:'topic_id='+$_GET["topic_id"]+'&id='+id+'&rating='+$(obj).data("emoji-rating"),
+	data:'topic_id='+<?php $_GET["topic_id"]; ?>+'&id='+id+'&rating='+$(obj).data("emoji-rating"),
 	type: "POST",
     success: function(data) {
         $("#emoji-rating-count-"+id).html(data);    
