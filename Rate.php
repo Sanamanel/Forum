@@ -60,7 +60,7 @@ class Rate extends DBController
             )
         );
         
-        $postResult = $this->getDBResult($query, $params);
+        $postResult = $this->getDBResult($query);
         return $postResult;
       
     }
