@@ -33,6 +33,13 @@ class Rate extends DBController
         join users on user_rate.user_rate_id = users.id
         WHERE user_rate.message_rate_id = '$message_id' AND user_rate.rating = '$rating'";
 
+        $params = array(
+            array(
+                "param_type" => "i",
+                "param_value" => $message_id
+            )
+        );
+
         $postResult = $this->getDBResult($query);
         return $postResult;
     }

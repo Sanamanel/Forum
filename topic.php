@@ -295,8 +295,8 @@ ob_start();
                                 src="icons/<?php echo $emojiData; ?>.png"
                                 class="emoji-data" />
                                     <?php
-                                    $test = getRatingNicknames($message['messageId'], 'like');
-                                    var_dump($test);
+                                    //$test = getRatingNicknames($message['messageId'], 'like');
+                                    //var_dump($test);
                                         }
                                     }
                                 } else {
