@@ -26,7 +26,13 @@
               $boardName = $board_row['boardName'];
 
               ?>
-              <h2 class="text-muted font-weight-bold"><?php echo $boardName  ?></h2> <div class="d-flex flex-row flex-wrap justify-content-center"><?php
+              <?php
+                if($boardId != 5){
+                  echo '<a href="./board.php?board_id='.$boardId.'"><h2 class="font-weight-bold">  '.$boardName.'</h2></a>';
+                }else{
+                  echo ' <h2 class="font-weight-bold text-primary">  '.$boardName.'</h2>';
+                }
+              ?> <div class="d-flex flex-row flex-wrap justify-content-center"><?php
 
               $sql = "select topics.title as topicTitle,topics.content as topicContent,topics.id as topicId, topics.modification_date as topicModificationDate from topics where board_id = '$boardId' order by id desc limit 3";  //Get all topics for board
 
