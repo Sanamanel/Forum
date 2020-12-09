@@ -17,7 +17,7 @@ session_start();
           }
         }
 ob_start();
-require ('connect.php');
+require ('config/connect.php');
 $redirect = false;
 $boardId = isset($_GET["board_id"]) && is_numeric($_GET["board_id"]) ? intval($_GET["board_id"]): 0;
 $board_result = NULL;

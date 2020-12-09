@@ -13,7 +13,7 @@
             exit();
         }
         
-        include("connect.php");
+        include("config/connect.php");
         include("header.php");
       
         
