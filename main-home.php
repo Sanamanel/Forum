@@ -27,7 +27,7 @@
 
               ?> <?php
               if($boardId != 5){
-                echo '<a href="./board.php?board_id='.$boardId.'"><h2 class="text-muted font-weight-bold"><?php echo $boardName  ?></h2> </a>';
+                echo '<a href="./board.php?board_id='.$boardId.'"><h2 class="text-muted font-weight-bold">echo $boardName</h2> </a>';
               }
             ?>
               <h2 class="text-muted font-weight-bold"><?php echo $boardName  ?></h2> <div class="d-flex flex-row flex-wrap justify-content-center"><?php
