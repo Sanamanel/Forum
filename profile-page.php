@@ -209,7 +209,7 @@ if (isset($name)) {
                       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         if(!is_null($row['image'])){
                           echo '<img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
-                          scr="data:image/png;base64,' . base64_encode($row['image']) . '"
+                          scr="data:image/png;base64,' . $row['image'] . '"
                            alt="Profile Picture"
                          /><br>';
                         }
