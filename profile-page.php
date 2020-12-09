@@ -151,6 +151,10 @@ if (isset($_FILES['file']['name'])){
 
   $tmp_name= $_FILES['file']['tmp_name'];
 
+  $blob_image = addslashes(file_get_contents($_FILES['file']['tmp_name']));
+
+  print_r($blob_image);
+
   $position= strpos($name, ".");
 
   $fileextension= substr($name, $position + 1);
