@@ -52,7 +52,7 @@ ob_start();
   //print_r($topicRow['topicAuthor']);
 
 
-  //$sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate, messages.deleted as isDeleted, users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
+  //$sql = "select messages.content as messageContent,messages.id as messageId,messages.creation_date as messageCreationDate, messages.modification_date as messageModificationDate, messages.deleted as isDeleted, users.nickname as authorNickname, users.email as authorEmail, users.id as authorId, users.image as authorAvatar, users.image_type as typeAvatar  from messages inner join users on messages.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
  // $messages_results = $conn->query($sql);
 
   //LOCK THE TOPIC
@@ -193,7 +193,7 @@ ob_start();
                                   src="<?php 
 
                                           if(!is_null($message['authorAvatar'])){
-                                            echo 'data:image/png;base64,' . base64_encode($message['authorAvatar']);
+                                            echo 'data:image/'.$message['typeAvatar'].';base64,' . base64_encode($message['authorAvatar']);
                                           }
                                           else{
                                             echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message['authorEmail'])))."?"."&s=80";
