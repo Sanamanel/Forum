@@ -152,9 +152,9 @@ if (isset($_FILES['file']['name'])){
 
   $tmp_name= $_FILES['file']['tmp_name'];
 
-  resize_crop_image(100, 100, $temp_name, $temp_name);
+  resize_crop_image(100, 100, $tmp_name, $tmp_name);
 
-  $blob_image = file_get_contents($temp_name);
+  $blob_image = file_get_contents($tmp_name);
 
   $position= strpos($name, ".");
 
