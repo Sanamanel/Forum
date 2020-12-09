@@ -100,6 +100,7 @@ function getDateDisplay($input)
         <p>These forums define spam as unsolicited advertisement for goods, services and/or other web sites, or posts with little, or completely unrelated content.</p> 
         <p>Do not spam the forums with links to your site or product, or try to self-promote your website, business or forums etc.</p>
         <p>Spamming also includes sending private messages to a large number of different users.</p>
+        <h4> Remain respectful of other members at all times and Do not post “offensive” posts, links or images</h4>
             </div>
             
 
