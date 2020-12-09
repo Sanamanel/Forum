@@ -75,7 +75,7 @@ function getDateDisplay($input)
 ?>
   
   
-<div class="container-fluid">
+<div class="container">
   <div class="section text-center">
           <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb">
