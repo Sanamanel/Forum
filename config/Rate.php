@@ -16,7 +16,7 @@ class Rate extends DBController
         as authorNickname, users.email as authorEmail, users.id as authorId, users.image as
         authorAvatar , COUNT(user_rate.rating) as  rating_count, group_concat(distinct rating) 
         as emoji_rating from messages
-      left join user_rate ON messages.id = user_rate.message_rate_id 
+       left join user_rate ON messages.id = user_rate.message_rate_id 
        left join users on messages.message_by = users.id
         where message_topic ='$topicId' GROUP BY messages.id order by creation_date DESC";
     // $sql = "select messages.*, COUNT(user_rate.rating) as  rating_count, group_concat(distinct rating) as emoji_rating  inner join users on topics.message_by = users.id where message_topic = '$topicId' order by creation_date DESC";
