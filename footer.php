@@ -22,7 +22,7 @@
           <div class="copyright">
             <ul>
               <li>
-                <a href="#"> Board </a>
+                <a href="home.php"> Board </a>
               </li>
               <li>
                 <a href="#"> About Us </a>

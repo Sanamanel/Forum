@@ -11,7 +11,7 @@ Coded by Creative Tim
 =========================================================
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
- <?php include('server.php') ?>  
+ <?php include('config/server.php') ?>  
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -196,13 +196,13 @@ The above copyright notice and this permission notice shall be included in all c
       type="text/javascript"
     ></script>
     
-    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+   
     <script
       src="./assets/js/material-kit.js?v=2.0.7"
       type="text/javascript"
     ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
     <script type="text/javascript" src="./index.js"></script>
   </body>
 </html>

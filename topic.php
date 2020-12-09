@@ -21,7 +21,7 @@ session_start();
             exit();
         } 
 ob_start();
-  require ('connect.php');
+  require ('config/connect.php');
   $redirect = false;
   $topicId = 0;
   $topic_result = NULL;
@@ -82,7 +82,7 @@ ob_start();
     
   $member_id = $_SESSION['id'];
   $emojiArray = array("like", "love", "smile", "wow", "sad", "angry");
-   require_once ("Rate.php");
+   require_once ("config/Rate.php");
    $rate = new Rate();
   $result = $rate->getAllPost();
 
@@ -162,8 +162,7 @@ ob_start();
                         <div class="comment-widgets m-b-20">
 
 
-
-
+                  
       
 
                             <!-- start messages -->
