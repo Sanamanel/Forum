@@ -201,16 +201,17 @@ if (isset($name)) {
                  <div class="card card-user">
                    <div class="card-image">
                    <?php
-                      $sql = "SELECT image_type, image FROM users WHERE users.id = $_SESSION['id']";
-                      $stmt = $pdo->prepare($sql);
+                      $sql = "SELECT image_type, image FROM users WHERE id = :id";
+                      $stmt = $conn->prepare($sql);
+                      $stmt->bindValue(':id',$_SESSION['id'],PDO::PARAM_INT);
                       $stmt->execute();
 
                       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        if(!is_null($row['image']){
+                        if(!is_null($row['image'])){
                           echo "CA MARCHE Y A UNE IMAGE";
                         }
                         else{
-                          echo "on utilise le gravatar"
+                          echo "on utilise le gravatar";
                         }
                       }
                    ?>
