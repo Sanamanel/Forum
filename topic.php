@@ -332,7 +332,7 @@ function hideEmojiPanel(obj) {
 function addUpdateRating(obj,id) {
 	$(obj).closest(".emoji-icon-container").hide();
 	$.ajax({
-	url: "https://led-zepplin-forum.herokuapp.com/addUpdateRating.php",
+	url: "https://led-zepplin-forum.herokuapp.com/config/addUpdateRating.php",
 	data:'id='+id+'&rating='+$(obj).data("emoji-rating"),
 	type: "POST",
     success: function(data) {
