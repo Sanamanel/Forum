@@ -151,7 +151,7 @@ if (isset($_FILES['file']['name'])){
 
   $tmp_name= $_FILES['file']['tmp_name'];
 
-  $blob_image = addslashes(file_get_contents($_FILES['file']['tmp_name']));
+  $blob_image = file_get_contents($_FILES['file']['tmp_name']);
 
   //print_r($blob_image);
 
@@ -181,9 +181,9 @@ if (isset($name)) {
 
     else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))
     {
-      if (move_uploaded_file($tmp_name, $path.$id.'.'.$fileextension)) {
+      /*if (move_uploaded_file($tmp_name, $path.$id.'.'.$fileextension)) {
       echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!</div>';
-      }
+      }*/
 
       $query=$conn->prepare('UPDATE users
                 SET image_type = :imgtype, image = :image  
