@@ -34,7 +34,7 @@
           document.getElementById("avatar").src =
           "data:image/".(profile.type).";base64," . base64_encode(profile.image);
         } else {*/
-          document.getElementById("avatar").src = "http://2.gravatar.com/avatar/" + md5(profile.email.toLowerCase());
+          document.getElementById("avatar").src = "http://2.gravatar.com/avatar/" + md5(profile.email.toLowerCase()) + "?s=150";
         //}
       } else if (response.status == 401)
         // When user is not authenticated, redirect to login page
