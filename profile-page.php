@@ -15,7 +15,7 @@
         
         include("config/connect.php");
         include("header.php");
-        include("resize.php");
+        
       
         
 ?>
@@ -151,8 +151,6 @@ if (isset($_FILES['file']['name'])){
   $name= $_FILES['file']['name'];
 
   $tmp_name= $_FILES['file']['tmp_name'];
-
-  resize_crop_image(100, 100, $tmp_name, $tmp_name);
 
   $blob_image = file_get_contents($tmp_name);
 
