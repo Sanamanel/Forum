@@ -96,6 +96,11 @@ function getDateDisplay($input)
             <h4 class="topic_title mb-3">Topics of <?php echo $boardRow['name'] ?></h4>
             <div class="alert alertnew mb-4" role="alert">
             Forum rules of the <?php echo $boardRow['name'] ?> Board
+            <h4> No Spam / Advertising / Self-promote in the forums</h4>
+        <p>These forums define spam as unsolicited advertisement for goods, services and/or other web sites, or posts with little, or completely unrelated content.</p> 
+        <p>Do not spam the forums with links to your site or product, or try to self-promote your website, business or forums etc.</p>
+        <p>Spamming also includes sending private messages to a large number of different users.</p>
+            </div>
             </div>
 
             <!-- Start Row Two -->
