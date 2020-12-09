@@ -48,8 +48,8 @@
        
                     <img class="rounded-circle border border-primary" 
                       src="<?php 
-                        if(!is_null($currentUserRow['image']) && file_exists('./Uploads/images/'.$currentUserRow['image'])){
-                          echo "./Uploads/images/".$currentUserRow['image'];
+                        if(!is_null($currentUserRow['image'])){
+                          echo 'data:image/'.$currentUserRow['image_type'].';base64,' . base64_encode($currentUserRow['image']);
                         }
                         else{
                           echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";
