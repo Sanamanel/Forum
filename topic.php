@@ -192,7 +192,7 @@ ob_start();
                                 ><img
                                   src="<?php 
 
-                                          if(!is_null($message['authorAvatar']) && file_exists('./Uploads/images/'.$message['authorAvatar'])){
+                                          if(!is_null($message['authorAvatar'])){
                                             echo 'data:image/png;base64,' . base64_encode($row['image']);
                                           }
                                           else{

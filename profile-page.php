@@ -215,7 +215,7 @@ if (isset($name)) {
                         }
                         else{
                           echo '<img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
-                          scr="http://2.gravatar.com/avatar/' . md5($row['email']) .'"
+                          scr="http://2.gravatar.com/avatar/' . md5(strtolower(trim($row['email']))) .'"
                            alt="Profile Picture"
                          /><br>';
                         }
