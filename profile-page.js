@@ -25,7 +25,9 @@
         
         //If avatar is set, select it or show gravatar
         if (profile.image != null) {
-          document.getElementById("avatar").src = "test"; //"data:image/".(profile.type).";base64," . base64_encode(profile.image);
+          alert("hello");
+          document.getElementById("avatar").src = "test"; 
+          /*"data:image/".(profile.type).";base64," . base64_encode(profile.image);*/
         } else {
           document.getElementById("avatar").src = "https://2.gravatar.com/avatar/" + md5(profile.email.toLowerCase()) + "?s=150";
         }
