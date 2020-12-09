@@ -201,7 +201,7 @@ if (isset($name)) {
                  <div class="card card-user">
                    <div class="card-image">
                    <?php
-                      $sql = "SELECT image_type, image FROM users WHERE id = :id";
+                      $sql = "SELECT image_type, image, email FROM users WHERE id = :id";
                       $stmt = $conn->prepare($sql);
                       $stmt->bindValue(':id',$_SESSION['id'],PDO::PARAM_INT);
                       $stmt->execute();
@@ -214,7 +214,10 @@ if (isset($name)) {
                          /><br>';
                         }
                         else{
-                          echo "on utilise le gravatar";
+                          echo '<img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
+                          scr="http://2.gravatar.com/avatar/' . md5($row['email']) .'"
+                           alt="Profile Picture"
+                         /><br>';
                         }
                       }
                    ?>
