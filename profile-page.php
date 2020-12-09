@@ -205,16 +205,7 @@ if (isset($name)) {
                       $stmt->execute();
                   ?>
                       <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;" id="avatar" scr="" alt="Profile Picture"/><br>
-                      <!--
-                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                          if(!is_null($row['image'])){
-                            echo 'data:image/png;base64,' . base64_encode($row['image']);
-                          }
-                          else{
-                            echo 'http://2.gravatar.com/avatar/' . md5(strtolower(trim($row['email'])));
-                          }
-                        }*/
-                      -->
+                    
                     
                     
                       <form action="#upload" method='post' enctype="multipart/form-data">
