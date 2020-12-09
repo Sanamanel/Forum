@@ -153,8 +153,6 @@ if (isset($_FILES['file']['name'])){
 
   $blob_image = file_get_contents($_FILES['file']['tmp_name']);
 
-  //print_r($blob_image);
-
   $position= strpos($name, ".");
 
   $fileextension= substr($name, $position + 1);
@@ -167,7 +165,7 @@ if (isset($_FILES['file']['name'])){
 
 if (isset($name)) {
 
-  $path= 'Uploads/images/';
+  
   if (empty($name))
   {
     echo '<div class="alert alert-warning rounded rounded-lg" role="alert">Please choose a file</div>';
@@ -181,9 +179,9 @@ if (isset($name)) {
 
     else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))
     {
-      /*if (move_uploaded_file($tmp_name, $path.$id.'.'.$fileextension)) {
+      
       echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!</div>';
-      }*/
+      
 
       $query=$conn->prepare('UPDATE users
                 SET image_type = :imgtype, image = :image  
@@ -205,22 +203,20 @@ if (isset($name)) {
                       $stmt = $conn->prepare($sql);
                       $stmt->bindValue(':id',$_SESSION['id'],PDO::PARAM_INT);
                       $stmt->execute();
-
-                      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        if(!is_null($row['image'])){
-                          echo '<img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
-                          scr="data:image/png;base64,' . base64_encode($row['image']) . '"
-                           alt="Profile Picture"
-                         /><br>';
+?>
+                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
+                          scr="
+                      <?php
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                          if(!is_null($row['image'])){
+                            echo 'data:image/png;base64,' . base64_encode($row['image']);
+                          }
+                          else{
+                            echo 'http://2.gravatar.com/avatar/' . md5(strtolower(trim($row['email'])));
+                          }
                         }
-                        else{
-                          echo '<img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
-                          scr="http://2.gravatar.com/avatar/' . md5(strtolower(trim($row['email']))) .'"
-                           alt="Profile Picture"
-                         /><br>';
-                        }
-                      }
-                   ?>
+                      ?>
+                    " alt="Profile Picture"/><br>
                     
                       <form action="#upload" method='post' enctype="multipart/form-data">
                         <div class="custom_file btn btn-round btn-outline-primary btn-sm">New avatar
