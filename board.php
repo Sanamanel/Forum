@@ -101,7 +101,7 @@ function getDateDisplay($input)
         <p>Do not spam the forums with links to your site or product, or try to self-promote your website, business or forums etc.</p>
         <p>Spamming also includes sending private messages to a large number of different users.</p>
             </div>
-            </div>
+            
 
             <!-- Start Row Two -->
             <div class="row">
