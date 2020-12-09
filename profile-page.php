@@ -204,9 +204,9 @@ if (isset($name)) {
                       $stmt->bindValue(':id',$_SESSION['id'],PDO::PARAM_INT);
                       $stmt->execute();
 ?>
-                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avata"
-                          scr="
-                      <?php
+                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
+                          scr="" alt="Profile Picture"/><br>
+                      <?php/*
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                           if(!is_null($row['image'])){
                             echo 'data:image/png;base64,' . base64_encode($row['image']);
@@ -214,9 +214,9 @@ if (isset($name)) {
                           else{
                             echo 'http://2.gravatar.com/avatar/' . md5(strtolower(trim($row['email'])));
                           }
-                        }
+                        }*/
                       ?>
-                    " alt="Profile Picture"/><br>
+                    
                     
                       <form action="#upload" method='post' enctype="multipart/form-data">
                         <div class="custom_file btn btn-round btn-outline-primary btn-sm">New avatar
