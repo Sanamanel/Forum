@@ -200,6 +200,20 @@ if (isset($name)) {
 ?>
                  <div class="card card-user">
                    <div class="card-image">
+                   <?php
+                      $sql = "SELECT image_type, image FROM users WHERE users.id = $_SESSION['id']";
+                      $stmt = $pdo->prepare($sql);
+                      $stmt->execute();
+
+                      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        if(!is_null($row['image']){
+                          echo "CA MARCHE Y A UNE IMAGE";
+                        }
+                        else{
+                          echo "on utilise le gravatar"
+                        }
+                      }
+                   ?>
                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
                       scr=""
                        alt="Gravatar"
