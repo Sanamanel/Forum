@@ -193,7 +193,7 @@ ob_start();
                                   src="<?php 
 
                                           if(!is_null($message['authorAvatar'])){
-                                            echo 'data:image/png;base64,' . base64_encode($row['image']);
+                                            echo 'data:image/png;base64,' . base64_encode($message['authorAvatar']);
                                           }
                                           else{
                                             echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($message['authorEmail'])))."?"."&s=80";
