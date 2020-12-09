@@ -18,7 +18,7 @@ function getDateDisplay($input)
   return date_format($date,"D M j, Y, g:i a");
 }
         
-include('connect.php');
+include('config/connect.php');
 include("header.php");
 include("main-home.php");
 include("aside.php"); 
