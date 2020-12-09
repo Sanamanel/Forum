@@ -1,3 +1,4 @@
+alert("hello world");/*
 (async function () {
   let baseUrl = "https://led-zepplin-forum.herokuapp.com/"; //to be adapted
 
@@ -32,7 +33,7 @@
         /*if (profile.image != null) {
           document.getElementById("avatar").src =
           "data:image/".(profile.type).";base64," . base64_encode(profile.image);
-        } else {*/
+        } else {
           document.getElementById("avatar").src = "http://2.gravatar.com/avatar/" + md5(profile.email.toLowerCase());
         //}
       } else if (response.status == 401)
