@@ -204,8 +204,7 @@ if (isset($name)) {
                       $stmt->bindValue(':id',$_SESSION['id'],PDO::PARAM_INT);
                       $stmt->execute();
                   ?>
-                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
-                          scr="" alt="Profile Picture"/><br>
+                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;" id="avatar" scr="" alt="Profile Picture"/><br>
                       <!--
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                           if(!is_null($row['image'])){
