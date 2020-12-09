@@ -208,17 +208,17 @@ if (isset($name)) {
 
                       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         if(!is_null($row['image'])){
-                          echo "CA MARCHE Y A UNE IMAGE";
+                          echo '<img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
+                          scr="data:image/png;base64,' . base64_encode($row['image']) . '"
+                           alt="Profile Picture"
+                         /><br>';
                         }
                         else{
                           echo "on utilise le gravatar";
                         }
                       }
                    ?>
-                     <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
-                      scr=""
-                       alt="Gravatar"
-                     /><br>
+                    
                       <form action="#upload" method='post' enctype="multipart/form-data">
                         <div class="custom_file btn btn-round btn-outline-primary btn-sm">New avatar
                           <input type="file" class="custom_file input_file" name="file"/>
