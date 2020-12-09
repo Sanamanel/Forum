@@ -40,13 +40,7 @@
                 <div class="card mx-3" style="width: 15rem">
                 <div class="card-body">
                   <h4 class="card-title"><?php echo $topicTitle ?></h4>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p>
-                    <i
-                      class="fa <?php echo getRandomTopicImageClasses()?> fa-3x pr-3"
-                      aria-hidden="true"
-                    ></i>
-                  </p>
+                 
                   <p class="card-text"><?php echo $topicContent ?></p>
                   <p class="card-text">
                 <small class="text-muted"><?php echo getLastModificationText($topicModificationDate) ?></small>
@@ -102,17 +96,6 @@
             }
 
             
-            function getRandomTopicImageClasses()
-            {
-              $images_types = array("fa-code","fa-desktop","fa-comments","fa-quote-right","fa-angellist","fa-user-plus","fa-bullhorn","fa-envelope-square");
-              $images_colors = array("text-success","text-warning","text-info","text-primary");
-
-              $rand_type = array_rand($images_types, 1);
-              $rand_color = array_rand($images_colors, 1);
-
-              return $images_types[$rand_type] . " " . $images_colors[$rand_color];
-            }
-           ?>
-
+           
 
 
