@@ -148,7 +148,7 @@ function getDateDisplay($input)
                           class="fa fa-bullhorn float-right text-primary"
                           aria-hidden="true"
                         ></i>
-                        <h5 class="global">this is a global announcements</h5>
+                        <h5 class="global">Global announcements</h5>
 
                         by <span class="name text-capitalize">carla</span>
                         <span>>> in Unread Forum</span>
@@ -156,12 +156,12 @@ function getDateDisplay($input)
                     </div>
                   </td>
 
-                  <td>201</td>
-                  <td>201</td>
+                  <td>56</td>
+                  <td>103</td>
                   <td>
                     <div class="text_cell">
                       by <span>carla</span>
-                      <p>Sun Oct 09, 2016 5:58 pm</p>
+                      <p>Sun Oct 09, 2019 5:58 pm</p>
                     </div>
                   </td>
                 </tr>
@@ -214,8 +214,8 @@ while ($topic_row = $topics_results->fetch())
                     </div>
                   </td>
 
-                  <td>201</td>
-                  <td>201</td>
+                  <td>25</td>
+                  <td>74</td>
                   <td>
                     <div class="text_cell">
                       by
