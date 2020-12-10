@@ -119,7 +119,7 @@ The above copyright notice and this permission notice shall be included in all c
     <div
       class="page-header header-filter clear-filter purple-filter"
       data-parallax="true"
-      style="background-image: url('./assets/img/bg3.jpg')"
+      style="background-image: url('./assets/img/bg6.jpg')"
     >
       <div class="container">
         <div class="row">
