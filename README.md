@@ -5,7 +5,7 @@ Readme WIP ...
 
 joint project carried out in collaboration as part of the Hamilton 4.25 training at Becode November 2020.
 
-the project was carried out by [Haddouch Rachida](https://github.com/Sanamanel), [Jansen Caroline](https://github.com/iCarolinei), [Mundher Ali](https://github.com/AliMundher), [Debroux Cédric](https://github.com/Cedricdebroux).
+the project was carried out by [Haddouch Rachida](https://github.com/Sanamanel), [Jansen Caroline](https://github.com/iCarolinei), [Mundher Ali](https://github.com/AliMundher),[Maillard Jonathan](https://github.com/JonathanMaillard), [Debroux Cédric](https://github.com/Cedricdebroux).
 
 
 
