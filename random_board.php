@@ -14,10 +14,7 @@ while ($topic_row = $topics_results->fetch())
                   <td class=" ">
                     <div class="row">
                       <div class="col">
-                     <i
-                          class="fa frst_i  <?php echo getRandomTopicImageClasses() ?> "
-                          aria-hidden="true"
-                        ></i>
+                   
                       </div>
 
 

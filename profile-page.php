@@ -15,6 +15,7 @@
         
         include("config/connect.php");
         include("header.php");
+        
       
         
 ?>
@@ -151,6 +152,8 @@ if (isset($_FILES['file']['name'])){
 
   $tmp_name= $_FILES['file']['tmp_name'];
 
+  $blob_image = file_get_contents($tmp_name);
+
   $position= strpos($name, ".");
 
   $fileextension= substr($name, $position + 1);
@@ -163,7 +166,7 @@ if (isset($_FILES['file']['name'])){
 
 if (isset($name)) {
 
-  $path= 'Uploads/images/';
+  
   if (empty($name))
   {
     echo '<div class="alert alert-warning rounded rounded-lg" role="alert">Please choose a file</div>';
@@ -177,14 +180,15 @@ if (isset($name)) {
 
     else if (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))
     {
-      if (move_uploaded_file($tmp_name, $path.$id.'.'.$fileextension)) {
+      
       echo '<div class="alert alert-success rounded rounded-lg" role="alert">Uploaded!</div>';
-      }
+      
 
       $query=$conn->prepare('UPDATE users
-                SET image = :avatar 
+                SET image_type = :imgtype, image = :image  
                 WHERE id = :id');
-                $query->bindValue(':avatar',$id.'.'.$fileextension,PDO::PARAM_STR);
+                $query->bindValue(':imgtype',$fileextension);
+                $query->bindValue(':image',$blob_image);
                 $query->bindValue(':id',$id,PDO::PARAM_INT);
                 $query->execute();
                 $query->CloseCursor();
@@ -195,10 +199,16 @@ if (isset($name)) {
 ?>
                  <div class="card card-user">
                    <div class="card-image">
-                     <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;"id="avatar"
-                      scr=""
-                       alt="Gravatar"
-                     /><br>
+                   <?php
+                      $sql = "SELECT image_type, image, email FROM users WHERE id = :id";
+                      $stmt = $conn->prepare($sql);
+                      $stmt->bindValue(':id',$_SESSION['id'],PDO::PARAM_INT);
+                      $stmt->execute();
+                  ?>
+                      <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;" id="avatar" scr="" alt="Profile Picture"/><br>
+                    
+                    
+                    
                       <form action="#upload" method='post' enctype="multipart/form-data">
                         <div class="custom_file btn btn-round btn-outline-primary btn-sm">New avatar
                           <input type="file" class="custom_file input_file" name="file"/>

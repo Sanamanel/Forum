@@ -107,6 +107,11 @@ The above copyright notice and this permission notice shall be included in all c
                 <i class="material-icons">login</i> Log out
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" >
+                <i class="material-icons">expand_less</i> Back to the top
+              </a>
+            </li>
           </ul>
         </div>
       </div>

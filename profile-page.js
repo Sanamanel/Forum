@@ -1,3 +1,4 @@
+
 (async function () {
   let baseUrl = "https://led-zepplin-forum.herokuapp.com/"; //to be adapted
 
@@ -18,23 +19,15 @@
         document.getElementById("birthdate").value = profile.birthdate;
         document.getElementById("country").value = profile.country;
         document.getElementById("signature").value = profile.signature;
-        document.getElementById("username_display").innerHTML =
-          profile.username;
-        document.getElementById("signature_display").innerHTML =
-          profile.signature;
-        document.getElementById(
-          "fullname_display"
-        ).innerHTML = `${Strings.orEmpty(profile.firstname)} ${Strings.orEmpty(
-          profile.lastname
-        )}`;
-
+        document.getElementById("username_display").innerHTML = profile.username;
+        document.getElementById("signature_display").innerHTML = profile.signature;
+        document.getElementById("fullname_display").innerHTML = `${Strings.orEmpty(profile.firstname)} ${Strings.orEmpty(profile.lastname)}`;
+        
         //If avatar is set, select it or show gravatar
-        if (profile.image != null) {
-          document.getElementById("avatar").src =
-            "./Uploads/images/" + profile.image;
+        if (profile.type != null) {
+          document.getElementById("avatar").src = "data:image/"+(profile.type)+";base64,"+(profile.image);
         } else {
-          document.getElementById("avatar").src =
-            "http://2.gravatar.com/avatar/" + md5(profile.email.toLowerCase());
+          document.getElementById("avatar").src = "https://2.gravatar.com/avatar/" + md5(profile.email.toLowerCase()) + "?s=150";
         }
       } else if (response.status == 401)
         // When user is not authenticated, redirect to login page
