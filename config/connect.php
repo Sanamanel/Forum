@@ -2,7 +2,7 @@
     $mysqlServername = 'mysql:host='.getenv("SQLSERVER").';dbname='.getenv("DBNAME").';charset=utf8mb4';
     $mysqlUsername = getenv('DBUSER');
     $mysqlPassword = getenv('DBPASS');
-    print_r($mysqlServername.' / '. $mysqlUsername.' / '. $mysqlPassword);
+    
     //On établit la connexion
 
     try{
