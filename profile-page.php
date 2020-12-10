@@ -211,7 +211,7 @@ if (isset($name)) {
                           <input type="file" class="custom_file input_file" name="file"/>
                         </div>
                         </div>
-                        <div class="d-flex justify-content-end"
+                        <div class="d-flex justify-content-end">
                             <input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>
                         </div>    
                       </form>
