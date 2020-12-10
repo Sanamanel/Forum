@@ -117,8 +117,7 @@
                              <label>Change signature</label>
                              <textarea id="signature"
                               class="form-control" 
-                              placeholder="Signature">
-                            </textarea>
+                              placeholder="Signature"></textarea>
                            </div>
                          </div>
                          <div class="col-md-6">
