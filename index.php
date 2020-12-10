@@ -79,23 +79,23 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="login-space">
                     <div class="login">
                       <div class="group">
-                        <label for="email" class="label">Email
+                        <label for="email" class="label">Email</label>
                         <input
                           id="login_email"
                           type="text"
                           class="input"
                           placeholder="Enter your email"
-                        /></label>
+                        />
                       </div>
                       <div class="group">
-                        <label for="pass" class="label">Password
+                        <label for="pass" class="label">Password</label>
                         <input
                           id="login_password"
                           type="password"
                           class="input"
                           data-type="password"
                           placeholder="Enter your password"
-                        /></label>
+                        />
                       </div>
                       <div class="group">
                         <input
@@ -120,42 +120,42 @@ The above copyright notice and this permission notice shall be included in all c
                     </div>
                     <div class="sign-up-form">
                       <div class="group">
-                        <label for="user" class="label">Username
+                        <label for="user" class="label">Username</label>
                         <input
                           id="register_username"
                           type="text"
                           class="input"
                           placeholder="Create your Username"
-                        /></label>
+                        />
                       </div>
                       <div class="group">
-                        <label for="pass" class="label">Password
+                        <label for="pass" class="label">Password</label>
                         <input
                           id="register_password"
                           type="password"
                           class="input"
                           data-type="password"
                           placeholder="Create your password"
-                        /></label>
+                        />
                       </div>
                       <div class="group">
-                        <label for="pass" class="label">Repeat Password
+                        <label for="pass" class="label">Repeat Password</label>
                         <input
                           id="register_password_confirmation"
                           type="password"
                           class="input"
                           data-type="password"
                           placeholder="Repeat your password"
-                        /></label>
+                        />
                       </div>
                       <div class="group">
-                        <label for="pass" class="label">Email Address
+                        <label for="pass" class="label">Email Address</label>
                         <input
                           id="register_email"
                           type="text"
                           class="input"
                           placeholder="Enter your email address"
-                        /></label>
+                        />
                       </div>
                       <div class="group">
                         <input type="submit" id="btn_register" class="button" value="Sign Up" />
