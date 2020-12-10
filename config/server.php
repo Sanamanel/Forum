@@ -93,10 +93,10 @@
 
   function connectDb()
   {
-    $dbhost = getenv('SQLSERVER');
-    $dbuser = getenv('DBUSER');
-    $dbpass = getenv('DBPASS');
-    $dbdatabase = getenv('DBNAME');
+    $dbhost = 'remotemysql.com:3306';
+    $dbuser = 'Q2qsa8HqT2';
+    $dbpass = 'vkN1eNSWhe';
+    $dbdatabase = 'Q2qsa8HqT2';
     $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbdatabase);
     $db->set_charset('utf8mb4');
     $db->query("SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci");
