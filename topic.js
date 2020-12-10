@@ -21,7 +21,7 @@
         };
         let contentStr = JSON.stringify(content);
         $.ajax({
-            url: baseUrl + 'server.php',
+            url: baseUrl + 'config/server.php',
             type: 'post',
             data: {content: contentStr},
             complete: function(response) {
