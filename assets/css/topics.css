@@ -31,7 +31,7 @@
 .my_alert {
   background-color: #e4bfc29e !important;
   border-radius: 10px;
-  box-shadow: -4px 0 0 red;
+  box-shadow: -4px 0 0;
   color: #444 !important;
   font-weight: bold;
   font-size: 0.7em;
@@ -203,7 +203,6 @@
   width: 70px;
   height: 70px;
   margin: auto;
-  border: 1px solid red;
   border-radius: 50%;
 }
 .box_image .img.active:before {

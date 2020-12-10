@@ -161,3 +161,15 @@ img {
 footer .menu-footer {
   padding: 30px 5px 0;
 }
+
+/*Custum Input File*/
+.custom_file  {
+  position: relative;
+  max-width: 100%;
+}
+.input_file {
+  opacity: 0;
+  max-width: 100%; 
+  position: relative;
+  left: -80px;
+}

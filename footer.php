@@ -22,7 +22,7 @@
           <div class="copyright">
             <ul>
               <li>
-                <a href="#"> Board </a>
+                <a href="home.php"> Board </a>
               </li>
               <li>
                 <a href="#"> About Us </a>
@@ -36,16 +36,20 @@
               document.write(new Date().getFullYear());
             </script>
             , made with <i class="material-icons">favorite</i> by
-            <a href="#" target="_blank">Ali, Caro, Cédric, Rachida </a>
+            <a href="#" target="_blank">Ali, Caro, Cédric, Jonathan, Rachida </a>
           </div>
         </div>
       </div>
     </footer>
     <!--   Core JS Files   -->
+
+
     <script
-      src="./assets/js/core/jquery.min.js"
-      type="text/javascript"
-    ></script>
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+
     <script
       src="./assets/js/core/popper.min.js"
       type="text/javascript"
@@ -60,24 +64,25 @@
       src="./assets/js/plugins/bootstrap-datetimepicker.js"
       type="text/javascript"
     ></script>
-    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-    <script
-      src="./assets/js/plugins/nouislider.min.js"
-      type="text/javascript"
-    ></script>
+   
     <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="./assets/js/reaction.js"></script>
     <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
     <script
       src="./assets/js/material-kit.js?v=2.0.7"
       type="text/javascript"
     ></script>
     <script>
+
+      $("#message_text").emojioneArea({
+            pickerPosition: "right"
+        });
+
       $(document).ready(function () {
         //init DateTimePickers
         materialKit.initFormExtendedDatetimepickers();
 
-        // Sliders Init
-        materialKit.initSliders();
+       
       });
 
       function scrollToDownload() {
@@ -93,3 +98,5 @@
     </script>
   </body>
 </html>
+
+   

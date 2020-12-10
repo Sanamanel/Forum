@@ -40,9 +40,15 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- CSS Files -->
 
     <link href="./assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
-    <link href="../assets/css/topics.css" rel="stylesheet" />
-    <link href="../assets/css/comment.css" rel="stylesheet" />
+    <link href="./assets/css/topics.css" rel="stylesheet" />
+    <link href="./assets/css/comment.css" rel="stylesheet" />
     <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/rating.css" rel="stylesheet" />
+     <!-- Css for reaction system -->
+     <link rel="stylesheet" type="text/css" href="./assets/css/reaction.css" />
+    <!-- Emoji Lib-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css" />
+
   </head>
 
   <body class="index-page sidebar-collapse">
@@ -78,21 +84,32 @@ The above copyright notice and this permission notice shall be included in all c
                 <i class="material-icons">apps</i> Menu
               </a>
               <div class="dropdown-menu dropdown-with-icons">
-                <a href="./index.html" class="dropdown-item">
+              <a
+                  href="https://led-zepplin-forum.herokuapp.com/home.php"
+                  class="dropdown-item"
+                >
                   <i class="material-icons">dashboard</i> Board
                 </a>
-                <a href="./pages/profile-page.html" class="dropdown-item">
+                <a
+                  href="https://led-zepplin-forum.herokuapp.com/profile-page.php"
+                  class="dropdown-item"
+                >
                   <i class="material-icons">account_box</i> Profile
                 </a>
-                <a href="#" class="dropdown-item">
-                  <i class="material-icons">contact_support</i> Contact
-                </a>
+             
+               
+              
               </div>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#" target="_blank">
+              <a class="nav-link" href="logout.php" >
                 <i class="material-icons">login</i> Log out
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" >
+                <i class="material-icons">expand_less</i> Back to the top
               </a>
             </li>
           </ul>
@@ -102,17 +119,17 @@ The above copyright notice and this permission notice shall be included in all c
     <div
       class="page-header header-filter clear-filter purple-filter"
       data-parallax="true"
-      style="background-image: url('./assets/img/bg3.jpg')"
+      style="background-image: url('./assets/img/bg6.jpg')"
     >
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
-            <div class="brand">
-              <h1>Led Zeppelin</h1>
-            </div>
+          <a class="text-white" href="https://led-zepplin-forum.herokuapp.com/home.php" >  <div class="brand">
+            <h1>Led Zeppelin</h1>
+            </div></a>
           </div>
         </div>
       </div>
     </div>
     <div class="main main-raised">
-       <!-- fin header -->
+      

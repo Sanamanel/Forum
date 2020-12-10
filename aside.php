@@ -1,143 +1,130 @@
+
+
+	
+  <?php
+
+  $sql ="SELECT topics.id as topicId,title,creation_date,CONCAT(SUBSTRING_INDEX(content, ' ', 5),'...') AS resume from topics
+  Order by creation_date DESC
+  Limit 3";
+  $stmt = $conn->query($sql);
+
+  $sql ="SELECT * from users WHERE user_active=1 order by last_login_date desc Limit 3";
+  $stmt2 = $conn->query($sql);
+  $currentUsername = $_SESSION['username'];
+  $currentId = $_SESSION['id'];
+  $sql = "SELECT * from users WHERE nickname = '$currentUsername'";
+  $stmt3 = $conn->query($sql);
+  $currentUserRow = $stmt3->fetch(PDO::FETCH_ASSOC);
+  
+  ?>
+ 
+
+<!--  3 - Titre des 3 derniers Posts-->
+
+
+
+
 <!-- div aside -->
 <div class="col-lg-3 m-15px-tb blog-aside">
             <!-- search -->
-            <div class="navbar navbar-expand-lg navbarbtn">
+            <nav class="navbar navbar-light bg-light">
               <div class="container">
-                <form class="form-inline ml-auto">
-                  <div class="form-group no-border">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Search"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-white btn-just-icon btn-round"
-                  >
-                    <i class="material-icons">search</i>
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-primary btn-round btn-sm" type="submit">
+                  <i class="material-icons">search</i>
                   </button>
                 </form>
               </div>
-            </div>
+            </nav>                   
             <!-- Author -->
             <div class="widget widget-author">
               <div class="widget-title">
-                <h3>Author</h3>
+                <h3>User</h3>
               </div>
               <div class="widget-body">
                 <div class="media align-items-center">
                   <div class="avatar">
-                    <img
-                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
-                      title=""
+       
+                    <img class="rounded-circle border border-primary" 
+                      src="<?php 
+                        if(!is_null($currentUserRow['image'])){
+                          echo 'data:image/'.$currentUserRow['image_type'].';base64,' . base64_encode($currentUserRow['image']);
+                        }
+                        else{
+                          echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($currentUserRow['email'])))."?"."&s=80";
+                        }
+                        
+                      ?>"
                       alt=""
                     />
+          
                   </div>
                   <div class="media-body">
                     <h6>
-                      Hello, I'm<br />
-                      Rachel Roth
+                      Hello<br />
+                      <?php echo $currentUsername; ?> !
                     </h6>
+                  <a name="" id="" class="btn btn-sm btn-outline-primary btn-round" href="https://led-zepplin-forum.herokuapp.com/profile-page.php" role="button">My profile </a>  
                   </div>
                 </div>
-                <p>
-                  I design and develop services for customers of all sizes,
-                  specializing in creating stylish, modern websites, web
-                  services and online stores
-                </p>
+               
               </div>
             </div>
             <!-- End Author -->
+<div class="card">
+  <div class="card-header last_post text-capitalize">last post</div>
+  <ul class="list-group list-group-flush">
+ 
+     
+   
+  <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+    <li class="list-group-item">
 
-            <!-- Latest Post -->
-            <div class="widget widget-latest-post">
-              <div class="widget-title">
-                <h3>Latest Post</h3>
-              </div>
-              <div class="widget-body">
-                <div class="latest-post-aside media">
-                  <div class="lpa-left media-body">
-                    <div class="lpa-title">
-                      <h5>
-                        <a href="./pages/comments.html"
-                          >Prevent 75% of visitors from google analytics</a
-                        >
-                      </h5>
-                    </div>
-                    <div class="lpa-meta">
-                      <a class="name" href="#"> Rachel Roth </a>
-                      <a class="date" href="#"> 26 FEB 2020 </a>
-                    </div>
-                  </div>
-                  <div class="lpa-right">
-                    <a href="./pages/comments.html">
-                      <img
-                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
-                        title=""
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="latest-post-aside media">
-                  <div class="lpa-left media-body">
-                    <div class="lpa-title">
-                      <h5>
-                        <a href="./pages/comments.html"
-                          >Prevent 75% of visitors from google analytics</a
-                        >
-                      </h5>
-                    </div>
-                    <div class="lpa-meta">
-                      <a class="name" href="#"> Rachel Roth </a>
-                      <a class="date" href="#"> 26 FEB 2020 </a>
-                    </div>
-                  </div>
-                  <div class="lpa-right">
-                    <a href="./pages/comments.html">
-                      <img
-                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
-                        title=""
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="latest-post-aside media">
-                  <div class="lpa-left media-body">
-                    <div class="lpa-title">
-                      <h5>
-                        <a href="./pages/comments.html"
-                          >Prevent 75% of visitors from google analytics</a
-                        >
-                      </h5>
-                    </div>
-                    <div class="lpa-meta">
-                      <a class="name" href="#"> Rachel Roth </a>
-                      <a class="date" href="#"> 26 FEB 2020 </a>
-                    </div>
-                  </div>
-                  <div class="lpa-right">
-                    <a href="./pages/comments.html">
-                      <img
-                        src="https://via.placeholder.com/400x200/FFB6C1/000000"
-                        title=""
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Latest Post -->
+      <div class="box_post">
+        <h4 class="cat text-capitalize"><a href="https://led-zepplin-forum.herokuapp.com/topic.php?topic_id=<?php echo $row["topicId"] ?>"><?php echo htmlspecialchars($row["title"]);?></a></h4>
+        
+        <h4 class="hour"><?php echo getDateDisplay($row["creation_date"]) ?></h4>
+        <div class="clear_both"></div>
+        <p class="card_pra"><?php echo htmlspecialchars($row["resume"]);?></p>
+        <span class="tags">tags: test <span>workeot repot</span></div></li> <?php endwhile; ?>
+
+<!-- Fin de région à répéter -->  
+  </ul>
+</div>
             <!-- Last users -->
-            <div class="widget widget-post">
-              <div class="widget-title">
-                <h3>Last active user</h3>
+            <!-- Start Last Active User-->
+
+            <div class="card">
+              <div class="card-header last_post text-capitalize">
+                active user
               </div>
-              <div class="widget-body"></div>
+              <ul class="list-group list-group-flush user_active">
+              <?php while($row = $stmt2->fetch(PDO::FETCH_ASSOC)) : ?>
+                <li class="list-group-item">
+                  <div class="box_post box_image">
+                    <div class="img active">
+                    <img class="rounded-circle border border-primary"
+                      src="<?php 
+                        if(!is_null($row['image'])){
+                          echo 'data:image/'.$row['image_type'].';base64,' . base64_encode($row['image']);
+                        }
+                        else{
+                          echo "https://www.gravatar.com/avatar/".md5(strtolower(trim($row['email'])))."?"."&s=80";
+                        }
+                        
+                      ?>"
+                      alt="Profile Picture"
+                    />
+                    </div>
+                    <p class="neck_name text-capitalize mt-2"><?php echo ($row["nickname"]);?></p>
+                  </div>
+                </li><?php endwhile; ?>
+               
+               
+              </ul>
             </div>
+            <!-- End Last Active User-->
             <!-- End Last users-->
           </div>
 

@@ -1,0 +1,4 @@
+
+# Catch 404 errors
+ErrorDocument 404 https://led-zepplin-forum.herokuapp.com/
+

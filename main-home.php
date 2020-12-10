@@ -1,327 +1,108 @@
+
 <div>
         <div class="container">
           <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb">
               <i class="fa fa-home mr-1 pt-1 home_icon" aria-hidden="true"></i>
               <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-              <li class="breadcrumb-item">
-                <a href="./index.html">Board index</a>
-              </li>
+           
             </ol>
           </nav>
         </div>
       </div>
       <div class="container mt-3">
         <div class="row">
-          <!-- structure contenu board -->
+          <!-- structure contenu board --->
 
           <div class="col-lg-9 m-15px-tb main-content">
             <div>
-              <h2 class="text-muted font-weight-bold">General</h2>
-              <div class="d-flex flex-row flex-wrap justify-content-center">
-                <div class="card mr-2" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-bell fa-3x text-primary pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-birthday-cake fa-3x text-success pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <p class="blockquote-footer">
-                      <small class="text-muted">
-                        Someone famous in
-                        <cite title="Source Title">Source Title</cite>
-                      </small>
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Unread Forum</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-bolt fa-3x text-warning pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Read Forum</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-bug fa-3x text-info pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">A forum with a lot of stuff</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p>
-                      <i
-                        class="fa fa-heart fa-3x text-danger pr-3"
-                        aria-hidden="true"
-                      ></i>
-                      This is the topic
-                    </p>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h2 class="text-muted font-weight-bold">Development</h2>
-              <div class="d-flex flex-row flex-wrap justify-content-center">
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-code text-info pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-desktop text-warning pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h2 class="text-muted font-weight-bold">Smalltalk</h2>
-              <div class="d-flex flex-row flex-wrap justify-content-center">
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-comments text-success pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-quote-right text-info pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-angellist text-primary pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div>
-              <h2 class="text-muted font-weight-bold">Events</h2>
-              <div class="d-flex flex-row flex-wrap justify-content-center">
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-user-plus text-info pr-3"
-                      aria-hidden="true"
-                    ></i>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
-                <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+           <?php
 
-                    <i
-                      class="fa fa-3x fa-bullhorn text-warning pr-3"
-                      aria-hidden="true"
-                    ></i>
+            $sql = 'select board.id as boardId,board.name as boardName from board order by board.id ';  
+            $boards_results = $conn->query($sql); 
+            while ($board_row = $boards_results->fetch()) {
+              $boardId = $board_row['boardId'];
+              $boardName = $board_row['boardName'];
 
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
-                </div>
+              ?>
+              <?php
+                if($boardId != 5){
+                  echo '<a href="./board.php?board_id='.$boardId.'"><h2 class="font-weight-bold">  '.$boardName.'</h2></a>';
+                }else{
+                  echo ' <h2 class="font-weight-bold text-primary">  '.$boardName.'</h2>';
+                }
+              ?> <div class="d-flex flex-row flex-wrap justify-content-center"><?php
+
+              $sql = "select topics.title as topicTitle,topics.content as topicContent,topics.id as topicId, topics.modification_date as topicModificationDate from topics where board_id = '$boardId' order by id desc limit 3";  //Get all topics for board
+
+              $topics_results = $conn->query($sql); 
+              while ($topic_row = $topics_results->fetch()) {
+                $topicTitle = $topic_row['topicTitle'];
+                $topicContent = $topic_row['topicContent'];
+                $topicID= $topic_row['topicId'];
+                $topicModificationDate = $topic_row['topicModificationDate'];
+                
+                ?>
                 <div class="card mx-3" style="width: 15rem">
-                  <div class="card-body">
-                    <h4 class="card-title">Topic Type Demo</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <i
-                      class="fa fa-3x fa-envelope-square text-success pr-3"
-                      aria-hidden="true"
-                    ></i>
-
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="./pages/topics.html" class="card-link"
-                      >Card link</a
-                    >
-                    <a href="./pages/topics.html" class="card-link"
-                      >Another link</a
-                    >
-                  </div>
+                <div class="card-body">
+                  <h4 class="card-title"><?php echo $topicTitle ?></h4>
+                 
+                  <p class="card-text"><?php echo $topicContent ?></p>
+                  <p class="card-text">
+                <small class="text-muted"><?php echo getLastModificationText($topicModificationDate) ?></small>
+                  </p>
+                  <?php
+                    if($boardId != 5){
+                      echo '<a href="./topic.php?topic_id='.$topic_row["topicId"].'" class="card-link">All comments</a>';
+                    }
+                  ?>
+                 
                 </div>
-              </div>
-            </div>
-          </div>
+                  
+                </div>
+              <?php
+              }
+              ?></div>
+              <?php
+                if($boardId != 5){
+                  echo '<a href="./board.php?board_id='.$boardId.'"><div class="d-flex justify-content-end mr-4"><button class="btn btn-primary btn-round btn-center text-capitalize text-center justify-content-center">More about this</button></div></a>';
+                }
+              ?>
+            
+              <?php
+             
+            }
+
+            ?></div></div><?php
+
+
+            function getLastModificationText($modificationDate) //Get last modification text
+            {
+              if (is_null($modificationDate))
+                return "";
+              $modifDate  = new DateTime($modificationDate);
+              $nowDate = new DateTime();
+              
+              $interval = $modifDate->diff($nowDate); //Compute time interval between 2 dates
+              return "Last updated " . formatTimeLapse($interval) . " ago";
+
+            }
+
+            function formatTimeLapse($interval) //format time lapse
+            {
+              if($interval->d > 0)
+                return $interval->d . " " . "days";
+              
+              if($interval->h > 0)
+                return $interval->h . " " . "hours";
+
+              if($interval->i > 0)
+                return $interval->i. " " . "minutes";
+
+            }
+
+            
+           
+
+
