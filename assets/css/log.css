@@ -27,6 +27,7 @@
   position: absolute;
   transform: rotateY(180deg);
   backface-visibility: hidden;
+  -webkit-backface-visibility :hidden;
   transition: all 0.4s linear;
 }
 
