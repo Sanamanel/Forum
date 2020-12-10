@@ -4,12 +4,12 @@ session_start();
         // means the user is yet to login 
         // User will be sent to 'login.php' page 
         // to allow the user to login 
-        if (!isset($_SESSION['username'])) { 
-            header('https://led-zepplin-forum.herokuapp.com/'); 
+        if(!isset($_SESSION['username'])){ 
+            header('location: https://led-zepplin-forum.herokuapp.com/'); 
             exit();
         }
         if($_GET['board_id'] == 5){
-          if($_GET['pass'] != 1234){
+          if($_GET['pass'] != getenv('SECRETPASS')){
 
             //header('HTTP/1.0 403 Forbidden');
             echo 'Access Denied, this board is top secret';
