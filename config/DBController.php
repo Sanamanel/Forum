@@ -1,21 +1,29 @@
 <?php
 
+$host = getenv('SQLSERVER');
+
+$user = getenv('DBUSER');
+
+$password = getenv('DBPASS');
+
+$database = getenv('DBNAME');
+
 class DBController
 {
 
-    private $host = getenv('SQLSERVER');
+    //private $host = $host;
 
-    private $user = getenv('DBUSER');
+    //private $user = getenv('DBUSER');
 
-    private $password = getenv('DBPASS');
+    //private $password = getenv('DBPASS');
 
-    private $database = getenv('DBNAME');
+    //private $database = getenv('DBNAME');
 
     private static $conn;
 
     function __construct()
     {
-        $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        $this->conn = mysqli_connect($host, $user, $password, $database);
         $this->conn->set_charset('utf8mb4');
         $this->conn->query("SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci");// Connecting to a database
     }
