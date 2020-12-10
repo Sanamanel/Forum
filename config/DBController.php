@@ -3,13 +3,13 @@
 class DBController
 {
 
-    private $host = "remotemysql.com:3306";
+    private $host = getenv('SQLSERVER');
 
-    private $user = "Q2qsa8HqT2";
+    private $user = getenv('DBUSER');
 
-    private $password = "vkN1eNSWhe";
+    private $password = getenv('DBPASS');
 
-    private $database = "Q2qsa8HqT2";
+    private $database = getenv('DBNAME');
 
     private static $conn;
 
