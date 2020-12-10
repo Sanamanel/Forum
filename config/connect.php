@@ -1,8 +1,8 @@
 <?php
-    $mysqlServername = 'mysql:host=remotemysql.com:3306;dbname=Q2qsa8HqT2;charset=utf8mb4';
-    $mysqlUsername = 'Q2qsa8HqT2';
-    $mysqlPassword = 'vkN1eNSWhe';
-
+    $mysqlServername = 'mysql:host='.getenv("SQLSERVER").';dbname='.getenv("DBNAME").';charset=utf8mb4';
+    $mysqlUsername = getenv('DBUSER');
+    $mysqlPassword = getenv('DBPASS');
+    print_r($mysqlServername.' / '. $mysqlUsername.' / '. $mysqlPassword);
     //On établit la connexion
 
     try{

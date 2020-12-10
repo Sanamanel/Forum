@@ -21,7 +21,7 @@ session_start();
             exit();
         } 
 ob_start();
-  print_r(getenv('envtest'));
+  
   require ('config/connect.php');
   $redirect = false;
   $topicId = 0;
