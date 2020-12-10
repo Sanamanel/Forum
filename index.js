@@ -59,6 +59,12 @@ document.getElementById("btn_register").addEventListener("click", async () => {
 
 });
 
+$('.input_register').on('keyup',function(e){
+    if(e.keyCode == 13){
+        register();
+    }
+});
+
 function register(){
 
     document.getElementById("register_errors").innerHTML = "";
@@ -122,11 +128,8 @@ function register(){
 
 }
 
-$('.input_register').on('keyup',function(e){
-    if(e.keyCode == 13){
-        register();
-    }
-});
-
 
   })();
+
+
+
