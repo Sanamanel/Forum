@@ -224,7 +224,16 @@
           } 
           else
           {
-            $_SESSION['username'] = $username; //Fill username session variable to specify that the user in connected and give its username
+            $query = "SELECT nickname, id FROM users WHERE nickname = $username";
+            $result = mysqli_query($db, $query);
+            
+            while ($row = $result->fetch_object()){
+              if($row['nickname'] == $username){
+                $_SESSION['id'] = $row['id'];
+              }
+            }
+            
+            $_SESSION['username'] = $username; //Fill username session variable to specify that the user in connected and give its username 
             header("HTTP/1.1 200 OK");
             return;
             
