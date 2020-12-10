@@ -115,10 +115,7 @@
                          <div class="col-md-6">
                            <div class="form-group">
                              <label>Change signature</label>
-                             <textarea id="signature"
-                              class="form-control" 
-                              placeholder="Signature">
-                            </textarea>
+                             <input type="text" id="signature" class="form-control" placeholder="Signature"></input>
                            </div>
                          </div>
                          <div class="col-md-6">

@@ -12,3 +12,15 @@ the project was carried out by [Haddouch Rachida](https://github.com/Sanamanel),
 The project consists of the creation of a bulletin board created with PHP, Bootstrap, MySQL ans SASS. 
 The website is fully responsive and requires registration to access it.
 In order to make it Dynamic, we have created a database.
+
+### instruction of project
+
+##### Part one
+
+Create a data base with four table :
+
+* Users
+* Board
+* Topics
+* Message
+
