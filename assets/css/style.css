@@ -169,7 +169,7 @@ footer .menu-footer {
 }
 .input_file {
   opacity: 0;
-  max-width: 100%; 
+  max-width: 110%; 
   position: relative;
-  left: -80px;
+  left: -170px;
 }
