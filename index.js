@@ -122,6 +122,11 @@ function register(){
 
 }
 
+$('.input_register').on('keyup',function(e){
+    if(e.keyCode == 13){
+        register();
+    }
+});
 
 
   })();

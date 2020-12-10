@@ -124,7 +124,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <input
                           id="register_username"
                           type="text"
-                          class="input"
+                          class="input_register"
                           placeholder="Create your Username"
                         />
                       </div>
@@ -133,7 +133,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <input
                           id="register_password"
                           type="password"
-                          class="input"
+                          class="input_register"
                           data-type="password"
                           placeholder="Create your password"
                         />
@@ -143,7 +143,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <input
                           id="register_password_confirmation"
                           type="password"
-                          class="input"
+                          class="input_register"
                           data-type="password"
                           placeholder="Repeat your password"
                         />
@@ -153,7 +153,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <input
                           id="register_email"
                           type="text"
-                          class="input"
+                          class="input_register"
                           placeholder="Enter your email address"
                         />
                       </div>
