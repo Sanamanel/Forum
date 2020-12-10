@@ -225,6 +225,13 @@
           else
           {
             $_SESSION['username'] = $username; //Fill username session variable to specify that the user in connected and give its username
+            
+            $query = "SELECT * FROM users WHERE nickname= '$username'"; 
+            $results = mysqli_query($db, $query);
+            $user=mysqli_fetch_array($results);
+            $_SESSION['id'] = $user['id'];
+
+
             header("HTTP/1.1 200 OK");
             return;
             
