@@ -208,13 +208,17 @@ if (isset($name)) {
                       <img class="mt-5 rounded img-thumbnail mx-auto d-block border-primary" style="width: 150px; height: auto;" id="avatar" scr="" alt="Profile Picture"/><br>
                     
                     
-                    
+                    <div class="mx-auto" style="width: 200px;">
                       <form action="#upload" method='post' enctype="multipart/form-data">
                         <div class="custom_file btn btn-round btn-outline-primary btn-sm">New avatar
                           <input type="file" class="custom_file input_file" name="file"/>
                         </div>
+                        </div>
+                        <div class="d-flex justify-content-end"
                             <input type="submit" class="btn btn-round btn-outline-primary btn-sm" value="Upload"/>
+                        </div>    
                       </form>
+                    
                    </div>
                    <div class="card-body">
                      <div class="author">
