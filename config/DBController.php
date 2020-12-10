@@ -3,18 +3,23 @@
 class DBController
 {
 
-    private $host = "remotemysql.com:3306";
+    private $host = null;
 
-    private $user = "Q2qsa8HqT2";
+    private $user = null;
 
-    private $password = "vkN1eNSWhe";
+    private $password = null;
 
-    private $database = "Q2qsa8HqT2";
+    private $database = null;
 
     private static $conn;
 
     function __construct()
     {
+        $this->host = getenv('SQLSERVER');
+        $this->user = getenv('DBUSER');
+        $this->password = getenv('DBPASS');
+        $this->database = getenv('DBNAME');
+        
         $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);
         $this->conn->set_charset('utf8mb4');
         $this->conn->query("SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci");// Connecting to a database
