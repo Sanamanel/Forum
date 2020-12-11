@@ -123,9 +123,6 @@ ob_start();
         <div class="row">
           <div class="col-lg-9">
             <h4 class="text-left"><?php echo $topicRow['topicTitle'] ?></h4>
-            <div class="alert alertnew" role="alert">
-              <a href="#" class="alert-link">Forum rules</a>
-            </div>
             <div class="row">
               <div>
               
