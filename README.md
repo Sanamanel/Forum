@@ -13,9 +13,9 @@ The website is fully responsive and requires registration to access it.
 In order to make it Dynamic, we have created a database.
 
 
-## what did we do?
+## What did we do?
 
-* Create a data base with four table :
+* Create a data base with five table :
   * Users
   * User_rate
   * Board
