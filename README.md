@@ -42,6 +42,7 @@ In order to make it Dynamic, we have created a database.
 * Secret Board accessing with password
 * We Create a Random Board, which can only have five topics in it - when creating the sixth, the oldest topic is deleted from the Board.
 * Show the last 3 users online
+* A search bar 
 * Bloc aside with the 3 last topics  of the Forum
 * Sticky menu with a back to the top button
 * For the exercise the picture (avatar) were stored in a blog to the database.
