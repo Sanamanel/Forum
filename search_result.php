@@ -102,7 +102,7 @@ session_start();
               
             </div>
 			<div class="col-10">
-			<h5 class="global"> '.$row['title'].'</h5>
+			<a class="text-dark" href="http://localhost:8888/Forum-local-last-version/topic.php?topic_id='.$row['id'].'"><h5 class="global"> '.$row['title'].'</h5></a>
 			<span class="name text-capitalize text-rose"
 			>'.$row['creation_date'].'</span>
 			<p>  '.$row['content'].'</p>
