@@ -54,9 +54,11 @@ ob_start();
   if($topicRow['boardId'] == 5){
     if(!isset($_GET['pass'])){
       echo 'You need to put the password in the URL !';
+      exit();
     }
     else if($_GET['pass'] != getenv('SECRETPASS')){
       echo 'Wrong password !';
+      exit();
     }
   }
 
