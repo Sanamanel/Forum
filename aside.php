@@ -31,8 +31,7 @@
               <div class="container">
                 <form class="form-inline">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-primary btn-round btn-sm" type="submit">
-                  <i class="material-icons">search</i>
+                  <button type="submit" name="" value="Search" class="btn btn-link text-primary" ><i class="fa fa-search"></i>
                   </button>
                 </form>
               </div>
