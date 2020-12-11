@@ -22,7 +22,7 @@ session_start();
   <div class="section ">
 				
 				<center>
-				<form action="test-search.php?search=" method="GET" name="">
+				<form action="search_result.php?search=" method="GET" name="">
 					<table>
 						<tr>
 							<td> <input
