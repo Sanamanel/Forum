@@ -30,7 +30,7 @@
             <!-- search -->
             <div class="navbar navbar-light bg-light">
               <div class="container">
-                <form class="form-inline ml-auto">
+                <form action="search_result.php?search=" methode="GET" name="" class="form-inline ml-auto">
                 <div class="form-group no-border">
                 <input
                     type="search" name="k" 
