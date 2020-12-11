@@ -9,7 +9,7 @@ session_start();
             exit();
         }
 		ob_start();
-		require ('config/connect.php');
+		include ('config/include.php');
 
 
 	include ("header.php");
@@ -19,10 +19,10 @@ session_start();
 			
 
 <div class="container-fluid">
-  <div class="section text-center">
+  <div class="section ">
 				
 				<center>
-				<form action="search_result.php?search=" method="GET" name="">
+				<form action="test-search.php?search=" method="GET" name="">
 					<table>
 						<tr>
 							<td> <input
@@ -57,6 +57,7 @@ session_start();
 
 
 
+
 				<?php
 
 					// CHECK TO SEE IF THE KEYWORDS WERE PROVIDED
@@ -78,75 +79,74 @@ session_start();
 						$query_string = substr($query_string, 0, strlen($query_string) - 3);
 
 						// connect to the database
-						$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbdatabase);
-					
+						$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
 						$query = mysqli_query($conn, $query_string);
 						$result_count = mysqli_num_rows($query);
 
-							// check to see if any results were returned
-							if ($result_count > 0){
+						// check to see if any results were returned
+						if ($result_count > 0){
 							
-								// display search result count to user
-	   echo '<center><h3>Your search for <b>'.$display_words.'</b></h3>';
-	   echo '<h3><b>'.$result_count.'</b> results found</h3></center><hr />';
-   
-							   echo '<table class="search table table-bordered mt-5">';
-   
-							   // display all the search results to the user
-							   while ($row = mysqli_fetch_assoc($query)){
-								   
-								   echo '<tr>
-								   <td class=" ">
-			   <div class="row">
-				 
-			   </div>
-			   <div class="col-10">
-			   <h5 class="global"> '.$row['title'].'</h5>
-			   <span class="name text-capitalize text-rose"
-			   >'.$row['creation_date'].'</span>
-			   <p>  '.$row['content'].'</p>
-		   </div>
-		   </div>
-		   </td>
-   
-		   <td>201</td>
-		   <td>201</td>
-		   <td>
-			 <div class="text_cell">
-			   
-			   <p></p>
-			 </div>
-		   </td>
-		 </tr>'
-								   ;
-							   }
-   
-							   echo '</table>';
-						   }
-						   else
-							   echo ' <div class="alert alert-warning">
-							   <div class="container">
-								 <div class="alert-icon">
-								 <i class="material-icons">warning</i>
-								 </div> <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								 <span aria-hidden="true"><i class="material-icons">clear</i></span>
-							   </button><b>warning alert:</b> No results found. Please search something else.</div>
-							   </div>';
-					   }
-					   else
-						   echo '';
-				   ?>
-	 <div class="row mt-5">
-				 <div class="col-md-4 col-sm-12">
-				   <a href="./index.php" class="text-capitalize return">
-					 <i class="fa fa-angle-left mr-1" aria-hidden="true"></i>
-					 return to board index</a
-				   >
-				 </div>
-				 </div>
-				 
-			   </div> 
-			   
-			   </div> 
-			   <?php include("footer.php"); ?>
+							 // display search result count to user
+    echo '<center><h3>Your search for <b class="text-primary">'.$display_words.'</b></h3>';
+    echo '<h3><b class="text-primary">'.$result_count.'</b> results found</h3></center><hr />';
+
+							echo '<table class="search table table-bordered mt-5">';
+
+							// display all the search results to the user
+							while ($row = mysqli_fetch_assoc($query)){
+								
+								echo '<tr>
+								<td class=" ">
+            <div class="row">
+              
+            </div>
+			<div class="col-10">
+			<h5 class="global"> '.$row['title'].'</h5>
+			<span class="name text-capitalize text-rose"
+			>'.$row['creation_date'].'</span>
+			<p>  '.$row['content'].'</p>
+		</div>
+		</div>
+		</td>
+
+		
+		
+		
+		  <div class="text_cell">
+			
+			<p></p>
+		  </div>
+		</>
+	  </tr> '
+								;
+							}
+
+							echo '</table>';
+						}
+						else
+							echo ' <div class="alert alert-warning">
+							<div class="container">
+							  <div class="alert-icon">
+							  <i class="material-icons">warning</i>
+							  </div> <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							  <span aria-hidden="true"><i class="material-icons">clear</i></span>
+							</button><b>warning alert:</b> No results found. Please search something else.</div>
+							</div> </table>';
+					}
+					else
+						echo '</table>';
+				?>
+  <div class="row mt-5">
+              <div class="col-md-4 col-sm-12">
+                <a href="./index.php" class="text-capitalize return">
+                  <i class="fa fa-angle-left mr-1" aria-hidden="true"></i>
+                  return to board index</a
+                >
+              </div>
+			  </div>
+			  
+			</div> 
+			
+			</div> 
+			<?php include("footer.php"); ?>
