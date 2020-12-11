@@ -46,8 +46,19 @@ ob_start();
       header('location: https://led-zepplin-forum.herokuapp.com/home.php');
       exit();
   }
+
+  
   
   $topicRow = $topic_result->fetch();
+
+  if($topicRow['boardId'] == 5){
+    if(!isset($_GET['pass'])){
+      echo 'You need to put the password in the URL !';
+    }
+    else if($_GET['pass'] != getenv('SECRETPASS')){
+      echo 'Wrong password !';
+    }
+  }
 
   //print_r($topicRow['locked']);
   //print_r($topicRow['topicAuthor']);
