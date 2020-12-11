@@ -27,16 +27,22 @@
 <!-- div aside -->
 <div class="col-lg-3 m-15px-tb blog-aside">
             <!-- search -->
-            <nav class="navbar navbar-light bg-light">
+            <div class="navbar navbar-light bg-light">
               <div class="container">
-                <form class="form-inline">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-primary btn-round btn-sm" type="submit">
-                  <i class="material-icons">search</i>
+                <form class="form-inline ml-auto">
+                <div class="form-group no-border">
+                <input
+                    type="search" name="k" 
+                    autocomplete="off"
+                      class="form-control"
+                      placeholder="Search..."
+                    />
+                    </div>
+                  <button type="submit" name="" value="Search" class="btn btn-link text-primary" ><i class="fa fa-search"></i>
                   </button>
                 </form>
               </div>
-            </nav>                   
+            </div>                   
             <!-- Author -->
             <div class="widget widget-author">
               <div class="widget-title">
