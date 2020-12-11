@@ -341,8 +341,9 @@
 }
 
 .edit-btn{
-  max-width: 20px;
+  max-width: 60px;
   float: right;
+  padding-right: 60px;
 }
 
 .message-content{
