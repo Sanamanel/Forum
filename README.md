@@ -17,12 +17,12 @@ In order to make it Dynamic, we have created a database.
 
 #### What we do
 
-- Create a data base with four table :
+* Create a data base with four table :
 
-* Users
-* Board
-* Topics
-* Message
+ * Users
+ * Board
+ * Topics
+ * Message
 
 ![Data-base-shema](https://github.com/Sanamanel/Forum/blob/main/Readme/Data_base.png)
 
