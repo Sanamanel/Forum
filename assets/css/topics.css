@@ -339,3 +339,13 @@
 .author p {
   margin: 0;
 }
+
+.edit-btn{
+  max-width: 20px;
+  float: right;
+  padding-right: 100px;
+}
+
+.message-content{
+  clear: both;
+}
