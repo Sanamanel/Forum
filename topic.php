@@ -220,13 +220,21 @@ ob_start();
                                 </span>
                                 <span class="text-right">
                                 <?php 
+
+                                  if(($_SESSION['id'] == $message['authorId']) && (!$message['isDeleted'])){
+                                    echo '<form class="edit-btn" method="POST" action="#">
+                                    <input type="hidden" value="true" name="deleteMessage" id="deleteMessage">
+                                    <input type="hidden" value="'.$message['messageId'].'" name="deleteMessageId" id="deleteMessageId">
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i></button>
+                                  </form>';
+                                  }
                                   if(($count == 0) && ($_SESSION['id'] == $lastId)){
 
                                     $messageToEditId = $message['messageId'];
                                     $commentToEdit = $message['messageContent'];
 
                                     if(!$message['isDeleted']){
-                                    echo '<form method="POST" action="#form-edit">
+                                    echo '<form class="edit-btn" method="POST" action="#form-edit">
                                       <input type="hidden" value="true" name="editMessage" id="editMessage">
                                       <button type="submit" class="btn"><i class="fa fa-pencil"></i></button>
                                     </form>';
@@ -234,18 +242,12 @@ ob_start();
                                     
                                   
                                   }
-                                  if(($_SESSION['id'] == $message['authorId']) && (!$message['isDeleted'])){
-                                    echo '<form method="POST" action="#">
-                                    <input type="hidden" value="true" name="deleteMessage" id="deleteMessage">
-                                    <input type="hidden" value="'.$message['messageId'].'" name="deleteMessageId" id="deleteMessageId">
-                                    <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i></button>
-                                  </form>';
-                                  }
+                                  
                                   
                                 ?>
                                 </span>
                               </div>
-                              <p class="m-b-5 m-t-10">
+                              <p class="m-b-5 m-t-10 message-content">
                               <?php 
                                 $comment = $message['messageContent'];
                                 $markdowned_comment = Michelf\Markdown::defaultTransform($comment);
