@@ -148,10 +148,10 @@ function getDateDisplay($input)
                           class="fa fa-bullhorn float-right text-primary"
                           aria-hidden="true"
                         ></i>
-                        <h5 class="global">Welcome here.</h5>
+                        <h5 class="global">Welcome to our forum.</h5>
 
-                        by <span class="name text-capitalize">Led Zeppelin</span>
-                
+                        by <span class="name text-capitalize">carla</span>
+                        <span>>> in Unread Forum</span>
                       </div>
                     </div>
                   </td>
