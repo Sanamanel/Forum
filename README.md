@@ -44,6 +44,7 @@ In order to make it Dynamic, we have created a database.
 * Show the last 3 users online
 * Bloc aside with the 3 last topics  of the Forum
 * Sticky menu with a back to the top button
+* For the exercise the picture (avatar) were stored in a blog to the database.
 
 To handle our local environment we used Lamp or Mamp and phpMyAdmin.
 
@@ -55,6 +56,12 @@ Technologies We use for the development:
 * sass.
 * bootstrap.
 * Javascript.
+
+#### Sécurity
+
+Passwords have been encrypted with sha 512 for more security
+For security we have used the heroku environment variables. 
+All passwords still present in old commits have been modified .....
 
 The spirit of our team is the fuel that allows us to attain  this result and we are very proud of it.
 We were all involved in every aspect of this project. 
