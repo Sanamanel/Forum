@@ -48,7 +48,7 @@ In order to make it Dynamic, we have created a database.
 
 To handle our local environment we used Lamp or Mamp and phpMyAdmin.
 
-Technologies We use for the development:
+####Technologies We use for the development:
 * html.
 * css.
 * php.
