@@ -3,7 +3,8 @@
 	
   <?php
 
-  $sql ="SELECT topics.id as topicId,title,creation_date,CONCAT(SUBSTRING_INDEX(content, ' ', 5),'...') AS resume from topics
+  $sql ="SELECT topics.id as topicId,board_id,title,creation_date,CONCAT(SUBSTRING_INDEX(content, ' ', 5),'...') AS resume from topics
+  WHERE board_id != 5
   Order by creation_date DESC
   Limit 3";
   $stmt = $conn->query($sql);
