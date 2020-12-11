@@ -29,7 +29,7 @@
               <?php
                 if($boardId != 5){
                   echo '<a href="./board.php?board_id='.$boardId.'"><h2 class="font-weight-bold">  '.$boardName.'</h2></a>';
-                  echo '<p>'.$board_row["boardDesc"].'</p>';
+                  echo '<h4>'.$board_row["boardDesc"].'</h4>';
                 }else{
                   echo ' <h2 class="font-weight-bold text-primary">  '.$boardName.'</h2>';
                 }
