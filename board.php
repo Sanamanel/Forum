@@ -257,7 +257,11 @@ while ($topic_row = $topics_results->fetch())
                           if(strlen($sujet) <= 70) {
                              $ins = $conn->prepare('INSERT INTO topics(title, content, board_id, topic_by, creation_date, modification_date) VALUES(?,?,?,?,NOW(),NOW())');
                              $ins->execute(array($sujet,$contenu,$_GET['board_id'],$_SESSION['id']));
-                             header("Location: https://led-zepplin-forum.herokuapp.com/board.php?board_id=".$_GET['board_id']."");
+                             if($_GET['board_id'] == 5){
+                              header("Location: https://led-zepplin-forum.herokuapp.com/board.php?board_id=".$_GET['board_id']."&pass=".getenv('SECRETPASS'));
+                             } else{
+                             header("Location: https://led-zepplin-forum.herokuapp.com/board.php?board_id=".$_GET['board_id']);
+                             }
                               exit();
                           } else {
                              $terror = "Votre sujet ne peut pas dépasser 70 caractères";
