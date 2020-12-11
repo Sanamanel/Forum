@@ -19,7 +19,7 @@
 
            <?php
 
-            $sql = 'select board.id as boardId,board.name as boardName from board order by board.id ';  
+            $sql = 'select board.id as boardId,board.name as boardName, board.description as boardDesc from board order by board.id ';  
             $boards_results = $conn->query($sql); 
             while ($board_row = $boards_results->fetch()) {
               $boardId = $board_row['boardId'];
@@ -29,6 +29,7 @@
               <?php
                 if($boardId != 5){
                   echo '<a href="./board.php?board_id='.$boardId.'"><h2 class="font-weight-bold">  '.$boardName.'</h2></a>';
+                  echo '<p>'.$board_row["boardDesc"].'</p>';
                 }else{
                   echo ' <h2 class="font-weight-bold text-primary">  '.$boardName.'</h2>';
                 }
