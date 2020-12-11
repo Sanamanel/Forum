@@ -45,7 +45,7 @@ session_start();
 				<table class="table table-bordered mt-5">
               <thead class="table-bg">
                 <tr class="text-white">
-                  <th class="text-capitalize"> Results of search</th>
+                  <th class="text-capitalize"> Results of your search</th>
                   
                  
                  
